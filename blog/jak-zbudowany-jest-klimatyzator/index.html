@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jak zbudowany jest klimatyzator split? 6 komponentów krok po kroku | NURTEX</title>
+<meta name="description" content="Sprężarka, skraplacz, parownik, EEV, R32 i PCB inwertera — rozkładamy klimatyzator split na czynniki pierwsze. Specyfikacje, ceny, normy 2026.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://wentylacja-nurtex-klimatyzacja.pl/blog/jak-zbudowany-jest-klimatyzator/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jak zbudowany jest klimatyzator split? 6 komponentów krok po kroku">
+<meta property="og:description" content="Sprężarka, skraplacz, parownik, EEV, R32 i PCB inwertera — rozkładamy klimatyzator split na czynniki pierwsze.">
+<meta property="og:image" content="https://wentylacja-nurtex-klimatyzacja.pl/blog/jak-zbudowany-jest-klimatyzator/img/hero.jpg">
+<meta property="og:url" content="https://wentylacja-nurtex-klimatyzacja.pl/blog/jak-zbudowany-jest-klimatyzator/">
+
+<!-- JSON-LD: Article + Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Jak zbudowany jest klimatyzator split? 6 komponentów wyjaśnionych krok po kroku",
+  "description": "Rozkładamy klimatyzator split na czynniki pierwsze — od wymiennika z miedzi po PCB inwertera.",
+  "image": "https://wentylacja-nurtex-klimatyzacja.pl/blog/jak-zbudowany-jest-klimatyzator/img/hero.jpg",
+  "author": {"@type": "Organization", "name": "NURTEX", "url": "https://wentylacja-nurtex-klimatyzacja.pl"},
+  "publisher": {"@type": "Organization", "name": "NURTEX", "logo": {"@type": "ImageObject", "url": "https://wentylacja-nurtex-klimatyzacja.pl/img/nurtex-logo.svg"}},
+  "datePublished": "2026-05-17",
+  "dateModified": "2026-05-17",
+  "mainEntityOfPage": "https://wentylacja-nurtex-klimatyzacja.pl/blog/jak-zbudowany-jest-klimatyzator/",
+  "articleSection": "TECH",
+  "keywords": "klimatyzator split, budowa klimatyzatora, sprężarka inverter, R32, EEV, PCB inwertera, Daikin, Mitsubishi"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NURTEX", "item": "https://wentylacja-nurtex-klimatyzacja.pl/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://wentylacja-nurtex-klimatyzacja.pl/blog/"},
+    {"@type": "ListItem", "position": 3, "name": "Jak zbudowany jest klimatyzator"}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#06060a; --bg2:#0a0a0e; --bg3:#10101a;
+  --line:#1a1a22; --line2:#26262e;
+  --txt:#ffffff; --txt2:#b0b0bc; --txt3:#8a8a96;
+  --accent:#e8503a; --accent2:#ff7a5a;
+  --green:#3dd982;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Helvetica Neue',-apple-system,BlinkMacSystemFont,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+
+/* HEADER (matches main site) */
+.nav{position:sticky;top:0;z-index:100;background:rgba(6,6,10,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);padding:18px 0}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:30px}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--txt);width:184px;max-width:46vw}.brand-logo{display:block;width:100%;height:auto}
+.brand-icon{width:36px;height:36px;border-radius:8px;background:var(--bg3);display:flex;align-items:center;justify-content:center;border:1px solid var(--line2)}
+.brand-icon svg{width:22px;height:22px}
+.brand-name{font-weight:800;letter-spacing:2px;font-size:15px}
+.brand-name .x{color:var(--accent)}
+.brand-sub{display:block;font-weight:500;letter-spacing:3px;font-size:9px;color:var(--txt3);margin-top:2px}
+.nav-links{display:flex;gap:28px;margin-left:auto;align-items:center}
+.nav-links a{color:var(--txt2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--txt)}
+.btn-cta{background:transparent;border:1px solid var(--accent);color:var(--accent);padding:10px 22px;border-radius:30px;font-weight:600;font-size:13px;letter-spacing:1px;text-decoration:none;transition:all .2s}
+.btn-cta:hover{background:var(--accent);color:#fff}
+
+/* HERO */
+.hero{padding:60px 32px 80px;max-width:1280px;margin:0 auto}
+.breadcrumbs{font-size:11px;letter-spacing:2px;color:var(--txt3);margin-bottom:30px}
+.breadcrumbs a{color:var(--txt3);text-decoration:none}
+.breadcrumbs a:hover{color:var(--accent)}
+.tags{display:flex;gap:14px;align-items:center;margin-bottom:24px;font-size:11px;letter-spacing:2px;color:var(--accent)}
+.tags span{color:var(--txt3)}
+.h1{font-size:clamp(36px,5vw,68px);font-weight:800;line-height:1.05;letter-spacing:-0.02em;margin-bottom:24px;max-width:1100px}
+.h1 em{font-style:italic;font-family:'Playfair Display',Georgia,serif;font-weight:500;color:var(--accent2)}
+.lead{font-size:20px;line-height:1.5;color:var(--txt2);max-width:780px;font-weight:300}
+.hero-meta{display:flex;gap:32px;margin-top:36px;padding-top:28px;border-top:1px solid var(--line);font-size:13px;color:var(--txt3);letter-spacing:1px}
+.hero-meta strong{color:var(--txt);font-weight:600}
+
+.hero-img{margin:60px -32px 0;border-radius:0;overflow:hidden;position:relative}
+.hero-img img{width:100%;display:block}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,var(--bg) 100%);pointer-events:none}
+
+/* CONTENT */
+.content{max-width:780px;margin:0 auto;padding:80px 32px}
+.content h2{font-size:34px;font-weight:800;margin:64px 0 24px;letter-spacing:-0.01em;line-height:1.2}
+.content h2 .num{color:var(--accent);font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;margin-right:14px}
+.content h3{font-size:22px;font-weight:700;margin:36px 0 14px;color:var(--txt)}
+.content h4{font-size:16px;font-weight:700;margin:24px 0 10px;color:var(--accent);letter-spacing:1px;text-transform:uppercase}
+.content p{font-size:17px;line-height:1.75;color:var(--txt2);margin-bottom:20px}
+.content p strong{color:var(--txt);font-weight:600}
+.content a{color:var(--accent2);text-decoration:none;border-bottom:1px solid rgba(255,122,90,0.3);transition:border-color .2s}
+.content a:hover{border-bottom-color:var(--accent2)}
+.content ul,.content ol{margin:18px 0 28px 0;padding-left:0;list-style:none}
+.content ul li,.content ol li{position:relative;padding-left:28px;margin-bottom:12px;color:var(--txt2);font-size:17px;line-height:1.65}
+.content ul li::before{content:"";position:absolute;left:0;top:13px;width:14px;height:1px;background:var(--accent)}
+.content ol{counter-reset:item}
+.content ol li{counter-increment:item}
+.content ol li::before{content:counter(item,decimal-leading-zero);position:absolute;left:0;top:0;color:var(--accent);font-weight:700;font-size:13px;letter-spacing:1px}
+.content ol li{padding-left:42px}
+
+/* CALLOUT */
+.callout{margin:32px 0;padding:24px 28px;background:var(--bg2);border-left:3px solid var(--accent);border-radius:0 8px 8px 0}
+.callout-label{font-size:11px;letter-spacing:3px;color:var(--accent);font-weight:700;margin-bottom:8px}
+.callout p{margin:0;color:var(--txt);font-size:16px}
+
+/* TABLE */
+.tbl-wrap{margin:32px 0;overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--bg2)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:var(--bg3);color:var(--accent);font-weight:700;text-align:left;padding:14px 18px;letter-spacing:1px;font-size:12px;text-transform:uppercase;border-bottom:1px solid var(--line)}
+td{padding:14px 18px;color:var(--txt2);border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+td strong{color:var(--txt)}
+
+/* BIG NUMBERS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--line);margin:40px 0;border-radius:12px;overflow:hidden}
+.stat{background:var(--bg2);padding:28px 22px}
+.stat-num{font-size:42px;font-weight:800;color:var(--accent);letter-spacing:-1px;line-height:1}
+.stat-lbl{font-size:11px;letter-spacing:2px;color:var(--txt3);margin-top:10px;text-transform:uppercase}
+
+/* SECTION DIVIDER */
+.divider{display:flex;align-items:center;gap:18px;margin:60px 0 24px;font-size:11px;letter-spacing:4px;color:var(--accent);font-weight:700;text-transform:uppercase}
+.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--accent),transparent)}
+
+/* CTA BOX */
+.cta-box{margin:80px 0 40px;padding:48px;background:linear-gradient(135deg,var(--bg2) 0%,var(--bg3) 100%);border:1px solid var(--line2);border-radius:16px;text-align:center}
+.cta-box h3{font-size:28px;margin-bottom:14px;color:var(--txt)}
+.cta-box p{color:var(--txt2);margin-bottom:28px;max-width:520px;margin-left:auto;margin-right:auto}
+.cta-btn{display:inline-block;background:var(--accent);color:#fff;padding:16px 38px;border-radius:30px;text-decoration:none;font-weight:700;letter-spacing:1px;transition:all .2s}
+.cta-btn:hover{background:var(--accent2);transform:translateY(-2px)}
+
+/* SOURCES */
+.sources{margin:60px 0 0;padding:32px;background:var(--bg2);border-radius:12px;border:1px solid var(--line)}
+.sources h4{color:var(--accent);font-size:11px;letter-spacing:3px;margin-bottom:18px;text-transform:uppercase;font-weight:700}
+.sources ol{margin:0;padding-left:20px;list-style:decimal}
+.sources ol li{font-size:13px;color:var(--txt3);margin-bottom:8px;line-height:1.5;padding-left:0}
+.sources ol li::before{display:none}
+.sources a{color:var(--txt2);border-bottom:1px dotted var(--txt3)}
+.sources a:hover{color:var(--accent2)}
+
+/* FOOTER */
+footer{padding:48px 32px;border-top:1px solid var(--line);text-align:center;color:var(--txt3);font-size:13px;margin-top:80px}
+footer a{color:var(--txt2);text-decoration:none}
+footer a:hover{color:var(--accent)}
+
+@media(max-width:720px){
+  .content{padding:48px 20px}
+  .hero{padding:32px 20px 48px}
+  .hero-img{margin:36px -20px 0}
+  .nav-inner{padding:0 20px;gap:16px}
+  .nav-links{gap:18px}
+  .nav-links a:not(.btn-cta){display:none}
+  .h1{font-size:36px}
+  .lead{font-size:17px}
+  .content h2{font-size:26px}
+  .cta-box{padding:32px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="NURTEX - strona główna">
+      <img class="brand-logo" src="/img/nurtex-logo.svg" alt="NURTEX - Inżynieria klimatu" width="760" height="188">
+    </a>
+    <div class="nav-links">
+      <a href="/#uslugi">Usługi</a>
+      <a href="/#cennik">Cennik</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#wycena" class="btn-cta">Wycena 24h</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="breadcrumbs"><a href="/">NURTEX</a> · <a href="/blog/">BLOG</a> · ANATOMIA KLIMATYZATORA</div>
+  <div class="tags">TECH<span>·</span>SPLIT AC<span>·</span>8 MIN CZYTANIA<span>·</span>2026</div>
+  <h1 class="h1">Jak zbudowany jest <em>klimatyzator split?</em><br> 6 komponentów wyjaśnionych krok po kroku</h1>
+  <p class="lead">Rozkładamy split na czynniki pierwsze — od wymiennika z miedzi po PCB inwertera. Specyfikacje, materiały, klasy, normy 2026 i ceny serwisowe rynku polskiego.</p>
+  <div class="hero-meta">
+    <div><strong>Autor:</strong> NURTEX</div>
+    <div><strong>Aktualizacja:</strong> 17.05.2026</div>
+    <div><strong>Branża:</strong> HVAC</div>
+  </div>
+  <div class="hero-img"><img src="/blog/jak-zbudowany-jest-klimatyzator/img/hero.jpg" alt="Klimatyzator split — przekrój techniczny pokazujący wymiennik, wentylator i PCB inwertera"></div>
+</section>
+
+<article class="content">
+
+<p>Klimatyzator split wygląda jak „biała skrzynka na ścianie i metalowa puszka na zewnątrz". W środku to <strong>precyzyjna maszyna termodynamiczna z 6 kluczowymi komponentami</strong>, których jakość przekłada się 1:1 na rachunek za prąd, żywotność i koszt serwisu w 5. roku eksploatacji.</p>
+
+<p>Poniżej rozkładamy każdy z nich na czynniki pierwsze — z typami, materiałami, klasami efektywności i orientacyjnymi cenami komponentów w Polsce 2026.</p>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">15 lat</div><div class="stat-lbl">Żywotność sprężarki</div></div>
+  <div class="stat"><div class="stat-num">110 Hz</div><div class="stat-lbl">Górna częstotliwość inwertera</div></div>
+  <div class="stat"><div class="stat-num">675</div><div class="stat-lbl">GWP czynnika R32</div></div>
+  <div class="stat"><div class="stat-num">40%</div><div class="stat-lbl">Oszczędność energii vs ON/OFF</div></div>
+</div>
+
+<h2><span class="num">01</span>Sprężarka (kompresor)</h2>
+
+<p>Serce układu. Spręża gazowy czynnik chłodniczy — to ona pochłania <strong>60–70% energii elektrycznej</strong> jednostki. Cztery dominujące architektury:</p>
+
+<ul>
+  <li><strong>Rotary</strong> — standard w jednostkach 2–7 kW (Panasonic, Highly/Toshiba). Kompaktowy, cichy, tani.</li>
+  <li><strong>Scroll</strong> — dwa zazębione spirale. Niezawodność i bardzo niski hałas (klimat. budynkowa, chillery).</li>
+  <li><strong>Swing</strong> — autorska konstrukcja <a href="https://www.daikin.com/about/corporate/tic/topics/feature/matsuura" target="_blank" rel="noopener">Daikina</a>: łopatka i rolka jako jeden element. Działa sprawnie nawet przy 4 obr./s (rotary traci poniżej 10).</li>
+  <li><strong>DC Twin-Rotary</strong> — Toshiba/Highly. Dwa cylindry przesunięte o 180° wzajemnie tłumią wibracje. Sprawność <strong>+50%</strong> vs single-rotor.</li>
+</ul>
+
+<h4>On/off vs inwerter DC — jedyne porównanie, jakiego potrzebujesz</h4>
+
+<div class="tbl-wrap"><table>
+  <tr><th>Cecha</th><th>On/off</th><th>Inwerter DC</th></tr>
+  <tr><td>Częstotliwość pracy</td><td>100% albo 0%</td><td><strong>15–110 Hz</strong> (modulacja)</td></tr>
+  <tr><td>Zużycie energii</td><td>Baseline</td><td><strong>−30 do −40%</strong></td></tr>
+  <tr><td>Start sprężarki</td><td>Pełny rozruch — wysokie prądy</td><td>Miękki start</td></tr>
+  <tr><td>Stabilność temperatury</td><td>±2°C (cykliczna)</td><td><strong>±0,5°C</strong></td></tr>
+  <tr><td>Koszt zakupu</td><td>Niższy</td><td>Wyższy o 30–60%</td></tr>
+</table></div>
+
+<p>Źródła: <a href="https://hvacprosales.com/blog/inverter-vs-single-stage-compressors-energy-savings/" target="_blank" rel="noopener">hvacprosales.com</a>, <a href="https://www.infineon.com/assets/row/public/documents/60/54/igbt-for-aircon-feb11-power-system-design-america.pdf?fileId=db3a30432f29829e012f2b44d6cf009f" target="_blank" rel="noopener">Infineon (PCB inwertera)</a>.</p>
+
+<div class="callout">
+  <div class="callout-label">PRAKTYKA NURTEX</div>
+  <p>Inwerter DC zwraca się w PL w ciągu <strong>3–4 sezonów chłodzenia</strong> przy ~600 godz./rok pracy. Po 5 latach jesteś w zysku ok. 1500–2400 zł vs ON/OFF — i kompresor ma 30% więcej żywotności przed pierwszą naprawą.</p>
+</div>
+
+<h3>Żywotność i koszty</h3>
+<ul>
+  <li>Średnia żywotność kompresora: <strong>12–15 lat</strong> (<a href="https://www.carrier.com/residential/en/us/products/ductless-mini-splits/mini-split-maintenance/how-long-do-mini-splits-last/" target="_blank" rel="noopener">Carrier</a>)</li>
+  <li>Wymiana sprężarki w serwisie (PL 2026): <strong>2 150–5 100 zł</strong> z robocizną</li>
+  <li>Diagnostyka + odzysk czynnika: 400–700 zł</li>
+</ul>
+
+<h2><span class="num">02</span>Skraplacz — jednostka zewnętrzna</h2>
+
+<p>Wymiennik ciepła, który <strong>oddaje energię do atmosfery</strong>. Tu czynnik chłodniczy przechodzi z fazy gazowej w ciekłą. Kluczowa decyzja materiałowa: <strong>miedź vs aluminium</strong>.</p>
+
+<div class="tbl-wrap"><table>
+  <tr><th>Cecha</th><th>Cu (rury miedziane)</th><th>All-Al (MCHX)</th></tr>
+  <tr><td>Odporność na korozję</td><td>Wyższa</td><td>Niższa — wymaga powłok</td></tr>
+  <tr><td>Naprawa w terenie</td><td>Lutowanie (standard)</td><td>Trudna (spawanie Al)</td></tr>
+  <tr><td>Wymiana ciepła / objętość</td><td>Dobra</td><td><strong>Bardzo wysoka</strong></td></tr>
+  <tr><td>Cena materiału</td><td>×3 wyższa</td><td>Niższa</td></tr>
+  <tr><td>Środowisko miejskie PL</td><td>OK bez powłok</td><td>Wymaga e-coatingu</td></tr>
+</table></div>
+
+<p>Źródło: <a href="https://blog.copper.org/hvac/r/four-facts-to-know-about-coil-corrosion-copper-versus-aluminum" target="_blank" rel="noopener">Copper.org</a>, <a href="https://www.shareddocs.com/hvac/docs/1001/Public/08/04-581061-01.pdf" target="_blank" rel="noopener">Carrier — Environmental Corrosion Protection (PDF)</a>.</p>
+
+<h4>Powłoki ochronne — hierarchia jakości</h4>
+<ol>
+  <li><strong>BlueFin</strong> — bazowy hydrofobowy lakier. Mid-range (Midea, Gree, Panasonic basic).</li>
+  <li><strong>GoldFin</strong> — lepsze spływanie wody, mniejsze ryzyko korozji galwanicznej.</li>
+  <li><strong>E-coating (epoxy galwaniczny)</strong> — pokrywa <strong>WSZYSTKIE</strong> powierzchnie cewki łącznie z krawędziami. Klasa korozyjności <strong>C4–CX</strong> wg ISO 12944. Standard dla strefy nadmorskiej i przemysłowej.</li>
+  <li><strong>Phenolic / Heresite P-413</strong> — top tier. Test mgły solnej >5000h (ISO 12944-9).</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">REKOMENDACJA WROCŁAW</div>
+  <p>Standardowo wystarcza <strong>GoldFin</strong>. Przy montażu w pobliżu autostrad (A4, AOW) lub zakładów przemysłowych warto dopłacić <strong>~600–1200 zł</strong> za <strong>e-coating</strong> — wydłuża żywotność wymiennika o 5–8 lat.</p>
+</div>
+
+<h2><span class="num">03</span>Parownik — jednostka wewnętrzna</h2>
+
+<p>Wymiennik, który <strong>pobiera ciepło z pomieszczenia</strong>. Wnętrze split: lamelowy wymiennik miedziano-aluminiowy + wentylator cross-flow + filtry + powłoki antybakteryjne.</p>
+
+<h4>Technologie antybakteryjne w 2026 r.</h4>
+<ul>
+  <li><strong>Daikin Streamer</strong> — wyładowanie plazmowe ~1000× silniejsze niż glow discharge. Inaktywacja <strong>&gt;99,9% SARS-CoV-2 w 3 h</strong> (badanie Daikin/Tokyo University).</li>
+  <li><strong>Mitsubishi Plasma Quad Plus</strong> — 99,8% SARS-CoV-2, 99% PM2.5, certyfikat QTEC Kobe.</li>
+  <li><strong>Panasonic nanoeX</strong> — drobinki wody +OH, redukcja alergenów, bakterii i wirusów.</li>
+</ul>
+
+<p>Filtry standardowe (kasetowe): <strong>klasa G4</strong> (zatrzymuje pyłki, kurz). HEPA H13 dostępne w jednostkach premium (Daikin Stylish, LG Artcool Smart).</p>
+
+<h2><span class="num">04</span>Zawór rozprężny EEV</h2>
+
+<p>Pomiędzy skraplaczem a parownikiem czynnik musi <strong>gwałtownie obniżyć ciśnienie</strong>. W ON/OFF stosuje się prymitywną <strong>kapilarę</strong> (stała średnica, brak regulacji). W inwerterach standardem jest <strong>EEV — Electronic Expansion Valve</strong>:</p>
+
+<ul>
+  <li>Zakres regulacji: <strong>30:1 do 50:1</strong> przepływu</li>
+  <li>Czas reakcji: <strong>1–2 sekundy</strong></li>
+  <li>Sterowanie: silnik krokowy (12V DC, ~500 mikrokroków)</li>
+  <li>Oszczędność energii vs kapilara: <strong>~15%</strong></li>
+</ul>
+
+<p>Dlaczego kapilara nie działa z inwerterem: stały przepływ vs ciągła modulacja sprężarki 15–110 Hz. EEV w czasie rzeczywistym dopasowuje strumień czynnika do bieżącej mocy — to dlatego inwertery są tak efektywne.</p>
+
+<h2><span class="num">05</span>Czynnik chłodniczy R32 i regulacje F-Gaz</h2>
+
+<p>Nośnik energii termicznej. R32 (difluorometan, CH₂F₂) od 2018 r. wypiera R410A jako standard w klimatyzacji rezydencjalnej.</p>
+
+<div class="tbl-wrap"><table>
+  <tr><th>Parametr</th><th>R32</th><th>R410A</th><th>R22 (historyczny)</th></tr>
+  <tr><td>GWP (IPCC AR4)</td><td><strong>675</strong></td><td>2 088</td><td>1 810</td></tr>
+  <tr><td>ODP</td><td>0</td><td>0</td><td>0,055</td></tr>
+  <tr><td>Klasa bezpieczeństwa</td><td>A2L (lekko palny)</td><td>A1</td><td>A1</td></tr>
+  <tr><td>Ciśnienie tłoczenia (50°C)</td><td>~31 bar</td><td>~30 bar</td><td>~19 bar</td></tr>
+  <tr><td>Maks. napełnienie / m²</td><td>wzór regulowany F-Gaz</td><td>brak limitu</td><td>—</td></tr>
+  <tr><td>Cena hurt PL 2026</td><td>130–140 zł/kg</td><td>~400 zł/kg</td><td>wycofany</td></tr>
+</table></div>
+
+<h4>F-Gaz — co zmienia rozporządzenie UE 2024/573</h4>
+<ul>
+  <li><strong>2025</strong>: zakaz wprowadzania split &le; 12 kW z czynnikiem o GWP &ge; 750 (R410A zablokowany, R32 OK)</li>
+  <li><strong>2027</strong>: ostrzejsze limity wycieków, obowiązkowe pre-charged dla A2L</li>
+  <li><strong>2029</strong>: zakaz wprowadzania do obrotu nowych splitów &le; 12 kW z GWP &ge; 150; dla nowych urządzeń rośnie znaczenie <strong>R290 — propan</strong></li>
+  <li><strong>2035</strong>: dalsze zaostrzanie ograniczeń HFC w nowych instalacjach &le; 12 kW</li>
+  <li><strong>2050</strong>: zero HFC w UE</li>
+</ul>
+
+<p>Źródła: <a href="https://www.daikinchem.de/wp-content/uploads/2024/12/Daikin_R32_Handling_Brochure_EN.pdf" target="_blank" rel="noopener">Daikin Chemical R32 Handling</a>, <a href="https://eur-lex.europa.eu/eli/reg/2024/573/oj" target="_blank" rel="noopener">Rozporządzenie UE 2024/573 (F-Gaz)</a>, <a href="https://www.ehpa.org/" target="_blank" rel="noopener">EHPA — kalendarz zakazów</a>.</p>
+
+<div class="callout">
+  <div class="callout-label">CO TO ZNACZY DLA KLIENTA</div>
+  <p>Kupując split <strong>R32 w 2026 r.</strong> wybierasz technologię nadal powszechną na rynku, ale warto pamiętać o zmianach dla nowych urządzeń od 2029 r. Inwestycja w R410A dziś oznacza większe ryzyko kosztownego serwisu i ograniczonej dostępności czynnika.</p>
+</div>
+
+<h2><span class="num">06</span>PCB inwertera — falownik IPM</h2>
+
+<p>Mózg jednostki. Zamienia 230V/50Hz z sieci na <strong>regulowaną częstotliwość 15–110 Hz</strong> dla silnika sprężarki.</p>
+
+<h4>Architektura PCB inwertera w split AC</h4>
+<ol>
+  <li><strong>Prostownik</strong> — 230 VAC → ~325 VDC</li>
+  <li><strong>Kondensator DC-bus</strong> — stabilizacja napięcia (470–1000 µF)</li>
+  <li><strong>PFC (Power Factor Correction)</strong> — wymóg EN 61000-3-2 (cos φ &gt; 0,95)</li>
+  <li><strong>IPM</strong> — Intelligent Power Module: 6 × IGBT + driver + ochrona. Producenci: <a href="https://www.infineon.com/" target="_blank" rel="noopener">Infineon</a>, STMicro, ON Semi, Fuji</li>
+  <li><strong>MCU/DSP</strong> — sterowanie wektorowe FOC, 5–16 kHz switching IGBT</li>
+  <li><strong>Wyjście trójfazowe</strong> 15–110 Hz do silnika BLDC sprężarki</li>
+</ol>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">230V</div><div class="stat-lbl">Wejście AC</div></div>
+  <div class="stat"><div class="stat-num">325V</div><div class="stat-lbl">DC-bus</div></div>
+  <div class="stat"><div class="stat-num">16 kHz</div><div class="stat-lbl">Switching IGBT</div></div>
+  <div class="stat"><div class="stat-num">±0,5°C</div><div class="stat-lbl">Precyzja regulacji</div></div>
+</div>
+
+<h2><span class="num">07</span>Klasy energetyczne SEER / SCOP w PL 2026</h2>
+
+<p>SEER (sezonowa efektywność chłodzenia) i SCOP (sezonowa efektywność grzewcza) — jedyne porównywalne wskaźniki. Wartości &le; 3,1 (SEER) to klasa <strong>D</strong>. Realne mid-range to <strong>A++</strong>:</p>
+
+<div class="tbl-wrap"><table>
+  <tr><th>Klasa</th><th>SEER</th><th>SCOP (klimat umiarkowany)</th><th>Przykład rynku PL</th></tr>
+  <tr><td><strong>A+++</strong></td><td>&ge; 8,5</td><td>&ge; 5,1</td><td>Daikin Stylish, Mitsubishi Diamond</td></tr>
+  <tr><td><strong>A++</strong></td><td>6,1–8,4</td><td>4,6–5,0</td><td>Hitachi Performance, Samsung WindFree</td></tr>
+  <tr><td><strong>A+</strong></td><td>5,6–6,0</td><td>4,0–4,5</td><td>Gree Lomo, Midea Xtreme</td></tr>
+  <tr><td><strong>A</strong></td><td>5,1–5,5</td><td>3,4–3,9</td><td>Tanie marki budżetowe</td></tr>
+</table></div>
+
+<div class="callout">
+  <div class="callout-label">UWAGA: SCOP DLA KLIMATU UMIARKOWANEGO ≠ POLSKA ZIMA</div>
+  <p>Etykieta UE bazuje na klimacie Strasburga. <strong>Realny SCOP we Wrocławiu jest 10–15% niższy</strong> niż na nalepce — wynika z faktycznych temperatur -5°C do -15°C. Przy pompie ciepła do grzania w PL wymagana jest dodatkowa weryfikacja COP w punkcie -10°C/+35°C (bivalent).</p>
+</div>
+
+<div class="divider">Co zapamiętać</div>
+
+<ul>
+  <li><strong>Sprężarka inwerterowa DC</strong> — fundament oszczędności (30–40% prądu)</li>
+  <li><strong>Wymiennik + powłoka</strong> dopasowana do środowiska (e-coating przy autostradach/przemyśle)</li>
+  <li><strong>EEV zamiast kapilary</strong> — wymóg każdego dobrego inwertera</li>
+  <li><strong>R32 jako standard 2026</strong>, a dla nowych splitów po 2029 r. coraz ważniejszy będzie R290</li>
+  <li><strong>Klasa A++ minimum</strong>; A+++ przy długim sezonie grzewczym</li>
+  <li><strong>PCB z IPM od Infineon/STMicro</strong> — sygnał jakości elektroniki</li>
+</ul>
+
+<div class="cta-box">
+  <h3>Chcesz dobrać klimatyzator idealnie pod Twój dom we Wrocławiu?</h3>
+  <p>Doradzimy markę, model, klasy materiałowe i pokażemy kalkulację oszczędności w 5-letnim horyzoncie. Bezpłatna wizyta w 24h.</p>
+  <a href="/#wycena" class="cta-btn">Zamów wycenę 24h</a>
+</div>
+
+<div class="sources">
+  <h4>Źródła i odniesienia</h4>
+  <ol>
+    <li><a href="https://www.daikinmea.com/en_us/knowledge-center/air-conditioner-compressor-types.html" target="_blank" rel="noopener">Daikin — Types of Compressors</a></li>
+    <li><a href="https://www.daikin.com/about/corporate/tic/topics/feature/matsuura" target="_blank" rel="noopener">Daikin — Swing Compressor Technology</a></li>
+    <li><a href="https://www.carrier.com/residential/en/us/products/ductless-mini-splits/mini-split-maintenance/how-long-do-mini-splits-last/" target="_blank" rel="noopener">Carrier — Mini-Split Lifespan</a></li>
+    <li><a href="https://blog.copper.org/hvac/r/four-facts-to-know-about-coil-corrosion-copper-versus-aluminum" target="_blank" rel="noopener">Copper.org — Coil Corrosion Cu vs Al</a></li>
+    <li><a href="https://www.shareddocs.com/hvac/docs/1001/Public/08/04-581061-01.pdf" target="_blank" rel="noopener">Carrier — Environmental Corrosion Protection (PDF)</a></li>
+    <li><a href="https://www.daikinchem.de/wp-content/uploads/2024/12/Daikin_R32_Handling_Brochure_EN.pdf" target="_blank" rel="noopener">Daikin Chemical — R32 Handling Brochure</a></li>
+    <li><a href="https://eur-lex.europa.eu/eli/reg/2024/573/oj" target="_blank" rel="noopener">Rozporządzenie UE 2024/573 (F-Gaz)</a></li>
+    <li><a href="https://www.infineon.com/assets/row/public/documents/60/54/igbt-for-aircon-feb11-power-system-design-america.pdf?fileId=db3a30432f29829e012f2b44d6cf009f" target="_blank" rel="noopener">Infineon — IGBT for Air Conditioner PCB</a></li>
+    <li><a href="https://hvacprosales.com/blog/inverter-vs-single-stage-compressors-energy-savings/" target="_blank" rel="noopener">HVAC Pro Sales — Inverter vs Single-Stage</a></li>
+  </ol>
+</div>
+
+</article>
+
+<footer>
+  © 2026 NURTEX · Klimatyzacja, wentylacja, rekuperacja Wrocław · NIP 899-281-81-26 · <a href="/">Strona główna</a> · <a href="tel:+48662070695">+48 662 070 695</a> · <a href="mailto:kontakt@nurtex.pl">kontakt@nurtex.pl</a>
+</footer>
+
+</body>
+</html>

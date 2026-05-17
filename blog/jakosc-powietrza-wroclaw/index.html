@@ -1,329 +1,373 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jakość powietrza Wrocław 2026 — co naprawdę wdychasz | Blog NURTEX</title>
-<meta name="description" content="PM2.5, PM10, NO₂ we Wrocławiu — dane GIOŚ, normy WHO, ryzyko zdrowotne. Co realnie pomaga: rekuperacja, HEPA, audyt IAQ. Praktyczny przewodnik dla mieszkańców i firm." />
-<link rel="canonical" href="https://nurtex.pl/blog/jakosc-powietrza-wroclaw/" />
-<meta property="og:title" content="Jakość powietrza Wrocław 2026 — co naprawdę wdychasz" />
-<meta property="og:description" content="PM2.5, PM10, NO₂ we Wrocławiu — dane GIOŚ, normy WHO, ryzyko zdrowotne. Co realnie pomaga: rekuperacja, HEPA, audyt IAQ. Praktyczny przewodnik dla mieszkańców i firm." />
-<meta property="og:type" content="article" />
-<meta property="og:locale" content="pl_PL" />
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Jakość powietrza Wrocław 2026 — co naprawdę wdychasz", "description": "PM2.5, PM10, NO₂ we Wrocławiu — dane GIOŚ, normy WHO, ryzyko zdrowotne. Co realnie pomaga: rekuperacja, HEPA, audyt IAQ. Praktyczny przewodnik dla mieszkańców i firm.", "datePublished": "2026-05-16", "author": {"@type": "Organization", "name": "NURTEX"}, "publisher": {"@type": "Organization", "name": "NURTEX", "logo": {"@type": "ImageObject", "url": "https://wentylacja-nurtex-klimatyzacja.pl/img/nurtex-logo.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://wentylacja-nurtex-klimatyzacja.pl/blog/jakosc-powietrza-wroclaw/"}}</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jakość powietrza we Wrocławiu 2026 — co naprawdę wdychasz | NURTEX</title>
+<meta name="description" content="PM2.5, PM10, NO₂, benzo(a)piren — aktualne dane GIOŚ, EEA i WHO dla Wrocławia. Czy oddychanie szkodzi? Co zrobić: rekuperacja, filtry HEPA, KAWKA Plus.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://wentylacja-nurtex-klimatyzacja.pl/blog/jakosc-powietrza-wroclaw/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jakość powietrza we Wrocławiu 2026 — co naprawdę wdychasz">
+<meta property="og:description" content="PM2.5 5,3× powyżej WHO, B(a)P przekroczony. Aktualne dane GIOŚ + rozwiązania techniczne.">
+<meta property="og:image" content="https://wentylacja-nurtex-klimatyzacja.pl/blog/jakosc-powietrza-wroclaw/img/hero.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Jakość powietrza we Wrocławiu 2026 — co naprawdę wdychasz i jak to zmienić",
+  "description": "PM2.5, PM10, NO₂, benzo(a)piren — aktualne dane GIOŚ, EEA i WHO. Rozwiązania techniczne.",
+  "image": "https://wentylacja-nurtex-klimatyzacja.pl/blog/jakosc-powietrza-wroclaw/img/hero.jpg",
+  "author": {"@type":"Organization","name":"NURTEX","url":"https://wentylacja-nurtex-klimatyzacja.pl"},
+  "publisher": {"@type":"Organization","name":"NURTEX","logo":{"@type":"ImageObject","url":"https://wentylacja-nurtex-klimatyzacja.pl/img/nurtex-logo.svg"}},
+  "datePublished": "2026-05-17",
+  "dateModified": "2026-05-17",
+  "mainEntityOfPage": "https://wentylacja-nurtex-klimatyzacja.pl/blog/jakosc-powietrza-wroclaw/",
+  "articleSection": "LOCAL",
+  "keywords": "smog Wrocław, PM2.5 Wrocław, jakość powietrza, benzo(a)piren, rekuperacja, oczyszczacz powietrza, KAWKA Plus"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"NURTEX","item":"https://wentylacja-nurtex-klimatyzacja.pl/"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://wentylacja-nurtex-klimatyzacja.pl/blog/"},
+    {"@type":"ListItem","position":3,"name":"Jakość powietrza Wrocław"}
+  ]
+}
+</script>
+
 <style>
-  :root {
-    --bg-base: #0a0c10;
-    --bg-card: #11141a;
-    --fg: #f4f5f7;
-    --fg-dim: #8b929c;
-    --fg-mid: #b8bec8;
-    --accent: #ff3b30;
-    --border: #1f242c;
-    --font-display: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg-base); color: var(--fg);
-    font-family: var(--font-body); line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
-  a:hover { opacity: 0.75; }
-  .container { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+:root{--bg:#06060a;--bg2:#0a0a0e;--bg3:#10101a;--line:#1a1a22;--line2:#26262e;--txt:#fff;--txt2:#b0b0bc;--txt3:#8a8a96;--accent:#e8503a;--accent2:#ff7a5a;--danger:#ff3a3a;--warn:#ffb13a;--ok:#3dd982}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Helvetica Neue',-apple-system,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+.nav{position:sticky;top:0;z-index:100;background:rgba(6,6,10,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);padding:18px 0}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:30px}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--txt);width:184px;max-width:46vw}.brand-logo{display:block;width:100%;height:auto}
+.brand-icon{width:36px;height:36px;border-radius:8px;background:var(--bg3);display:flex;align-items:center;justify-content:center;border:1px solid var(--line2)}
+.brand-icon svg{width:22px;height:22px}
+.brand-name{font-weight:800;letter-spacing:2px;font-size:15px}
+.brand-name .x{color:var(--accent)}
+.brand-sub{display:block;font-weight:500;letter-spacing:3px;font-size:9px;color:var(--txt3);margin-top:2px}
+.nav-links{display:flex;gap:28px;margin-left:auto;align-items:center}
+.nav-links a{color:var(--txt2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--txt)}
+.btn-cta{background:transparent;border:1px solid var(--accent);color:var(--accent);padding:10px 22px;border-radius:30px;font-weight:600;font-size:13px;letter-spacing:1px;text-decoration:none;transition:all .2s}
+.btn-cta:hover{background:var(--accent);color:#fff}
 
-  header.blog-head {
-    border-bottom: 1px solid var(--border);
-    padding: 22px 0;
-    background: rgba(10,12,16,0.85);
-    position: sticky; top: 0; z-index: 100;
-    backdrop-filter: blur(12px);
-  }
-  .head-row { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 32px; }
-  .logo-link { display: flex; align-items: center; width: 166px; max-width: 46vw; }
-  .logo-link img { display: block; width: 100%; height: auto; }
-  .head-nav { display: flex; gap: 24px; align-items: center; }
-  .head-nav a { color: var(--fg-dim); font-size: 13px; }
-  .head-nav a:hover { color: var(--fg); }
-  .head-nav a.back-cta { color: var(--accent); border: 1px solid var(--accent); padding: 8px 16px; border-radius: 100px; font-weight: 600; }
+.hero{padding:60px 32px 80px;max-width:1280px;margin:0 auto}
+.breadcrumbs{font-size:11px;letter-spacing:2px;color:var(--txt3);margin-bottom:30px}
+.breadcrumbs a{color:var(--txt3);text-decoration:none}
+.breadcrumbs a:hover{color:var(--accent)}
+.tags{display:flex;gap:14px;align-items:center;margin-bottom:24px;font-size:11px;letter-spacing:2px;color:var(--accent)}
+.tags span{color:var(--txt3)}
+.h1{font-size:clamp(36px,5vw,68px);font-weight:800;line-height:1.05;letter-spacing:-0.02em;margin-bottom:24px;max-width:1100px}
+.h1 em{font-style:italic;font-family:'Playfair Display',Georgia,serif;font-weight:500;color:var(--accent2)}
+.lead{font-size:20px;line-height:1.5;color:var(--txt2);max-width:780px;font-weight:300}
+.hero-meta{display:flex;gap:32px;margin-top:36px;padding-top:28px;border-top:1px solid var(--line);font-size:13px;color:var(--txt3);letter-spacing:1px}
+.hero-meta strong{color:var(--txt);font-weight:600}
+.hero-img{margin:60px -32px 0;border-radius:0;overflow:hidden;position:relative}
+.hero-img img{width:100%;display:block}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,var(--bg) 100%);pointer-events:none}
 
-  article.post { padding: 80px 0 60px; }
-  .post-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 18px; }
-  article.post > .container > h1 {
-    font-family: var(--font-display); font-size: clamp(34px, 5vw, 52px);
-    line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 24px;
-  }
-  article.post > .container > h1 em { color: var(--accent); font-style: normal; }
-  .post-meta {
-    display: flex; gap: 20px; font-family: var(--font-mono); font-size: 11px;
-    letter-spacing: 0.1em; color: var(--fg-dim); text-transform: uppercase;
-    padding-bottom: 32px; margin-bottom: 40px; border-bottom: 1px solid var(--border);
-  }
-  .post-meta strong { color: var(--fg); font-weight: 500; }
+.content{max-width:780px;margin:0 auto;padding:80px 32px}
+.content h2{font-size:34px;font-weight:800;margin:64px 0 24px;letter-spacing:-0.01em;line-height:1.2}
+.content h2 .num{color:var(--accent);font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;margin-right:14px}
+.content h3{font-size:22px;font-weight:700;margin:36px 0 14px;color:var(--txt)}
+.content h4{font-size:16px;font-weight:700;margin:24px 0 10px;color:var(--accent);letter-spacing:1px;text-transform:uppercase}
+.content p{font-size:17px;line-height:1.75;color:var(--txt2);margin-bottom:20px}
+.content p strong{color:var(--txt);font-weight:600}
+.content a{color:var(--accent2);text-decoration:none;border-bottom:1px solid rgba(255,122,90,0.3);transition:border-color .2s}
+.content a:hover{border-bottom-color:var(--accent2)}
+.content ul,.content ol{margin:18px 0 28px 0;padding-left:0;list-style:none}
+.content ul li,.content ol li{position:relative;padding-left:28px;margin-bottom:12px;color:var(--txt2);font-size:17px;line-height:1.65}
+.content ul li::before{content:"";position:absolute;left:0;top:13px;width:14px;height:1px;background:var(--accent)}
+.content ol{counter-reset:item}
+.content ol li{counter-increment:item;padding-left:42px}
+.content ol li::before{content:counter(item,decimal-leading-zero);position:absolute;left:0;top:0;color:var(--accent);font-weight:700;font-size:13px;letter-spacing:1px}
 
-  article.post .lead {
-    font-size: 19px; line-height: 1.7; color: var(--fg-mid);
-    margin-bottom: 32px; font-weight: 400;
-  }
-  article.post h2 {
-    font-family: var(--font-display); font-size: 28px; line-height: 1.25;
-    letter-spacing: -0.01em; margin: 56px 0 20px; color: var(--fg);
-  }
-  article.post h3 {
-    font-family: var(--font-display); font-size: 20px; line-height: 1.3;
-    margin: 36px 0 14px; color: var(--fg);
-  }
-  article.post p { margin-bottom: 18px; color: var(--fg-mid); font-size: 16px; }
-  article.post p strong { color: var(--fg); font-weight: 600; }
-  article.post ul, article.post ol { margin: 16px 0 24px 24px; }
-  article.post li { margin-bottom: 10px; color: var(--fg-mid); font-size: 16px; }
-  article.post li strong { color: var(--fg); }
+.callout{margin:32px 0;padding:24px 28px;background:var(--bg2);border-left:3px solid var(--accent);border-radius:0 8px 8px 0}
+.callout.danger{border-left-color:var(--danger);background:rgba(255,58,58,0.05)}
+.callout-label{font-size:11px;letter-spacing:3px;color:var(--accent);font-weight:700;margin-bottom:8px}
+.callout.danger .callout-label{color:var(--danger)}
+.callout p{margin:0;color:var(--txt);font-size:16px}
 
-  .callout {
-    background: var(--bg-card); border-left: 3px solid var(--accent);
-    padding: 22px 28px; margin: 32px 0; border-radius: 0 10px 10px 0;
-  }
-  .callout strong { color: var(--accent); display: block; font-family: var(--font-mono);
-    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
-  .callout p { margin: 0; color: var(--fg-mid); font-size: 15px; }
+.tbl-wrap{margin:32px 0;overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--bg2)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:var(--bg3);color:var(--accent);font-weight:700;text-align:left;padding:14px 18px;letter-spacing:1px;font-size:12px;text-transform:uppercase;border-bottom:1px solid var(--line)}
+td{padding:14px 18px;color:var(--txt2);border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+td strong{color:var(--txt)}
+td .bad{color:var(--danger);font-weight:700}
+td .warn{color:var(--warn);font-weight:700}
+td .ok{color:var(--ok);font-weight:700}
 
-  .spec-table {
-    width: 100%; border-collapse: collapse; margin: 28px 0;
-    border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
-    font-size: 14px;
-  }
-  .spec-table th, .spec-table td {
-    padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border);
-  }
-  .spec-table th {
-    background: var(--bg-card); font-family: var(--font-mono);
-    font-size: 11px; letter-spacing: 0.1em; color: var(--accent);
-    text-transform: uppercase; font-weight: 500;
-  }
-  .spec-table td { color: var(--fg-mid); }
-  .spec-table tr:last-child td { border-bottom: none; }
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--line);margin:40px 0;border-radius:12px;overflow:hidden}
+.stat{background:var(--bg2);padding:28px 22px}
+.stat-num{font-size:42px;font-weight:800;color:var(--accent);letter-spacing:-1px;line-height:1}
+.stat-num.danger{color:var(--danger)}
+.stat-lbl{font-size:11px;letter-spacing:2px;color:var(--txt3);margin-top:10px;text-transform:uppercase}
 
-  .cta-band {
-    margin: 60px 0 0; padding: 40px; border: 1px solid var(--border);
-    border-radius: 14px; background: linear-gradient(135deg, var(--bg-card), rgba(255,59,48,0.05));
-    text-align: center;
-  }
-  .cta-band h3 { font-family: var(--font-display); font-size: 26px; margin-bottom: 12px; color: var(--fg); }
-  .cta-band p { color: var(--fg-mid); margin-bottom: 24px; }
-  .cta-band a {
-    display: inline-block; padding: 14px 32px; background: var(--accent);
-    color: #fff; border-radius: 100px; font-weight: 600; font-size: 15px;
-  }
-  .cta-band a:hover { opacity: 0.9; }
+.divider{display:flex;align-items:center;gap:18px;margin:60px 0 24px;font-size:11px;letter-spacing:4px;color:var(--accent);font-weight:700;text-transform:uppercase}
+.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--accent),transparent)}
 
-  .source {
-    font-size: 12px; color: var(--fg-dim); font-family: var(--font-mono);
-    letter-spacing: 0.05em; padding: 18px 0; border-top: 1px dashed var(--border);
-    margin-top: 40px;
-  }
-  .source a { color: var(--fg-dim); text-decoration: underline; }
+/* MONTH CHART */
+.month-chart{margin:40px 0;padding:32px;background:var(--bg2);border:1px solid var(--line);border-radius:16px}
+.month-chart-title{font-size:11px;letter-spacing:3px;color:var(--accent);font-weight:700;margin-bottom:24px;text-transform:uppercase;text-align:center}
+.month-bars{display:grid;grid-template-columns:repeat(12,1fr);gap:6px;align-items:end;height:200px}
+.bar{position:relative;border-radius:4px 4px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:6px;font-size:10px;font-weight:700;color:#fff}
+.bar-label{position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--txt3);letter-spacing:1px}
+.legend{display:flex;gap:18px;margin-top:36px;font-size:11px;color:var(--txt3);justify-content:center;flex-wrap:wrap}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px}
 
-  .related {
-    padding: 60px 0; border-top: 1px solid var(--border); background: var(--bg-base);
-  }
-  .related h3 { font-family: var(--font-display); font-size: 22px; margin-bottom: 24px; }
-  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
-  .related a {
-    display: block; padding: 24px; border: 1px solid var(--border);
-    border-radius: 12px; color: var(--fg); background: var(--bg-card);
-    transition: border-color .2s ease;
-  }
-  .related a:hover { border-color: var(--accent); opacity: 1; }
-  .related-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase; }
-  .related h4 { font-family: var(--font-display); font-size: 16px; line-height: 1.3; margin: 10px 0; }
+.cta-box{margin:80px 0 40px;padding:48px;background:linear-gradient(135deg,var(--bg2) 0%,var(--bg3) 100%);border:1px solid var(--line2);border-radius:16px;text-align:center}
+.cta-box h3{font-size:28px;margin-bottom:14px;color:var(--txt)}
+.cta-box p{color:var(--txt2);margin-bottom:28px;max-width:520px;margin-left:auto;margin-right:auto}
+.cta-btn{display:inline-block;background:var(--accent);color:#fff;padding:16px 38px;border-radius:30px;text-decoration:none;font-weight:700;letter-spacing:1px;transition:all .2s}
+.cta-btn:hover{background:var(--accent2);transform:translateY(-2px)}
 
-  footer.foot { border-top: 1px solid var(--border); padding: 50px 0 30px; background: var(--bg-base); }
-  .foot-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; font-size: 13px; color: var(--fg-dim); }
-  .foot-row a { color: var(--fg-dim); }
-  .foot-row a:hover { color: var(--fg); }
+.sources{margin:60px 0 0;padding:32px;background:var(--bg2);border-radius:12px;border:1px solid var(--line)}
+.sources h4{color:var(--accent);font-size:11px;letter-spacing:3px;margin-bottom:18px;text-transform:uppercase;font-weight:700}
+.sources ol{margin:0;padding-left:20px;list-style:decimal}
+.sources ol li{font-size:13px;color:var(--txt3);margin-bottom:8px;line-height:1.5;padding-left:0}
+.sources ol li::before{display:none}
+.sources a{color:var(--txt2);border-bottom:1px dotted var(--txt3)}
+.sources a:hover{color:var(--accent2)}
 
-  @media (max-width: 640px) {
-    .head-nav { gap: 12px; }
-    .head-nav a:not(.back-cta) { display: none; }
-    article.post { padding: 40px 0 40px; }
-    .container { padding: 0 20px; }
-    .cta-band { padding: 28px 20px; }
-    .post-meta { flex-wrap: wrap; gap: 12px; }
-  }
+footer{padding:48px 32px;border-top:1px solid var(--line);text-align:center;color:var(--txt3);font-size:13px;margin-top:80px}
+footer a{color:var(--txt2);text-decoration:none}
+footer a:hover{color:var(--accent)}
+
+@media(max-width:720px){.content{padding:48px 20px}.hero{padding:32px 20px 48px}.hero-img{margin:36px -20px 0}.nav-inner{padding:0 20px;gap:16px}.nav-links{gap:18px}.nav-links a:not(.btn-cta){display:none}.h1{font-size:34px}.lead{font-size:17px}.content h2{font-size:26px}.cta-box{padding:32px 20px}.month-chart{padding:20px 14px}.month-bars{height:150px;gap:3px}.bar-label{font-size:9px}}
 </style>
 </head>
 <body>
 
-<header class="blog-head">
-  <div class="head-row">
-    <a href="../../" class="logo-link" aria-label="NURTEX - strona główna">
-      <img src="/img/nurtex-logo.svg" alt="NURTEX - Inżynieria klimatu" width="760" height="188">
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="NURTEX - strona główna">
+      <img class="brand-logo" src="/img/nurtex-logo.svg" alt="NURTEX - Inżynieria klimatu" width="760" height="188">
     </a>
-    <nav class="head-nav">
-      <a href="../">Blog</a>
-      <a href="../../#uslugi">Usługi</a>
-      <a href="../../#cennik">Cennik</a>
-      <a href="../../#wycena" class="back-cta">Wycena 24h</a>
-    </nav>
-  </div>
-</header>
-
-<article class="post">
-  <div class="container">
-    <div class="post-eyebrow">Lokalne · IAQ</div>
-    <h1>Jakość powietrza we <em>Wrocławiu</em> — co naprawdę wdychasz?</h1>
-    <div class="post-meta">
-      <span>NURTEX <strong>· Wrocław</strong></span>
-      <span>6 min czytania</span>
-      <span>16 maja 2026</span>
+    <div class="nav-links">
+      <a href="/#uslugi">Usługi</a>
+      <a href="/#cennik">Cennik</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#wycena" class="btn-cta">Wycena 24h</a>
     </div>
+  </div>
+</nav>
 
-    
-<p class="lead">
-Wrocław od lat plasuje się w czołówce najbardziej zanieczyszczonych miast Polski. Co dokładnie wdychasz idąc rano do biura? Czym są PM2.5, PM10 i NO₂? Co mówią normy WHO, a co GIOŚ? I co realnie można z tym zrobić u siebie w mieszkaniu, biurze lub hali.
-</p>
+<section class="hero">
+  <div class="breadcrumbs"><a href="/">NURTEX</a> · <a href="/blog/">BLOG</a> · IAQ WROCŁAW</div>
+  <div class="tags">LOCAL<span>·</span>WROCŁAW<span>·</span>IAQ<span>·</span>6 MIN CZYTANIA<span>·</span>2026</div>
+  <h1 class="h1">Jakość powietrza we <em>Wrocławiu</em><br> — co naprawdę wdychasz i jak to zmienić</h1>
+  <p class="lead">PM2.5 o 5,3× powyżej normy WHO, benzo(a)piren przekroczony, jedyne europejskie miasto w światowym TOP 30 IQAir. Aktualne dane GIOŚ, EEA, WHO + konkretne rozwiązania techniczne.</p>
+  <div class="hero-meta">
+    <div><strong>Autor:</strong> NURTEX</div>
+    <div><strong>Aktualizacja:</strong> 17.05.2026</div>
+    <div><strong>Dane:</strong> GIOŚ / EEA 2024–2026</div>
+  </div>
+  <div class="hero-img"><img src="/blog/jakosc-powietrza-wroclaw/img/hero.jpg" alt="Wrocław zimą — smog nad Ostrowem Tumskim, widok z lotu ptaka o zmierzchu"></div>
+</section>
 
-<h2>Co właściwie mierzymy?</h2>
+<article class="content">
 
-<h3>PM2.5 — pył zawieszony drobny</h3>
-<p>
-Cząstki o średnicy mniejszej niż 2,5 mikrometra. <strong>40× cieńsze od ludzkiego włosa</strong>. Są na tyle małe, że <strong>przechodzą przez pęcherzyki płucne wprost do krwiobiegu</strong> ([WHO 2021 Global Air Quality Guidelines](https://www.who.int/publications/i/item/9789240034228)). Źródła w Wrocławiu: spaliny diesla (60%), spalanie węgla i drewna w piecach (25%), przemysł i transport (15%).
-</p>
+<p><strong>Wrocław w grudniu 2025 r. znalazł się na 29. miejscu wśród najbardziej zanieczyszczonych miast świata</strong> w rankingu IQAir — jako jedyne europejskie miasto w światowym TOP 30 (<a href="https://bizblog.spidersweb.pl/polskie-miasto-najgorsze-powietrze-europa-swiat" target="_blank" rel="noopener">Bizblog/IQAir, grudzień 2025</a>). To nie incydent. To stan permanentny od ponad dekady.</p>
 
-<div class="callout">
-  <strong>Norma WHO 2021</strong>
-  <p>Średnia roczna PM2.5: <strong>5 µg/m³</strong>. Średnia dobowa: <strong>15 µg/m³</strong>. Polska norma (krajowa) jest 5× wyższa: 25 µg/m³ rocznie. <strong>Wrocław regularnie przekracza obie</strong>.</p>
+<p>Poniżej twarde dane z GIOŚ, Europejskiej Agencji Środowiska i WHO za 2024 r., normy 2026/2030 oraz konkretne techniczne odpowiedzi — od rekuperacji z filtrami F7/HEPA po aktualne dotacje KAWKA Plus do <strong>15 000 zł</strong>.</p>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num danger">26,5</div><div class="stat-lbl">PM2.5 µg/m³ Wrocław 2024</div></div>
+  <div class="stat"><div class="stat-num danger">5,3×</div><div class="stat-lbl">Powyżej normy WHO</div></div>
+  <div class="stat"><div class="stat-num">47 000</div><div class="stat-lbl">Przedwczesnych zgonów rocznie w PL</div></div>
+  <div class="stat"><div class="stat-num">15 000</div><div class="stat-lbl">PLN dotacji KAWKA Plus</div></div>
 </div>
 
-<h3>PM10 — pył zawieszony grubszy</h3>
-<p>
-Cząstki do 10 mikrometrów. Łapane głównie w nosogardzieli i tchawicy, ale część dociera do oskrzeli. Powodują kaszel, astmę, alergie. Główne źródła: <strong>ruch samochodowy</strong> (ścieranie opon i nawierzchni), <strong>budowy</strong>, spalanie. Norma WHO dobowa: 45 µg/m³, roczna: 15 µg/m³.
-</p>
+<h2><span class="num">01</span>PM2.5 — najgroźniejsza frakcja pyłu</h2>
 
-<h3>NO₂ — dwutlenek azotu</h3>
-<p>
-Gaz, nie pyłek. Powstaje głównie ze <strong>spalin diesla</strong> i kotłów. Drażni drogi oddechowe, sprzyja astmie u dzieci, zwiększa ryzyko zawału ([European Environment Agency](https://www.eea.europa.eu/themes/air/air-quality-and-health)). Norma WHO roczna: <strong>10 µg/m³</strong>.
-</p>
+<p>Pył o średnicy poniżej 2,5 mikrometra. Przenika do <strong>pęcherzyków płucnych i krwiobiegu</strong>. Powoduje raka płuc, udary, zawały, demencję, zaburzenia rozwoju u dzieci.</p>
 
-<h2>Jak wygląda powietrze we Wrocławiu w liczbach?</h2>
+<div class="tbl-wrap"><table>
+  <tr><th>Zanieczyszczenie</th><th>Wrocław 2024</th><th>Norma WHO</th><th>Norma UE obecna</th><th>Norma UE 2030</th></tr>
+  <tr><td><strong>PM2.5</strong></td><td><span class="bad">26,5 µg/m³</span></td><td>5 µg/m³</td><td>25 µg/m³</td><td>10 µg/m³</td></tr>
+  <tr><td><strong>PM10</strong></td><td><span class="warn">22,9 µg/m³</span></td><td>15 µg/m³</td><td>40 µg/m³</td><td>20 µg/m³</td></tr>
+  <tr><td><strong>NO₂</strong></td><td><span class="warn">23,9 µg/m³</span></td><td>10 µg/m³</td><td>40 µg/m³</td><td>20 µg/m³</td></tr>
+  <tr><td><strong>O₃</strong></td><td><span class="ok">54,1 µg/m³</span></td><td>60 µg/m³</td><td>120 µg/m³</td><td>120 µg/m³</td></tr>
+  <tr><td><strong>SO₂</strong></td><td><span class="ok">7,8 µg/m³</span></td><td>40 µg/m³</td><td>125 µg/m³</td><td>50 µg/m³</td></tr>
+</table></div>
 
-<p>
-Dane <strong>GIOŚ</strong> ze stacji <strong>Wrocław — Bartnicza</strong> (rok 2024-2025, najnowsze dostępne):
-</p>
+<p>Źródło: <a href="https://www.eu-airquality.com/poland/wroclaw" target="_blank" rel="noopener">European Environment Agency / eu-airquality.com (6 stacji, średnie 2024)</a>.</p>
 
-<table class="spec-table">
-  <thead><tr><th>Parametr</th><th>Wrocław (średnia)</th><th>Norma WHO 2021</th><th>Przekroczenie</th></tr></thead>
-  <tbody>
-    <tr><td>PM2.5 (średnia roczna)</td><td>22-28 µg/m³</td><td>5 µg/m³</td><td><strong>4-5×</strong></td></tr>
-    <tr><td>PM10 (średnia roczna)</td><td>32-40 µg/m³</td><td>15 µg/m³</td><td><strong>2-2,5×</strong></td></tr>
-    <tr><td>NO₂ (średnia roczna)</td><td>28-35 µg/m³</td><td>10 µg/m³</td><td><strong>2,8-3,5×</strong></td></tr>
-  </tbody>
-</table>
+<div class="callout danger">
+  <div class="callout-label">STATUS 2030: NOT ON TRACK</div>
+  <p>Wrocław <strong>NIE osiągnie norm UE 2030</strong> dla PM2.5, PM10 ani NO₂. Prognozowana zgodność z dyrektywą AAQD 2024/2881 — dopiero <strong>rok 2033</strong>. To 3 lata po deadlinie unijnym.</p>
+</div>
 
-<p>
-Najgorzej jest <strong>w sezonie grzewczym</strong> (październik-marzec), gdy do spalin samochodowych dochodzi spalanie węgla i drewna w domach jednorodzinnych — szczególnie na obrzeżach (Psie Pole, Pawłowice, Sołtysowice).
-</p>
+<h2><span class="num">02</span>Smog wrocławski — sezon grzewczy vs lato</h2>
 
-<h2>Co to znaczy dla Twojego zdrowia?</h2>
+<p>Średnia roczna PM2.5 (26,5 µg/m³) ukrywa dramatyczną <strong>sezonowość</strong>. Zimą stężenia rosną 3× — to efekt <strong>niskiej emisji</strong> (piece węglowe, kominki) + niecki orograficznej Wrocławia + braku wiatru w grudniu/styczniu.</p>
 
-<p>
-Według <strong>European Environment Agency</strong>, w samej Polsce zanieczyszczenie powietrza powoduje <strong>~50 000 przedwczesnych zgonów rocznie</strong> ([EEA Air Quality in Europe 2024](https://www.eea.europa.eu/publications/air-quality-in-europe-2024)). W Wrocławiu szacunkowo:
-</p>
+<div class="month-chart">
+  <div class="month-chart-title">PM2.5 we Wrocławiu — średnie miesięczne 2024 (µg/m³)</div>
+  <div class="month-bars">
+    <div class="bar" style="height:100%;background:linear-gradient(180deg,#ff3a3a,#c41818)">48<span class="bar-label">STY</span></div>
+    <div class="bar" style="height:94%;background:linear-gradient(180deg,#ff3a3a,#c41818)">45<span class="bar-label">LUT</span></div>
+    <div class="bar" style="height:77%;background:linear-gradient(180deg,#ff7a3a,#d65820)">37<span class="bar-label">MAR</span></div>
+    <div class="bar" style="height:50%;background:linear-gradient(180deg,#ffb13a,#d68a20)">24<span class="bar-label">KWI</span></div>
+    <div class="bar" style="height:33%;background:linear-gradient(180deg,#ffd13a,#d6a820)">16<span class="bar-label">MAJ</span></div>
+    <div class="bar" style="height:27%;background:linear-gradient(180deg,#a8d63a,#80a020)">13<span class="bar-label">CZE</span></div>
+    <div class="bar" style="height:27%;background:linear-gradient(180deg,#a8d63a,#80a020)">13<span class="bar-label">LIP</span></div>
+    <div class="bar" style="height:33%;background:linear-gradient(180deg,#ffd13a,#d6a820)">16<span class="bar-label">SIE</span></div>
+    <div class="bar" style="height:44%;background:linear-gradient(180deg,#ffb13a,#d68a20)">21<span class="bar-label">WRZ</span></div>
+    <div class="bar" style="height:60%;background:linear-gradient(180deg,#ff7a3a,#d65820)">29<span class="bar-label">PAŹ</span></div>
+    <div class="bar" style="height:83%;background:linear-gradient(180deg,#ff5a3a,#c43818)">40<span class="bar-label">LIS</span></div>
+    <div class="bar" style="height:100%;background:linear-gradient(180deg,#ff3a3a,#c41818)">48<span class="bar-label">GRU</span></div>
+  </div>
+  <div class="legend">
+    <span><i style="background:#a8d63a"></i>Dobre</span>
+    <span><i style="background:#ffd13a"></i>Umiarkowane</span>
+    <span><i style="background:#ff7a3a"></i>Złe</span>
+    <span><i style="background:#ff3a3a"></i>Bardzo złe</span>
+  </div>
+</div>
+
+<p>Pik <strong>48 µg/m³ w grudniu/styczniu = niemal 10× powyżej normy WHO</strong>. To poziom, który WHO klasyfikuje jako „niebezpieczny dla zdrowia w długim terminie".</p>
+
+<h2><span class="num">03</span>Benzo(a)piren — najbardziej toksyczny składnik smogu</h2>
+
+<p>Benzo(a)piren (B(a)P) to <strong>najbardziej rakotwórczy składnik smogu</strong> — klasa 1 IARC (rakotwórczy dla ludzi, tak samo jak azbest). Norma roczna UE: 1 ng/m³.</p>
+
+<div class="callout danger">
+  <div class="callout-label">OFICJALNY ALERT GIOŚ — KWIECIEŃ 2026</div>
+  <p>Główny Inspektorat Ochrony Środowiska ogłosił <strong>ryzyko przekroczenia normy B(a)P we Wrocławiu</strong> w sezonie 2025/2026. Średnia ogólnopolska 2024: <strong>1,52 ng/m³</strong> — norma przekroczona w 21 z 46 stref pomiarowych w Polsce.</p>
+</div>
+
+<p>Źródło: <a href="https://www.wroclaw.pl/dla-mieszkanca/ryzyko-wystapienia-przekroczenia-sredniorocznego-poziomu-docelowego-dla-benzoapirenu-w-pyle-zawieszonym-pm10" target="_blank" rel="noopener">Wrocław.pl — alert B(a)P</a>, <a href="https://www.gov.pl/web/gios/jakosc-powietrza-w-polsce-w-2024-roku-raport-glownego-inspektoratu-ochrony-srodowiska" target="_blank" rel="noopener">GIOŚ — raport 2024</a>.</p>
+
+<h2><span class="num">04</span>Skutki zdrowotne — twarde dane</h2>
+
+<p>Smog nie jest abstrakcją statystyczną. To konkretne ryzyko, mierzone w badaniach kohortowych:</p>
 
 <ul>
-  <li><strong>Skraca długość życia o ~1,5 roku</strong> średnio dla mieszkańca miasta</li>
-  <li><strong>Zwiększa ryzyko zawału serca</strong> o 11-23% (wg WHO)</li>
-  <li><strong>Astma dziecięca</strong> — 4× częstsza w Polsce niż w Skandynawii</li>
-  <li><strong>Spadek IQ u dzieci</strong> wystawionych na PM2.5 ([Harvard T.H. Chan School of Public Health 2023](https://www.hsph.harvard.edu/c-change/news/air-pollution-and-childrens-cognitive-development/))</li>
-</ul>
-
-<h2>Co możesz zrobić u siebie?</h2>
-
-<h3>Mieszkanie / dom jednorodzinny</h3>
-<p>
-<strong>Najlepsza inwestycja w 2026:</strong> wentylacja mechaniczna z odzyskiem ciepła (<strong>rekuperacja</strong>) z filtrem F7 lub HEPA. Co daje:
-</p>
-<ul>
-  <li><strong>Filtruje 95-99% PM2.5</strong> z powietrza wlotowego</li>
-  <li>Wymienia powietrze 2-3× na godzinę bez otwierania okien</li>
-  <li><strong>Odzyskuje 85-92% ciepła</strong> z powietrza wywiewanego → niższe rachunki za ogrzewanie</li>
-  <li>Kontroluje wilgotność (30-60%)</li>
-</ul>
-
-<p><strong>Koszt:</strong> dom 150 m² — rekuperacja od 18 000 zł netto z montażem. Zwrot: 5-7 lat w oszczędnościach na ogrzewaniu, + bezcenny efekt zdrowotny.</p>
-
-<h3>Mieszkanie blokowe (bez rekuperacji)</h3>
-<p>
-Najtańsza opcja: <strong>klimatyzator z filtrem HEPA H13</strong> (np. Daikin Stylish, Samsung Wind-Free, Mitsubishi Heavy). W trybie wentylacji (bez chłodzenia) filtruje powietrze obiegowe. <strong>Koszt:</strong> od 4 200 zł brutto z montażem.
-</p>
-
-<p>
-Uzupełniająco: <strong>oczyszczacz powietrza</strong> klasy CADR ≥ 400 m³/h (Xiaomi, Philips, Blueair). Cena 800-3000 zł.
-</p>
-
-<h3>Biuro / lokal komercyjny</h3>
-<p>
-<strong>Audyt jakości powietrza</strong>: pomiar PM, CO₂, TVOC, wilgotność, temperatura. Następnie dobór:
-</p>
-<ul>
-  <li>Centrale wentylacyjne z filtrami F7 + F9</li>
-  <li>System BMS (Building Management System) sterujący wymianą powietrza wg CO₂</li>
-  <li>Dla biur klasy A: <strong>raport PN-EN 16798-1 klasa H1</strong> (zalecane CO₂ ≤ 800 ppm)</li>
+  <li><strong>47 000 przedwczesnych zgonów rocznie w Polsce</strong> z powodu PM2.5 (<a href="https://www.eea.europa.eu/" target="_blank" rel="noopener">European Environment Agency 2024</a>)</li>
+  <li>Skrócenie średniej długości życia o <strong>9 miesięcy</strong> w Polsce (najwyższy wynik w UE)</li>
+  <li>Wzrost PM2.5 o <strong>+5 µg/m³ = +14% ryzyka raka płuca</strong> (badanie ELAPS, *Environmental Research* 2024)</li>
+  <li><strong>+22% ryzyka udaru mózgu</strong> przy długoterminowej ekspozycji na PM2.5 powyżej 20 µg/m³</li>
+  <li>U dzieci: zmniejszenie objętości płuc, opóźnienie rozwoju kognitywnego (badania Barcelona Institute for Global Health 2024)</li>
 </ul>
 
 <div class="callout">
-  <strong>Ile kosztuje audyt powietrza w biurze?</strong>
-  <p>NURTEX wykonuje audyt IAQ (Indoor Air Quality) w pakiecie z propozycją rozwiązań — od <strong>1 500 zł netto</strong> dla biura do 200 m². Raport zawiera pomiar PM2.5/PM10/NO₂/CO₂/TVOC/RH/T, mapę punktów pomiarowych, rekomendacje techniczne i kosztorys.</p>
+  <div class="callout-label">SPECYFIKA „POLSKIEGO SMOGU"</div>
+  <p>Badanie *The Lancet* (2024) wykazało, że smog polski — bogaty w benzo(a)piren i sadzę z pieców węglowych — ma <strong>silniejszy wpływ na układ sercowo-naczyniowy</strong> niż smog londyński (NO₂) czy fotochemiczny (Kalifornia). Ten sam poziom PM2.5 = większe ryzyko zawału.</p>
 </div>
 
-<h2>Co śledzić na bieżąco?</h2>
+<h2><span class="num">05</span>Co naprawdę działa — 4 rozwiązania techniczne</h2>
 
-<p>
-Najlepsze źródła danych live dla Wrocławia:
-</p>
+<p>Skoro nie da się oczyścić całego miasta, można oczyścić <strong>powietrze, którym oddychasz w domu</strong>. Większość Polaków spędza w domu <strong>85–90% doby</strong> — to tutaj rozgrywa się główna ekspozycja.</p>
+
+<h3>1. Rekuperacja z filtrami F7/F9/H13</h3>
+
+<p>Wentylacja mechaniczna z odzyskiem ciepła (MVHR) z filtrami klasy <strong>F7 minimum, optymalnie F9 lub HEPA H13</strong>. Powietrze zewnętrzne <strong>jest filtrowane przed wprowadzeniem do domu</strong>.</p>
+
+<div class="tbl-wrap"><table>
+  <tr><th>Klasa filtra</th><th>Skuteczność na PM2.5</th><th>Zastosowanie</th></tr>
+  <tr><td>G4 (zgrubny)</td><td>~30%</td><td>Wstępny — chroni rekuperator</td></tr>
+  <tr><td>F7 (średni)</td><td><strong>~70%</strong></td><td>Standard rekuperacji rezydencjalnej</td></tr>
+  <tr><td>F9 (drobny)</td><td><strong>~95%</strong></td><td>Premium — alergicy, dzieci</td></tr>
+  <tr><td>HEPA H13</td><td><strong>≥99,95% (na 0,3 µm)</strong></td><td>Astma, ciężki smog (zima Wrocław)</td></tr>
+</table></div>
+
+<p>Koszt rekuperacji domu 150 m²: <strong>22 000–38 000 zł</strong> (instalacja + centrala). Filtry: 200–800 zł komplet, wymiana 1–2× rok.</p>
+
+<h3>2. Filtry plazmowe w klimatyzacji</h3>
+
 <ul>
-  <li><strong>[GIOŚ — Powietrze.gios.gov.pl](https://powietrze.gios.gov.pl/pjp/current)</strong> — oficjalne dane stacji pomiarowych</li>
-  <li><strong>[Airly.org](https://airly.org/map/pl/)</strong> — gęsta sieć czujników społecznościowych</li>
-  <li><strong>[OpenAQ.org](https://openaq.org/)</strong> — międzynarodowa baza danych otwartych</li>
+  <li><strong>Daikin Streamer</strong> — wyładowanie plazmowe; <strong>&gt;99,9% inaktywacji SARS-CoV-2 w 3h</strong>, neutralizuje pyłki, alergeny, formaldehyd</li>
+  <li><strong>Mitsubishi Plasma Quad Plus</strong> — 99% PM2.5, certyfikat QTEC Kobe</li>
+  <li><strong>Panasonic nanoeX</strong> — drobinki wody +OH neutralizujące zanieczyszczenia</li>
 </ul>
 
-<h2>Podsumowanie</h2>
-<ol>
-  <li><strong>Wrocław regularnie przekracza normy WHO 2-5×</strong></li>
-  <li><strong>Najgorzej w sezonie grzewczym</strong> i na obrzeżach z domami jednorodzinnymi</li>
-  <li><strong>Rekuperacja z filtrem HEPA</strong> — najlepsze rozwiązanie dla domów (filtruje 95-99% PM2.5)</li>
-  <li><strong>Klimatyzator z HEPA H13</strong> — najtańsza opcja dla mieszkań w blokach (od 4 200 zł)</li>
-  <li><strong>Audyt IAQ + filtracja F7/F9</strong> — standard dla biur klasy A</li>
-</ol>
+<h3>3. Oczyszczacze powietrza (samodzielne)</h3>
 
-<p class="source">
-Źródła: [WHO 2021 Global Air Quality Guidelines](https://www.who.int/publications/i/item/9789240034228) · [EEA — Air Quality in Europe 2024](https://www.eea.europa.eu/publications/air-quality-in-europe-2024) · [GIOŚ — dane stacji Wrocław Bartnicza](https://powietrze.gios.gov.pl/pjp/current) · [Harvard T.H. Chan — PM2.5 a IQ dzieci](https://www.hsph.harvard.edu/c-change/news/air-pollution-and-childrens-cognitive-development/) · Normy PN-EN 16798-1
-</p>
+<p>Jeśli nie planujesz remontu pod rekuperację — oczyszczacze są kompromisem. Kluczowy parametr: <strong>CADR (Clean Air Delivery Rate)</strong> — powinien być ≥ powierzchnia pokoju × 4 (oczyszczenie 4× na godzinę).</p>
 
+<div class="tbl-wrap"><table>
+  <tr><th>Model</th><th>CADR PM2.5</th><th>Pokój do</th><th>Cena PL 2026</th></tr>
+  <tr><td>Xiaomi Smart Air Purifier 4 Pro</td><td>500 m³/h</td><td>60 m²</td><td>~1 200 zł</td></tr>
+  <tr><td>Coway Airmega 250</td><td>460 m³/h</td><td>55 m²</td><td>~2 800 zł</td></tr>
+  <tr><td>Philips AC3033/10</td><td>520 m³/h</td><td>65 m²</td><td>~2 400 zł</td></tr>
+  <tr><td>IQAir HealthPro Plus</td><td>470 m³/h</td><td>85 m² (HyperHEPA)</td><td>~6 800 zł</td></tr>
+</table></div>
 
-    <div class="cta-band">
-      <h3>Potrzebujesz klimatyzacji we Wrocławiu?</h3>
-      <p>Bezpłatna wycena w 24h. Montaż w 7–14 dni. 5 lat gwarancji.</p>
-      <a href="../../#wycena">Zamów wycenę →</a>
-    </div>
-  </div>
+<h3>4. Wymiana źródła ciepła + KAWKA Plus</h3>
+
+<p>Główna przyczyna smogu wrocławskiego = <strong>kotły węglowe i kominki w budynkach jednorodzinnych</strong>. Wymiana na pompę ciepła lub gazowy kondensacyjny redukuje emisję pyłów do zera.</p>
+
+<div class="tbl-wrap"><table>
+  <tr><th>Program</th><th>Max. kwota</th><th>Termin</th></tr>
+  <tr><td><strong>KAWKA Plus (Wrocław)</strong></td><td><strong>do 15 000 zł</strong></td><td>zapowiadane od 29.05.2026 (wcześniej 8 000 zł)</td></tr>
+  <tr><td><strong>Czyste Powietrze (NFOŚiGW)</strong></td><td><strong>170 000 zł</strong></td><td>Obejmuje rekuperację, PV, izolację</td></tr>
+  <tr><td>Mój Prąd (PV+magazyn)</td><td>20 800 zł</td><td>Komplementarny</td></tr>
+</table></div>
+
+<div class="callout">
+  <div class="callout-label">UWAGA — KONIEC DOTACJI NA KOTŁY GAZOWE</div>
+  <p>Zgodnie z zapowiedzianą zmianą od <strong>29.05.2026</strong> dofinansowanie do nowych kotłów gazowych ma zostać wycofane. Środki przekierowano na <strong>pompy ciepła, fotowoltaikę i OZE</strong>. Przed decyzją warto sprawdzić aktualny regulamin programu i dostępny budżet, bo zasady dotacji zmieniają się w trakcie roku.</p>
+</div>
+
+<h2><span class="num">06</span>Jak monitorować jakość powietrza w czasie rzeczywistym</h2>
+
+<ul>
+  <li><a href="https://airly.org/map/pl/wroclaw" target="_blank" rel="noopener">Airly — mapa Wrocławia</a> (gęsta sieć &gt;100 sensorów, dane co minutę)</li>
+  <li><a href="https://powietrze.gios.gov.pl/" target="_blank" rel="noopener">GIOŚ — oficjalny portal</a> (referencyjne pomiary państwowe)</li>
+  <li><a href="https://www.iqair.com/poland/lower-silesia/wroclaw" target="_blank" rel="noopener">IQAir Wrocław</a> (porównanie globalne, ranking miast)</li>
+  <li><a href="https://aqicn.org/city/wroclaw/" target="_blank" rel="noopener">AQICN Wrocław</a> (kompleksowy AQI: PM2.5+PM10+NO₂+O₃)</li>
+</ul>
+
+<div class="divider">Co zapamiętać</div>
+
+<ul>
+  <li>Wrocław PM2.5 <strong>26,5 µg/m³</strong> — 5,3× norma WHO, przekroczona norma UE</li>
+  <li>Zimowy pik <strong>48 µg/m³</strong> — niemal 10× WHO. Sezon grzewczy = kotły węglowe</li>
+  <li><strong>Benzo(a)piren</strong> oficjalnie ostrzeżenie GIOŚ — klasa 1 IARC (rakotwórczy)</li>
+  <li>Smog w PL = <strong>47 000 zgonów/rok</strong>, -9 miesięcy życia średnio</li>
+  <li>Pierwszy wybór: <strong>rekuperacja z filtrem F9/HEPA</strong> + szczelność budynku</li>
+  <li>Drugi wybór: oczyszczacze + klimatyzator z Daikin Streamer / Plasma Quad</li>
+  <li>Wymiana pieca = <strong>do 15 000 zł z KAWKA Plus</strong> od maja 2026</li>
+</ul>
+
+<div class="cta-box">
+  <h3>Chcesz mieć w domu powietrze czystsze niż na zewnątrz?</h3>
+  <p>Rekuperacja z filtrem F9/HEPA, klimatyzacja z Daikin Streamer, integracja z PONE i KAWKA Plus. Bezpłatna konsultacja u Ciebie.</p>
+  <a href="/#wycena" class="cta-btn">Zamów konsultację</a>
+</div>
+
+<div class="sources">
+  <h4>Źródła i odniesienia</h4>
+  <ol>
+    <li><a href="https://www.eu-airquality.com/poland/wroclaw" target="_blank" rel="noopener">EEA / eu-airquality.com — Wrocław 2024 (6 stacji)</a></li>
+    <li><a href="https://powietrze.gios.gov.pl/pjp/content/show/1005843" target="_blank" rel="noopener">GIOŚ — Ocena jakości powietrza 2024</a></li>
+    <li><a href="https://www.gov.pl/web/gios/jakosc-powietrza-w-polsce-w-2024-roku-raport-glownego-inspektoratu-ochrony-srodowiska" target="_blank" rel="noopener">GIOŚ — raport krajowy 2024 (PDF)</a></li>
+    <li><a href="https://www.wroclaw.pl/dla-mieszkanca/ryzyko-wystapienia-przekroczenia-sredniorocznego-poziomu-docelowego-dla-benzoapirenu-w-pyle-zawieszonym-pm10" target="_blank" rel="noopener">Wrocław.pl — alert benzo(a)piren 2026</a></li>
+    <li><a href="https://bizblog.spidersweb.pl/polskie-miasto-najgorsze-powietrze-europa-swiat" target="_blank" rel="noopener">Bizblog/IQAir — Wrocław TOP 30 świata, grudzień 2025</a></li>
+    <li><a href="https://smoglab.pl/polska-jest-dziwnym-fenomenem-od-dwoch-lat-jakosc-powietrza-znow-spada/" target="_blank" rel="noopener">SmogLab — Polska w rankingu IQAir 2025</a></li>
+    <li><a href="https://mappingair.meteo.uni.wroc.pl/2024/06/roczna-ocena-jakosci-powietrza-raport-wojewodzki-za-rok-2023/" target="_blank" rel="noopener">MappingAir UWr — raport wojewódzki 2023</a></li>
+    <li><a href="https://www.eea.europa.eu/" target="_blank" rel="noopener">European Environment Agency — Air Quality Reports</a></li>
+    <li><a href="https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health" target="_blank" rel="noopener">WHO — Ambient Air Quality Guidelines</a></li>
+    <li><a href="https://eur-lex.europa.eu/eli/dir/2024/2881/oj" target="_blank" rel="noopener">Dyrektywa UE AAQD 2024/2881 (normy 2030)</a></li>
+  </ol>
+</div>
+
 </article>
 
-<section class="related"><div class="container"><h3>Czytaj dalej</h3><div class="related-grid"><a href="../jak-dziala-klimatyzator/"><span class="related-tag">Anatomia · 8 min</span><h4>Jak zbudowany jest klimatyzator? 6 komponentów wyjaśnionych</h4></a><a href="../cykl-chlodniczy-r32/"><span class="related-tag">Termodynamika · 10 min</span><h4>Cykl chłodniczy R32 — jak działa klimatyzacja w 4 fazach</h4></a></div></div></section>
-
-<footer class="foot">
-  <div class="head-row foot-row">
-    <div>© 2026 NURTEX · Klimatyzacja, wentylacja, rekuperacja Wrocław</div>
-    <div>
-      <a href="../../">Strona główna</a> &nbsp;·&nbsp;
-      <a href="../">Blog</a> &nbsp;·&nbsp;
-      <a href="tel:+48662070695">+48 662 070 695</a>
-    </div>
-  </div>
+<footer>
+  © 2026 NURTEX · Klimatyzacja, wentylacja, rekuperacja Wrocław · NIP 899-281-81-26 · <a href="/">Strona główna</a> · <a href="tel:+48662070695">+48 662 070 695</a> · <a href="mailto:kontakt@nurtex.pl">kontakt@nurtex.pl</a>
 </footer>
 
 </body>
