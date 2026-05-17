@@ -4,13 +4,14 @@ Data: 2026-05-17
 
 ## Aktualna produkcja
 
-- Projekt Vercel: `nurtex-www`
+- Projekt Vercel: `nurtex-www-production`
 - Repo GitHub: `https://github.com/KaruzO1302/nurtex-www.git`
 - Domena glowna: `https://wentylacja-nurtex-klimatyzacja.pl`
 - Alias Vercel: `https://nurtex-www.vercel.app`
 - Typ strony: statyczny HTML/CSS/JS
 - Blog: `/blog`
-- Pierwsza podstrona uslugowa: `/montaz-klimatyzacji-wroclaw/`
+- Podstrona uslugowa: `/montaz-klimatyzacji-wroclaw/`
+- Podstrona uslugowa: `/wentylacja-mechaniczna-rekuperacja-wroclaw/`
 
 ## Backupi lokalne
 
@@ -41,14 +42,8 @@ W `vercel.json` dodano przekierowania ze starego `/wiedza` na `/blog`.
 4. Po zmianach testujemy minimum:
    - `/`
    - `/montaz-klimatyzacji-wroclaw/`
+   - `/wentylacja-mechaniczna-rekuperacja-wroclaw/`
    - `/blog`
    - `/blog/jak-dziala-klimatyzator`
    - `/wiedza` jako przekierowanie do `/blog`
-5. GitHub wymaga autoryzacji terminala. Dopoki jej nie ma, produkcje mozna ratowac przez Vercel CLI, ale repo GitHub bedzie o commit do tylu.
-
-## Aktualny problem do zamkniecia
-
-- Commit `106803f fix: redirect old knowledge URLs to blog` jest lokalnie.
-- Push do GitHuba nie przeszedl przez brak logowania terminala.
-- Po zalogowaniu GitHuba trzeba wykonac:
-  `git push origin production-clean:main`
+5. GitHub i Vercel sa synchronizowane z katalogu produkcyjnego po kazdej zamknietej zmianie.
