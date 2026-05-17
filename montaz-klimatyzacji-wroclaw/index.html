@@ -94,9 +94,9 @@ button { font-family: inherit; cursor: none; }
   display: flex; justify-content: space-between; align-items: center;
 }
 .topbar-logo {
-  font-size: 18px; font-weight: 700; letter-spacing: -0.02em;
+  display: flex; align-items: center; width: 184px; max-width: 46vw;
 }
-.topbar-logo .accent { font-weight: 800; }
+.topbar-logo img { display: block; width: 100%; height: auto; }
 .topbar-nav { display: flex; gap: 32px; font-size: 13px; }
 .topbar-nav a { color: var(--fg-dim); transition: color 0.2s; font-family: 'Geist Mono', monospace; text-transform: uppercase; letter-spacing: 0.05em; font-size: 11px; }
 .topbar-nav a:hover { color: var(--fg); }
@@ -813,10 +813,9 @@ section { padding: 100px 0; position: relative; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 .footer-brand {
-  font-size: 24px; font-weight: 700; letter-spacing: -0.02em;
-  margin-bottom: 12px;
+  width: min(250px, 100%); margin-bottom: 12px;
 }
-.footer-brand .accent { font-weight: 800; }
+.footer-brand img { display: block; width: 100%; height: auto; }
 .footer-tag {
   font-family: 'Geist Mono', monospace; font-size: 11px;
   color: var(--fg-dim); letter-spacing: 0.05em;
@@ -906,7 +905,7 @@ section { padding: 100px 0; position: relative; }
   "provider": {
     "@type": "LocalBusiness",
     "name": "NURTEX",
-    "image": "https://wentylacja-nurtex-klimatyzacja.pl/img/logo.png",
+    "image": "https://wentylacja-nurtex-klimatyzacja.pl/img/nurtex-logo.svg",
     "telephone": "+48662070695",
     "email": "kontakt@nurtex.pl",
     "address": {
@@ -1062,7 +1061,9 @@ section { padding: 100px 0; position: relative; }
 
 <!-- ============ TOP BAR ============ -->
 <header class="topbar">
-  <a href="/" class="topbar-logo" data-hover>NUR<span class="accent">TEX</span></a>
+  <a href="/" class="topbar-logo" data-hover aria-label="NURTEX - strona główna">
+    <img src="/img/nurtex-logo.svg" alt="NURTEX - Inżynieria klimatu" width="760" height="188" />
+  </a>
   <nav class="topbar-nav">
     <a href="/#uslugi" data-hover>Usługi</a>
     <a href="/#realizacje" data-hover>Realizacje</a>
@@ -1858,7 +1859,9 @@ section { padding: 100px 0; position: relative; }
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand">NUR<span class="accent">TEX</span></div>
+        <div class="footer-brand">
+          <img src="/img/nurtex-logo.svg" alt="NURTEX - Inżynieria klimatu" width="760" height="188" />
+        </div>
         <div class="footer-tag">Klimatyzacja · Wentylacja · Serwis · Wrocław</div>
         <p style="color:var(--fg-dim);font-size:13px;">
           Inżynieria sanitarna premium. 8 lat doświadczenia, 287 instalacji, F-gaz, NADCA.

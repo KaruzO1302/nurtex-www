@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 188 188" role="img" aria-labelledby="title desc">
+  <title id="title">Sygnet NURTEX</title>
+  <desc id="desc">Kwadratowy sygnet NURTEX z literą N i liniami przepływu powietrza.</desc>
+  <defs>
+    <linearGradient id="markBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#202129"/>
+      <stop offset="1" stop-color="#111217"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff5b45"/>
+      <stop offset="1" stop-color="#e23524"/>
+    </linearGradient>
+  </defs>
+  <rect x="18" y="18" width="152" height="152" rx="34" fill="url(#markBg)" stroke="#2c2d35" stroke-width="2"/>
+  <text x="60" y="119" fill="#ffffff" font-family="Inter, Arial Black, Helvetica, sans-serif" font-size="88" font-weight="950" letter-spacing="-6">N</text>
+  <circle cx="132" cy="68" r="8" fill="url(#red)"/>
+  <path d="M49 130C70 115 94 109 124 130" fill="none" stroke="url(#red)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M60 145C82 132 106 130 129 145" fill="none" stroke="#b84a40" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+</svg>

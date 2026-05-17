@@ -41,7 +41,9 @@ strong { color: var(--fg); }
   background: rgba(7, 8, 12, .86); border-bottom: 1px solid var(--line);
   backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
 }
-.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 180px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 190px; }
+.brand-logo { display: block; width: 184px; height: auto; max-width: 46vw; }
+.footer-logo { display: block; width: min(250px, 100%); height: auto; margin-bottom: 20px; }
 .brand-mark {
   width: 38px; height: 38px; border: 1px solid rgba(255,59,48,.5); border-radius: 50%;
   display: grid; place-items: center; color: var(--accent); font-weight: 900; font-size: 24px;
@@ -194,6 +196,8 @@ details p { margin-top: 16px; }
 
 @media (max-width: 940px) {
   .nav-links { display: none; }
+  .brand { min-width: 0; }
+  .brand-logo { width: 154px; }
   .comparison-grid, .brands-grid, .target-grid, .equipment-grid, .features-grid, .producers-grid, .troubleshoot-grid, .uslugi-grid, .footer-grid, .company-data-grid { grid-template-columns: 1fr; }
   table { display: block; overflow-x: auto; white-space: nowrap; }
   .hero::after { opacity: .28; right: -260px; width: 760px; }

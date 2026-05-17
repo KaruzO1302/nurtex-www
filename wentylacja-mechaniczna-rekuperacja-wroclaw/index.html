@@ -141,7 +141,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 /* HEADER */
 header.top{position:sticky;top:0;z-index:50;backdrop-filter:blur(18px);background:rgba(7,10,18,0.7);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-0.02em;font-size:18px}
+.logo{display:flex;align-items:center;width:184px;max-width:46vw}
+.logo img{display:block;width:100%;height:auto}
 .logo .dot{width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 18px var(--red-glow);animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:0.6}}
 .nav-cta{display:flex;gap:10px;align-items:center}
@@ -376,8 +377,7 @@ footer.bottom a:hover{color:var(--red)}
 <header class="top">
   <div class="container nav">
     <a href="/" class="logo" aria-label="NURTEX strona główna">
-      <span class="dot"></span>
-      <span>NURTEX</span>
+      <img src="/img/nurtex-logo.svg" alt="NURTEX - Inżynieria klimatu" width="760" height="188">
     </a>
     <div class="nav-cta">
       <a href="/" class="back-home" aria-label="Powrót do strony głównej">

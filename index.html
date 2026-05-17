@@ -111,11 +111,8 @@
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.6; transform: scale(0.85); }
   }
-  .logo-wrap { display: flex; align-items: center; gap: 14px; }
-  .logo-mark { width: 32px; height: 32px; flex-shrink: 0; }
-  .logo-text { display: flex; flex-direction: column; line-height: 1; }
-  .logo-name { font-family: var(--font-display); font-weight: 700; font-size: 17px; letter-spacing: 0.18em; color: var(--fg); }
-  .logo-tag { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; color: var(--accent); margin-top: 4px; text-transform: uppercase; }
+  .logo-wrap { display: flex; align-items: center; text-decoration: none; }
+  .logo-image { display: block; width: clamp(154px, 17vw, 214px); height: auto; }
   nav ul { display: flex; gap: 26px; list-style: none; align-items: center; }
   .mobile-toggle {
     display: none;
@@ -1307,7 +1304,7 @@
     "https://wentylacja-nurtex-klimatyzacja.pl/img/zespol.jpg",
     "https://wentylacja-nurtex-klimatyzacja.pl/img/realizacja-9.jpg"
   ],
-  "logo": "https://wentylacja-nurtex-klimatyzacja.pl/img/logo.png",
+  "logo": "https://wentylacja-nurtex-klimatyzacja.pl/img/nurtex-logo.svg",
   "priceRange": "4200-280000 PLN",
   "foundingDate": "2018",
   "slogan": "Inżynierowie, nie sprzedawcy.",
@@ -1460,28 +1457,9 @@
 <!-- ============ TOP BAR ============ -->
 <header class="topbar">
   <div class="topbar-left">
-    <div class="logo-wrap">
-      <svg class="logo-mark" viewBox="0 0 64 64" fill="none" aria-label="NURTEX">
-        <defs>
-          <linearGradient id="lgGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#ff3b30"/>
-            <stop offset="1" stop-color="#ff7a52"/>
-          </linearGradient>
-        </defs>
-        <circle cx="32" cy="32" r="30" stroke="url(#lgGrad)" stroke-width="1.5" opacity="0.6"/>
-        <g stroke="url(#lgGrad)" stroke-width="2.4" stroke-linecap="round">
-          <path d="M32 32 Q 22 18, 14 24 T 12 38"/>
-          <path d="M32 32 Q 46 22, 50 32 T 44 48"/>
-          <path d="M32 32 Q 32 46, 22 50 T 16 42"/>
-        </g>
-        <circle cx="32" cy="32" r="4" fill="url(#lgGrad)"/>
-      </svg>
-      <div class="logo-text">
-        <span class="logo-name">NURTEX</span>
-        <span class="logo-tag">Inżynieria klimatu</span>
-      </div>
-      <img src="img/logo.png" alt="" style="display:none" id="logo" />
-    </div>
+    <a class="logo-wrap" href="/" aria-label="NURTEX - strona główna">
+      <img class="logo-image" src="/img/nurtex-logo.svg" alt="NURTEX - Inżynieria klimatu" width="760" height="188" id="logo" />
+    </a>
     <span><span class="live-dot"></span>System Online · Wrocław</span>
   </div>
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
@@ -2393,22 +2371,7 @@
     </div>
     <div class="foot-grid">
       <div class="foot-brand">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;">
-          <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
-            <defs><linearGradient id="ftGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff3b30"/><stop offset="1" stop-color="#ff7a52"/></linearGradient></defs>
-            <circle cx="32" cy="32" r="30" stroke="url(#ftGrad)" stroke-width="1.5" opacity="0.6"/>
-            <g stroke="url(#ftGrad)" stroke-width="2.4" stroke-linecap="round" fill="none">
-              <path d="M32 32 Q 22 18, 14 24 T 12 38"/>
-              <path d="M32 32 Q 46 22, 50 32 T 44 48"/>
-              <path d="M32 32 Q 32 46, 22 50 T 16 42"/>
-            </g>
-            <circle cx="32" cy="32" r="4" fill="url(#ftGrad)"/>
-          </svg>
-          <div style="display:flex;flex-direction:column;line-height:1;">
-            <span style="font-family:var(--font-display);font-weight:700;font-size:22px;letter-spacing:0.18em;color:var(--fg);">NURTEX</span>
-            <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.22em;color:var(--accent);margin-top:5px;text-transform:uppercase;">Inżynieria klimatu</span>
-          </div>
-        </div>
+        <img src="/img/nurtex-logo.svg" alt="NURTEX - Inżynieria klimatu" width="760" height="188" style="display:block;width:min(250px,100%);height:auto;margin-bottom:24px;" />
         <p>
           NURTEX — Inżynieria sanitarna.<br/>
           Klimatyzacja · Wentylacja · Pompy ciepła · Chłodnictwo.<br/>
