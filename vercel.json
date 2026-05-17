@@ -6,6 +6,23 @@
   "framework": null,
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/wiedza",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/wiedza/jak-dziala-klimatyzator-prosto-wyjasnione",
+      "destination": "/blog/jak-dziala-klimatyzator",
+      "permanent": true
+    },
+    {
+      "source": "/wiedza/:path*",
+      "destination": "/blog",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/img/(.*)",
