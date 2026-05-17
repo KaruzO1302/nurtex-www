@@ -10,6 +10,7 @@ Data: 2026-05-17
 - Alias Vercel: `https://nurtex-www.vercel.app`
 - Typ strony: statyczny HTML/CSS/JS
 - Blog: `/blog`
+- Pierwsza podstrona uslugowa: `/montaz-klimatyzacji-wroclaw/`
 
 ## Backupi lokalne
 
@@ -39,6 +40,7 @@ W `vercel.json` dodano przekierowania ze starego `/wiedza` na `/blog`.
    `https://wentylacja-nurtex-klimatyzacja.pl`
 4. Po zmianach testujemy minimum:
    - `/`
+   - `/montaz-klimatyzacji-wroclaw/`
    - `/blog`
    - `/blog/jak-dziala-klimatyzator`
    - `/wiedza` jako przekierowanie do `/blog`
