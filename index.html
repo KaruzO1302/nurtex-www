@@ -512,20 +512,17 @@
     letter-spacing: 0.1em; text-transform: uppercase;
     color: var(--fg-dim);
   }
-  .scroll-indicator {
-    display: flex; flex-direction: column; align-items: center; gap: 8px;
-    animation: bounce 2s ease-in-out infinite;
+  .bottombar a { color: var(--fg); transition: color 0.25s ease; }
+  .bottombar a:hover { color: var(--accent); }
+  .field-status {
+    display: inline-flex; align-items: center; gap: 10px;
   }
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(6px); }
+  .field-status strong { color: var(--fg); font-weight: 700; }
+  .status-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--green); box-shadow: 0 0 18px var(--green);
+    animation: pulse 1.8s ease-in-out infinite;
   }
-  .scroll-line {
-    width: 1px; height: 32px;
-    background: linear-gradient(180deg, transparent, var(--fg-dim), transparent);
-  }
-  .rpm-badge { display: inline-flex; gap: 8px; align-items: baseline; }
-  .rpm-value { font-size: 14px; color: var(--accent); }
   .noise {
     position: absolute; inset: 0; pointer-events: none;
     opacity: 0.04; z-index: 6; mix-blend-mode: overlay;
@@ -1427,17 +1424,11 @@
   </aside>
 
   <footer class="bottombar">
-    <div>
-      <span class="rpm-badge">
-        <span>Rotor RPM</span>
-        <span class="rpm-value" id="rpm">— 480 —</span>
-      </span>
+    <div class="field-status">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span>Aktywne zlecenia: <strong>3 w terenie</strong></span>
     </div>
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-    <div>NX-01 / VENT-CORE / 2026</div>
+    <a href="#wycena" data-hover>Wycena w 24h</a>
   </footer>
 
   <div class="noise"></div>
@@ -1506,7 +1497,7 @@
         </div>
       </a>
 
-      <a href="#" class="service-card" data-hover>
+      <a href="#wycena" class="service-card" data-hover>
         <div class="service-icon">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
             <circle cx="24" cy="24" r="18" />
@@ -1531,7 +1522,7 @@
         </div>
       </a>
 
-      <a href="#" class="service-card" data-hover>
+      <a href="#cennik" class="service-card" data-hover>
         <div class="service-icon">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M24 6L36 18v18a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4V18L24 6z" />
@@ -1555,7 +1546,7 @@
         </div>
       </a>
 
-      <a href="#" class="service-card" data-hover>
+      <a href="#wycena" class="service-card" data-hover>
         <div class="service-icon">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M24 4v8M24 36v8M4 24h8M36 24h8M10 10l6 6M32 32l6 6M10 38l6-6M32 16l6-6" />
@@ -1579,7 +1570,7 @@
         </div>
       </a>
 
-      <a href="#" class="service-card" data-hover>
+      <a href="#wycena" class="service-card" data-hover>
         <div class="service-icon">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
             <circle cx="24" cy="24" r="18" />
@@ -1620,7 +1611,7 @@
       </div>
       <div class="stat">
         <div class="stat-num"><span data-count="4.97">4,97</span><span class="stat-suffix">★</span></div>
-        <div class="stat-label">Średnia ocen Google<br/>na podstawie 47 opinii</div>
+        <div class="stat-label">Średnia ocen Google<br/>na podstawie 142 opinii</div>
       </div>
       <div class="stat">
         <div class="stat-num"><span data-count="92">92</span><span class="stat-suffix">%</span></div>
@@ -1741,7 +1732,7 @@
     <div class="section-eyebrow">06 · Opinie klientów</div>
     <h2 class="section-title">Co mówią <em class="accent">klienci</em> z Wrocławia?</h2>
     <p class="section-lead">
-      287 instalacji, 0 reklamacji. Średnia <strong style="color:var(--fg)">4.97/5</strong> z 142 ocen w Google Maps. Poniżej wybór ostatnich opinii — z imieniem i dzielnicą.
+      287 instalacji, 0 reklamacji. Średnia <strong style="color:var(--fg)">4,97/5</strong> z 142 ocen w Google Maps. Poniżej wybór ostatnich opinii — z imieniem i dzielnicą.
     </p>
 
     <div class="test-grid">
@@ -1825,7 +1816,7 @@
     </div>
 
     <p style="text-align:center;margin-top:40px;font-family:var(--font-mono);font-size:12px;color:var(--fg-dim);letter-spacing:0.1em;">
-      WSZYSTKIE OPINIE WERYFIKOWANE · GOOGLE MAPS · 4.97/5 (142)
+      WSZYSTKIE OPINIE WERYFIKOWANE · GOOGLE MAPS · 4,97/5 (142)
     </p>
   </div>
 </section>
@@ -1836,7 +1827,7 @@
     <div class="lead-cta-band" style="margin-top:0;">
       <div>
         <h3>Chcesz dołączyć do tych <em>142 opinii</em>?</h3>
-        <p>4.97/5 średniej — montaże split, multisplit, rekuperacje, pompy ciepła. Krzyki, Stare Miasto, Fabryczna, Psie Pole, Bielany, Gaj. Sprawdź wycenę dla swojego mieszkania.</p>
+        <p>4,97/5 średniej — montaże split, multisplit, rekuperacje, pompy ciepła. Krzyki, Stare Miasto, Fabryczna, Psie Pole, Bielany, Gaj. Sprawdź wycenę dla swojego mieszkania.</p>
       </div>
       <div class="lead-cta-band-actions">
         <a href="#wycena" class="btn btn-primary" data-hover>
@@ -2486,8 +2477,6 @@ window.addEventListener('resize', () => {
 });
 
 const clock = new THREE.Clock();
-let rpmD = 480;
-const rpmEl = document.getElementById('rpm');
 
 function animate() {
   const t = clock.getElapsedTime();
@@ -2518,10 +2507,6 @@ function animate() {
   }
   particles.geometry.attributes.position.needsUpdate = true;
   pMat.uniforms.time.value = t;
-
-  const target = Math.floor(480 + Math.abs(scrollVel) * 2000);
-  rpmD += (target - rpmD) * 0.1;
-  if (rpmEl) rpmEl.textContent = `— ${Math.floor(rpmD)} —`;
 
   composer.render();
   requestAnimationFrame(animate);
