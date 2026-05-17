@@ -72,6 +72,9 @@ strong { color: var(--fg); }
 .hero-bms::before {
   background: linear-gradient(90deg, rgba(7,8,12,.96), rgba(7,8,12,.58)), url('/img/proces-manometr.jpg') center/cover;
 }
+.hero-serwis::before {
+  background: linear-gradient(90deg, rgba(7,8,12,.96), rgba(7,8,12,.60)), url('/img/proces-manometr.jpg') center/cover;
+}
 .hero::after {
   content: ""; position: absolute; right: -160px; top: 14%; width: min(52vw, 620px); aspect-ratio: 1;
   border: 2px solid rgba(255,59,48,.45); border-radius: 50%;
@@ -130,15 +133,15 @@ h3 { font-size: clamp(22px, 2.4vw, 32px); margin: 24px 0 14px; line-height: 1.12
 }
 
 .comparison-grid, .brands-grid, .target-grid, .equipment-grid, .process-timeline, .case-grid,
-.features-grid, .architecture-levels, .producers-grid {
+.features-grid, .architecture-levels, .producers-grid, .troubleshoot-grid, .uslugi-grid {
   display: grid; gap: 18px; margin-top: 34px;
 }
 .comparison-grid { grid-template-columns: repeat(3, 1fr); }
-.brands-grid, .target-grid, .equipment-grid, .features-grid, .producers-grid { grid-template-columns: repeat(2, 1fr); }
+.brands-grid, .target-grid, .equipment-grid, .features-grid, .producers-grid, .troubleshoot-grid, .uslugi-grid { grid-template-columns: repeat(2, 1fr); }
 .architecture-levels { grid-template-columns: repeat(4, minmax(220px, 1fr)); overflow-x: auto; padding-bottom: 10px; }
 .process-timeline { grid-template-columns: repeat(7, minmax(220px, 1fr)); overflow-x: auto; padding-bottom: 10px; }
 .comparison-card, .brand-card, .target-card, .equipment-card, .process-step, .cta-block, .case-content, details,
-.feature-card, .arch-level, .producer-group {
+.feature-card, .arch-level, .producer-group, .trouble-card, .usluga-card {
   border: 1px solid var(--line); border-radius: 8px; background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
   padding: 26px; box-shadow: 0 24px 80px rgba(0,0,0,.18);
 }
@@ -191,7 +194,7 @@ details p { margin-top: 16px; }
 
 @media (max-width: 940px) {
   .nav-links { display: none; }
-  .comparison-grid, .brands-grid, .target-grid, .equipment-grid, .features-grid, .producers-grid, .footer-grid, .company-data-grid { grid-template-columns: 1fr; }
+  .comparison-grid, .brands-grid, .target-grid, .equipment-grid, .features-grid, .producers-grid, .troubleshoot-grid, .uslugi-grid, .footer-grid, .company-data-grid { grid-template-columns: 1fr; }
   table { display: block; overflow-x: auto; white-space: nowrap; }
   .hero::after { opacity: .28; right: -260px; width: 760px; }
   .hero-content { margin-left: 20px; padding-top: 70px; }
