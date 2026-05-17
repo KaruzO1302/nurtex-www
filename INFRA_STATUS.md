@@ -28,3 +28,25 @@ Data: 2026-05-17
 
 Stara wersja Next.js miala blog pod `/wiedza`. Aktualna produkcja ma blog pod `/blog`.
 W `vercel.json` dodano przekierowania ze starego `/wiedza` na `/blog`.
+
+## Jak pracujemy dalej
+
+1. Edycje NURTEX robimy w katalogu:
+   `/Users/leszek/Documents/Codex/nurtex-www-production`
+2. Lokalny podglad:
+   `http://127.0.0.1:4174`
+3. Produkcja:
+   `https://wentylacja-nurtex-klimatyzacja.pl`
+4. Po zmianach testujemy minimum:
+   - `/`
+   - `/blog`
+   - `/blog/jak-dziala-klimatyzator`
+   - `/wiedza` jako przekierowanie do `/blog`
+5. GitHub wymaga autoryzacji terminala. Dopoki jej nie ma, produkcje mozna ratowac przez Vercel CLI, ale repo GitHub bedzie o commit do tylu.
+
+## Aktualny problem do zamkniecia
+
+- Commit `106803f fix: redirect old knowledge URLs to blog` jest lokalnie.
+- Push do GitHuba nie przeszedl przez brak logowania terminala.
+- Po zalogowaniu GitHuba trzeba wykonac:
+  `git push origin production-clean:main`
