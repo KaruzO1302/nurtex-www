@@ -1608,26 +1608,26 @@
 
 
 <!-- ============ STATS SECTION ============ -->
-<section class="stats">
+<section class="stats" id="liczby">
   <div class="container">
     <div class="section-eyebrow">03 · Liczby pracujące w tle</div>
     <h2 class="section-title" style="margin-bottom: 80px;">Wymierne wskaźniki. <em class="accent">Mierzalna jakość.</em></h2>
 
     <div class="stats-grid">
       <div class="stat">
-        <div class="stat-num"><span data-count="287">0</span></div>
+        <div class="stat-num"><span data-count="287">287</span></div>
         <div class="stat-label">Systemów HVAC<br/>wdrożonych od 2018</div>
       </div>
       <div class="stat">
-        <div class="stat-num"><span data-count="4.97">0</span><span class="stat-suffix">★</span></div>
+        <div class="stat-num"><span data-count="4.97">4,97</span><span class="stat-suffix">★</span></div>
         <div class="stat-label">Średnia ocen Google<br/>na podstawie 47 opinii</div>
       </div>
       <div class="stat">
-        <div class="stat-num"><span data-count="92">0</span><span class="stat-suffix">%</span></div>
+        <div class="stat-num"><span data-count="92">92</span><span class="stat-suffix">%</span></div>
         <div class="stat-label">Sprawność odzysku<br/>ciepła rekuperatorów</div>
       </div>
       <div class="stat">
-        <div class="stat-num"><span data-count="4">0</span><span class="stat-suffix">h</span></div>
+        <div class="stat-num"><span data-count="4">4</span><span class="stat-suffix">h</span></div>
         <div class="stat-label">Czas reakcji serwisu<br/>we Wrocławiu (SLA)</div>
       </div>
     </div>
@@ -2604,6 +2604,9 @@ rotateComp();
 
 // === Number counters (IntersectionObserver) ===
 const counters = document.querySelectorAll('[data-count]');
+const formatCounterValue = (value, isFloat) => (
+  isFloat ? value.toFixed(2).replace('.', ',') : Math.floor(value).toString()
+);
 const obs = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -2612,13 +2615,19 @@ const obs = new IntersectionObserver(entries => {
       const duration = 1800;
       const start = performance.now();
       const isFloat = target % 1 !== 0;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        el.textContent = formatCounterValue(target, isFloat);
+        obs.unobserve(el);
+        return;
+      }
       function tick(now) {
         const elapsed = now - start;
         const p = Math.min(elapsed / duration, 1);
         const eased = 1 - Math.pow(1 - p, 3);
         const v = target * eased;
-        el.textContent = isFloat ? v.toFixed(2) : Math.floor(v);
+        el.textContent = formatCounterValue(v, isFloat);
         if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = formatCounterValue(target, isFloat);
       }
       requestAnimationFrame(tick);
       obs.unobserve(el);
