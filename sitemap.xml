@@ -31,6 +31,12 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://wentylacja-nurtex-klimatyzacja.pl/monitoring-iaq-bms-wroclaw</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://wentylacja-nurtex-klimatyzacja.pl/blog</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>weekly</changefreq>

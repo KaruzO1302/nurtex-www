@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ====== SEO META ====== -->
+  <title>Monitoring IAQ i automatyka BMS Wrocław | NURTEX</title>
+  <meta name="description" content="Monitoring jakości powietrza IAQ i automatyka BMS dla biurowców we Wrocławiu. Dashboard realtime, czujniki CO₂/PM2.5/VOC, integracja KNX, Modbus, BACnet, raporty ESG. Wycena od 50 000 zł. ☎ 662 070 695">
+  <meta name="keywords" content="monitoring IAQ Wrocław, automatyka BMS Wrocław, jakość powietrza biurowiec, system BMS, smart building Wrocław, czujniki CO2 biurowiec, KNX Wrocław, Modbus BACnet, dashboard HVAC, ESG raportowanie HVAC, EPBD 2026, automatyka wentylacji biurowca">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="NURTEX — HVAC Engineering Wrocław">
+  <link rel="canonical" href="https://wentylacja-nurtex-klimatyzacja.pl/monitoring-iaq-bms-wroclaw/">
+  
+  <!-- ====== GEO ====== -->
+  <meta name="ICBM" content="51.0582136, 17.042428">
+  <meta name="geo.position" content="51.0582136;17.042428">
+  <meta name="geo.placename" content="Wrocław">
+  <meta name="geo.region" content="PL-DS">
+  
+  <!-- ====== OPEN GRAPH ====== -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:site_name" content="NURTEX">
+  <meta property="og:title" content="Monitoring IAQ + BMS Wrocław | NURTEX">
+  <meta property="og:description" content="Monitoring jakości powietrza i automatyka BMS dla biurowców. Dashboard realtime, raporty ESG, integracja KNX/Modbus/BACnet. Od 50 000 zł.">
+  <meta property="og:url" content="https://wentylacja-nurtex-klimatyzacja.pl/monitoring-iaq-bms-wroclaw/">
+  <meta property="og:image" content="https://wentylacja-nurtex-klimatyzacja.pl/img/proces-manometr.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <!-- ====== TWITTER ====== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Monitoring IAQ + BMS Wrocław — NURTEX">
+  <meta name="twitter:description" content="Smart building HVAC dla biurowców. Monitoring IAQ, BMS, raporty ESG i otwarte protokoły.">
+  
+  <!-- ====== SCHEMA.ORG SERVICE ====== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://wentylacja-nurtex-klimatyzacja.pl/monitoring-iaq-bms-wroclaw/#service",
+    "name": "Monitoring IAQ i automatyka BMS dla budynków komercyjnych",
+    "description": "Projektowanie i wdrażanie systemów monitoringu jakości powietrza wewnętrznego (IAQ) oraz automatyki budynkowej BMS dla biurowców, hoteli, obiektów handlowych i fabryk we Wrocławiu. Integracja KNX, Modbus, BACnet. Dashboard realtime, raporty ESG i doradztwo w zakresie wymagań EPBD.",
+    "provider": {
+      "@type": "HVACBusiness",
+      "@id": "https://wentylacja-nurtex-klimatyzacja.pl/#business",
+      "name": "NURTEX Wiktor Zięba",
+      "telephone": "+48662070695",
+      "url": "https://wentylacja-nurtex-klimatyzacja.pl/"
+    },
+    "serviceType": "Building Management System",
+    "category": "Smart Building Automation",
+    "areaServed": [
+      {"@type": "City", "name": "Wrocław"},
+      {"@type": "AdministrativeArea", "name": "Dolny Śląsk"},
+      {"@type": "Country", "name": "Polska"}
+    ],
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "System monitoringu IAQ - biurowiec do 1000 m²",
+        "price": "50000",
+        "priceCurrency": "PLN"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pełny system BMS z integracją HVAC",
+        "price": "150000",
+        "priceCurrency": "PLN"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- ====== SCHEMA.ORG FAQPage ====== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Co to jest monitoring IAQ i dlaczego biurowce go potrzebują?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "IAQ (Indoor Air Quality) to monitoring jakości powietrza wewnętrznego w czasie rzeczywistym — pomiar CO₂, PM2.5, VOC, temperatury, wilgotności i innych parametrów. Biurowce klasy A i B we Wrocławiu wdrażają IAQ z trzech powodów: wsparcie certyfikacji BREEAM/LEED/WELL, komfort i produktywność pracowników oraz raportowanie ESG dla najemców korporacyjnych. EPBD 2024/1275 wzmacnia znaczenie automatyki budynkowej i jakości środowiska wewnętrznego, dlatego przy większych obiektach warto przeprowadzić audyt BMS/BACS."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ile kosztuje system BMS dla biurowca we Wrocławiu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mały system BMS dla biurowca 500-1000 m²: 50 000-90 000 zł brutto. Średni biurowiec 2000-5000 m² z integracją HVAC, oświetlenia i kontroli dostępu: 120 000-250 000 zł. Duży obiekt 10 000+ m² (np. biurowiec klasy A): 300 000-800 000 zł. Cena zależy od liczby pętli sterowania, integracji z istniejącymi systemami (centrala wentylacyjna, chiller, kotły) oraz wymagań raportowania. Roczne utrzymanie: 8-15% wartości systemu."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Jakie protokoły komunikacyjne stosujemy w BMS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pracujemy w 4 głównych standardach: KNX (najpopularniejszy w Europie dla automatyki budynkowej), Modbus RTU/TCP (przemysłowy standard dla central wentylacyjnych i chillerów), BACnet IP (standard dla dużych biurowców i obiektów multinational), LoRaWAN (dla obiektów rozproszonych geograficznie). Wszystkie systemy konfigurujemy tak, by można było wymieniać urządzenia różnych producentów (Siemens, Honeywell, Trox, Belimo, Schneider Electric) bez vendor lock-in."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Jak monitoring IAQ wpływa na rachunki za energię?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Realne oszczędności energii w biurowcach po wdrożeniu BMS: 18-35%. Mechanizmy: (1) Demand Control Ventilation - wentylacja sterowana stężeniem CO₂, nie stałym strumieniem, (2) optymalizacja temperatury w godzinach zamknięcia biura, (3) wykrywanie nieszczelności i awarii zanim eskalują, (4) raporty pokazujące marnotrawstwo i ROI każdej zmiany. Średni czas zwrotu z systemu BMS dla biurowca 3000 m²: 3-5 lat z samych oszczędności energii."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy BMS pomaga w certyfikacji BREEAM i LEED?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak — BMS i monitoring IAQ mogą wspierać ocenę w systemach BREEAM, LEED i WELL, zwłaszcza w obszarach jakości środowiska wewnętrznego, monitoringu energii, komfortu użytkowników i raportowania danych. Zakres punktów zależy od wersji systemu, typu obiektu i dokumentacji projektowej. NURTEX doradza w doborze rozwiązań pod konkretną certyfikację."
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <!-- ====== SCHEMA.ORG BREADCRUMBS ====== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://wentylacja-nurtex-klimatyzacja.pl/"},
+      {"@type": "ListItem", "position": 2, "name": "Usługi", "item": "https://wentylacja-nurtex-klimatyzacja.pl/#uslugi"},
+      {"@type": "ListItem", "position": 3, "name": "Monitoring IAQ + BMS Wrocław"}
+    ]
+  }
+  </script>
+  
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="NURTEX - strona główna">
+      <span class="brand-mark">+</span>
+      <span>
+        <span class="brand-name">NURTEX</span>
+        <span class="brand-tag">Inżynieria klimatu</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Nawigacja">
+      <a href="/#uslugi">Usługi</a>
+      <a href="/#cennik">Cennik</a>
+      <a href="/#obszar">Obszar</a>
+      <a href="/#proces">Proces</a>
+      <a href="/blog/">Blog</a>
+      <a class="nav-cta" href="/#wycena">Wycena 24h</a>
+      <a href="tel:+48662070695">662 070 695</a>
+    </nav>
+  </header>
+  
+  <!-- ====== BREADCRUMBS ====== -->
+  <nav class="breadcrumbs" aria-label="Ścieżka okruszków">
+    <a href="/">Strona główna</a>
+    <span> › </span>
+    <a href="/#uslugi">Usługi</a>
+    <span> › </span>
+    <span aria-current="page">Monitoring IAQ + BMS Wrocław</span>
+  </nav>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero hero-bms">
+    <div class="hero-content">
+      <span class="hero-label">KNX · Modbus · BACnet · wsparcie ESG / BREEAM</span>
+      
+      <h1>Monitoring IAQ i automatyka <em>BMS</em> dla biurowców we Wrocławiu</h1>
+      
+      <p class="hero-subtitle">
+        Projektujemy i wdrażamy systemy monitoringu jakości powietrza (IAQ) oraz
+        automatyki budynkowej (BMS) dla biurowców klasy A/B, obiektów handlowych,
+        hoteli i fabryk. <strong>Dashboard realtime, raporty ESG, doradztwo pod EPBD.</strong>
+        Standard KNX, Modbus, BACnet. Bez vendor lock-in.
+      </p>
+      
+      <div class="hero-cta">
+        <a href="/#wycena" class="btn btn-primary">Audyt techniczny</a>
+        <a href="tel:+48662070695" class="btn btn-secondary">☎ 662 070 695</a>
+      </div>
+      
+      <ul class="hero-badges">
+        <li>KNX / Modbus / BACnet</li>
+        <li>Wsparcie BREEAM / LEED / WELL</li>
+        <li>Raporty ESG</li>
+        <li>Audyt EPBD / BACS</li>
+        <li>Bez vendor lock-in</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ====== SEKCJA 1: KONTEKST RYNKOWY ====== -->
+  <section class="section section-edukacja">
+    <span class="section-label">01 · Kontekst rynkowy</span>
+    <h2>Dlaczego <em>2026 to rok BMS</em> dla biurowców</h2>
+    
+    <p>
+      Smart building przestał być luksusem. Regulacje europejskie, presja najemców
+      i koszty energii sprawiają, że monitoring IAQ oraz automatyka BMS stają się
+      realnym narzędziem zarządcy, a nie tylko dodatkiem do budynku premium.
+    </p>
+    
+    <h3>1. EPBD 2024/1275 — dyrektywa o charakterystyce energetycznej budynków</h3>
+    <p>
+      Dyrektywa weszła w życie 28 maja 2024, a państwa członkowskie mają ją
+      transponować do prawa krajowego do 29 maja 2026. W obszarze BACS
+      (Building Automation and Control Systems) wskazuje m.in. obowiązki dla
+      budynków niemieszkalnych o efektywnej znamionowej mocy systemów HVAC powyżej
+      290 kW oraz kolejny próg 70 kW od 31 grudnia 2029. W praktyce oznacza to,
+      że większe biurowce i obiekty komercyjne powinny już dziś planować audyt
+      automatyki, opomiarowania i sterowania energią.
+    </p>
+    
+    <h3>2. CSRD i raportowanie ESG (CSRD Dyrektywa 2022/2464)</h3>
+    <p>
+      CSRD rozszerza obowiązki raportowania zrównoważonego rozwoju dla dużych firm
+      i spółek spełniających określone kryteria. Dla właściciela biurowca oznacza to
+      rosnącą presję najemców na dane: zużycie energii, komfort środowiska pracy,
+      emisje i ślad operacyjny obiektu. BMS nie zastępuje raportowania ESG, ale
+      dostarcza dane, których bez automatyki zwykle brakuje.
+    </p>
+    
+    <h3>3. Polskie WT 2021 — Warunki Techniczne</h3>
+    <p>
+      Warunki Techniczne dla budynków stawiają nacisk na minimalne wymagania
+      energetyczne, właściwe wyposażenie techniczne i kontrolę pracy instalacji.
+      Przy nowych i modernizowanych obiektach warto zestawiać projekt automatyki
+      z PN-EN ISO 52120-1, która opisuje wpływ automatyki, sterowania i zarządzania
+      technicznego budynkiem na efektywność energetyczną.
+    </p>
+    
+    <p class="emphasis">
+      <strong>Konsekwencja praktyczna:</strong> biurowiec bez dobrych danych o energii,
+      jakości powietrza i pracy HVAC trudniej wynająć klientowi korporacyjnemu.
+      BMS pomaga obniżyć koszty, uporządkować raportowanie i przygotować budynek pod
+      wymagania najemców, audytorów oraz finansowania ESG.
+    </p>
+  </section>
+
+  <!-- ====== SEKCJA 2: CO ROBI BMS ====== -->
+  <section class="section section-funkcje">
+    <span class="section-label">02 · Funkcje BMS</span>
+    <h2>Co robi <em>system BMS</em> w praktyce</h2>
+    
+    <p>
+      BMS (Building Management System) to centralny mózg budynku. Łączy w jednym
+      interfejsie wentylację, klimatyzację, ogrzewanie, oświetlenie, kontrolę dostępu,
+      monitoring zużycia mediów i bezpieczeństwo.
+    </p>
+    
+    <div class="features-grid">
+      
+      <div class="feature-card">
+        <h3>Demand Control Ventilation</h3>
+        <p>
+          Wentylacja sterowana stężeniem CO₂, nie stałym strumieniem. W salach
+          konferencyjnych, gdy nikt nie ma spotkania, strumień powietrza spada
+          do 30% nominalnego. Oszczędności: <strong>22-35% energii na wentylację.</strong>
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <h3>Adaptacyjne ogrzewanie i chłodzenie</h3>
+        <p>
+          System uczy się harmonogramu obiektu i pogody. Zaczyna ogrzewać 30 min
+          przed wejściem pracowników, zatrzymuje 30 min przed wyjściem. Letnie
+          chłodzenie nocne (free cooling). Oszczędności: <strong>15-25% energii
+          na klimatyzację.</strong>
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <h3>Monitoring IAQ realtime</h3>
+        <p>
+          Czujniki CO₂, PM2.5, PM10, VOC, formaldehyd, temperatura, wilgotność
+          w każdej strefie. Dashboard dla zarządcy + tablica publiczna dla
+          pracowników. Dzięki trendom CO₂, temperatury i wilgotności zarządca widzi,
+          które strefy wymagają korekty nawiewu, filtracji albo harmonogramu pracy HVAC.
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <h3>Predictive maintenance</h3>
+        <p>
+          Algorytmy wykrywają anomalie zanim staną się awariami. Spadek sprawności
+          rekuperatora przez 2 tygodnie? Alert — czas na przegląd. Wibracje pompy?
+          Sprawdzenie łożysk. Celem jest wykrywanie trendów zanim staną się awarią,
+          nie gaszenie pożarów po telefonie od najemcy.
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <h3>Raportowanie ESG i certyfikacje</h3>
+        <p>
+          Automatyczne raporty miesięczne i roczne: zużycie energii zakresu 1 i 2,
+          emisje GHG, godziny komfortu pracowników, audyt powietrza. Format
+          kompatybilny z ESRS, GRI, BREEAM In-Use, LEED O+M.
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <h3>Integracja z fotowoltaiką i pompami ciepła</h3>
+        <p>
+          BMS optymalizuje zużycie energii pod produkcję PV w czasie rzeczywistym.
+          Pompa ciepła chłodzi bufor wody gdy panele produkują nadmiar (autokonsumpcja
+          rośnie z 30% do 65%). Klima działa pełną mocą gdy słońce świeci, oszczędza
+          gdy nie.
+        </p>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ====== SEKCJA 3: PARAMETRY IAQ ====== -->
+  <section class="section section-iaq">
+    <span class="section-label">03 · Parametry IAQ</span>
+    <h2>Co dokładnie mierzymy <em>w jakości powietrza</em></h2>
+    
+    <p>
+      Standardowy zestaw czujników IAQ dla biurowca obejmuje 7 parametrów. Każdy ma
+      własne progi alarmowe i wpływ na komfort i produktywność pracowników.
+    </p>
+    
+    <table class="iaq-table">
+      <thead>
+        <tr>
+          <th>Parametr</th>
+          <th>Norma optymalna</th>
+          <th>Próg alarmu</th>
+          <th>Wpływ na pracowników</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>CO₂</strong> (dwutlenek węgla)</td>
+          <td>400-800 ppm</td>
+          <td>&gt; 1000 ppm</td>
+          <td>spadek koncentracji, senność, bóle głowy</td>
+        </tr>
+        <tr>
+          <td><strong>PM2.5</strong> (pył drobny)</td>
+          <td>&lt; 10 µg/m³</td>
+          <td>&gt; 25 µg/m³</td>
+          <td>podrażnienia dróg oddechowych, alergie, większe obciążenie filtracji</td>
+        </tr>
+        <tr>
+          <td><strong>PM10</strong> (pył gruby)</td>
+          <td>&lt; 20 µg/m³</td>
+          <td>&gt; 50 µg/m³</td>
+          <td>kaszel, astma, podrażnienie dróg oddechowych</td>
+        </tr>
+        <tr>
+          <td><strong>VOC</strong> (lotne zw. organiczne)</td>
+          <td>&lt; 220 µg/m³</td>
+          <td>&gt; 660 µg/m³</td>
+          <td>bóle głowy, podrażnienia, dyskomfort zapachowy</td>
+        </tr>
+        <tr>
+          <td><strong>HCHO</strong> (formaldehyd)</td>
+          <td>&lt; 100 µg/m³</td>
+          <td>&gt; 300 µg/m³</td>
+          <td>podrażnienie oczu i dróg oddechowych, wymaga szybkiej diagnostyki źródła</td>
+        </tr>
+        <tr>
+          <td><strong>Temperatura</strong></td>
+          <td>20-24°C (zima) / 23-26°C (lato)</td>
+          <td>&lt; 18°C lub &gt; 28°C</td>
+          <td>spadek produktywności 2% na każdy 1°C odchylenia</td>
+        </tr>
+        <tr>
+          <td><strong>Wilgotność</strong></td>
+          <td>40-60%</td>
+          <td>&lt; 30% lub &gt; 70%</td>
+          <td>suchość oczu i gardła, rozwój pleśni, statyka</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <p>
+      <strong>Bonus dla nowoczesnych systemów:</strong> dodatkowo mierzymy
+      <strong>NO₂</strong> (przy obiektach przy ruchliwych ulicach),
+      <strong>O₃</strong> (przy biurach z dużą liczbą drukarek/kserokopiarek),
+      <strong>radon</strong> (w piwnicach, na parterze) oraz <strong>natężenie
+      hałasu</strong> (open space &gt; 60 dB pogarsza produktywność).
+    </p>
+  </section>
+
+  <!-- ====== SEKCJA 4: ARCHITEKTURA SYSTEMU ====== -->
+  <section class="section section-architecture">
+    <span class="section-label">04 · Architektura systemu</span>
+    <h2>Jak budujemy <em>system BMS</em></h2>
+    
+    <p>
+      Architektura 4-warstwowa zgodna ze standardem ISO 16484 (Building automation
+      and control systems). Bez monolitycznych rozwiązań — modułowa, skalowalna,
+      gotowa do rozbudowy.
+    </p>
+    
+    <div class="architecture-levels">
+      
+      <div class="arch-level">
+        <h3>Warstwa 1 — Pole (Field Level)</h3>
+        <p>
+          Czujniki, siłowniki, urządzenia wykonawcze. <strong>Czujniki IAQ</strong>
+          (Trox, Sentera, Honeywell), <strong>siłowniki przepustnic</strong> (Belimo),
+          <strong>zawory regulacyjne</strong> (Siemens, Danfoss). Komunikacja: KNX
+          (skrętka 30 V DC), Modbus RTU (RS-485), 0-10 V analog.
+        </p>
+      </div>
+      
+      <div class="arch-level">
+        <h3>Warstwa 2 — Automatyka (Automation Level)</h3>
+        <p>
+          Sterowniki PLC i regulatory swobodnie programowalne. Modele: <strong>Siemens
+          Climatix</strong>, <strong>Saia PCD</strong>, <strong>Schneider Modicon</strong>,
+          <strong>WAGO PFC</strong>. Logika sterowania PID, sekwencje czasowe, regulacja
+          kaskadowa central wentylacyjnych, integracja z chillerami.
+        </p>
+      </div>
+      
+      <div class="arch-level">
+        <h3>Warstwa 3 — Zarządzanie (Management Level)</h3>
+        <p>
+          Serwer BMS + interfejs operatora. Oprogramowanie SCADA: <strong>Honeywell
+          Niagara 4</strong>, <strong>Siemens Desigo CC</strong>, <strong>Schneider
+          EcoStruxure</strong>, <strong>open-source: openHAB, Home Assistant</strong>
+          dla mniejszych obiektów. Dashboardy konfigurowalne, alarmy, harmonogramy,
+          raporty.
+        </p>
+      </div>
+      
+      <div class="arch-level">
+        <h3>Warstwa 4 — Chmura i AI (Cloud Level)</h3>
+        <p>
+          Dane z BMS replikowane do chmury (AWS, Azure, lokalne datacenter w Polsce).
+          Analityka predykcyjna, machine learning dla optymalizacji, integracja z ERP
+          (SAP, Comarch). Mobilna aplikacja dla zarządcy i pracowników. API REST/MQTT
+          do integracji z systemami zewnętrznymi (kontrola dostępu, rezerwacja sal).
+        </p>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ====== SEKCJA 5: CENNIK ====== -->
+  <section class="section section-cennik" id="cennik">
+    <span class="section-label">05 · Cennik 2026</span>
+    <h2>Ile kosztuje <em>system BMS</em> we Wrocławiu</h2>
+    
+    <p>
+      Każdy obiekt jest unikalny — cennik poniżej to widełki bazowane na 50+ projektach
+      we Wrocławiu i Dolnym Śląsku. Zawsze poprzedzamy projekt <strong>bezpłatnym audytem
+      technicznym</strong>: 4-8 godzin na obiekcie, dokumentacja istniejącej infrastruktury,
+      ocena możliwości integracji.
+    </p>
+    
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Typ projektu</th>
+          <th>Zakres</th>
+          <th>Cena brutto</th>
+          <th>Czas wdrożenia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monitoring IAQ basic</td>
+          <td>biurowiec 500-1000 m², 8-12 stref</td>
+          <td>50 000 – 90 000 zł</td>
+          <td>3-5 tygodni</td>
+        </tr>
+        <tr>
+          <td>Monitoring IAQ + sterowanie wentylacją</td>
+          <td>biurowiec 1000-2000 m², DCV</td>
+          <td>80 000 – 140 000 zł</td>
+          <td>5-8 tygodni</td>
+        </tr>
+        <tr>
+          <td>Pełny BMS — HVAC integration</td>
+          <td>biurowiec 2000-5000 m², central. + chillery</td>
+          <td>140 000 – 250 000 zł</td>
+          <td>8-14 tygodni</td>
+        </tr>
+        <tr>
+          <td>Pełny BMS — multi-system</td>
+          <td>biurowiec 5000-10000 m², + ośw. + dostęp</td>
+          <td>220 000 – 400 000 zł</td>
+          <td>12-20 tygodni</td>
+        </tr>
+        <tr>
+          <td>Enterprise BMS — biurowiec klasy A</td>
+          <td>10 000+ m², dokumentacja pod BREEAM / ESG</td>
+          <td>350 000 – 800 000 zł</td>
+          <td>16-26 tygodni</td>
+        </tr>
+        <tr>
+          <td>Retrofit BMS dla istniejącej centrali</td>
+          <td>wymiana sterowania zachowując sprzęt</td>
+          <td>25 000 – 80 000 zł</td>
+          <td>2-4 tygodnie</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h3>Co zawiera cena</h3>
+    <ul>
+      <li>Audyt techniczny i projekt wykonawczy</li>
+      <li>Sprzęt: czujniki, sterowniki, serwer BMS</li>
+      <li>Oprogramowanie SCADA + licencje (5 lat)</li>
+      <li>Konfiguracja, programowanie logiki, integracja z istniejącym HVAC</li>
+      <li>Konfigurowalny dashboard z firmowym brandingiem</li>
+      <li>Aplikacja mobilna iOS/Android dla zarządcy</li>
+      <li>Szkolenie operatora i administratora (16 h)</li>
+      <li>Dokumentacja powykonawcza, protokoły uruchomienia i nastawy systemu</li>
+      <li>12 miesięcy gwarancji + bezpłatny support pierwszej linii</li>
+    </ul>
+    
+    <h3>Maintenance i monitoring po wdrożeniu</h3>
+    <p>
+      Roczna obsługa systemu: <strong>8-15% wartości projektu</strong>. Obejmuje:
+      monitoring 24/7 (helpdesk), aktualizacje oprogramowania, przeglądy kwartalne,
+      kalibrację czujników, dostosowywanie logiki sterowania do zmian użytkowania
+      budynku, raporty miesięczne ESG. Dla klientów z umową — priorytetowa reakcja
+      4 godziny we Wrocławiu.
+    </p>
+  </section>
+
+  <!-- ====== SEKCJA 6: PRODUCENCI ====== -->
+  <section class="section section-producers">
+    <span class="section-label">06 · Z czym pracujemy</span>
+    <h2>Producenci sprzętu, <em>z którymi integrujemy</em></h2>
+    
+    <p>
+      Nie reprezentujemy ani nie sprzedajemy żadnej marki — jesteśmy <strong>niezależnym
+      integratorem</strong>. Sprzęt dobieramy pod potrzeby projektu i budżet klienta.
+      Pracujemy z 12+ producentami:
+    </p>
+    
+    <div class="producers-grid">
+      
+      <div class="producer-group">
+        <h3>Sterowniki PLC i regulatory</h3>
+        <ul>
+          <li>Siemens (Climatix, Desigo)</li>
+          <li>Honeywell (Niagara, Trend)</li>
+          <li>Schneider Electric (Modicon, EcoStruxure)</li>
+          <li>Saia (PCD)</li>
+          <li>WAGO (PFC, I/O System 750)</li>
+          <li>Beckhoff (TwinCAT, EtherCAT)</li>
+        </ul>
+      </div>
+      
+      <div class="producer-group">
+        <h3>Czujniki IAQ i HVAC</h3>
+        <ul>
+          <li>Trox (czujniki strefowe)</li>
+          <li>Sentera (przewodowe i bezprzewodowe)</li>
+          <li>Vaisala (jakość premium, kalibracja)</li>
+          <li>E+E Elektronik (temperatura, wilgotność)</li>
+          <li>Honeywell (CO₂, VOC, PM)</li>
+          <li>Sensirion (zaawansowane sensory)</li>
+        </ul>
+      </div>
+      
+      <div class="producer-group">
+        <h3>Siłowniki i zawory</h3>
+        <ul>
+          <li>Belimo (siłowniki przepustnic i zaworów)</li>
+          <li>Siemens (zawory regulacyjne)</li>
+          <li>Danfoss (zawory hydrauliczne)</li>
+          <li>Sauter (mikser temperatury)</li>
+        </ul>
+      </div>
+      
+      <div class="producer-group">
+        <h3>Oprogramowanie SCADA</h3>
+        <ul>
+          <li>Honeywell Niagara 4 (standard branżowy)</li>
+          <li>Siemens Desigo CC</li>
+          <li>Schneider EcoStruxure Building Operation</li>
+          <li>InGen Dynamics Aladdin Pro</li>
+          <li>openHAB (open-source dla mniejszych obiektów)</li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    <p class="emphasis">
+      <strong>Filozofia bez vendor lock-in:</strong> projekty budujemy z otwartymi
+      protokołami (KNX, Modbus, BACnet) tak, by za 5-10 lat można było wymienić
+      sterownik Siemensa na Schneidera bez przerabiania całej instalacji. To chroni
+      inwestycję klienta i daje swobodę negocjacji z dostawcami.
+    </p>
+  </section>
+
+  <!-- ====== SEKCJA 7: CASE STUDY ====== -->
+  <section class="section section-case">
+    <span class="section-label">07 · Przykład wdrożenia</span>
+    <h2>Biurowiec 3 200 m² <em>— monitoring IAQ + DCV</em></h2>
+    
+    <div class="case-grid">
+      <div class="case-content">
+        <h3>Sytuacja wyjściowa</h3>
+        <p>
+          Modelowy biurowiec klasy B w centrum Wrocławia, 3 200 m² powierzchni najmu, 4 piętra,
+          centrala wentylacyjna ze stałym strumieniem (CAV) z 2018 r. Najemcy zgłaszają
+          duszność w salach konferencyjnych i przesuszenie powietrza zimą. Właściciel
+          obiektu planuje przygotowanie dokumentacji pod BREEAM In-Use.
+        </p>
+        
+        <h3>Audyt techniczny — wyniki</h3>
+        <ul>
+          <li>CO₂ w salach konferencyjnych przy pełnym obłożeniu: 1 800-2 400 ppm (norma &lt; 1 000)</li>
+          <li>Wilgotność zimą: 18-25% (norma 40-60%)</li>
+          <li>Wentylacja CAV pracuje pełną mocą 8h, niezależnie od obłożenia</li>
+          <li>Brak integracji z chillerem (osobne systemy sterowania)</li>
+          <li>Roczne zużycie energii HVAC: 165 MWh (51 kWh/m²)</li>
+        </ul>
+        
+        <h3>Realizacja NURTEX</h3>
+        <ul>
+          <li>32 czujniki IAQ (CO₂, T, RH, VOC) — 1 czujnik na strefę 100 m²</li>
+          <li>Retrofit centrali do DCV (Demand Control Ventilation) z siłownikami Belimo</li>
+          <li>Sterownik Siemens Climatix POL648 + integracja z chillerem (Modbus TCP)</li>
+          <li>Nawilżacze adiabatyczne w nawiewie dla 2 najbardziej zajętych pięter</li>
+          <li>Dashboard SCADA Niagara 4 + tablica IAQ w lobby (transparency dla najemców)</li>
+          <li>Aplikacja mobilna dla facility managera</li>
+        </ul>
+        
+        <h3>Wynik po 12 miesiącach</h3>
+        <ul class="case-results">
+          <li><strong>Koszt projektu:</strong> 187 000 zł brutto</li>
+          <li><strong>Zużycie energii HVAC:</strong> spadek o 31% (-51 MWh/rok = -29 580 zł/rok)</li>
+          <li><strong>CO₂ średnie w godzinach pracy:</strong> 680 ppm (z 1 850)</li>
+          <li><strong>Wilgotność zimą:</strong> 42-48% (z 21%)</li>
+          <li><strong>Zwrot inwestycji:</strong> 6,3 roku (sama energia)</li>
+          <li><strong>Dokumentacja:</strong> dane gotowe do audytu energetycznego i rozmów z asesorem BREEAM</li>
+          <li><strong>Bonus:</strong> zarządca otrzymuje twarde dane do rozmów z najemcami i właścicielem obiektu</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SEKCJA 8: FAQ ====== -->
+  <section class="section section-faq" id="faq">
+    <span class="section-label">08 · FAQ</span>
+    <h2>Najczęstsze pytania <em>o BMS i IAQ</em></h2>
+    
+    <details>
+      <summary><strong>Co to jest monitoring IAQ i dlaczego biurowce go potrzebują?</strong></summary>
+      <p>
+        IAQ (Indoor Air Quality) to monitoring jakości powietrza wewnętrznego w czasie
+        rzeczywistym — pomiar CO₂, PM2.5, VOC, temperatury, wilgotności i innych
+        parametrów. <strong>Biurowce klasy A i B</strong> w Wrocławiu wdrażają IAQ
+        z 3 powodów: (1) wsparcie certyfikacji BREEAM/LEED/WELL, (2) komfort i
+        koncentracja pracowników, (3) raportowanie ESG dla najemców korporacyjnych.
+        EPBD 2024/1275 wzmacnia znaczenie automatyki budynkowej i jakości środowiska
+        wewnętrznego.
+      </p>
+    </details>
+    
+    <details>
+      <summary><strong>Ile kosztuje system BMS dla biurowca we Wrocławiu?</strong></summary>
+      <p>
+        Mały BMS biurowiec 500-1000 m²: 50 000-90 000 zł. Średni 2000-5000 m² z integracją
+        HVAC, oświetlenia, dostępu: 120 000-250 000 zł. Duży 10 000+ m² (klasa A):
+        300 000-800 000 zł. Cena zależy od liczby pętli sterowania, integracji z systemami
+        i wymagań raportowania. Roczne utrzymanie: 8-15% wartości systemu.
+      </p>
+    </details>
+    
+    <details>
+      <summary><strong>Jakie protokoły stosujemy w BMS?</strong></summary>
+      <p>
+        4 główne standardy: <strong>KNX</strong> (najpopularniejszy w Europie),
+        <strong>Modbus RTU/TCP</strong> (przemysłowy, central wentylacyjnych i chillerów),
+        <strong>BACnet IP</strong> (duże biurowce, multinational), <strong>LoRaWAN</strong>
+        (obiekty rozproszone). Bez vendor lock-in — wymiana urządzeń różnych producentów
+        bez przebudowy.
+      </p>
+    </details>
+    
+    <details>
+      <summary><strong>Jak BMS wpływa na rachunki za energię?</strong></summary>
+      <p>
+        Realne oszczędności energii w biurowcach: <strong>18-35%</strong>. Mechanizmy:
+        (1) Demand Control Ventilation — wentylacja sterowana CO₂, nie stałym strumieniem,
+        (2) optymalizacja temperatury w godzinach zamknięcia, (3) wykrywanie awarii zanim
+        eskalują, (4) raporty pokazujące marnotrawstwo. Średni zwrot dla biurowca 3 000 m²:
+        3-5 lat z samych oszczędności energii.
+      </p>
+    </details>
+    
+    <details>
+      <summary><strong>Czy BMS pomaga w certyfikacji BREEAM i LEED?</strong></summary>
+      <p>
+        Tak — BMS i monitoring IAQ mogą wspierać proces BREEAM, LEED i WELL,
+        zwłaszcza w obszarach jakości środowiska wewnętrznego, monitoringu energii,
+        komfortu użytkowników i raportowania danych. Konkretna punktacja zależy od
+        wersji systemu, typu obiektu i dokumentacji projektowej. Doradzamy w doborze
+        rozwiązań pod konkretną certyfikację.
+      </p>
+    </details>
+    
+    <details>
+      <summary><strong>Ile trwa wdrożenie BMS?</strong></summary>
+      <p>
+        Monitoring IAQ basic: 3-5 tygodni. Pełny BMS z integracją HVAC: 8-14 tygodni.
+        Enterprise BMS dla biurowca klasy A: 16-26 tygodni. Etapy: audyt (1-2 tyg),
+        projekt wykonawczy (2-4 tyg), zakup sprzętu (2-6 tyg), instalacja (4-12 tyg),
+        rozruch i kalibracja (1-2 tyg), szkolenia. Pracujemy etapami żeby nie zatrzymać
+        budynku.
+      </p>
+    </details>
+    
+    <details>
+      <summary><strong>Czy mogę dobudować BMS do istniejącej centrali wentylacyjnej?</strong></summary>
+      <p>
+        Tak — to nazywamy <strong>retrofit</strong>. Wymieniamy tylko sterowanie,
+        zachowując sprzęt mechaniczny (wymiennik, wentylatory, kanały). Koszt:
+        25 000-80 000 zł. Czas: 2-4 tygodnie. Najczęstszy przypadek dla biurowców
+        z central wentylacyjnymi z lat 2005-2018, które mechanicznie są w dobrym stanie
+        ale automatyka jest przestarzała.
+      </p>
+    </details>
+    
+    <details>
+      <summary><strong>Co z bezpieczeństwem cybernetycznym BMS?</strong></summary>
+      <p>
+        Standard branżowy: segregacja sieci OT (Operational Technology) od IT
+        firmowego, VPN dla dostępu zdalnego, zasady zgodne z podejściem IEC 62443
+        dla systemów OT oraz regularne przeglądy bezpieczeństwa. Konfigurujemy zgodnie
+        z dobrymi praktykami branżowymi i z polityką IT klienta.
+      </p>
+    </details>
+    
+    <details>
+      <summary><strong>Czy oferujecie obsługę po wdrożeniu?</strong></summary>
+      <p>
+        Tak — to kluczowa część projektu. Umowa serwisowa SLA obejmuje: monitoring
+        24/7 z helpdeskiem, przeglądy kwartalne, kalibrację czujników 2x/rok,
+        aktualizacje oprogramowania, dostosowywanie logiki sterowania do zmian, raporty
+        miesięczne dla zarządcy i właściciela. Czas reakcji we Wrocławiu: 4h dla
+        klientów z aktywną umową. Koszt: 8-15% wartości systemu rocznie.
+      </p>
+    </details>
+    
+    <details>
+      <summary><strong>Czy BMS musi mieć integrację z systemem PV i pompą ciepła?</strong></summary>
+      <p>
+        Nie musi, ale <strong>warto.</strong> Integracja BMS z fotowoltaiką i pompą
+        ciepła zwiększa autokonsumpcję energii z PV z typowych 30% do 60-70%. System
+        chłodzi bufor wody i pomieszczenia gdy PV produkuje nadmiar, oszczędza gdy
+        nie ma słońca. Dla biurowców z PV powyżej 50 kWp opłacalność integracji to
+        2-3 lata zwrotu z dodatkowych oszczędności.
+      </p>
+    </details>
+  </section>
+
+  <!-- ====== SEKCJA 9: CTA ====== -->
+  <section class="section section-cta-final">
+    <h2>Czas na <em>smart building</em>?</h2>
+    <p>
+      Zacznij od bezpłatnego audytu technicznego. 4-8 godzin na obiekcie. Inwentaryzacja
+      istniejącego HVAC, ocena możliwości integracji, propozycja architektury BMS.
+      Bez zobowiązań. Po audycie otrzymujesz raport techniczny z 2-3 wariantami
+      wdrożenia (tani / średni / premium) z kalkulacją ROI dla każdego.
+    </p>
+    
+    <div class="cta-buttons">
+      <a href="/#wycena" class="btn btn-primary btn-large">Bezpłatny audyt</a>
+      <a href="tel:+48662070695" class="btn btn-secondary btn-large">☎ 662 070 695</a>
+      <a href="https://wa.me/48662070695" class="btn btn-tertiary btn-large">WhatsApp B2B</a>
+    </div>
+    
+    <ul class="cta-stats">
+      <li><strong>Audyt</strong> EPBD / BACS</li>
+      <li><strong>Wsparcie</strong> BREEAM / LEED / WELL</li>
+      <li><strong>ESG</strong> reporting</li>
+      <li><strong>Bez</strong> vendor lock-in</li>
+    </ul>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="/" aria-label="NURTEX - strona główna">
+            <span class="brand-mark">+</span>
+            <span>
+              <span class="brand-name">NURTEX</span>
+              <span class="brand-tag">Inżynieria klimatu</span>
+            </span>
+          </a>
+          <p style="margin-top:18px">Klimatyzacja, wentylacja, rekuperacja, automatyka BMS i monitoring IAQ dla Wrocławia.</p>
+        </div>
+        <div>
+          <h4>Usługi</h4>
+          <ul>
+            <li><a href="/montaz-klimatyzacji-wroclaw">Montaż klimatyzacji</a></li>
+            <li><a href="/wentylacja-mechaniczna-rekuperacja-wroclaw">Wentylacja i rekuperacja</a></li>
+            <li><a href="/pompy-ciepla-wroclaw">Pompy ciepła Wrocław</a></li>
+            <li><a href="/czyszczenie-kanalow-wentylacji-wroclaw">Czyszczenie kanałów</a></li>
+            <li><a href="/monitoring-iaq-bms-wroclaw">Monitoring IAQ + BMS</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Firma</h4>
+          <ul>
+            <li><a href="/#realizacje">Realizacje</a></li>
+            <li><a href="/blog/">Blog techniczny</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/#proces">Proces</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:+48662070695">+48 662 070 695</a></li>
+            <li><a href="https://wa.me/48662070695" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="mailto:kontakt@nurtex.pl">kontakt@nurtex.pl</a></li>
+            <li><a href="https://www.google.com/maps/place/NURTEX+Klimatyzacja+i+Wentylacja/@51.0582136,16.8899927,12z/data=!4m10!1m2!2m1!1snurtex!3m6!1s0x470fc35787acca65:0x3b3021f1fe833308!8m2!3d51.0582136!4d17.042428!15sCgZudXJ0ZXiSAR9haXJfY29uZGl0aW9uaW5nX3JlcGFpcl9zZXJ2aWNl4AEA!16s%2Fg%2F11z15gx_dk?entry=ttu" target="_blank" rel="noopener">Wizytówka Google</a></li>
+          </ul>
+        </div>
+      </div>
+      <section class="footer-company-data" aria-label="Dane firmy">
+        <div class="company-data-grid">
+          <div class="company-data-block">
+            <h4>Dane firmy</h4>
+            <address>
+              <strong>NURTEX Wiktor Zięba</strong><br>
+              ul. Smardzowska 83B<br>
+              52-234 Wrocław<br>
+              Polska
+            </address>
+            <dl class="company-ids">
+              <dt>NIP</dt><dd>899-281-81-26</dd>
+              <dt>REGON</dt><dd>367234417</dd>
+            </dl>
+          </div>
+          <div class="company-data-block">
+            <h4>Godziny pracy</h4>
+            <dl class="company-hours">
+              <dt>Pon-Pt</dt><dd>7:00-19:00</dd>
+              <dt>Sobota</dt><dd>8:00-14:00</dd>
+              <dt>Niedziela</dt><dd>zamknięte</dd>
+            </dl>
+          </div>
+          <div class="company-data-block">
+            <h4>Płatności</h4>
+            <ul class="payment-methods">
+              <li>Faktura VAT</li>
+              <li>Karta płatnicza</li>
+              <li>Przelew dla firm</li>
+              <li>Stała umowa serwisowa</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <div class="foot-bottom">
+        <span>© 2026 NURTEX · Wszystkie prawa zastrzeżone</span>
+        <span>Monitoring IAQ i BMS Wrocław · SEO landing v1</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="nurtex-mobile-bar" id="nurtex-mobile-bar" role="navigation" aria-label="Szybki kontakt">
+    <a href="tel:+48662070695" class="mobile-bar-btn mobile-bar-btn--call" aria-label="Zadzwoń teraz: 662 070 695" data-track="mobile_bar_call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      <span>Zadzwoń</span>
+    </a>
+    <a href="https://wa.me/48662070695?text=Dzie%C5%84%20dobry%2C%20prosz%C4%99%20o%20audyt%20BMS%20i%20monitoringu%20IAQ" class="mobile-bar-btn mobile-bar-btn--wa" target="_blank" rel="noopener" aria-label="Napisz na WhatsApp" data-track="mobile_bar_whatsapp">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+      </svg>
+      <span>WhatsApp</span>
+    </a>
+    <a href="/#wycena" class="mobile-bar-btn" aria-label="Przejdź do formularza wyceny" data-track="mobile_bar_quote">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="9" y1="15" x2="15" y2="15"/>
+        <line x1="9" y1="11" x2="15" y2="11"/>
+      </svg>
+      <span>Wycena</span>
+    </a>
+  </div>
+
+  <script>
+  (function initMobileContactBar() {
+    const bar = document.getElementById('nurtex-mobile-bar');
+    if (!bar) return;
+
+    bar.querySelectorAll('[data-track]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const eventName = button.dataset.track;
+        const href = button.getAttribute('href') || '';
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', eventName, { event_category: 'mobile_bar', event_label: href });
+        }
+        if (typeof window.plausible === 'function') {
+          window.plausible(eventName, { props: { href } });
+        }
+      });
+    });
+  })();
+  </script>
+
+</body>
+</html>

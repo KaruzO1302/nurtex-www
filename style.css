@@ -69,6 +69,9 @@ strong { color: var(--fg); }
 .hero-pompa::before {
   background: linear-gradient(90deg, rgba(7,8,12,.96), rgba(7,8,12,.62)), url('/img/hero-instalator.jpg') center/cover;
 }
+.hero-bms::before {
+  background: linear-gradient(90deg, rgba(7,8,12,.96), rgba(7,8,12,.58)), url('/img/proces-manometr.jpg') center/cover;
+}
 .hero::after {
   content: ""; position: absolute; right: -160px; top: 14%; width: min(52vw, 620px); aspect-ratio: 1;
   border: 2px solid rgba(255,59,48,.45); border-radius: 50%;
@@ -126,17 +129,20 @@ h3 { font-size: clamp(22px, 2.4vw, 32px); margin: 24px 0 14px; line-height: 1.12
   border-radius: 50%; background: rgba(255,59,48,.16); color: var(--accent); font-family: var(--font-mono); font-weight: 900;
 }
 
-.comparison-grid, .brands-grid, .target-grid, .equipment-grid, .process-timeline, .case-grid {
+.comparison-grid, .brands-grid, .target-grid, .equipment-grid, .process-timeline, .case-grid,
+.features-grid, .architecture-levels, .producers-grid {
   display: grid; gap: 18px; margin-top: 34px;
 }
 .comparison-grid { grid-template-columns: repeat(3, 1fr); }
-.brands-grid, .target-grid, .equipment-grid { grid-template-columns: repeat(2, 1fr); }
+.brands-grid, .target-grid, .equipment-grid, .features-grid, .producers-grid { grid-template-columns: repeat(2, 1fr); }
+.architecture-levels { grid-template-columns: repeat(4, minmax(220px, 1fr)); overflow-x: auto; padding-bottom: 10px; }
 .process-timeline { grid-template-columns: repeat(7, minmax(220px, 1fr)); overflow-x: auto; padding-bottom: 10px; }
-.comparison-card, .brand-card, .target-card, .equipment-card, .process-step, .cta-block, .case-content, details {
+.comparison-card, .brand-card, .target-card, .equipment-card, .process-step, .cta-block, .case-content, details,
+.feature-card, .arch-level, .producer-group {
   border: 1px solid var(--line); border-radius: 8px; background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
   padding: 26px; box-shadow: 0 24px 80px rgba(0,0,0,.18);
 }
-.comparison-card ul, .case-content ul { color: var(--muted); padding-left: 18px; }
+.comparison-card ul, .case-content ul, .producer-group ul { color: var(--muted); padding-left: 18px; }
 .card-price, .target-stat { display: inline-flex; margin: 10px 0 14px; color: var(--accent); }
 .brand-card .brand-tag { display: inline-flex; border-radius: 6px; color: var(--blue); margin: 0 0 14px; }
 .section-cta a { color: var(--fg); font-weight: 900; }
@@ -185,7 +191,7 @@ details p { margin-top: 16px; }
 
 @media (max-width: 940px) {
   .nav-links { display: none; }
-  .comparison-grid, .brands-grid, .target-grid, .equipment-grid, .footer-grid, .company-data-grid { grid-template-columns: 1fr; }
+  .comparison-grid, .brands-grid, .target-grid, .equipment-grid, .features-grid, .producers-grid, .footer-grid, .company-data-grid { grid-template-columns: 1fr; }
   table { display: block; overflow-x: auto; white-space: nowrap; }
   .hero::after { opacity: .28; right: -260px; width: 760px; }
   .hero-content { margin-left: 20px; padding-top: 70px; }
