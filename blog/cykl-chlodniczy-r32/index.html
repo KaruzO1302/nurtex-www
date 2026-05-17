@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cykl chłodniczy R32 — jak działa klimatyzacja w 4 fazach | Blog NURTEX</title>
+<meta name="description" content="Termodynamika klimatyzacji wyjaśniona: parowanie, sprężanie, skraplanie, rozprężanie. Co dzieje się w rurach R32 i dlaczego pompa ciepła jest 3-5× wydajniejsza od grzejnika." />
+<link rel="canonical" href="https://nurtex.pl/blog/cykl-chlodniczy-r32/" />
+<meta property="og:title" content="Cykl chłodniczy R32 — jak działa klimatyzacja w 4 fazach" />
+<meta property="og:description" content="Termodynamika klimatyzacji wyjaśniona: parowanie, sprężanie, skraplanie, rozprężanie. Co dzieje się w rurach R32 i dlaczego pompa ciepła jest 3-5× wydajniejsza od grzejnika." />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="pl_PL" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Cykl chłodniczy R32 — jak działa klimatyzacja w 4 fazach", "description": "Termodynamika klimatyzacji wyjaśniona: parowanie, sprężanie, skraplanie, rozprężanie. Co dzieje się w rurach R32 i dlaczego pompa ciepła jest 3-5× wydajniejsza od grzejnika.", "datePublished": "2026-05-16", "author": {"@type": "Organization", "name": "NURTEX"}, "publisher": {"@type": "Organization", "name": "NURTEX", "logo": {"@type": "ImageObject", "url": "https://nurtex.pl/img/logo-light.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://nurtex.pl/blog/cykl-chlodniczy-r32/"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg-base: #0a0c10;
+    --bg-card: #11141a;
+    --fg: #f4f5f7;
+    --fg-dim: #8b929c;
+    --fg-mid: #b8bec8;
+    --accent: #ff3b30;
+    --border: #1f242c;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg-base); color: var(--fg);
+    font-family: var(--font-body); line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+  a:hover { opacity: 0.75; }
+  .container { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+
+  header.blog-head {
+    border-bottom: 1px solid var(--border);
+    padding: 22px 0;
+    background: rgba(10,12,16,0.85);
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+  .head-row { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .logo-link { font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: 0.15em; color: var(--fg); }
+  .logo-link em { color: var(--accent); font-style: normal; }
+  .head-nav { display: flex; gap: 24px; align-items: center; }
+  .head-nav a { color: var(--fg-dim); font-size: 13px; }
+  .head-nav a:hover { color: var(--fg); }
+  .head-nav a.back-cta { color: var(--accent); border: 1px solid var(--accent); padding: 8px 16px; border-radius: 100px; font-weight: 600; }
+
+  article.post { padding: 80px 0 60px; }
+  .post-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 18px; }
+  article.post > .container > h1 {
+    font-family: var(--font-display); font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 24px;
+  }
+  article.post > .container > h1 em { color: var(--accent); font-style: normal; }
+  .post-meta {
+    display: flex; gap: 20px; font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.1em; color: var(--fg-dim); text-transform: uppercase;
+    padding-bottom: 32px; margin-bottom: 40px; border-bottom: 1px solid var(--border);
+  }
+  .post-meta strong { color: var(--fg); font-weight: 500; }
+
+  article.post .lead {
+    font-size: 19px; line-height: 1.7; color: var(--fg-mid);
+    margin-bottom: 32px; font-weight: 400;
+  }
+  article.post h2 {
+    font-family: var(--font-display); font-size: 28px; line-height: 1.25;
+    letter-spacing: -0.01em; margin: 56px 0 20px; color: var(--fg);
+  }
+  article.post h3 {
+    font-family: var(--font-display); font-size: 20px; line-height: 1.3;
+    margin: 36px 0 14px; color: var(--fg);
+  }
+  article.post p { margin-bottom: 18px; color: var(--fg-mid); font-size: 16px; }
+  article.post p strong { color: var(--fg); font-weight: 600; }
+  article.post ul, article.post ol { margin: 16px 0 24px 24px; }
+  article.post li { margin-bottom: 10px; color: var(--fg-mid); font-size: 16px; }
+  article.post li strong { color: var(--fg); }
+
+  .callout {
+    background: var(--bg-card); border-left: 3px solid var(--accent);
+    padding: 22px 28px; margin: 32px 0; border-radius: 0 10px 10px 0;
+  }
+  .callout strong { color: var(--accent); display: block; font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
+  .callout p { margin: 0; color: var(--fg-mid); font-size: 15px; }
+
+  .spec-table {
+    width: 100%; border-collapse: collapse; margin: 28px 0;
+    border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+    font-size: 14px;
+  }
+  .spec-table th, .spec-table td {
+    padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border);
+  }
+  .spec-table th {
+    background: var(--bg-card); font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: 0.1em; color: var(--accent);
+    text-transform: uppercase; font-weight: 500;
+  }
+  .spec-table td { color: var(--fg-mid); }
+  .spec-table tr:last-child td { border-bottom: none; }
+
+  .cta-band {
+    margin: 60px 0 0; padding: 40px; border: 1px solid var(--border);
+    border-radius: 14px; background: linear-gradient(135deg, var(--bg-card), rgba(255,59,48,0.05));
+    text-align: center;
+  }
+  .cta-band h3 { font-family: var(--font-display); font-size: 26px; margin-bottom: 12px; color: var(--fg); }
+  .cta-band p { color: var(--fg-mid); margin-bottom: 24px; }
+  .cta-band a {
+    display: inline-block; padding: 14px 32px; background: var(--accent);
+    color: #fff; border-radius: 100px; font-weight: 600; font-size: 15px;
+  }
+  .cta-band a:hover { opacity: 0.9; }
+
+  .source {
+    font-size: 12px; color: var(--fg-dim); font-family: var(--font-mono);
+    letter-spacing: 0.05em; padding: 18px 0; border-top: 1px dashed var(--border);
+    margin-top: 40px;
+  }
+  .source a { color: var(--fg-dim); text-decoration: underline; }
+
+  .related {
+    padding: 60px 0; border-top: 1px solid var(--border); background: var(--bg-base);
+  }
+  .related h3 { font-family: var(--font-display); font-size: 22px; margin-bottom: 24px; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+  .related a {
+    display: block; padding: 24px; border: 1px solid var(--border);
+    border-radius: 12px; color: var(--fg); background: var(--bg-card);
+    transition: border-color .2s ease;
+  }
+  .related a:hover { border-color: var(--accent); opacity: 1; }
+  .related-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase; }
+  .related h4 { font-family: var(--font-display); font-size: 16px; line-height: 1.3; margin: 10px 0; }
+
+  footer.foot { border-top: 1px solid var(--border); padding: 50px 0 30px; background: var(--bg-base); }
+  .foot-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; font-size: 13px; color: var(--fg-dim); }
+  .foot-row a { color: var(--fg-dim); }
+  .foot-row a:hover { color: var(--fg); }
+
+  @media (max-width: 640px) {
+    .head-nav { gap: 12px; }
+    .head-nav a:not(.back-cta) { display: none; }
+    article.post { padding: 40px 0 40px; }
+    .container { padding: 0 20px; }
+    .cta-band { padding: 28px 20px; }
+    .post-meta { flex-wrap: wrap; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="blog-head">
+  <div class="head-row">
+    <a href="../../" class="logo-link">NURT<em>EX</em></a>
+    <nav class="head-nav">
+      <a href="../">Blog</a>
+      <a href="../../#uslugi">Usługi</a>
+      <a href="../../#cennik">Cennik</a>
+      <a href="../../#wycena" class="back-cta">Wycena 24h</a>
+    </nav>
+  </div>
+</header>
+
+<article class="post">
+  <div class="container">
+    <div class="post-eyebrow">Termodynamika · Tech</div>
+    <h1>Cykl chłodniczy R32 — jak <em>działa klimatyzacja</em> w 4 fazach</h1>
+    <div class="post-meta">
+      <span>NURTEX <strong>· Wrocław</strong></span>
+      <span>10 min czytania</span>
+      <span>16 maja 2026</span>
+    </div>
+
+    
+<p class="lead">
+Klimatyzacja nie "produkuje zimna" — <strong>przenosi ciepło z jednego miejsca w drugie</strong>. Dokładnie tak samo jak lodówka. Kluczem jest 4-fazowy obieg czynnika R32, który krąży między jednostką wewnętrzną a zewnętrzną w zamkniętej rurze miedzianej. Rozłożymy ten cykl na fazy.
+</p>
+
+<p>
+Dlaczego klient powinien to wiedzieć? Bo zrozumienie cyklu chłodniczego pomaga <strong>diagnozować problemy</strong> (dlaczego klimatyzator się oszrania? dlaczego jednostka zewnętrzna kapie?) i <strong>świadomie dobierać sprzęt</strong> — szczególnie do trybu grzania zimą (pompa ciepła powietrze/powietrze).
+</p>
+
+<h2>Pierwsza zasada — termodynamika w trzech zdaniach</h2>
+<p>
+<strong>Ciepło przepływa zawsze z miejsca cieplejszego do chłodniejszego.</strong> Zatem żeby "schłodzić" pokój, nie trzeba produkować zimna — wystarczy <strong>zabrać ciepło i wyrzucić je na zewnątrz</strong>. Klimatyzacja robi to za pomocą czynnika R32, który zmienia stan skupienia (gaz↔ciecz) w zamkniętym obiegu pod różnymi ciśnieniami.
+</p>
+
+<div class="callout">
+  <strong>Kluczowa zasada</strong>
+  <p>Czynnik chłodniczy przy <strong>parowaniu pobiera ciepło</strong> z otoczenia. Przy <strong>skraplaniu oddaje ciepło</strong>. Cały cykl polega na sterowaniu kiedy i gdzie czynnik paruje, a kiedy się skrapla.</p>
+</div>
+
+<h2>Faza 1 · Parowanie (jednostka wewnętrzna)</h2>
+<p>
+<strong>Ciekły R32 wpada do parownika</strong> (wymiennika w jednostce wewnętrznej) i zaczyna wrzeć w temperaturze około <strong>7°C przy ciśnieniu 5 bar</strong>. Pobiera ciepło z powietrza w pomieszczeniu (które ma 26°C) — <strong>powietrze się schładza</strong>, czynnik się odparowuje.
+</p>
+
+<table class="spec-table">
+  <thead><tr><th>Parametr</th><th>Wartość</th></tr></thead>
+  <tbody>
+    <tr><td>Temperatura R32</td><td>7°C</td></tr>
+    <tr><td>Ciśnienie</td><td>5 bar (niskie)</td></tr>
+    <tr><td>Stan skupienia</td><td>gaz (po parowaniu)</td></tr>
+    <tr><td>Entalpia pobierana z otoczenia</td><td>~250 kJ/kg</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Co odczuwa klient:</strong> chłodne, suche powietrze z jednostki wewnętrznej + skraplanie wilgoci na wymienniku (stąd skropliny w wężyku odpływowym).</p>
+
+<h2>Faza 2 · Sprężanie (jednostka zewnętrzna — sprężarka)</h2>
+<p>
+Gazowy R32 z parownika trafia przez rurę ssawną do <strong>sprężarki DC-Inverter</strong> w jednostce zewnętrznej. Sprężarka <strong>podnosi ciśnienie 4-krotnie</strong> — z 5 bar do 22 bar.
+</p>
+
+<p>
+Zgodnie z <strong>II zasadą termodynamiki</strong>: wzrost ciśnienia = wzrost temperatury. Gaz po sprężeniu osiąga <strong>85°C</strong> (tak, ponad 80 stopni!).
+</p>
+
+<table class="spec-table">
+  <thead><tr><th>Parametr</th><th>Wartość</th></tr></thead>
+  <tbody>
+    <tr><td>Temperatura R32</td><td>85°C</td></tr>
+    <tr><td>Ciśnienie</td><td>22 bar (wysokie)</td></tr>
+    <tr><td>Stan skupienia</td><td>gaz przegrzany</td></tr>
+    <tr><td>Praca sprężarki (input)</td><td>0,8-2,5 kW (zależnie od mocy)</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <strong>Dlaczego DC-Inverter, nie zwykła sprężarka on/off?</strong>
+  <p>Sprężarka DC-Inverter <strong>płynnie reguluje obroty</strong> (300-7200 RPM) zamiast włączać i wyłączać się co 5 minut. Efekt: stabilna temperatura w pokoju, mniejsze zużycie prądu, dłuższa żywotność (mniej cykli rozruchowych = mniej zużycie). Różnica w rachunkach: <strong>15-30% mniej energii rocznie</strong>.</p>
+</div>
+
+<h2>Faza 3 · Skraplanie (jednostka zewnętrzna — skraplacz)</h2>
+<p>
+Gorący gaz (85°C, 22 bar) wpada do <strong>skraplacza</strong> — drugiego wymiennika ciepła w jednostce zewnętrznej. Wentylator skraplacza wymusza przepływ powietrza zewnętrznego (np. 32°C) wokół rurek.
+</p>
+
+<p>
+Gaz ma 85°C, powietrze 32°C — różnica 53°C. <strong>Ciepło ucieka z gazu do powietrza zewnętrznego</strong>. Gaz oddaje ciepło, jego temperatura spada do ok. 55°C i <strong>kondensuje do cieczy</strong> (zachowując wysokie ciśnienie 22 bar).
+</p>
+
+<table class="spec-table">
+  <thead><tr><th>Parametr</th><th>Wartość</th></tr></thead>
+  <tbody>
+    <tr><td>Temperatura R32 (po skropleniu)</td><td>55°C</td></tr>
+    <tr><td>Ciśnienie</td><td>22 bar (wysokie)</td></tr>
+    <tr><td>Stan skupienia</td><td>ciecz</td></tr>
+    <tr><td>Ciepło oddane do otoczenia</td><td>~280 kJ/kg</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Co widzisz na zewnątrz:</strong> jednostka zewnętrzna dmucha ciepłym powietrzem (40-50°C). To dosłownie ciepło zabrane z Twojego pokoju.</p>
+
+<h2>Faza 4 · Rozprężanie (zawór EEV)</h2>
+<p>
+Ciekły R32 pod wysokim ciśnieniem (22 bar) trafia do <strong>elektronicznego zaworu rozprężnego (EEV — Electronic Expansion Valve)</strong>. Zawór <strong>gwałtownie obniża ciśnienie</strong> z 22 bar do 5 bar.
+</p>
+
+<p>
+Spadek ciśnienia = spadek temperatury (znów II zasada termodynamiki, w drugą stronę). <strong>R32 schładza się z 55°C do 7°C</strong> — i jest gotowy do ponownego parowania.
+</p>
+
+<p>Cykl się zamyka. <strong>Czynnik wraca do parownika</strong> w jednostce wewnętrznej. I tak w kółko — kilka razy na minutę, dopóki klimatyzator pracuje.</p>
+
+<h2>Co się dzieje w trybie grzania?</h2>
+<p>
+W <strong>trybie pompy ciepła powietrze/powietrze</strong> (grzanie zimą) cykl <strong>działa odwrotnie</strong>. Specjalny zawór 4-drogowy odwraca kierunek przepływu czynnika:
+</p>
+<ul>
+  <li><strong>Jednostka zewnętrzna pobiera ciepło</strong> z powietrza zewnętrznego (nawet przy -15°C w powietrzu wciąż jest energia cieplna!)</li>
+  <li><strong>Jednostka wewnętrzna oddaje ciepło</strong> do pokoju</li>
+</ul>
+
+<div class="callout">
+  <strong>Dlaczego pompa ciepła jest tak efektywna?</strong>
+  <p>Klimatyzacja w trybie grzania <strong>nie produkuje ciepła — przenosi je z dworu do mieszkania</strong>. Na 1 kW prądu oddaje 3-5 kW ciepła (COP 3-5). Klasyczny grzejnik elektryczny: 1 kW prądu = 1 kW ciepła (COP 1,0). <strong>Pompa ciepła jest 3-5× wydajniejsza od grzejnika</strong> ([European Heat Pump Association](https://www.ehpa.org/)).</p>
+</div>
+
+<h2>Częste problemy diagnostyczne</h2>
+
+<h3>Jednostka zewnętrzna zamarza zimą</h3>
+<p>To <strong>normalne</strong> — wymiennik zewnętrzny w trybie grzania osiąga temperatury poniżej 0°C i pokrywa się szronem. Sterownik automatycznie uruchamia <strong>tryb odszraniania</strong> (defrost) co 30-60 minut: na chwilę cykl się odwraca, ciepły gaz topi szron.</p>
+
+<h3>Klimatyzator kapie ze ściany</h3>
+<p>Skraplina (woda z powietrza) wypływa z parownika przez wężyk odprowadzający. Jeśli kapie z innego miejsca — <strong>zatkany odpływ</strong> lub źle wykonane spadki rury skroplinowej. Naprawa: 200-400 zł.</p>
+
+<h3>Brak chłodzenia, jednostka pracuje</h3>
+<p>Najczęściej: <strong>ucieczka czynnika R32</strong> z układu (mikronieszczelność na połączeniach). Ciśnienie spada poniżej 3 bar, sprężarka pracuje ale nie ma co sprężać. Wymaga <strong>uzupełnienia czynnika i lokalizacji nieszczelności</strong> (detektor + barwnik UV).</p>
+
+<p class="source">
+Źródła: [European Heat Pump Association — COP/SCOP](https://www.ehpa.org/) · [Rozporządzenie F-gaz UE 2024/573 (R32)](https://eur-lex.europa.eu/eli/reg/2024/573/oj) · [ASHRAE Handbook — Refrigeration](https://www.ashrae.org/technical-resources/ashrae-handbook)
+</p>
+
+
+    <div class="cta-band">
+      <h3>Potrzebujesz klimatyzacji we Wrocławiu?</h3>
+      <p>Bezpłatna wycena w 24h. Montaż w 7–14 dni. 5 lat gwarancji.</p>
+      <a href="../../#wycena">Zamów wycenę →</a>
+    </div>
+  </div>
+</article>
+
+<section class="related"><div class="container"><h3>Czytaj dalej</h3><div class="related-grid"><a href="../jak-dziala-klimatyzator/"><span class="related-tag">Anatomia · 8 min</span><h4>Jak zbudowany jest klimatyzator? 6 komponentów wyjaśnionych</h4></a><a href="../jakosc-powietrza-wroclaw/"><span class="related-tag">Lokalne · 6 min</span><h4>Jakość powietrza we Wrocławiu — co naprawdę wdychasz</h4></a></div></div></section>
+
+<footer class="foot">
+  <div class="head-row foot-row">
+    <div>© 2026 NURTEX · Klimatyzacja, wentylacja, rekuperacja Wrocław</div>
+    <div>
+      <a href="../../">Strona główna</a> &nbsp;·&nbsp;
+      <a href="../">Blog</a> &nbsp;·&nbsp;
+      <a href="tel:+48662070695">+48 662 070 695</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog NURTEX — Klimatyzacja, rekuperacja, pompy ciepła Wrocław</title>
+<meta name="description" content="Wiedza techniczna o klimatyzacji, rekuperacji i jakości powietrza we Wrocławiu. Artykuły inżynieryjne pisane przez praktyków NURTEX." />
+<link rel="canonical" href="https://nurtex.pl/blog/" />
+<meta property="og:title" content="Blog NURTEX — wiedza HVAC z Wrocławia" />
+<meta property="og:description" content="Jak działa klimatyzator, cykl chłodniczy R32, jakość powietrza we Wrocławiu — artykuły techniczne." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pl_PL" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg-base: #0a0c10;
+    --bg-card: #11141a;
+    --fg: #f4f5f7;
+    --fg-dim: #8b929c;
+    --accent: #ff3b30;
+    --border: #1f242c;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg-base); color: var(--fg);
+    font-family: var(--font-body); line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+  a:hover { opacity: 0.75; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+  header.blog-head {
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+    background: var(--bg-base);
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+  .head-row { display: flex; justify-content: space-between; align-items: center; }
+  .logo-link { font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: 0.15em; color: var(--fg); }
+  .logo-link em { color: var(--accent); font-style: normal; }
+  .head-nav { display: flex; gap: 28px; }
+  .head-nav a { color: var(--fg-dim); font-size: 13px; }
+  .head-nav a:hover { color: var(--fg); }
+  .head-nav a.back-cta { color: var(--accent); border: 1px solid var(--accent); padding: 8px 16px; border-radius: 100px; font-weight: 600; }
+
+  .blog-hero {
+    padding: 100px 0 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 18px; }
+  .blog-hero h1 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 60px); line-height: 1.05; letter-spacing: -0.02em; max-width: 800px; }
+  .blog-hero h1 em { color: var(--accent); font-style: normal; }
+  .blog-hero p { max-width: 620px; color: var(--fg-dim); font-size: 17px; margin-top: 20px; }
+
+  .posts { padding: 80px 0 120px; }
+  .post-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; margin-top: 48px; }
+  .post-card {
+    display: block; padding: 36px; border: 1px solid var(--border);
+    border-radius: 14px; background: var(--bg-card);
+    transition: all .3s ease; color: var(--fg);
+    position: relative; overflow: hidden;
+  }
+  .post-card:hover { border-color: var(--accent); transform: translateY(-4px); opacity: 1; }
+  .post-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase; }
+  .post-card h2 { font-family: var(--font-display); font-size: 24px; line-height: 1.2; margin: 16px 0 14px; letter-spacing: -0.01em; }
+  .post-card p { color: var(--fg-dim); font-size: 14px; line-height: 1.6; }
+  .post-meta { display: flex; gap: 16px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border); font-family: var(--font-mono); font-size: 11px; color: var(--fg-dim); letter-spacing: 0.08em; text-transform: uppercase; }
+  .post-meta strong { color: var(--accent); font-weight: 500; }
+
+  footer.foot { border-top: 1px solid var(--border); padding: 60px 0 40px; }
+  .foot-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 32px; font-size: 13px; color: var(--fg-dim); }
+  .foot-row a { color: var(--fg-dim); }
+  .foot-row a:hover { color: var(--fg); }
+
+  @media (max-width: 640px) {
+    .head-nav { gap: 14px; }
+    .head-nav a:not(.back-cta) { display: none; }
+    .blog-hero { padding: 60px 0 40px; }
+    .posts { padding: 40px 0 80px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="blog-head">
+  <div class="container head-row">
+    <a href="../" class="logo-link">NURT<em>EX</em></a>
+    <nav class="head-nav">
+      <a href="../#uslugi">Usługi</a>
+      <a href="../#cennik">Cennik</a>
+      <a href="../#obszar">Obszar</a>
+      <a href="../#wycena" class="back-cta">Wycena 24h</a>
+    </nav>
+  </div>
+</header>
+
+<section class="blog-hero">
+  <div class="container">
+    <div class="eyebrow">Blog techniczny · NURTEX</div>
+    <h1>Wiedza, którą używamy <em>codziennie</em>.</h1>
+    <p>
+      Artykuły inżynieryjne o klimatyzacji, rekuperacji i jakości powietrza we Wrocławiu.
+      Bez marketingu — same fakty, dane, przykłady z naszych instalacji. Pisane przez monterów i projektantów NURTEX, weryfikowane przez F-gaz.
+    </p>
+  </div>
+</section>
+
+<section class="posts">
+  <div class="container">
+    <div class="eyebrow">Artykuły · 03/03</div>
+
+    <div class="post-grid">
+      <a href="./jak-dziala-klimatyzator/" class="post-card">
+        <span class="post-tag">Anatomia · 8 min czytania</span>
+        <h2>Jak zbudowany jest klimatyzator? 6 komponentów wyjaśnionych krok po kroku</h2>
+        <p>Rozkładamy split na czynniki pierwsze — od wymiennika z miedzi po PCB inwertera. Specyfikacje, materiały, klasy, normy.</p>
+        <div class="post-meta">
+          <span><strong>Tech</strong> · Split AC</span>
+          <span>2026</span>
+        </div>
+      </a>
+
+      <a href="./cykl-chlodniczy-r32/" class="post-card">
+        <span class="post-tag">Termodynamika · 10 min czytania</span>
+        <h2>Cykl chłodniczy R32 — jak działa klimatyzacja w 4 fazach</h2>
+        <p>Parowanie, sprężanie, skraplanie, rozprężanie. Co dzieje się w rurze miedzianej między jednostką wewnętrzną a zewnętrzną.</p>
+        <div class="post-meta">
+          <span><strong>Tech</strong> · R32 · DC-Inverter</span>
+          <span>2026</span>
+        </div>
+      </a>
+
+      <a href="./jakosc-powietrza-wroclaw/" class="post-card">
+        <span class="post-tag">Lokalne · 6 min czytania</span>
+        <h2>Jakość powietrza we Wrocławiu — co naprawdę wdychasz i jak to zmienić</h2>
+        <p>PM2.5, PM10, NO₂ — czym oddychamy w 2026 we Wrocławiu. Dane GIOŚ, normy WHO, rozwiązania techniczne.</p>
+        <div class="post-meta">
+          <span><strong>Local</strong> · Wrocław · IAQ</span>
+          <span>2026</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container foot-row">
+    <div>© 2026 NURTEX · Klimatyzacja, wentylacja, rekuperacja Wrocław · NIP 894-302-44-66</div>
+    <div>
+      <a href="../">Strona główna</a> &nbsp;·&nbsp;
+      <a href="tel:+48662070695">+48 662 070 695</a> &nbsp;·&nbsp;
+      <a href="mailto:kontakt@nurtex.pl">kontakt@nurtex.pl</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

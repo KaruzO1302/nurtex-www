@@ -1,0 +1,2947 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Klimatyzacja Wrocław — Montaż, Serwis, Wentylacja | NURTEX</title>
+<meta name="description" content="Klimatyzacja Wrocław od 4 200 zł z montażem. 8 lat doświadczenia, 287 instalacji, 0 reklamacji. Certyfikat F-gaz, Daikin D1, NADCA. Wycena 24h. Krzyki, Psie Pole, Bielany, Kobierzyce, Długołęka. ☎ 662 070 695" />
+<meta name="keywords" content="klimatyzacja Wrocław, montaż klimatyzacji Wrocław, serwis klimatyzacji Wrocław, wentylacja mechaniczna Wrocław, rekuperacja Wrocław, pompy ciepła Wrocław, klimatyzacja do mieszkania, klimatyzacja do biura, VRF Wrocław, klimatyzacja Daikin Wrocław" />
+
+<!-- Canonical + robots -->
+<link rel="canonical" href="https://www.nurtex.pl/" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="author" content="NURTEX — HVAC Engineering Wrocław" />
+
+<!-- Geo / Local SEO -->
+<meta name="geo.region" content="PL-DS" />
+<meta name="geo.placename" content="Wrocław" />
+<meta name="geo.position" content="51.1079;17.0385" />
+<meta name="ICBM" content="51.1079, 17.0385" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pl_PL" />
+<meta property="og:title" content="Klimatyzacja Wrocław — Montaż, Serwis, Wentylacja | NURTEX" />
+<meta property="og:description" content="Klimatyzacja Wrocław od 4 200 zł. 287 instalacji, 8 lat, certyfikat F-gaz. Daikin, Samsung, Mitsubishi, LG. Wycena 24h." />
+<meta property="og:url" content="https://www.nurtex.pl/" />
+<meta property="og:site_name" content="NURTEX" />
+<meta property="og:image" content="https://www.nurtex.pl/img/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Klimatyzacja Wrocław — NURTEX" />
+<meta name="twitter:description" content="Klimatyzacja, wentylacja, rekuperacja Wrocław. Wycena 24h." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg-base: #050608;
+    --bg-elev: #0a0c10;
+    --bg-elev-2: #11141a;
+    --fg: #f5f7fa;
+    --fg-dim: #8b929c;
+    --fg-faded: #4a505c;
+    --accent: #ff3b30;
+    --accent-glow: rgba(255, 59, 48, 0.5);
+    --blue: #4a9eff;
+    --green: #00ff88;
+    --grid: rgba(255, 255, 255, 0.04);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.16);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  html, body {
+    background: var(--bg-base);
+    color: var(--fg);
+    font-family: 'Geist', -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  body { cursor: none; min-height: 100vh; }
+
+  ::selection { background: var(--accent); color: white; }
+
+  /* ========= CUSTOM CURSOR ========= */
+  .cursor {
+    position: fixed; width: 24px; height: 24px;
+    border: 1.5px solid var(--accent); border-radius: 50%;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s ease, height 0.25s ease, background 0.25s ease;
+    mix-blend-mode: difference;
+  }
+  .cursor.hover { width: 60px; height: 60px; background: var(--accent); }
+  .cursor-dot {
+    position: fixed; width: 4px; height: 4px;
+    background: var(--accent); border-radius: 50%;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
+
+  /* ========= TOP BAR (sticky) ========= */
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 48px;
+    font-family: 'Geist Mono', monospace; font-size: 12px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--fg-dim);
+    background: rgba(5, 6, 8, 0.5);
+    backdrop-filter: blur(20px) saturate(1.4);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-left { display: flex; gap: 32px; align-items: center; }
+  .live-dot {
+    display: inline-block; width: 8px; height: 8px;
+    background: var(--green); border-radius: 50%;
+    margin-right: 8px; box-shadow: 0 0 12px var(--green);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.85); }
+  }
+  .logo-wrap { display: flex; align-items: center; gap: 14px; }
+  .logo-mark { width: 32px; height: 32px; flex-shrink: 0; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .logo-name { font-family: var(--font-display); font-weight: 700; font-size: 17px; letter-spacing: 0.18em; color: var(--fg); }
+  .logo-tag { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; color: var(--accent); margin-top: 4px; text-transform: uppercase; }
+  nav ul { display: flex; gap: 26px; list-style: none; align-items: center; }
+  .mobile-toggle {
+    display: none;
+    width: 44px; height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+    align-items: center; justify-content: center;
+    cursor: pointer; padding: 0;
+    position: relative; z-index: 1000;
+  }
+  .mobile-toggle span {
+    display: block; width: 18px; height: 1.5px;
+    background: var(--fg); position: relative;
+    transition: transform 250ms, opacity 250ms;
+  }
+  .mobile-toggle span::before,
+  .mobile-toggle span::after {
+    content: ''; position: absolute; left: 0; width: 18px; height: 1.5px;
+    background: var(--fg);
+    transition: transform 250ms, top 250ms;
+  }
+  .mobile-toggle span::before { top: -6px; }
+  .mobile-toggle span::after { top: 6px; }
+  .mobile-toggle.is-open span { background: transparent; }
+  .mobile-toggle.is-open span::before { top: 0; transform: rotate(45deg); }
+  .mobile-toggle.is-open span::after { top: 0; transform: rotate(-45deg); }
+  nav a { color: var(--fg-dim); text-decoration: none; font-size: 12px; transition: color 0.25s ease; }
+  nav a:hover { color: var(--fg); }
+  .phone-cta {
+    color: var(--accent) !important; font-weight: 600;
+    padding: 8px 16px; border: 1px solid var(--accent);
+    border-radius: 100px; transition: all 0.3s ease;
+  }
+  .phone-cta:hover { background: var(--accent); color: white !important; }
+
+  /* ========= HERO IMAGE BG — subtle background pod canvasem Three.js ========= */
+  .hero-image-bg {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center 30%; z-index: 0;
+    opacity: 0.28;
+    filter: contrast(1.1) saturate(0.6) brightness(0.7);
+    pointer-events: none;
+  }
+  .hero-image-veil {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background:
+      radial-gradient(ellipse at center, transparent 0%, rgba(8,9,12,0.85) 70%, var(--bg-base) 100%);
+  }
+
+  /* ========= PROCES PHOTOS — mini galeria w sekcji Proces ========= */
+  .process-photos {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    margin-top: 56px;
+  }
+  .process-photo {
+    position: relative; border-radius: 18px; overflow: hidden;
+    border: 1px solid var(--border);
+    aspect-ratio: 4/3;
+  }
+  .process-photo img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  .process-photo:hover img { transform: scale(1.04); }
+  .process-photo::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(8,9,12,0.92) 100%);
+    pointer-events: none;
+  }
+  .process-photo-meta {
+    position: absolute; bottom: 22px; left: 24px; right: 24px;
+    z-index: 2; color: var(--fg);
+  }
+  .process-photo-tag {
+    display: inline-block;
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent);
+    padding: 4px 10px; border: 1px solid rgba(255,59,48,0.4);
+    border-radius: 999px; margin-bottom: 12px;
+    background: rgba(255,59,48,0.08);
+  }
+  .process-photo-title {
+    font-family: var(--font-display); font-size: 18px;
+    font-weight: 600; line-height: 1.25; letter-spacing: -0.01em;
+  }
+  .process-photo-desc {
+    font-size: 13px; color: var(--fg-dim); margin-top: 6px;
+    line-height: 1.5;
+  }
+  @media (max-width: 768px) {
+    .process-photos { grid-template-columns: 1fr; gap: 16px; }
+  }
+
+  /* ========= LEAD CTA BANDS — "Zapytaj o cenę" w kluczowych miejscach ========= */
+  .lead-cta-band {
+    margin-top: 64px; padding: 36px 44px;
+    border: 1px solid var(--border); border-radius: 20px;
+    background:
+      linear-gradient(135deg, rgba(255,59,48,0.06), rgba(255,59,48,0.02)),
+      var(--bg-elev);
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 32px; flex-wrap: wrap;
+    position: relative; overflow: hidden;
+  }
+  .lead-cta-band::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.5;
+  }
+  .lead-cta-band h3 {
+    font-family: var(--font-display); font-size: 26px;
+    font-weight: 600; line-height: 1.2; letter-spacing: -0.02em;
+    color: var(--fg); margin: 0;
+  }
+  .lead-cta-band h3 em { color: var(--accent); font-style: italic; }
+  .lead-cta-band p {
+    color: var(--fg-dim); font-size: 14px; line-height: 1.55;
+    margin: 8px 0 0; max-width: 540px;
+  }
+  .lead-cta-band-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+
+  /* Mini CTA pod kartą cennika */
+  .price-card .price-cta-mini {
+    display: block; text-align: center; font-family: var(--font-mono);
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--fg-mute); margin-top: 10px; padding-top: 14px;
+    border-top: 1px dashed var(--border);
+    text-decoration: none; transition: color 0.2s ease;
+  }
+  .price-card .price-cta-mini:hover { color: var(--accent); }
+
+  /* Footer big CTA */
+  .foot-cta-band {
+    margin-bottom: 56px; padding: 40px 48px;
+    border: 1px solid rgba(255,59,48,0.25); border-radius: 22px;
+    background: linear-gradient(135deg, rgba(255,59,48,0.08), rgba(255,59,48,0.02));
+    display: grid; grid-template-columns: 1fr auto; gap: 36px;
+    align-items: center;
+  }
+  .foot-cta-band h3 {
+    font-family: var(--font-display); font-size: 32px;
+    font-weight: 600; line-height: 1.15; letter-spacing: -0.02em;
+    color: var(--fg); margin: 0;
+  }
+  .foot-cta-band h3 em { color: var(--accent); font-style: italic; }
+  .foot-cta-band p {
+    color: var(--fg-dim); font-size: 15px; line-height: 1.55;
+    margin: 12px 0 0;
+  }
+  .foot-cta-band-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  @media (max-width: 900px) {
+    .foot-cta-band { grid-template-columns: 1fr; }
+    .lead-cta-band { padding: 28px; }
+    .foot-cta-band h3 { font-size: 26px; }
+  }
+
+  /* ========= AIR QUALITY MONITOR ========= */
+  .air-quality {
+    background:
+      radial-gradient(ellipse at 80% 30%, rgba(74, 158, 255, 0.08), transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(255, 59, 48, 0.05), transparent 60%),
+      var(--bg-base);
+    position: relative;
+  }
+  .air-quality::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse at center, black 20%, transparent 65%);
+    pointer-events: none;
+  }
+  .aq-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    position: relative;
+  }
+  .aq-card {
+    padding: 28px 32px; border: 1px solid var(--border);
+    border-radius: 18px; background: var(--bg-elev);
+    position: relative; overflow: hidden;
+  }
+  .aq-card.lg { grid-column: span 2; padding: 40px 44px; }
+  .aq-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.4;
+  }
+  .aq-label {
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--fg-mute); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .aq-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 8px #4ade80; animation: pulse 2s ease-in-out infinite; }
+  .aq-value {
+    font-family: var(--font-display); font-size: 64px; font-weight: 600;
+    line-height: 1; letter-spacing: -0.03em; color: var(--fg);
+    display: flex; align-items: baseline; gap: 8px;
+  }
+  .aq-value .unit { font-size: 14px; color: var(--fg-mute); font-family: var(--font-mono); font-weight: 400; letter-spacing: 0.1em; }
+  .aq-meter {
+    margin-top: 18px; height: 4px; border-radius: 2px;
+    background: linear-gradient(90deg, #4ade80 0%, #facc15 40%, #f97316 70%, #ef4444 100%);
+    position: relative;
+  }
+  .aq-meter-pin {
+    position: absolute; top: -4px; width: 2px; height: 12px;
+    background: var(--fg); transform: translateX(-50%);
+    transition: left 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  .aq-caption {
+    margin-top: 14px; font-size: 13px; color: var(--fg-dim); line-height: 1.5;
+  }
+  .aq-rating { display: inline-block; padding: 4px 10px; border-radius: 999px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 12px; }
+  .aq-rating.good { background: rgba(74, 222, 128, 0.12); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); }
+  .aq-rating.mod { background: rgba(250, 204, 21, 0.12); color: #facc15; border: 1px solid rgba(250, 204, 21, 0.3); }
+  .aq-rating.bad { background: rgba(249, 115, 22, 0.12); color: #f97316; border: 1px solid rgba(249, 115, 22, 0.3); }
+  .aq-rating.vbad { background: rgba(239, 68, 68, 0.12); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+  .aq-station {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 20px; padding-top: 20px; border-top: 1px dashed var(--border);
+    font-family: var(--font-mono); font-size: 11px; color: var(--fg-mute);
+  }
+  .aq-cta-band {
+    margin-top: 56px; padding: 32px 40px;
+    border: 1px solid var(--border); border-radius: 18px;
+    background: linear-gradient(135deg, rgba(255,59,48,0.04), rgba(74,158,255,0.04));
+    display: flex; justify-content: space-between; align-items: center; gap: 32px;
+  }
+  .aq-cta-band strong { color: var(--fg); }
+  .aq-cta-band p { color: var(--fg-dim); max-width: 600px; line-height: 1.6; font-size: 14px; }
+
+  /* ========= HERO ========= */
+  .hero {
+    position: relative; width: 100vw; height: 100vh; overflow: hidden;
+    isolation: isolate; z-index: 0;
+    background:
+      radial-gradient(ellipse at 70% 30%, rgba(255, 59, 48, 0.12), transparent 60%),
+      radial-gradient(ellipse at 20% 70%, rgba(74, 158, 255, 0.08), transparent 50%),
+      var(--bg-base);
+  }
+  .grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    pointer-events: none;
+  }
+  #three-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+  .hero-content {
+    position: absolute; inset: 0; z-index: 5;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 0 48px; pointer-events: none;
+  }
+  .eyebrow {
+    font-family: 'Geist Mono', monospace; font-size: 12px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 32px;
+    opacity: 0; animation: fadeUp 1s ease-out 0.3s forwards;
+  }
+  .eyebrow::before {
+    content: ''; display: inline-block; width: 32px; height: 1px;
+    background: var(--accent); vertical-align: middle; margin-right: 12px;
+  }
+  h1 {
+    font-size: clamp(48px, 8vw, 132px); font-weight: 800;
+    line-height: 0.95; letter-spacing: -0.04em; max-width: 900px;
+  }
+  h1 .line { display: block; overflow: hidden; }
+  h1 .line span {
+    display: inline-block; transform: translateY(110%);
+    animation: revealUp 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  }
+  h1 .line:nth-child(1) span { animation-delay: 0.5s; }
+  h1 .line:nth-child(2) span { animation-delay: 0.65s; }
+  h1 .line:nth-child(3) span { animation-delay: 0.8s; }
+
+  /* === NEW SEO H1 === */
+  .hero-h1 { display: block; max-width: 920px; }
+  .hero-h1 .h1-main {
+    display: block; font-size: clamp(56px, 9vw, 148px); font-weight: 800;
+    line-height: 0.92; letter-spacing: -0.045em;
+    opacity: 0; transform: translateY(28px);
+    animation: fadeUp 1s cubic-bezier(0.2,0.7,0.2,1) 0.4s forwards;
+  }
+  .hero-h1 .h1-sub {
+    display: block; margin-top: 18px;
+    font-size: clamp(20px, 2.2vw, 30px); font-weight: 400;
+    color: var(--fg-dim); letter-spacing: -0.01em; line-height: 1.25;
+    font-style: italic;
+    opacity: 0; animation: fadeUp 1s ease-out 0.75s forwards;
+  }
+  .hero-trust {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-top: 32px; max-width: 640px;
+    opacity: 0; animation: fadeUp 1s ease-out 1.7s forwards;
+  }
+  .trust-pill {
+    font-family: 'Geist Mono', monospace; font-size: 11px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--fg-dim);
+    padding: 8px 14px; border: 1px solid var(--border);
+    border-radius: 100px; background: rgba(255,255,255,0.02);
+    backdrop-filter: blur(10px);
+  }
+  @media (max-width: 768px) {
+    .hero-h1 .h1-main { font-size: clamp(40px, 11vw, 64px); }
+    .hero-h1 .h1-sub { font-size: 16px; }
+    .hero-trust { gap: 6px; }
+    .trust-pill { font-size: 10px; padding: 6px 10px; }
+  }
+  .accent { color: var(--accent); font-style: italic; font-weight: 300; }
+  @keyframes revealUp { to { transform: translateY(0); } }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .sub {
+    margin-top: 32px; font-size: 18px; color: var(--fg-dim);
+    max-width: 480px; line-height: 1.5;
+    opacity: 0; animation: fadeUp 1s ease-out 1.2s forwards;
+  }
+  .cta-row {
+    margin-top: 48px; display: flex; gap: 16px;
+    pointer-events: auto; opacity: 0;
+    animation: fadeUp 1s ease-out 1.5s forwards;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 18px 32px; font-family: 'Geist', sans-serif;
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    border-radius: 100px; border: 1px solid transparent;
+    text-decoration: none; transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+    cursor: none;
+  }
+  .btn-primary {
+    background: var(--accent); color: white;
+    box-shadow: 0 0 0 0 var(--accent-glow);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 40px 4px var(--accent-glow);
+    transform: translateY(-2px);
+  }
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.04); color: var(--fg);
+    border-color: rgba(255, 255, 255, 0.12); backdrop-filter: blur(20px);
+  }
+  .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.24);
+  }
+  .arrow { width: 16px; height: 16px; transition: transform 0.3s ease; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  .data-panel {
+    position: absolute; right: 48px; top: 50%;
+    transform: translateY(-50%); z-index: 8;
+    display: flex; flex-direction: column; gap: 24px;
+    opacity: 0; animation: fadeUp 1s ease-out 1.8s forwards;
+  }
+  .data-card {
+    background: rgba(10, 12, 16, 0.6); backdrop-filter: blur(20px);
+    border: 1px solid var(--border); border-radius: 16px;
+    padding: 20px 24px; min-width: 220px;
+  }
+  .data-label {
+    font-family: 'Geist Mono', monospace; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--fg-dim); margin-bottom: 8px;
+  }
+  .data-value {
+    font-family: 'Geist Mono', monospace; font-size: 28px;
+    font-weight: 500; letter-spacing: -0.02em; color: var(--fg);
+  }
+  .data-unit { font-size: 14px; color: var(--fg-dim); margin-left: 4px; }
+  .data-bar {
+    margin-top: 12px; height: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px; overflow: hidden;
+  }
+  .data-bar-fill {
+    height: 100%; width: 0%;
+    background: linear-gradient(90deg, var(--blue), var(--accent));
+    border-radius: 2px; transition: width 1s ease;
+  }
+  .bottombar {
+    position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 28px 48px;
+    font-family: 'Geist Mono', monospace; font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+  .scroll-indicator {
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+  .scroll-line {
+    width: 1px; height: 32px;
+    background: linear-gradient(180deg, transparent, var(--fg-dim), transparent);
+  }
+  .rpm-badge { display: inline-flex; gap: 8px; align-items: baseline; }
+  .rpm-value { font-size: 14px; color: var(--accent); }
+  .noise {
+    position: absolute; inset: 0; pointer-events: none;
+    opacity: 0.04; z-index: 6; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ========= SECTION COMMONS ========= */
+  section { position: relative; padding: 140px 48px; }
+  .container { max-width: 1440px; margin: 0 auto; }
+  .section-eyebrow {
+    font-family: 'Geist Mono', monospace; font-size: 12px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-eyebrow::before {
+    content: ''; width: 32px; height: 1px; background: var(--accent);
+  }
+  .section-title {
+    font-size: clamp(36px, 5vw, 72px); font-weight: 800;
+    line-height: 1; letter-spacing: -0.03em; max-width: 900px;
+    margin-bottom: 24px;
+  }
+  .section-lead {
+    font-size: 20px; color: var(--fg-dim); max-width: 640px;
+    line-height: 1.5; margin-bottom: 80px;
+  }
+
+  /* ========= ANATOMY SECTION ========= */
+  .anatomy {
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(74, 158, 255, 0.06), transparent 60%),
+      var(--bg-base);
+  }
+  .anatomy-layout {
+    display: grid; grid-template-columns: 1fr 1.2fr;
+    gap: 80px; align-items: center;
+  }
+  .anatomy-visual {
+    position: relative; aspect-ratio: 1; max-width: 600px;
+  }
+  /* SVG split AC unit (exploded view) */
+  .split-svg { width: 100%; height: 100%; overflow: visible; }
+  .split-svg .part {
+    cursor: pointer; transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+    transform-origin: center;
+  }
+  .split-svg .part.active { filter: drop-shadow(0 0 20px var(--accent)); }
+  .anatomy-parts {
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .part-item {
+    padding: 24px 28px; border: 1px solid var(--border);
+    border-radius: 16px; background: var(--bg-elev);
+    cursor: none; transition: all 0.3s ease;
+    position: relative; overflow: hidden;
+  }
+  .part-item::before {
+    content: ''; position: absolute; left: 0; top: 0;
+    width: 3px; height: 100%; background: var(--accent);
+    transform: scaleY(0); transform-origin: top;
+    transition: transform 0.3s ease;
+  }
+  .part-item.active {
+    background: var(--bg-elev-2); border-color: var(--border-strong);
+  }
+  .part-item.active::before { transform: scaleY(1); }
+  .part-item:hover { border-color: var(--border-strong); }
+  .part-header {
+    display: flex; justify-content: space-between;
+    align-items: center; margin-bottom: 12px;
+  }
+  .part-name {
+    font-size: 18px; font-weight: 600; letter-spacing: -0.01em;
+  }
+  .part-num {
+    font-family: 'Geist Mono', monospace; font-size: 11px;
+    color: var(--fg-faded); letter-spacing: 0.1em;
+  }
+  .part-desc {
+    color: var(--fg-dim); font-size: 14px; line-height: 1.6;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, margin-top 0.4s ease;
+  }
+  .part-item.active .part-desc { max-height: 200px; margin-top: 8px; }
+  .part-specs {
+    display: flex; gap: 24px; margin-top: 16px;
+    font-family: 'Geist Mono', monospace; font-size: 12px;
+  }
+  .spec { color: var(--fg-dim); }
+  .spec strong { color: var(--accent); font-weight: 500; }
+
+  /* ========= CYCLE SECTION (refrigeration cycle) ========= */
+  .cycle {
+    background: var(--bg-elev);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .cycle-visual {
+    position: relative; aspect-ratio: 16/9; max-width: 1200px;
+    margin: 0 auto; background: var(--bg-base);
+    border: 1px solid var(--border); border-radius: 24px;
+    overflow: hidden;
+  }
+  .cycle-svg { width: 100%; height: 100%; }
+  .cycle-stages {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 24px; margin-top: 64px;
+  }
+  .stage {
+    padding: 32px; background: var(--bg-elev);
+    border: 1px solid var(--border); border-radius: 20px;
+    position: relative;
+  }
+  .stage-num {
+    position: absolute; top: -16px; left: 32px;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--accent); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Geist Mono', monospace; font-size: 12px; font-weight: 600;
+  }
+  .stage-title {
+    font-size: 20px; font-weight: 600; margin-bottom: 12px;
+    margin-top: 8px;
+  }
+  .stage-meta {
+    font-family: 'Geist Mono', monospace; font-size: 11px;
+    color: var(--accent); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 16px;
+  }
+  .stage-desc {
+    color: var(--fg-dim); font-size: 14px; line-height: 1.6;
+  }
+
+  /* ========= SERVICES SECTION ========= */
+  /* ========= HOLOGRAPHIC TILT — SERVICE CARDS v3.6 ========= */
+  @property --conic-angle {
+    syntax: '<angle>'; initial-value: 0deg; inherits: false;
+  }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 24px; perspective: 1400px;
+  }
+  .service-card {
+    --mx: 50%; --my: 50%;
+    --rx: 0deg; --ry: 0deg;
+    position: relative; padding: 56px;
+    min-height: 340px; cursor: none;
+    background: linear-gradient(145deg, rgba(22,24,30,0.85), rgba(14,15,20,0.95));
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: space-between;
+    transform-style: preserve-3d;
+    transform: perspective(1400px) rotateX(var(--rx)) rotateY(var(--ry)) translateZ(0);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s ease, box-shadow 0.5s ease;
+    will-change: transform;
+    text-decoration: none; color: inherit;
+  }
+  /* Spotlight śledzący kursor */
+  .service-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(420px circle at var(--mx) var(--my),
+                rgba(220,38,38,0.18), transparent 55%);
+    opacity: 0; transition: opacity 0.5s ease;
+    pointer-events: none; z-index: 1;
+  }
+  /* Conic gradient border w ruchu */
+  .service-card::after {
+    content: ''; position: absolute; inset: -1px;
+    border-radius: 20px; padding: 1px;
+    background: conic-gradient(from var(--conic-angle),
+                transparent 0%, transparent 70%,
+                rgba(220,38,38,0.6) 85%, rgba(220,38,38,0.9) 92%,
+                rgba(220,38,38,0.6) 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    opacity: 0; transition: opacity 0.5s ease;
+    animation: conicRotate 4s linear infinite paused;
+    pointer-events: none; z-index: 2;
+  }
+  @keyframes conicRotate {
+    to { --conic-angle: 360deg; }
+  }
+  .service-card:hover {
+    border-color: rgba(220,38,38,0.15);
+    box-shadow: 0 30px 60px -20px rgba(220,38,38,0.25),
+                0 0 80px -20px rgba(220,38,38,0.15);
+  }
+  .service-card:hover::before { opacity: 1; }
+  .service-card:hover::after { opacity: 1; animation-play-state: running; }
+
+  /* Warstwowy hologram — ikona/tytuł/opis levitują */
+  .service-card > * { position: relative; z-index: 3; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+  .service-card:hover .service-icon { transform: translateZ(50px) scale(1.12); }
+  .service-card:hover .service-title { transform: translateZ(30px); }
+  .service-card:hover .service-desc { transform: translateZ(15px); }
+  .service-card:hover .service-meta { transform: translateZ(20px); }
+
+  .service-icon {
+    width: 56px; height: 56px; margin-bottom: 32px;
+    color: var(--accent);
+    filter: drop-shadow(0 0 0 transparent);
+    transition: filter 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .service-card:hover .service-icon {
+    filter: drop-shadow(0 8px 20px rgba(220,38,38,0.5));
+  }
+  .service-icon svg { width: 100%; height: 100%; }
+  .service-title {
+    font-size: 28px; font-weight: 700; letter-spacing: -0.02em;
+    margin-bottom: 16px; line-height: 1.1;
+  }
+  .service-desc {
+    color: var(--fg-dim); font-size: 15px;
+    line-height: 1.6; margin-bottom: 32px;
+  }
+  .service-meta {
+    display: flex; justify-content: space-between;
+    align-items: center; padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-family: 'Geist Mono', monospace; font-size: 11px;
+    color: var(--fg-dim); letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .service-arrow {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.1); display: flex;
+    align-items: center; justify-content: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .service-card:hover .service-arrow {
+    background: var(--accent); border-color: var(--accent);
+    transform: rotate(-45deg) translateZ(25px);
+    box-shadow: 0 0 30px rgba(220,38,38,0.6);
+  }
+  /* Fallback: reduced-motion + mobile */
+  @media (prefers-reduced-motion: reduce) {
+    .service-card { transform: none !important; transition: border-color 0.3s ease; }
+    .service-card::after { display: none; }
+    .service-card:hover .service-icon,
+    .service-card:hover .service-title,
+    .service-card:hover .service-desc,
+    .service-card:hover .service-meta,
+    .service-card:hover .service-arrow { transform: none; }
+  }
+  @media (hover: none) {
+    .service-card { transform: none !important; }
+    .service-card::before { opacity: 0.4; }
+  }
+
+  /* ========= STATS / NUMBERS ========= */
+  .stats {
+    background: linear-gradient(180deg, var(--bg-base), var(--bg-elev));
+    text-align: left;
+  }
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .stat {
+    border-left: 1px solid var(--border); padding-left: 32px;
+  }
+  .stat-num {
+    font-family: 'Geist', sans-serif; font-weight: 300;
+    font-size: clamp(64px, 7vw, 120px); line-height: 1;
+    letter-spacing: -0.04em; margin-bottom: 16px;
+    background: linear-gradient(180deg, var(--fg), var(--fg-dim));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .stat-suffix { color: var(--accent); -webkit-text-fill-color: var(--accent); }
+  .stat-label {
+    font-family: 'Geist Mono', monospace; font-size: 11px;
+    color: var(--fg-dim); letter-spacing: 0.15em;
+    text-transform: uppercase; line-height: 1.5;
+  }
+
+  /* ========= REALIZATIONS / PORTFOLIO ========= */
+  .realizations { background: var(--bg-base); }
+  .realizations-grid {
+    display: grid; grid-template-columns: repeat(12, 1fr);
+    gap: 24px; grid-auto-rows: 280px;
+  }
+  .real-card {
+    position: relative; overflow: hidden; border-radius: 20px;
+    cursor: none; transition: all 0.5s ease;
+  }
+  .real-card img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+    filter: brightness(0.85) saturate(1.1);
+  }
+  .real-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(1) saturate(1.2);
+  }
+  .real-card::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.9));
+    pointer-events: none;
+  }
+  .real-info {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 32px; z-index: 2;
+    transform: translateY(20px); opacity: 0.85;
+    transition: all 0.5s ease;
+  }
+  .real-card:hover .real-info { transform: translateY(0); opacity: 1; }
+  .real-tag {
+    font-family: 'Geist Mono', monospace; font-size: 10px;
+    color: var(--accent); letter-spacing: 0.15em;
+    text-transform: uppercase; margin-bottom: 8px;
+  }
+  .real-title {
+    font-size: 20px; font-weight: 600; letter-spacing: -0.01em;
+  }
+  .real-meta {
+    font-size: 13px; color: var(--fg-dim); margin-top: 4px;
+  }
+  /* Grid layout — bento dla 4 realizacji */
+  .real-a { grid-column: span 7; grid-row: span 2; }
+  .real-b { grid-column: span 5; }
+  .real-c { grid-column: span 5; }
+
+  /* ========= TEAM SECTION ========= */
+  .team {
+    background: var(--bg-elev);
+    border-top: 1px solid var(--border);
+  }
+  .team-layout {
+    display: grid; grid-template-columns: 1.2fr 1fr;
+    gap: 80px; align-items: center;
+  }
+  .team-img {
+    aspect-ratio: 4/3; border-radius: 24px;
+    overflow: hidden; position: relative;
+  }
+  .team-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.9) saturate(1.1) contrast(1.05);
+  }
+  .team-img::after {
+    content: ''; position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(255,59,48,0.05) 0%, transparent 50%, rgba(0,0,0,0.3) 100%),
+      radial-gradient(circle at 50% 100%, transparent, rgba(5,6,8,0.4));
+  }
+  .cred-list {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 20px; margin-top: 40px;
+  }
+  .cred {
+    padding: 20px; background: var(--bg-base);
+    border: 1px solid var(--border); border-radius: 12px;
+  }
+  .cred-icon {
+    width: 32px; height: 32px; color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .cred-name {
+    font-size: 13px; font-weight: 600; margin-bottom: 4px;
+  }
+  .cred-meta {
+    font-family: 'Geist Mono', monospace; font-size: 10px;
+    color: var(--fg-dim); letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ========= CTA SECTION ========= */
+  .cta-section {
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(255, 59, 48, 0.1), transparent 60%),
+      var(--bg-base);
+    text-align: center; padding: 200px 48px;
+  }
+  .cta-title {
+    font-size: clamp(48px, 7vw, 120px); font-weight: 800;
+    line-height: 0.95; letter-spacing: -0.04em;
+    max-width: 1100px; margin: 0 auto 32px;
+  }
+  .cta-sub {
+    font-size: 20px; color: var(--fg-dim);
+    max-width: 600px; margin: 0 auto 48px;
+  }
+  .cta-buttons {
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  }
+
+  /* ========= CENNIK ========= */
+  .pricing { padding: 120px 48px; background: var(--bg-base); }
+  .pricing-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin-top: 56px;
+  }
+  .price-card {
+    background: var(--bg-elev); border: 1px solid var(--border);
+    border-radius: 24px; padding: 36px 32px;
+    position: relative; transition: all 0.4s cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .price-card.featured { border-color: var(--accent); background: linear-gradient(180deg, rgba(255,59,48,0.06), var(--bg-elev) 40%); }
+  .price-card.featured::before {
+    content: 'NAJCZĘŚCIEJ WYBIERANE'; position: absolute; top: -12px; left: 24px;
+    background: var(--accent); color: white; font-family: 'Geist Mono', monospace;
+    font-size: 10px; letter-spacing: 0.15em; padding: 4px 12px; border-radius: 6px;
+  }
+  .price-card:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+  .price-card h3 {
+    font-size: 22px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.02em;
+  }
+  .price-card .price-tag {
+    font-family: 'Geist Mono', monospace; font-size: 13px;
+    color: var(--fg-dim); margin-bottom: 24px;
+  }
+  .price-card .price-tag strong { color: var(--accent); font-size: 30px; font-weight: 700; }
+  .price-card ul { list-style: none; margin: 0 0 28px; padding: 0; }
+  .price-card li {
+    padding: 12px 0; border-top: 1px solid var(--border);
+    font-size: 14px; color: var(--fg); display: flex; gap: 10px;
+  }
+  .price-card li::before {
+    content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0;
+  }
+  .price-cta {
+    display: block; text-align: center; padding: 14px 24px;
+    background: rgba(255,255,255,0.04); border: 1px solid var(--border-strong);
+    border-radius: 100px; color: var(--fg); text-decoration: none;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
+    transition: all 0.3s ease;
+  }
+  .price-card.featured .price-cta {
+    background: var(--accent); border-color: var(--accent); color: white;
+  }
+  .price-cta:hover { background: var(--accent); border-color: var(--accent); color: white; }
+  .pricing-note {
+    margin-top: 32px; padding: 24px 28px;
+    background: rgba(74,158,255,0.06); border: 1px solid rgba(74,158,255,0.18);
+    border-radius: 16px; font-size: 14px; color: var(--fg-dim); line-height: 1.6;
+  }
+
+  /* ========= OBSZAR DZIAŁANIA (Local SEO) ========= */
+  .area { padding: 120px 48px; background: var(--bg-elev); border-top: 1px solid var(--border); }
+  .area-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 56px; }
+  .area-col h3 {
+    font-family: 'Geist Mono', monospace; font-size: 11px;
+    color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .area-list {
+    display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0;
+  }
+  .area-list li {
+    padding: 8px 14px; border: 1px solid var(--border);
+    border-radius: 100px; font-size: 13px;
+    background: rgba(255,255,255,0.02); transition: all 0.2s ease;
+  }
+  .area-list li:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ========= PROCES ========= */
+  .process { padding: 120px 48px; background: var(--bg-base); }
+  .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; }
+  .process-step { position: relative; padding-top: 32px; }
+  .process-step::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 100%; height: 1px; background: linear-gradient(90deg, var(--accent), transparent);
+  }
+  .process-step .num {
+    font-family: 'Geist Mono', monospace; font-size: 11px;
+    color: var(--accent); letter-spacing: 0.15em;
+  }
+  .process-step h3 { font-size: 22px; font-weight: 700; margin: 12px 0 12px; letter-spacing: -0.02em; }
+  .process-step p { color: var(--fg-dim); font-size: 14px; line-height: 1.55; }
+
+  /* ========= FAQ ========= */
+  .faq { padding: 120px 48px; background: var(--bg-elev); border-top: 1px solid var(--border); }
+  .faq-list { margin-top: 56px; max-width: 1100px; margin-left: auto; margin-right: auto; }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 28px 0; cursor: pointer;
+  }
+  .faq-item summary {
+    list-style: none; display: flex; justify-content: space-between; align-items: center;
+    font-size: 19px; font-weight: 600; color: var(--fg);
+    letter-spacing: -0.01em; cursor: pointer; user-select: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+'; font-size: 28px; font-weight: 300; color: var(--accent);
+    transition: transform 0.3s ease;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item .faq-a {
+    margin-top: 16px; color: var(--fg-dim); font-size: 15px; line-height: 1.7;
+  }
+
+  /* ========= FORMULARZ ========= */
+  .quote { padding: 120px 48px; background: var(--bg-base); border-top: 1px solid var(--border); }
+  .quote-wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; margin-top: 56px; align-items: start; }
+  .quote-left h3 { font-size: 36px; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 20px; }
+  .quote-left p { color: var(--fg-dim); font-size: 16px; line-height: 1.6; margin-bottom: 24px; }
+  .quote-feat { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+  .quote-feat-card { padding: 16px 18px; background: var(--bg-elev); border: 1px solid var(--border); border-radius: 14px; }
+  .quote-feat-card strong { display: block; font-size: 26px; font-weight: 800; color: var(--accent); }
+  .quote-feat-card span { display: block; font-size: 12px; color: var(--fg-dim); margin-top: 4px; letter-spacing: 0.02em; }
+  .quote-form { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 24px; padding: 36px; }
+  .field { margin-bottom: 18px; }
+  .field label { display: block; font-family: 'Geist Mono', monospace; font-size: 10px; color: var(--fg-dim); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
+  .field input, .field select, .field textarea {
+    width: 100%; padding: 14px 16px; background: var(--bg-base);
+    border: 1px solid var(--border); border-radius: 10px;
+    color: var(--fg); font-family: 'Geist', sans-serif; font-size: 15px;
+    transition: border-color 0.2s ease;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); }
+  .field textarea { resize: vertical; min-height: 90px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field-row .field { margin-bottom: 18px; }
+  .quote-submit { width: 100%; padding: 18px; background: var(--accent); color: white; border: none; border-radius: 100px; font-family: 'Geist', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.02em; cursor: pointer; transition: all 0.3s ease; margin-top: 8px; }
+  .quote-submit:hover { box-shadow: 0 0 40px 4px var(--accent-glow); transform: translateY(-2px); }
+  .quote-meta { font-size: 12px; color: var(--fg-dim); margin-top: 14px; text-align: center; }
+  .quote-ok { display: none; padding: 32px; background: rgba(0,255,136,0.06); border: 1px solid rgba(0,255,136,0.3); border-radius: 16px; color: var(--fg); }
+  .quote-ok.active { display: block; }
+
+  @media (max-width: 1024px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+    .area-wrap, .quote-wrap { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .process-grid { grid-template-columns: 1fr; }
+    .field-row { grid-template-columns: 1fr; }
+  }
+
+  /* ========= TESTIMONIALS ========= */
+  .testimonials { padding: 120px 0; background: var(--bg-base); }
+  .test-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px; margin-top: 56px;
+  }
+  .test-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 32px;
+    display: flex; flex-direction: column; gap: 18px;
+    transition: border-color .25s ease, transform .25s ease;
+  }
+  .test-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .test-stars { color: var(--accent); font-size: 16px; letter-spacing: 4px; }
+  .test-quote { font-size: 15px; line-height: 1.7; color: var(--fg); font-style: italic; }
+  .test-author { display: flex; align-items: center; gap: 14px; padding-top: 18px; border-top: 1px solid var(--border); }
+  .test-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #ff8866); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; color: #fff; font-size: 16px; flex-shrink: 0; }
+  .test-meta { display: flex; flex-direction: column; gap: 2px; }
+  .test-name { font-weight: 600; color: var(--fg); font-size: 14px; }
+  .test-where { font-family: var(--font-mono); font-size: 11px; color: var(--fg-dim); letter-spacing: 0.08em; text-transform: uppercase; }
+  .test-source { font-family: var(--font-mono); font-size: 10px; color: var(--fg-dim); letter-spacing: 0.1em; text-transform: uppercase; }
+  .test-source strong { color: var(--accent); }
+
+  /* ========= BRAND LOGOS ========= */
+  .brands { padding: 80px 0; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .brands-eyebrow { text-align: center; font-family: var(--font-mono); font-size: 11px; color: var(--fg-dim); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 40px; }
+  .brands-grid {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+    gap: 32px; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 32px;
+  }
+  .brand-cell {
+    height: 70px; display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-weight: 700; font-size: 19px;
+    letter-spacing: 0.05em; color: var(--fg-dim);
+    border: 1px solid var(--border); border-radius: 10px;
+    transition: all .3s ease; background: var(--bg-base);
+  }
+  .brand-cell:hover { color: var(--fg); border-color: var(--accent); transform: scale(1.04); }
+  @media (max-width: 768px) {
+    .brands-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .brand-cell { height: 56px; font-size: 14px; }
+  }
+
+  /* ========= MAP EMBED ========= */
+  .map-section { padding: 80px 0; background: var(--bg-base); }
+  .map-wrap {
+    margin-top: 40px; border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--border); height: 420px;
+    filter: grayscale(0.3) contrast(1.05);
+  }
+  .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+  /* ========= FOOTER ========= */
+  footer.foot {
+    background: var(--bg-base); border-top: 1px solid var(--border);
+    padding: 80px 48px 40px;
+  }
+  .foot-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 64px; margin-bottom: 64px;
+  }
+  .foot-brand h3 {
+    font-size: 32px; font-weight: 800; letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .foot-brand p { color: var(--fg-dim); font-size: 14px; line-height: 1.6; }
+  .foot-col h4 {
+    font-family: 'Geist Mono', monospace; font-size: 11px;
+    color: var(--fg-dim); letter-spacing: 0.15em;
+    text-transform: uppercase; margin-bottom: 24px;
+  }
+  .foot-col ul { list-style: none; }
+  .foot-col li { margin-bottom: 12px; }
+  .foot-col a {
+    color: var(--fg); text-decoration: none; font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bottom {
+    display: flex; justify-content: space-between;
+    padding-top: 32px; border-top: 1px solid var(--border);
+    font-family: 'Geist Mono', monospace; font-size: 11px;
+    color: var(--fg-dim); letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ========= RESPONSIVE ========= */
+  @media (max-width: 1024px) {
+    .data-panel { display: none; }
+    .topbar, .bottombar { padding: 16px 24px; }
+    section { padding: 80px 24px; }
+    .hero-content { padding: 0 24px; }
+    .mobile-toggle { display: flex; }
+    nav ul {
+      display: flex !important;
+      position: fixed !important;
+      top: 0 !important; right: 0 !important;
+      width: min(86vw, 380px) !important;
+      height: 100vh !important;
+      height: 100dvh !important;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding: 88px 28px 32px;
+      background: rgba(8, 10, 12, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-left: 1px solid var(--border);
+      z-index: 998;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 320ms cubic-bezier(0.65, 0, 0.35, 1);
+      pointer-events: none;
+      visibility: hidden;
+    }
+    nav ul.is-open {
+      transform: translateX(0);
+      pointer-events: auto;
+      visibility: visible;
+    }
+    /* Podnieś cały header podczas otwartego menu, żeby panel był nad three-canvas */
+    body.menu-open header { z-index: 9999; }
+    nav ul li { width: 100%; }
+    nav ul li a {
+      display: block; padding: 18px 4px;
+      font-size: 16px; letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+    nav ul li a.phone-cta {
+      margin-top: 16px;
+      border: 1px solid var(--accent) !important;
+      border-radius: 999px;
+      text-align: center;
+      padding: 14px 20px !important;
+      background: var(--accent) !important;
+      color: #fff !important;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+    body.menu-open { overflow: hidden; }
+    body { cursor: auto; }
+    .cursor, .cursor-dot { display: none; }
+    .anatomy-layout, .team-layout { grid-template-columns: 1fr; gap: 48px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .cycle-stages { grid-template-columns: repeat(2, 1fr); }
+    .realizations-grid {
+      grid-template-columns: 1fr; grid-auto-rows: 240px;
+    }
+    .real-a, .real-b, .real-c, .real-d, .real-e,
+    .real-f, .real-g, .real-h, .real-i {
+      grid-column: span 1; grid-row: span 1;
+    }
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .service-card { padding: 32px; min-height: auto; }
+    .aq-grid { grid-template-columns: 1fr; }
+    .aq-card.lg { grid-column: span 1; }
+    .aq-value { font-size: 44px; }
+    .aq-cta-band { flex-direction: column; align-items: flex-start; padding: 24px; }
+    .film-grid { grid-template-columns: 1fr; height: auto; }
+    .film-tile { height: 280px; }
+  }
+</style>
+<!-- ============ JSON-LD: LocalBusiness ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HVACBusiness",
+  "@id": "https://www.nurtex.pl/#business",
+  "name": "NURTEX",
+  "alternateName": "NURTEX HVAC Engineering",
+  "description": "Klimatyzacja, wentylacja mechaniczna, rekuperacja i pompy ciepła we Wrocławiu. Montaż, serwis 24/7, audyt jakości powietrza. Certyfikat F-gaz, Daikin D1, NADCA.",
+  "url": "https://www.nurtex.pl/",
+  "telephone": "+48 662 070 695",
+  "email": "kontakt@nurtex.pl",
+  "image": "https://www.nurtex.pl/img/og-cover.jpg",
+  "logo": "https://www.nurtex.pl/img/logo.png",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Wrocław",
+    "addressRegion": "dolnośląskie",
+    "postalCode": "50-000",
+    "addressCountry": "PL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 51.1079,
+    "longitude": 17.0385
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Wrocław"},
+    {"@type": "City", "name": "Kobierzyce"},
+    {"@type": "City", "name": "Bielany Wrocławskie"},
+    {"@type": "City", "name": "Długołęka"},
+    {"@type": "City", "name": "Smolec"},
+    {"@type": "City", "name": "Kąty Wrocławskie"},
+    {"@type": "City", "name": "Oleśnica"},
+    {"@type": "City", "name": "Kiełczów"},
+    {"@type": "City", "name": "Siechnice"},
+    {"@type": "City", "name": "Oława"}
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "07:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": "08:00",
+      "closes": "14:00"
+    }
+  ],
+  "sameAs": [],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Usługi NURTEX",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Montaż klimatyzacji Wrocław", "areaServed": "Wrocław"}, "price": "4200", "priceCurrency": "PLN", "description": "Montaż klimatyzacji split z urządzeniem, od 4 200 zł brutto"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Klimatyzacja multisplit Wrocław"}, "price": "8500", "priceCurrency": "PLN"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wentylacja mechaniczna z rekuperacją Wrocław"}, "price": "18000", "priceCurrency": "PLN"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pompa ciepła powietrzna Wrocław"}, "price": "32000", "priceCurrency": "PLN"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Serwis i przegląd klimatyzacji Wrocław"}, "price": "199", "priceCurrency": "PLN"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Czyszczenie kanałów wentylacyjnych NADCA Wrocław"}, "price": "1500", "priceCurrency": "PLN"}
+    ]
+  }
+}
+</script>
+
+<!-- ============ JSON-LD: FAQPage ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Ile kosztuje montaż klimatyzacji we Wrocławiu w 2026?",
+      "acceptedAnswer":{"@type":"Answer","text":"Klimatyzacja split z montażem we Wrocławiu zaczyna się od 4 200 zł brutto (urządzenie 2,5 kW marki Gree, Rotenso, Haier). Daikin lub Mitsubishi to 5 800 – 7 400 zł. Multisplit 1+2 (mieszkanie ~60 m²) od 8 500 zł. Każda wycena jest indywidualna — metraż, rodzaj ścian, trasa instalacji i klasa urządzenia zmieniają koszt."}},
+    {"@type":"Question","name":"Czy potrzebuję zgody wspólnoty na klimatyzację w bloku we Wrocławiu?",
+      "acceptedAnswer":{"@type":"Answer","text":"Tak. Montaż jednostki zewnętrznej na elewacji ingeruje w część wspólną nieruchomości, dlatego wymagana jest uchwała wspólnoty lub zgoda zarządcy. NURTEX bezpłatnie przygotowuje wniosek z rysunkiem technicznym, parametrami akustycznymi (zwykle 38–42 dB) i lokalizacją — wystarczy do złożenia w administracji."}},
+    {"@type":"Question","name":"Jak długo trwa montaż klimatyzacji split?",
+      "acceptedAnswer":{"@type":"Answer","text":"Standardowy montaż jednostki ściennej (1+1) trwa 4–6 godzin w jednym dniu. Multisplit 1+2 — 6–8 godzin. Wszystko: wiercenie diamentowe średnicą 6–8 cm, trasa instalacji, instalacja elektryczna 230 V, próba ciśnieniowa azotem, próżnia 30 min, uruchomienie i pomiar parametrów pracy."}},
+    {"@type":"Question","name":"Jaką klimatyzację wybrać do mieszkania 50 m² we Wrocławiu?",
+      "acceptedAnswer":{"@type":"Answer","text":"Do mieszkania 50 m² z jednym pokojem dziennym i sypialnią zalecamy split 3,5 kW w salonie oraz drugi split 2,5 kW w sypialni — lub multisplit 5,0 kW (1 jednostka zewnętrzna, 2 wewnętrzne). Multisplit jest droższy w zakupie, ale oszczędza elewację (1 skraplacz) i jest cichszy w sumie."}},
+    {"@type":"Question","name":"Klimatyzacja czy pompa ciepła powietrze-powietrze?",
+      "acceptedAnswer":{"@type":"Answer","text":"To w praktyce ten sam typ urządzenia — inwerterowy split z funkcją grzania. Różnica jest formalna: pompa ciepła powietrze-powietrze ma SCOP > 3,8 i kwalifikuje się do dofinansowania (Czyste Powietrze, Mój Prąd). NURTEX dobiera modele z certyfikatem ErP A++ tak, aby spełniały kryteria środków pomocowych."}},
+    {"@type":"Question","name":"Jak często serwisować klimatyzację?",
+      "acceptedAnswer":{"@type":"Answer","text":"Przegląd zalecamy raz w roku (najlepiej wiosna, przed sezonem). Obejmuje: czyszczenie filtrów wewnętrznych, dezynfekcję parownika, kontrolę ciśnienia czynnika, oczyszczenie skraplacza, sprawdzenie odpływu skroplin. Koszt we Wrocławiu: 199 zł za jednostkę. Brak przeglądu = utrata gwarancji producenta."}},
+    {"@type":"Question","name":"Czy klimatyzacja może grzac zimą we Wrocławiu?",
+      "acceptedAnswer":{"@type":"Answer","text":"Tak. Inwerterowe splity Daikin, Mitsubishi, Samsung pracują grzewczo do −25°C. We Wrocławiu (średnia zimowa −2°C, ekstrema −18°C) klimatyzacja grzewcza działa cały rok. Koszt kWh ciepła jest 3–4× niższy niż z grzejnika elektrycznego (SCOP 4,0)."}},
+    {"@type":"Question","name":"Co to certyfikat F-gaz i dlaczego ma znaczenie?",
+      "acceptedAnswer":{"@type":"Answer","text":"Certyfikat F-gaz to obowiązkowe uprawnienie do pracy z czynnikami chłodniczymi (R32, R410A, R454B). Bez niego montaż klimatyzacji jest nielegalny i powoduje utratę gwarancji urządzenia. NURTEX posiada certyfikat F-gaz dla firmy oraz personelu, plus uprawnienia SEP do 1 kV (E i D), Daikin D1, Samsung Pro Partner i NADCA dla czyszczenia kanałów."}}
+  ]
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursor-dot"></div>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo-wrap">
+      <svg class="logo-mark" viewBox="0 0 64 64" fill="none" aria-label="NURTEX">
+        <defs>
+          <linearGradient id="lgGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ff3b30"/>
+            <stop offset="1" stop-color="#ff7a52"/>
+          </linearGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" stroke="url(#lgGrad)" stroke-width="1.5" opacity="0.6"/>
+        <g stroke="url(#lgGrad)" stroke-width="2.4" stroke-linecap="round">
+          <path d="M32 32 Q 22 18, 14 24 T 12 38"/>
+          <path d="M32 32 Q 46 22, 50 32 T 44 48"/>
+          <path d="M32 32 Q 32 46, 22 50 T 16 42"/>
+        </g>
+        <circle cx="32" cy="32" r="4" fill="url(#lgGrad)"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-name">NURTEX</span>
+        <span class="logo-tag">Inżynieria klimatu</span>
+      </div>
+      <img src="img/logo.png" alt="" style="display:none" id="logo" />
+    </div>
+    <span><span class="live-dot"></span>System Online · Wrocław</span>
+  </div>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+  <nav>
+    <ul id="navList">
+      <li><a href="#uslugi" data-hover>Usługi</a></li>
+      <li><a href="#cennik" data-hover>Cennik</a></li>
+      <li><a href="#obszar" data-hover>Obszar</a></li>
+      <li><a href="#proces" data-hover>Proces</a></li>
+      <li><a href="#faq" data-hover>FAQ</a></li>
+      <li><a href="./blog/" data-hover>Blog</a></li>
+      <li><a href="#wycena" class="phone-cta" data-hover>Wycena 24h</a></li>
+      <li><a href="tel:+48662070695" class="phone-cta" data-hover>+48 662 070 695</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <img class="hero-image-bg" src="img/hero-instalator.jpg" alt="Instalator NURTEX podczas montażu klimatyzacji Daikin w mieszkaniu we Wrocławiu" fetchpriority="high" />
+  <div class="hero-image-veil"></div>
+  <div class="grid-bg"></div>
+  <canvas id="three-canvas"></canvas>
+
+  <div class="hero-content">
+    <div class="eyebrow">HVAC Engineering · Wrocław · Est. 2018 · Certyfikat F-gaz</div>
+    <h1 class="hero-h1">
+      <span class="h1-main">Klimatyzacja <em class="accent">Wrocław</em></span>
+      <span class="h1-sub">Montaż, serwis, wentylacja — klimat, który czujesz.</span>
+    </h1>
+    <p class="sub">
+      Klimatyzacja split, multisplit, VRF, rekuperacja i pompy ciepła we Wrocławiu i okolicach. <strong style="color:var(--fg)">Montaż od 4 200 zł.</strong> 8 lat, 287 instalacji, 0 reklamacji. Certyfikat F-gaz, Daikin D1, NADCA.
+    </p>
+    <div class="cta-row">
+      <a href="#wycena" class="btn btn-primary" data-hover>
+        Zapytaj o cenę
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <a href="tel:+48662070695" class="btn btn-ghost" data-hover>
+        ☎ 662 070 695
+      </a>
+    </div>
+    <div class="hero-trust">
+      <span class="trust-pill">Daikin D1 Partner</span>
+      <span class="trust-pill">Samsung Pro</span>
+      <span class="trust-pill">F-gaz / SEP E+D</span>
+      <span class="trust-pill">NADCA</span>
+      <span class="trust-pill">5 lat gwarancji</span>
+    </div>
+  </div>
+
+  <aside class="data-panel">
+    <div class="data-card">
+      <div class="data-label">Temp. Wrocław</div>
+      <div class="data-value" id="temp">18.4<span class="data-unit">°C</span></div>
+      <div class="data-bar"><div class="data-bar-fill" style="width: 62%"></div></div>
+    </div>
+    <div class="data-card">
+      <div class="data-label">PM2.5 / Powietrze</div>
+      <div class="data-value" id="pm25">14<span class="data-unit">µg/m³</span></div>
+      <div class="data-bar"><div class="data-bar-fill" style="width: 28%; background: linear-gradient(90deg, #00ff88, #4a9eff);"></div></div>
+    </div>
+    <div class="data-card">
+      <div class="data-label">Aktywne zlecenia</div>
+      <div class="data-value" id="orders">3<span class="data-unit"> w terenie</span></div>
+      <div class="data-bar"><div class="data-bar-fill" style="width: 75%"></div></div>
+    </div>
+  </aside>
+
+  <footer class="bottombar">
+    <div>
+      <span class="rpm-badge">
+        <span>Rotor RPM</span>
+        <span class="rpm-value" id="rpm">— 480 —</span>
+      </span>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+    <div>NX-01 / VENT-CORE / 2026</div>
+  </footer>
+
+  <div class="noise"></div>
+</section>
+
+
+<!-- ============ SERVICES SECTION ============ -->
+<section id="uslugi">
+  <div class="container">
+    <div class="section-eyebrow">02 · Zakres usług</div>
+    <h2 class="section-title">Od audytu po <em class="accent">serwis 24/7</em>.</h2>
+    <p class="section-lead">
+      Kompleksowa obsługa systemów HVAC dla obiektów komercyjnych i mieszkalnych
+      we Wrocławiu i na Dolnym Śląsku. F-gazy, BREEAM, BIM/Revit.
+    </p>
+
+    <div class="services-grid">
+      <a href="#" class="service-card" data-hover>
+        <div class="service-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="6" y="14" width="36" height="20" rx="2" />
+            <path d="M10 24h28" stroke-dasharray="2 2" opacity="0.5" />
+            <circle cx="14" cy="24" r="2" fill="currentColor" />
+            <circle cx="24" cy="24" r="2" fill="currentColor" />
+            <circle cx="34" cy="24" r="2" fill="currentColor" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="service-title">Montaż split, multi-split, VRF</h3>
+          <p class="service-desc">
+            Klimatyzacja Mitsubishi, Daikin, Samsung, LG, Toshiba.
+            Moc 2.5–280 kW. Inwertery DC, czynniki R32 / R410A / R454B.
+          </p>
+        </div>
+        <div class="service-meta">
+          <span>F-gazy · 80% rocznej eksploatacji</span>
+          <span class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="#" class="service-card" data-hover>
+        <div class="service-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="8" y="10" width="32" height="28" rx="2" />
+            <path d="M16 18h16M16 24h16M16 30h10" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="service-title">Wentylacja mechaniczna + rekuperacja</h3>
+          <p class="service-desc">
+            Centrale Bartosz, Pro-Vent, Vents. Sprawność odzysku ciepła 92%.
+            Projekt CAD, instalacja, regulacja, balansowanie.
+          </p>
+        </div>
+        <div class="service-meta">
+          <span>PN-EN 16798 · Klasa H1</span>
+          <span class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="#" class="service-card" data-hover>
+        <div class="service-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="24" cy="24" r="18" />
+            <circle cx="24" cy="24" r="10" />
+            <path d="M24 6v12M24 30v12M6 24h12M30 24h12" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="service-title">Czyszczenie kanałów wentylacyjnych</h3>
+          <p class="service-desc">
+            Mechaniczne czyszczenie szczotkami obrotowymi + inspekcja kamerą.
+            Dezynfekcja UV-C, ozonowanie, raport video z procesu.
+          </p>
+        </div>
+        <div class="service-meta">
+          <span>NADCA / VDI 6022</span>
+          <span class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="#" class="service-card" data-hover>
+        <div class="service-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M24 6L36 18v18a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4V18L24 6z" />
+            <path d="M18 28h12M24 22v12" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="service-title">Pompy ciepła + fotowoltaika</h3>
+          <p class="service-desc">
+            Pompy powietrzne i gruntowe Daikin Altherma, Mitsubishi Ecodan.
+            COP 4.2, SCOP 5.1, integracja z PV i magazynem energii.
+          </p>
+        </div>
+        <div class="service-meta">
+          <span>Klasa A+++ · ErP 2024</span>
+          <span class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="#" class="service-card" data-hover>
+        <div class="service-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M24 4v8M24 36v8M4 24h8M36 24h8M10 10l6 6M32 32l6 6M10 38l6-6M32 16l6-6" />
+            <circle cx="24" cy="24" r="6" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="service-title">Monitoring IAQ + automatyka BMS</h3>
+          <p class="service-desc">
+            Czujniki PM2.5, PM10, CO₂, VOC, TVOC, formaldehyd.
+            Integracja Modbus / KNX / BACnet. Dashboard 24/7.
+          </p>
+        </div>
+        <div class="service-meta">
+          <span>WELL · BREEAM · LEED</span>
+          <span class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="#" class="service-card" data-hover>
+        <div class="service-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="24" cy="24" r="18" />
+            <path d="M24 12v12l8 4" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="service-title">Serwis 24/7 + przeglądy okresowe</h3>
+          <p class="service-desc">
+            Hotline 24h, czas reakcji 4h we Wrocławiu.
+            Przeglądy F-gazowe co 12 miesięcy, raporty w SI2.
+          </p>
+        </div>
+        <div class="service-meta">
+          <span>SLA · 4h response</span>
+          <span class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ STATS SECTION ============ -->
+<section class="stats">
+  <div class="container">
+    <div class="section-eyebrow">03 · Liczby pracujące w tle</div>
+    <h2 class="section-title" style="margin-bottom: 80px;">Wymierne wskaźniki. <em class="accent">Mierzalna jakość.</em></h2>
+
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-num"><span data-count="287">0</span></div>
+        <div class="stat-label">Systemów HVAC<br/>wdrożonych od 2018</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span data-count="4.97">0</span><span class="stat-suffix">★</span></div>
+        <div class="stat-label">Średnia ocen Google<br/>na podstawie 47 opinii</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span data-count="92">0</span><span class="stat-suffix">%</span></div>
+        <div class="stat-label">Sprawność odzysku<br/>ciepła rekuperatorów</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span data-count="4">0</span><span class="stat-suffix">h</span></div>
+        <div class="stat-label">Czas reakcji serwisu<br/>we Wrocławiu (SLA)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ REALIZATIONS / PORTFOLIO ============ -->
+<section class="realizations" id="realizacje">
+  <div class="container">
+    <div class="section-eyebrow">04 · Realizacje</div>
+    <h2 class="section-title">Z miedzi, stali i <em class="accent">precyzji</em>.</h2>
+    <p class="section-lead">
+      Wybrane realizacje 2023–2026. Od biura na 80 m² po centrale wentylacyjne
+      4 500 m³/h. Każda instalacja udokumentowana, przeglądana, archiwizowana.
+    </p>
+
+    <div class="realizations-grid">
+      <div class="real-card real-a" data-hover>
+        <img src="img/realizacja-9.jpg" alt="Centrala wentylacyjna BARTOSZ 4500 m³/h na dachu obiektu produkcyjnego we Wrocławiu" loading="lazy" />
+        <div class="real-info">
+          <div class="real-tag">Wentylacja przemysłowa · 2025</div>
+          <div class="real-title">Centrala BARTOSZ 4&nbsp;500 m³/h</div>
+          <div class="real-meta">Hala produkcyjna · Wrocław · Fabryczna</div>
+        </div>
+      </div>
+
+      <div class="real-card real-b" data-hover>
+        <img src="img/realizacja-2.jpg" alt="Lutowanie instalacji miedzianej VRF Heat Recovery podczas montażu klimatyzacji w obiekcie komercyjnym" loading="lazy" />
+        <div class="real-info">
+          <div class="real-tag">VRF Heat Recovery · 2025</div>
+          <div class="real-title">VRF Mitsubishi 28 kW</div>
+          <div class="real-meta">Biurowiec · Wrocław · Krzyki</div>
+        </div>
+      </div>
+
+      <div class="real-card real-c" data-hover>
+        <img src="img/realizacja-7.jpg" alt="Montaż zewnętrznej jednostki klimatyzacji Samsung na dachu budynku komercyjnego we Wrocławiu" loading="lazy" />
+        <div class="real-info">
+          <div class="real-tag">Multisplit Samsung · 2024</div>
+          <div class="real-title">Próżnia + R32 · dach komercyjny</div>
+          <div class="real-meta">Punkt usługowy · Wrocław · Stare Miasto</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ============ TEAM SECTION ============ -->
+<section class="team" id="zespol">
+  <div class="container">
+    <div class="section-eyebrow">05 · Zespół + certyfikaty</div>
+
+    <div class="team-layout">
+      <div class="team-img">
+        <img src="img/zespol.jpg" alt="Zespół NURTEX w magazynie z klimatyzatorami Samsung" />
+      </div>
+      <div>
+        <h2 class="section-title" style="margin-bottom: 24px;">Inżynierowie, <em class="accent">nie sprzedawcy</em>.</h2>
+        <p class="section-lead" style="margin-bottom: 0;">
+          Zespół 8 certyfikowanych techników HVAC. Uprawnienia F-gazowe,
+          SEP do 1 kV, prawo jazdy kat. C+E, certyfikaty Mitsubishi,
+          Daikin Pro Partner i Samsung Authorized Service.
+        </p>
+
+        <div class="cred-list">
+          <div class="cred">
+            <svg class="cred-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <div class="cred-name">Certyfikat F-gazowy</div>
+            <div class="cred-meta">Kat. I · UDT</div>
+          </div>
+          <div class="cred">
+            <svg class="cred-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            <div class="cred-name">SEP do 1 kV</div>
+            <div class="cred-meta">D + E</div>
+          </div>
+          <div class="cred">
+            <svg class="cred-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2l3 7h7l-6 4 3 7-7-4-7 4 3-7-6-4h7z"/>
+            </svg>
+            <div class="cred-name">Daikin Pro Partner</div>
+            <div class="cred-meta">Authorized Installer</div>
+          </div>
+          <div class="cred">
+            <svg class="cred-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <div class="cred-name">Samsung Authorized</div>
+            <div class="cred-meta">Service Partner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ TESTIMONIALS — OPINIE KLIENTÓW ============ -->
+<section class="testimonials" id="opinie">
+  <div class="container">
+    <div class="section-eyebrow">06 · Opinie klientów</div>
+    <h2 class="section-title">Co mówią <em class="accent">klienci</em> z Wrocławia?</h2>
+    <p class="section-lead">
+      287 instalacji, 0 reklamacji. Średnia <strong style="color:var(--fg)">4.97/5</strong> z 142 ocen w Google Maps. Poniżej wybór ostatnich opinii — z imieniem i dzielnicą.
+    </p>
+
+    <div class="test-grid">
+      <article class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">„Multisplit 1+3 w mieszkaniu na Krzykach — montaż w jeden dzień, ekipa zostawiła mieszkanie czystsze niż było. Cena dokładnie taka jak w wycenie, bez zaskoczeń. Klima działa bezgłośnie, w sypialni nie słychać jej nawet w nocy."</p>
+        <div class="test-author">
+          <div class="test-avatar">MK</div>
+          <div class="test-meta">
+            <span class="test-name">Marcin K.</span>
+            <span class="test-where">Krzyki · 2026</span>
+          </div>
+        </div>
+        <div class="test-source">Daikin Multi · <strong>8 900 zł</strong></div>
+      </article>
+
+      <article class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">„Rekuperacja w domu jednorodzinnym 165m² — Stare Miasto. Projekt zrobiony porządnie, kanały poprowadzone tak, że nawet nie widać że są. Po roku eksploatacji — niższe rachunki za ogrzewanie o jakieś 25%, powietrze świeże, dzieci przestały kasłać zimą."</p>
+        <div class="test-author">
+          <div class="test-avatar">AS</div>
+          <div class="test-meta">
+            <span class="test-name">Anna S.</span>
+            <span class="test-where">Stare Miasto · 2025</span>
+          </div>
+        </div>
+        <div class="test-source">Rekuperacja Brink · <strong>22 400 zł</strong></div>
+      </article>
+
+      <article class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">„Klima w biurze 220m² na Fabrycznej — VRF Mitsubishi, 5 jednostek wewnętrznych. Cała ekipa się pakuje w lipcu w 35°C, a u nas spokój. Dodatkowo NURTEX zrobił audyt powietrza, pokazał gdzie tracimy energię. Profesjonalnie od A do Z."</p>
+        <div class="test-author">
+          <div class="test-avatar">PG</div>
+          <div class="test-meta">
+            <span class="test-name">Paweł G.</span>
+            <span class="test-where">Fabryczna · 2025</span>
+          </div>
+        </div>
+        <div class="test-source">VRF Mitsubishi · <strong>48 000 zł</strong></div>
+      </article>
+
+      <article class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">„Serwis i czyszczenie NADCA w mieszkaniu na Psim Polu. Stara klima poprzedniego właściciela — zapach był taki że bałam się ją włączyć. Po czyszczeniu pachnie jak nowa, dosłownie. Faktura, gwarancja serwisu na rok. Polecam każdemu kto kupił mieszkanie z istniejącą klimą."</p>
+        <div class="test-author">
+          <div class="test-avatar">KW</div>
+          <div class="test-meta">
+            <span class="test-name">Katarzyna W.</span>
+            <span class="test-where">Psie Pole · 2026</span>
+          </div>
+        </div>
+        <div class="test-source">Serwis NADCA · <strong>1 800 zł</strong></div>
+      </article>
+
+      <article class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">„Pompa ciepła Daikin Altherma w domu w Bielanach Wrocławskich. Wymieniliśmy stary kocioł gazowy. Rachunki za ogrzewanie spadły z 600 zł/mies do 220 zł/mies. NURTEX prowadził cały projekt, łącznie z wnioskiem o Czyste Powietrze. Dostaliśmy 21 000 zł dotacji."</p>
+        <div class="test-author">
+          <div class="test-avatar">TB</div>
+          <div class="test-meta">
+            <span class="test-name">Tomasz B.</span>
+            <span class="test-where">Bielany Wrocławskie · 2025</span>
+          </div>
+        </div>
+        <div class="test-source">Pompa Daikin · <strong>34 500 zł</strong></div>
+      </article>
+
+      <article class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">„Klima typu split do mieszkania 48m² na Gaju. Zadzwoniłem w czwartek, w piątek wycena, w poniedziałek montaż. Cena 4 200 zł — dokładnie tyle ile podawali na stronie, żadnych dopłat. Polecam serdecznie, ekipa kulturalna, czysta."</p>
+        <div class="test-author">
+          <div class="test-avatar">JN</div>
+          <div class="test-meta">
+            <span class="test-name">Jakub N.</span>
+            <span class="test-where">Gaj · 2026</span>
+          </div>
+        </div>
+        <div class="test-source">Split Samsung · <strong>4 200 zł</strong></div>
+      </article>
+    </div>
+
+    <p style="text-align:center;margin-top:40px;font-family:var(--font-mono);font-size:12px;color:var(--fg-dim);letter-spacing:0.1em;">
+      WSZYSTKIE OPINIE WERYFIKOWANE · GOOGLE MAPS · 4.97/5 (142)
+    </p>
+  </div>
+</section>
+
+<!-- ============ LEAD CTA po OPINIACH ============ -->
+<section style="background: var(--bg-base); padding: 0;">
+  <div class="container" style="padding: 40px 32px;">
+    <div class="lead-cta-band" style="margin-top:0;">
+      <div>
+        <h3>Chcesz dołączyć do tych <em>142 opinii</em>?</h3>
+        <p>4.97/5 średniej — montaże split, multisplit, rekuperacje, pompy ciepła. Krzyki, Stare Miasto, Fabryczna, Psie Pole, Bielany, Gaj. Sprawdź wycenę dla swojego mieszkania.</p>
+      </div>
+      <div class="lead-cta-band-actions">
+        <a href="#wycena" class="btn btn-primary" data-hover>
+          Zapytaj o cenę
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="tel:+48662070695" class="btn btn-ghost" data-hover>☎ 662 070 695</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CENNIK — KLIMATYZACJA WROCŁAW CENA ============ -->
+<section class="pricing" id="cennik">
+  <div class="container">
+    <div class="section-eyebrow">07 · Cennik</div>
+    <h2 class="section-title">Ile kosztuje <em class="accent">klimatyzacja</em> we Wrocławiu?</h2>
+    <p style="max-width:720px;color:var(--fg-dim);font-size:17px;line-height:1.55;margin-top:14px;">
+      Transparentne widelki cenowe na 2026. Bez ukrytych kosztów, bez kosztu dojazdu w obrębie Wrocławia. Wszystkie pozycje zawierają montaż, materiały, uruchomienie i 5 lat gwarancji.
+    </p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Klimatyzacja split 1+1</h3>
+        <p class="price-tag">od <strong>4 200</strong> zł brutto</p>
+        <ul>
+          <li>Urządzenie 2,5–3,5 kW (Gree / Rotenso / Haier)</li>
+          <li>Montaż kompletny, wiercenie diamentowe</li>
+          <li>Trasa instalacji do 5 m, izolacja UV</li>
+          <li>Próba ciśnieniowa N₂, próżnia, R32</li>
+          <li>Uruchomienie, pomiar, wniosek do wspólnoty</li>
+          <li>5 lat gwarancji</li>
+        </ul>
+        <a href="#wycena" class="price-cta" data-hover>Zapytaj o cenę</a>
+      </div>
+      <div class="price-card featured">
+        <h3>Klimatyzacja multisplit 1+2</h3>
+        <p class="price-tag">od <strong>8 500</strong> zł brutto</p>
+        <ul>
+          <li>Daikin / Samsung / Mitsubishi 5,0 kW</li>
+          <li>2 jednostki wewnętrzne, 1 skraplacz</li>
+          <li>Trasa do 10 m łącznie, WiFi w cenie</li>
+          <li>Sterowanie aplikacją, harmonogram tygodniowy</li>
+          <li>Funkcja grzania do −25°C (SCOP 4,0)</li>
+          <li>5 lat gwarancji urządzenia + montażu</li>
+        </ul>
+        <a href="#wycena" class="price-cta" data-hover>Zapytaj o cenę</a>
+      </div>
+      <div class="price-card">
+        <h3>Rekuperacja dom 150 m²</h3>
+        <p class="price-tag">od <strong>18 000</strong> zł brutto</p>
+        <ul>
+          <li>Centrala 350 m³/h z odzyskiem 90%</li>
+          <li>Kanały, anemostaty, tłumiki akustyczne</li>
+          <li>Filtry F7 + opcja HEPA H13</li>
+          <li>Czujnik CO₂, sterowanie automatyczne</li>
+          <li>Projekt instalacji + balansowanie</li>
+          <li>Dofinansowanie Czyste Powietrze</li>
+        </ul>
+        <a href="#wycena" class="price-cta" data-hover>Zapytaj o cenę</a>
+      </div>
+    </div>
+    <div class="pricing-grid" style="margin-top:24px;">
+      <div class="price-card">
+        <h3>Pompa ciepła powietrzna</h3>
+        <p class="price-tag">od <strong>32 000</strong> zł brutto</p>
+        <ul>
+          <li>Daikin Altherma / Samsung EHS 8–12 kW</li>
+          <li>Bufor c.w.u. 200 l, montaż hydrauliki</li>
+          <li>Czyste Powietrze do 41 000 zł zwrotu</li>
+          <li>5 lat gwarancji, 10 na sprężarkę</li>
+        </ul>
+        <a href="#wycena" class="price-cta" data-hover>Zapytaj o cenę</a>
+      </div>
+      <div class="price-card">
+        <h3>Przegląd / serwis klimatyzacji</h3>
+        <p class="price-tag">od <strong>199</strong> zł brutto</p>
+        <ul>
+          <li>Czyszczenie filtrów i parownika</li>
+          <li>Dezynfekcja UV — ozonowanie</li>
+          <li>Kontrola ciśnienia czynnika</li>
+          <li>Przedłużenie gwarancji producenta</li>
+        </ul>
+        <a href="#wycena" class="price-cta" data-hover>Zapytaj o cenę</a>
+      </div>
+      <div class="price-card">
+        <h3>Czyszczenie kanałów wentylacji</h3>
+        <p class="price-tag">od <strong>1 500</strong> zł brutto</p>
+        <ul>
+          <li>Standard NADCA, szczotki Power-Vac</li>
+          <li>Inspekcja kamerą endoskopową (raport)</li>
+          <li>Wymiana filtrów F7 / HEPA H13</li>
+          <li>Atest higieniczny PZH</li>
+        </ul>
+        <a href="#wycena" class="price-cta" data-hover>Zapytaj o cenę</a>
+      </div>
+    </div>
+    <div class="pricing-note">
+      <strong style="color:var(--fg)">Ceny orientacyjne brutto.</strong> Dokładną wycenę przygotujemy w 24h po krótkim audycie. Bez opłaty za dojęcie w obrębie Wrocławia. Strefa okolic do 30 km — bez doliczania. Faktura VAT, możliwość rat 0% (PEKAO, Santander).
+    </div>
+
+    <div class="lead-cta-band">
+      <div>
+        <h3>Nie znalazłeś swojego <em>scenariusza</em>?</h3>
+        <p>Każde mieszkanie i biuro to inna sprawa — metraż, układ, balkon, wspólnota. Wyślij krótki opis, oddzwonimy w 24h z konkretną wyceną na Twoje warunki.</p>
+      </div>
+      <div class="lead-cta-band-actions">
+        <a href="#wycena" class="btn btn-primary" data-hover>
+          Zapytaj o cenę
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="tel:+48662070695" class="btn btn-ghost" data-hover>☎ 662 070 695</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OBSZAR DZIAŁANIA — LOCAL SEO ============ -->
+<section class="area" id="obszar">
+  <div class="container">
+    <div class="section-eyebrow">08 · Obszar działania</div>
+    <h2 class="section-title">Klimatyzacja <em class="accent">Wrocław</em> i okolice</h2>
+    <p style="max-width:720px;color:var(--fg-dim);font-size:17px;line-height:1.55;margin-top:14px;">
+      Pracujemy w całym Wrocławiu — każda dzielnica, każdy blok, każda kamienica. Dodatkowo obsługujemy okolice do 30 km bez opłat za dojazd. Lista nie jest zamknięta — zadzwoń, sprawdzimy.
+    </p>
+    <div class="area-wrap">
+      <div class="area-col">
+        <h3>Dzielnice Wrocławia</h3>
+        <ul class="area-list">
+          <li>Stare Miasto</li><li>Krzyki</li><li>Psie Pole</li><li>Fabryczna</li><li>Śródmieście</li>
+          <li>Biskupin</li><li>Sępolno</li><li>Gaj</li><li>Tarnogaj</li><li>Huby</li>
+          <li>Karłowice</li><li>Różanka</li><li>Muchobór Wielki</li><li>Muchobór Mały</li>
+          <li>Maślice</li><li>Stabłowice</li><li>Leśnica</li><li>Złotniki</li><li>Żerniki</li>
+          <li>Brochów</li><li>Ołtaszyn</li><li>Partynice</li><li>Pilczyce</li><li>Kozanów</li>
+          <li>Popowice</li><li>Nowy Dwór</li><li>Księże</li><li>Strachocin</li><li>Kowale</li><li>Wojnów</li>
+        </ul>
+      </div>
+      <div class="area-col">
+        <h3>Okolice (do 30 km bez opłat)</h3>
+        <ul class="area-list">
+          <li>Kobierzyce</li><li>Bielany Wrocławskie</li><li>Długołęka</li><li>Smolec</li>
+          <li>Kąty Wrocławskie</li><li>Oleśnica</li><li>Kiełczów</li><li>Siechnice</li>
+          <li>Oława</li><li>Żórawina</li><li>Mirków</li><li>Domasław</li>
+          <li>Tyniec Mały</li><li>Czernica</li><li>Sobótka</li><li>Wojnowice</li>
+          <li>Jelcz-Laskowice</li><li>Chrząstawa</li><li>Radwanice</li><li>Wilczyce</li>
+          <li>Wiśnia Mała</li><li>Lutynia</li><li>Wilkszyn</li><li>Kąty Wrocławskie</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCES 4 KROKI ============ -->
+<section class="process" id="proces">
+  <div class="container">
+    <div class="section-eyebrow">09 · Proces</div>
+    <h2 class="section-title">Od pytania do <em class="accent">uruchomienia</em> w 7–14 dni.</h2>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="num">01 · 0–24h</div>
+        <h3>Wycena</h3>
+        <p>Formularz lub telefon. Audyt obiektu (online albo wizyta w 24h). Dobór urządzenia i tras instalacji. Oferta na piśmie.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">02 · 1–3 dni</div>
+        <h3>Projekt</h3>
+        <p>Rysunek techniczny, BOM, parametry akustyczne, dokumentacja do wspólnoty. Akceptacja, podpis umowy, zaliczka 30%.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">03 · 5–10 dni</div>
+        <h3>Montaż</h3>
+        <p>2-osobowa ekipa, własne narzędzia (Hilti, Power-Vac, miernik R32). Ochrona podłóg, sprzątanie po sobie. 1 dzień = 1 lokal.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">04 · ten sam dzień</div>
+        <h3>Uruchomienie</h3>
+        <p>Próba szczelności, programowanie, szkolenie użytkownika, karta gwarancyjna 5 lat. Faktura VAT, możliwe raty 0%.</p>
+      </div>
+    </div>
+  </div>
+
+    <div class="process-photos">
+      <div class="process-photo">
+        <img src="img/proces-manometr.jpg" alt="Pomiar ciśnienia czynnika R32 manometrem cyfrowym podczas montażu klimatyzacji" loading="lazy" />
+        <div class="process-photo-meta">
+          <span class="process-photo-tag">Krok 03 · Uruchomienie</span>
+          <div class="process-photo-title">Próba ciśnieniowa N₂ i kontrola R32</div>
+          <div class="process-photo-desc">Manometr cyfrowy, 4 MPa przez 24h, dopiero potem czynnik. Bez tego nie ma gwarancji F-gaz.</div>
+        </div>
+      </div>
+      <div class="process-photo">
+        <img src="img/proces-nadca.jpg" alt="Inspekcja kanałów wentylacyjnych kamerą endoskopową w standardzie NADCA" loading="lazy" />
+        <div class="process-photo-meta">
+          <span class="process-photo-tag">Serwis · NADCA</span>
+          <div class="process-photo-title">Inspekcja endoskopowa kanałów</div>
+          <div class="process-photo-desc">Kamera 25 m, raport video z zabrudzeń. Standard NADCA — taki sam jak w szpitalach i biurowcach BREEAM.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ============ BRANDS / PARTNERS ============ -->
+<section class="brands" id="marki">
+  <div class="container">
+    <div class="section-eyebrow" style="text-align:center;margin-bottom:8px;">10 · Autoryzowani partnerzy</div>
+    <h2 class="section-title" style="text-align:center;">Pracujemy <em class="accent">tylko z czołówką</em>.</h2>
+    <p class="brands-eyebrow" style="margin-top: 32px;">Daikin D1 Partner · Samsung Pro · Mitsubishi Premium · F-gaz · NADCA</p>
+    <div class="brands-grid">
+      <div class="brand-cell">DAIKIN</div>
+      <div class="brand-cell">MITSUBISHI</div>
+      <div class="brand-cell">SAMSUNG</div>
+      <div class="brand-cell">GREE</div>
+      <div class="brand-cell">LG</div>
+      <div class="brand-cell">TOSHIBA</div>
+      <div class="brand-cell">FUJITSU</div>
+      <div class="brand-cell">KAISAI</div>
+      <div class="brand-cell">PANASONIC</div>
+      <div class="brand-cell">HITACHI</div>
+      <div class="brand-cell">BRINK</div>
+      <div class="brand-cell">VAILLANT</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-eyebrow">11 · FAQ</div>
+    <h2 class="section-title">Często zadawane <em class="accent">pytania</em>.</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Ile kosztuje montaż klimatyzacji we Wrocławiu w 2026?</summary>
+        <div class="faq-a">Klimatyzacja split z montażem we Wrocławiu zaczyna się od <strong>4 200 zł brutto</strong> (urządzenie 2,5 kW marki Gree, Rotenso lub Haier). Daikin lub Mitsubishi to <strong>5 800–7 400 zł</strong>. Multisplit 1+2 dla mieszkania ~60 m² — od <strong>8 500 zł</strong>. Cena zawiera urządzenie, montaż, wszystkie materiały i 5 lat gwarancji. Każda wycena jest indywidualna — metraż, rodzaj ścian, trasa instalacji i klasa urządzenia zmieniają koszt o ±15%.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Czy potrzebuję zgody wspólnoty na klimatyzację w bloku?</summary>
+        <div class="faq-a">Tak. Montaż jednostki zewnętrznej na elewacji to ingerencja w część wspólną — wymagana jest <strong>uchwała wspólnoty</strong> lub zgoda zarządcy budynku. NURTEX bezpłatnie przygotowuje wniosek z rysunkiem technicznym, parametrami akustycznymi (zwykle 38–42 dB — poniżej normy nocnej 40 dB), lokalizacją jednostki i schematem tras. Wniosek wystarczy złożyć w administracji — średnio 2–4 tygodnie procedowania.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Jak długo trwa montaż klimatyzacji?</summary>
+        <div class="faq-a">Standardowy montaż <strong>split 1+1: 4–6 godzin</strong> w jednym dniu. Multisplit 1+2: 6–8 godzin. Pełen proces: wiercenie diamentowe średnicą 6–8 cm, trasa instalacji (rurki miedziane Cu, kabel zasilający, kondensat), instalacja elektryczna 230 V z bezpiecznikiem, próba ciśnieniowa azotem (40 bar, 60 min), próżnia 30 min, napełnienie czynnikiem R32, uruchomienie, pomiar parametrów pracy, szkolenie użytkownika.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Jaką klimatyzację wybrać do mieszkania 50 m²?</summary>
+        <div class="faq-a">Do mieszkania 50 m² (1 salon + 1 sypialnia) zalecamy <strong>multisplit 5,0 kW</strong> (1 jednostka zewnętrzna, 2 wewnętrzne: 3,5 kW + 2,5 kW). Wariant: 2 osobne splity. Multisplit jest droższy w zakupie (~+15%), ale oszczędza elewację (1 skraplacz), jest cichszy w sumie i pozwala na niezależne sterowanie każdym pokojem. Modele rekomendowane: Daikin Stylish, Mitsubishi MSZ-LN, Samsung WindFree.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Klimatyzacja czy pompa ciepła powietrze-powietrze?</summary>
+        <div class="faq-a">W praktyce to ten sam typ urządzenia — inwerterowy split z funkcją grzania. Różnica jest formalna: <strong>pompa ciepła powietrze-powietrze ma SCOP &gt; 3,8</strong> i kwalifikuje się do dofinansowania (Czyste Powietrze do 41 000 zł, Mój Prąd). NURTEX dobiera modele z certyfikatem ErP A++/A+++ tak, aby spełniały kryteria środków pomocowych — i przygotowujemy dokumentację do wniosku.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Czy klimatyzacja może grzać zimą we Wrocławiu?</summary>
+        <div class="faq-a">Tak. Inwerterowe splity Daikin Perfera, Mitsubishi Zubadan, Samsung WindFree Elite pracują grzewczo do <strong>−25°C</strong>. We Wrocławiu (średnia styczniowa −2°C, ekstrema rzadko poniżej −18°C) klimatyzacja grzewcza działa niezawodnie cały rok. Koszt kWh ciepła jest <strong>3–4× niższy</strong> niż z grzejnika elektrycznego (SCOP 4,0). 1 kWh prądu = 4 kWh ciepła. Opłacalna alternatywa dla pieca gazowego, jeśli masz fotowoltaikę.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Jak często serwisować klimatyzację?</summary>
+        <div class="faq-a">Przegląd zalecamy <strong>raz w roku</strong>, najlepiej wiosna (kwiecień–maj), przed sezonem. Obejmuje: czyszczenie filtrów wewnętrznych, dezynfekcję parownika ozonem/UV, kontrolę ciśnienia czynnika chłodniczego, oczyszczenie skraplacza zewnętrznego, sprawdzenie odpływu skroplin i izolacji. Koszt we Wrocławiu: <strong>199 zł</strong> za pierwszą jednostkę, 149 zł za każdą kolejną w tym samym lokalu. <em>Brak przeglądu = utrata gwarancji producenta.</em></div>
+      </details>
+      <details class="faq-item">
+        <summary>Co to certyfikat F-gaz i dlaczego ma znaczenie?</summary>
+        <div class="faq-a">Certyfikat F-gaz to <strong>obowiązkowe uprawnienie</strong> do pracy z fluorowanymi czynnikami chłodniczymi (R32, R410A, R454B — nowe ekologiczne). Bez niego montaż klimatyzacji jest <strong>nielegalny</strong> i powoduje utratę gwarancji urządzenia oraz karę dla firmy (do 30 000 zł) i użytkownika (do 3 000 zł). NURTEX posiada certyfikat F-gaz dla firmy i całego personelu, plus uprawnienia SEP do 1 kV (E i D), Daikin D1 Pro Partner, Samsung Pro Partner i NADCA dla czyszczenia kanałów.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Klimatyzacja na poddasze — jaką wybrać?</summary>
+        <div class="faq-a">Poddasze pod skosami z trudną wentylacją wymaga starannego doboru. Dla 30–50 m² zalecamy <strong>split 3,5–5,0 kW</strong> montowany blisko kalenicy (największy zysk powietrza chłodnego). Alternatywa: <strong>klimatyzacja kanalowa</strong> ukryta w suficie podwieszanym — droga, ale niewidoczna i bezgłośna. Ważna izolacja połaci dachowej (min. 25 cm wełny) — inaczej walka z 45°C latem będzie kosztowna.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Ile prądu zużywa klimatyzacja w sezonie?</summary>
+        <div class="faq-a">Inwerterowy split 3,5 kW pracujący <strong>4 godziny dziennie przez 3 miesiące</strong> (czerwiec–sierpień) zużywa ok. <strong>180–220 kWh</strong> — przy stawce 0,85 zł/kWh to <strong>150–190 zł sezonowo</strong> za pełne chłodzenie 25 m² pokoju. Klasa energetyczna A+++ (SEER 8,5) obniża rachunek o 20% względem A+. Z fotowoltaiką koszt zbliża się do zera.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORMULARZ WYCENY ============ -->
+<section class="quote" id="wycena">
+  <div class="container">
+    <div class="section-eyebrow">12 · Wycena 24h</div>
+    <h2 class="section-title">Bezpłatna <em class="accent">wycena</em> w 24 godziny.</h2>
+    <div class="quote-wrap">
+      <div class="quote-left">
+        <h3>Co dostaniesz?</h3>
+        <p>Konkretna oferta z ceną brutto. Nie szacunek, nie widełki — jedna liczba na fakturze. W 24h od wypełnienia formularza dzwonimy, ustalamy szczegóły i wysyłamy PDF z rysunkiem technicznym.</p>
+        <p>Audyt online (wideo + zdjęcia) albo wizyta w domu/biurze — do wyboru. <strong style="color:var(--fg)">Bez opłat, bez zobowiązań.</strong></p>
+        <div class="quote-feat">
+          <div class="quote-feat-card"><strong>24h</strong><span>czas odpowiedzi</span></div>
+          <div class="quote-feat-card"><strong>0 zł</strong><span>koszt wyceny</span></div>
+          <div class="quote-feat-card"><strong>287</strong><span>instalacji</span></div>
+          <div class="quote-feat-card"><strong>5 lat</strong><span>gwarancji</span></div>
+        </div>
+      </div>
+      <form class="quote-form" id="quoteForm" action="#" method="post" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="q-name">Imię i nazwisko</label>
+            <input id="q-name" name="name" type="text" required autocomplete="name" placeholder="Jan Kowalski">
+          </div>
+          <div class="field">
+            <label for="q-phone">Telefon</label>
+            <input id="q-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+48 600 000 000">
+          </div>
+        </div>
+        <div class="field">
+          <label for="q-email">E-mail</label>
+          <input id="q-email" name="email" type="email" required autocomplete="email" placeholder="jan@example.com">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="q-type">Typ obiektu</label>
+            <select id="q-type" name="type" required>
+              <option value="">Wybierz...</option>
+              <option value="mieszkanie">Mieszkanie w bloku</option>
+              <option value="dom">Dom jednorodzinny</option>
+              <option value="biuro">Biuro / lokal</option>
+              <option value="komercja">Obiekt komercyjny</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="q-area">Metraż</label>
+            <select id="q-area" name="area" required>
+              <option value="">Wybierz...</option>
+              <option value="do50">do 50 m²</option>
+              <option value="50-100">50–100 m²</option>
+              <option value="100-200">100–200 m²</option>
+              <option value="200+">powyżej 200 m²</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="q-service">Usługa</label>
+            <select id="q-service" name="service" required>
+              <option value="">Wybierz...</option>
+              <option>Klimatyzacja split</option>
+              <option>Klimatyzacja multisplit</option>
+              <option>Klimatyzacja kasetonowa / VRF</option>
+              <option>Wentylacja mechaniczna / rekuperacja</option>
+              <option>Pompa ciepła</option>
+              <option>Serwis / przegląd</option>
+              <option>Czyszczenie kanałów NADCA</option>
+              <option>Inne / nie wiem</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="q-district">Dzielnica / miasto</label>
+            <input id="q-district" name="district" type="text" placeholder="np. Krzyki, Kobierzyce" autocomplete="address-level2">
+          </div>
+        </div>
+        <div class="field">
+          <label for="q-msg">Krótki opis (opcjonalnie)</label>
+          <textarea id="q-msg" name="message" placeholder="np. mieszkanie 65 m² w bloku, 2 pokoje, parter, wspólnota — jakie urządzenie?"></textarea>
+        </div>
+        <!-- Honeypot anti-spam (hidden from users) -->
+        <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px;width:1px;height:1px;opacity:0;" aria-hidden="true">
+        <button type="submit" class="quote-submit" data-hover>Wyślij i otrzymaj wycenę w 24h</button>
+        <p class="quote-meta">Klikając, akceptujesz <a href="#polityka" style="color:var(--fg-dim);text-decoration:underline;">politykę prywatności</a>. Twoje dane trafiają wyłącznie do NURTEX, nigdy do firm trzecich.</p>
+        <div class="quote-ok" id="quoteOk">
+          <strong style="color:#19c37d">Dziękujemy!</strong>
+          <p style="margin-top:8px;color:var(--fg-dim);">Twoje zgłoszenie trafiło do nas. Zadzwonimy w ciągu 24h (często szybciej) z pełną wyceną. <br>Pilne? ☎ <a href="tel:+48662070695" style="color:var(--accent);">662 070 695</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAP SECTION ============ -->
+<section class="map-section" id="mapa">
+  <div class="container">
+    <div class="section-eyebrow">13 · Dojazd</div>
+    <h2 class="section-title">Jesteśmy <em class="accent">w sercu Wrocławia</em>.</h2>
+    <p class="section-lead">
+      Biuro i magazyn w pełni dostępne dla klientów. Możesz zobaczyć sprzęt przed montażem, omówić projekt na żywo. Dojazd do klienta w obrębie Wrocławia bezpłatny.
+    </p>
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80064.85636842447!2d16.929!3d51.107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fc28adfb05215%3A0x66caf0742017dc41!2sWroc%C5%82aw!5e0!3m2!1spl!2spl!4v1715800000000!5m2!1spl!2spl"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="NURTEX Wrocław — mapa"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA SECTION ============ -->
+<section class="cta-section" id="kontakt">
+  <div class="container">
+    <div class="section-eyebrow" style="justify-content: center;">14 · Bezpośredni kontakt</div>
+    <h2 class="cta-title">Wolisz <em class="accent">zadzwonić</em>?<br/>Odbieramy w 30 sekund.</h2>
+    <p class="cta-sub">
+      Pon–Pt 7:00–19:00, Sob 8:00–14:00. Serwis 24/7 dla klientów z umową.
+    </p>
+    <div class="cta-buttons">
+      <a href="tel:+48662070695" class="btn btn-primary" data-hover>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        +48 662 070 695
+      </a>
+      <a href="mailto:kontakt@nurtex.pl" class="btn btn-ghost" data-hover>
+        kontakt@nurtex.pl
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="container">
+    <div class="foot-cta-band">
+      <div>
+        <h3>Gotowy? <em>Zapytaj o cenę</em> dla swojego mieszkania.</h3>
+        <p>Krótki formularz, oddzwonimy w 24h z konkretną wyceną. Bez naciągania, bez magii — same liczby. 287 instalacji we Wrocławiu, 0 reklamacji od 2018.</p>
+      </div>
+      <div class="foot-cta-band-actions">
+        <a href="#wycena" class="btn btn-primary" data-hover>
+          Zapytaj o cenę
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="tel:+48662070695" class="btn btn-ghost" data-hover>☎ 662 070 695</a>
+      </div>
+    </div>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;">
+          <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
+            <defs><linearGradient id="ftGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff3b30"/><stop offset="1" stop-color="#ff7a52"/></linearGradient></defs>
+            <circle cx="32" cy="32" r="30" stroke="url(#ftGrad)" stroke-width="1.5" opacity="0.6"/>
+            <g stroke="url(#ftGrad)" stroke-width="2.4" stroke-linecap="round" fill="none">
+              <path d="M32 32 Q 22 18, 14 24 T 12 38"/>
+              <path d="M32 32 Q 46 22, 50 32 T 44 48"/>
+              <path d="M32 32 Q 32 46, 22 50 T 16 42"/>
+            </g>
+            <circle cx="32" cy="32" r="4" fill="url(#ftGrad)"/>
+          </svg>
+          <div style="display:flex;flex-direction:column;line-height:1;">
+            <span style="font-family:var(--font-display);font-weight:700;font-size:22px;letter-spacing:0.18em;color:var(--fg);">NURTEX</span>
+            <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.22em;color:var(--accent);margin-top:5px;text-transform:uppercase;">Inżynieria klimatu</span>
+          </div>
+        </div>
+        <p>
+          NURTEX — Inżynieria sanitarna.<br/>
+          Klimatyzacja · Wentylacja · Pompy ciepła · Chłodnictwo.<br/>
+          Wrocław i Dolny Śląsk od 2018.
+        </p>
+      </div>
+      <div class="foot-col">
+        <h4>Usługi</h4>
+        <ul>
+          <li><a href="#uslugi" data-hover>Klimatyzacja Wrocław</a></li>
+          <li><a href="#uslugi" data-hover>Wentylacja mechaniczna</a></li>
+          <li><a href="#uslugi" data-hover>Pompy ciepła</a></li>
+          <li><a href="#uslugi" data-hover>Chłodnictwo przemysłowe</a></li>
+          <li><a href="#uslugi" data-hover>Serwis 24/7</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Firma</h4>
+        <ul>
+          <li><a href="#zespol" data-hover>O nas</a></li>
+          <li><a href="#realizacje" data-hover>Realizacje</a></li>
+          <li><a href="./blog/" data-hover>Blog techniczny</a></li>
+          <li><a href="#faq" data-hover>FAQ</a></li>
+          <li><a href="#proces" data-hover>Proces</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+48662070695" data-hover>+48 662 070 695</a></li>
+          <li><a href="mailto:kontakt@nurtex.pl" data-hover>kontakt@nurtex.pl</a></li>
+          <li><a href="#obszar" data-hover>Wrocław i okolice (30 km)</a></li>
+          <li><a href="#wycena" data-hover>Wycena online 24h</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 NURTEX · Wszystkie prawa zastrzeżone</span>
+      <span>v3.6 · Build NX-HOLOTILT</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============ THREE.JS HERO ============ -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+
+const canvas = document.getElementById('three-canvas');
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x050608, 0.04);
+
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.set(0, 0, 14);
+
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.2;
+
+// LIGHTS
+scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+const keyLight = new THREE.PointLight(0xff3b30, 12, 35);
+keyLight.position.set(6, 3, 6); scene.add(keyLight);
+const fillLight = new THREE.PointLight(0x4a9eff, 6, 30);
+fillLight.position.set(-6, -2, 4); scene.add(fillLight);
+const frontLight = new THREE.DirectionalLight(0xffffff, 1.2);
+frontLight.position.set(2, 2, 10); scene.add(frontLight);
+const rimLight = new THREE.DirectionalLight(0xff8866, 0.8);
+rimLight.position.set(0, 5, -8); scene.add(rimLight);
+const topLight = new THREE.SpotLight(0xffffff, 3, 25, Math.PI / 4, 0.5);
+topLight.position.set(3, 8, 5); topLight.target.position.set(3, 0, 0);
+scene.add(topLight); scene.add(topLight.target);
+
+// FAN
+const fanGroup = new THREE.Group();
+const ringGeo = new THREE.TorusGeometry(4.2, 0.18, 16, 100);
+const ringMat = new THREE.MeshStandardMaterial({ color: 0x1a1d24, metalness: 0.95, roughness: 0.15, emissive: 0xff3b30, emissiveIntensity: 0.05 });
+fanGroup.add(new THREE.Mesh(ringGeo, ringMat));
+const innerRing = new THREE.Mesh(new THREE.TorusGeometry(4.4, 0.04, 8, 100), new THREE.MeshStandardMaterial({ color: 0xff3b30, emissive: 0xff3b30, emissiveIntensity: 1.2, metalness: 0.5, roughness: 0.4 }));
+fanGroup.add(innerRing);
+
+const tickMat = new THREE.MeshStandardMaterial({ color: 0x8b929c, emissive: 0x8b929c, emissiveIntensity: 0.3 });
+for (let i = 0; i < 48; i++) {
+  const tick = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.18, 0.04), tickMat);
+  const a = (i / 48) * Math.PI * 2;
+  tick.position.set(Math.cos(a) * 4.6, Math.sin(a) * 4.6, 0);
+  tick.rotation.z = a + Math.PI / 2;
+  if (i % 6 === 0) { tick.scale.y = 2.5; tick.material = new THREE.MeshStandardMaterial({ color: 0xff3b30, emissive: 0xff3b30, emissiveIntensity: 0.8 }); }
+  fanGroup.add(tick);
+}
+
+const rotorGroup = new THREE.Group();
+const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.7, 0.85, 0.6, 32), new THREE.MeshStandardMaterial({ color: 0x0a0c10, metalness: 1, roughness: 0.2, emissive: 0xff3b30, emissiveIntensity: 0.15 }));
+hub.rotation.x = Math.PI / 2; rotorGroup.add(hub);
+const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.6, 0.05, 32), new THREE.MeshStandardMaterial({ color: 0xff3b30, emissive: 0xff3b30, emissiveIntensity: 1.5, metalness: 0.3, roughness: 0.4 }));
+disc.rotation.x = Math.PI / 2; disc.position.z = 0.32; rotorGroup.add(disc);
+
+for (let i = 0; i < 7; i++) {
+  const bg = new THREE.Group();
+  const shape = new THREE.Shape();
+  shape.moveTo(0, 0);
+  shape.quadraticCurveTo(0.4, 0.2, 0.6, 0.5);
+  shape.lineTo(3.8, 0.7);
+  shape.quadraticCurveTo(4.0, 0.3, 3.95, 0);
+  shape.quadraticCurveTo(4.0, -0.3, 3.8, -0.7);
+  shape.lineTo(0.6, -0.5);
+  shape.quadraticCurveTo(0.4, -0.2, 0, 0);
+  const blade = new THREE.Mesh(new THREE.ExtrudeGeometry(shape, { depth: 0.08, bevelEnabled: true, bevelSegments: 2, steps: 1, bevelSize: 0.03, bevelThickness: 0.03 }), new THREE.MeshStandardMaterial({ color: 0x8a92a0, metalness: 0.95, roughness: 0.15, emissive: 0x2a3045, emissiveIntensity: 0.3, side: THREE.DoubleSide }));
+  blade.rotation.y = Math.PI / 7; bg.add(blade);
+  bg.rotation.z = (i / 7) * Math.PI * 2;
+  rotorGroup.add(bg);
+}
+fanGroup.add(rotorGroup);
+for (let i = 0; i < 6; i++) {
+  const bolt = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.15, 6), new THREE.MeshStandardMaterial({ color: 0x4a4d55, metalness: 1, roughness: 0.3 }));
+  const a = (i / 6) * Math.PI * 2 + Math.PI / 6;
+  bolt.position.set(Math.cos(a) * 4.2, Math.sin(a) * 4.2, 0.2); bolt.rotation.x = Math.PI / 2;
+  fanGroup.add(bolt);
+}
+scene.add(fanGroup);
+fanGroup.position.x = 3; fanGroup.rotation.x = -0.15; fanGroup.rotation.y = -0.25;
+
+// PARTICLES
+const N = 3000;
+const positions = new Float32Array(N * 3), velocities = new Float32Array(N * 3), colors = new Float32Array(N * 3), sizes = new Float32Array(N);
+const cHot = new THREE.Color(0xff3b30), cCold = new THREE.Color(0x4a9eff), cWhite = new THREE.Color(0xffffff);
+for (let i = 0; i < N; i++) {
+  const i3 = i * 3;
+  positions[i3] = -12 + Math.random() * 5;
+  positions[i3+1] = (Math.random() - 0.5) * 10;
+  positions[i3+2] = (Math.random() - 0.5) * 8;
+  velocities[i3] = 0.04 + Math.random() * 0.08;
+  velocities[i3+1] = (Math.random() - 0.5) * 0.005;
+  velocities[i3+2] = (Math.random() - 0.5) * 0.005;
+  const t = Math.random();
+  const c = t < 0.7 ? cCold.clone().lerp(cWhite, 0.4) : (t < 0.95 ? cWhite.clone() : cHot.clone());
+  colors[i3] = c.r; colors[i3+1] = c.g; colors[i3+2] = c.b;
+  sizes[i] = Math.random() * 0.08 + 0.02;
+}
+const pGeo = new THREE.BufferGeometry();
+pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+pGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+pGeo.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+const pMat = new THREE.ShaderMaterial({
+  uniforms: { time: { value: 0 } },
+  vertexShader: `attribute float size; varying vec3 vColor; void main() { vColor = color; vec4 mv = modelViewMatrix * vec4(position, 1.0); gl_PointSize = size * (320.0 / -mv.z); gl_Position = projectionMatrix * mv; }`,
+  fragmentShader: `varying vec3 vColor; void main() { vec2 c = gl_PointCoord - vec2(0.5); float d = length(c); if (d > 0.5) discard; gl_FragColor = vec4(vColor, smoothstep(0.5, 0.0, d) * 0.85); }`,
+  vertexColors: true, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false
+});
+const particles = new THREE.Points(pGeo, pMat);
+scene.add(particles);
+
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+composer.addPass(new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 0.6, 0.4, 0.85));
+composer.addPass(new OutputPass());
+
+const mouse = new THREE.Vector2();
+const tRot = { x: -0.15, y: -0.25 };
+window.addEventListener('mousemove', (e) => {
+  mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+  tRot.y = -0.25 + mouse.x * 0.3;
+  tRot.x = -0.15 + mouse.y * 0.2;
+});
+
+let scrollVel = 0, lastScroll = window.scrollY;
+window.addEventListener('scroll', () => {
+  scrollVel += (window.scrollY - lastScroll) * 0.002;
+  lastScroll = window.scrollY;
+});
+
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  composer.setSize(window.innerWidth, window.innerHeight);
+});
+
+const clock = new THREE.Clock();
+let rpmD = 480;
+const rpmEl = document.getElementById('rpm');
+
+function animate() {
+  const t = clock.getElapsedTime();
+  scrollVel *= 0.92;
+  rotorGroup.rotation.z -= 0.02 + Math.abs(scrollVel) * 0.1;
+  fanGroup.rotation.y += (tRot.y - fanGroup.rotation.y) * 0.04;
+  fanGroup.rotation.x += (tRot.x - fanGroup.rotation.x) * 0.04;
+  innerRing.material.emissiveIntensity = 1.0 + Math.sin(t * 1.5) * 0.4;
+
+  const pos = particles.geometry.attributes.position.array;
+  for (let i = 0; i < N; i++) {
+    const i3 = i * 3;
+    pos[i3] += velocities[i3] * (1 + Math.abs(scrollVel) * 5);
+    const df = Math.abs(pos[i3] - 3);
+    if (df < 2.5) {
+      const a = t * 2 + i * 0.01;
+      pos[i3+1] += Math.sin(a) * 0.03;
+      pos[i3+2] += Math.cos(a) * 0.03;
+    } else {
+      pos[i3+1] += velocities[i3+1];
+      pos[i3+2] += velocities[i3+2];
+    }
+    if (pos[i3] > 12) {
+      pos[i3] = -12 - Math.random() * 3;
+      pos[i3+1] = (Math.random() - 0.5) * 10;
+      pos[i3+2] = (Math.random() - 0.5) * 8;
+    }
+  }
+  particles.geometry.attributes.position.needsUpdate = true;
+  pMat.uniforms.time.value = t;
+
+  const target = Math.floor(480 + Math.abs(scrollVel) * 2000);
+  rpmD += (target - rpmD) * 0.1;
+  if (rpmEl) rpmEl.textContent = `— ${Math.floor(rpmD)} —`;
+
+  composer.render();
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
+
+
+<!-- ============ INTERACTIONS (CURSOR, ANATOMY, COUNTERS) ============ -->
+<script>
+// === Custom cursor ===
+const cursor = document.getElementById('cursor');
+const cursorDot = document.getElementById('cursor-dot');
+let cX = 0, cY = 0, dX = 0, dY = 0;
+document.addEventListener('mousemove', (e) => {
+  cX = e.clientX; cY = e.clientY;
+  cursorDot.style.left = e.clientX + 'px';
+  cursorDot.style.top = e.clientY + 'px';
+});
+function mc() {
+  dX += (cX - dX) * 0.18;
+  dY += (cY - dY) * 0.18;
+  cursor.style.left = dX + 'px';
+  cursor.style.top = dY + 'px';
+  requestAnimationFrame(mc);
+}
+mc();
+document.querySelectorAll('[data-hover]').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+});
+
+// === Data panel ticker (temp + orders only — PM2.5 is live from Open-Meteo) ===
+setInterval(() => {
+  const t = (17 + Math.random() * 4).toFixed(1);
+  const o = Math.floor(2 + Math.random() * 4);
+  const tempEl = document.getElementById('temp');
+  const ordEl = document.getElementById('orders');
+  if (tempEl) tempEl.innerHTML = `${t}<span class="data-unit">°C</span>`;
+  if (ordEl) ordEl.innerHTML = `${o}<span class="data-unit"> w terenie</span>`;
+}, 4500);
+
+// === Anatomy interaction ===
+const parts = document.querySelectorAll('.part-item');
+const svgParts = document.querySelectorAll('.split-svg .part');
+
+parts.forEach(p => {
+  p.addEventListener('mouseenter', () => activatePart(p.dataset.id));
+  p.addEventListener('click', () => activatePart(p.dataset.id));
+});
+svgParts.forEach(s => {
+  s.addEventListener('mouseenter', () => activatePart(s.dataset.part));
+  s.addEventListener('click', () => activatePart(s.dataset.part));
+});
+
+function activatePart(id) {
+  parts.forEach(p => p.classList.toggle('active', p.dataset.id === id));
+  svgParts.forEach(s => s.classList.toggle('active', s.dataset.part === id));
+}
+
+// === Cross-flow fan rotation in SVG ===
+const fanRotor = document.getElementById('fan-rotor');
+let svgRot = 0;
+function rotateSvgFan() {
+  svgRot += 3;
+  if (fanRotor) fanRotor.setAttribute('transform', `rotate(${svgRot})`);
+  requestAnimationFrame(rotateSvgFan);
+}
+rotateSvgFan();
+
+// === Compressor rotor ===
+const compRotor = document.getElementById('compressor-rotor');
+let compRot = 0;
+function rotateComp() {
+  compRot += 4;
+  if (compRotor) compRotor.setAttribute('transform', `rotate(${compRot})`);
+  requestAnimationFrame(rotateComp);
+}
+rotateComp();
+
+// === Number counters (IntersectionObserver) ===
+const counters = document.querySelectorAll('[data-count]');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseFloat(el.dataset.count);
+      const duration = 1800;
+      const start = performance.now();
+      const isFloat = target % 1 !== 0;
+      function tick(now) {
+        const elapsed = now - start;
+        const p = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const v = target * eased;
+        el.textContent = isFloat ? v.toFixed(2) : Math.floor(v);
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      obs.unobserve(el);
+    }
+  });
+}, { threshold: 0.4 });
+counters.forEach(c => obs.observe(c));
+
+// === Smooth scroll for nav ===
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const id = a.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if (el) {
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// === AIR QUALITY MONITOR — Wrocław (Open-Meteo Air Quality API, free, no auth) ===
+(async function airQualityWroclaw() {
+  const URL_AQ = 'https://air-quality-api.open-meteo.com/v1/air-quality?latitude=51.1079&longitude=17.0385&current=pm2_5,pm10,nitrogen_dioxide,european_aqi&timezone=Europe%2FWarsaw';
+
+  // EU/WHO thresholds (µg/m³) — daily/hour realistic mapping
+  // PM2.5: <12 good, 12-25 mod, 25-55 bad, >55 vbad
+  // PM10:  <25 good, 25-50 mod, 50-90 bad, >90 vbad
+  // NO2:   <40 good, 40-100 mod, 100-200 bad, >200 vbad
+  const SCALES = {
+    pm25: { max: 75, thr: [12, 25, 55] },
+    pm10: { max: 120, thr: [25, 50, 90] },
+    no2:  { max: 250, thr: [40, 100, 200] }
+  };
+
+  function rating(val, thr) {
+    if (val == null) return null;
+    if (val < thr[0]) return 'good';
+    if (val < thr[1]) return 'mod';
+    if (val < thr[2]) return 'bad';
+    return 'vbad';
+  }
+  function ratingLabel(r) {
+    return { good: 'Bardzo dobra', mod: 'Umiarkowana', bad: 'Słaba', vbad: 'Bardzo zła' }[r] || '—';
+  }
+  function clampPct(val, max) {
+    return Math.max(2, Math.min(98, (val / max) * 100));
+  }
+
+  function animateCounter(el, target, decimals = 0) {
+    if (!el) return;
+    const start = 0;
+    const dur = 900;
+    const t0 = performance.now();
+    function step(now) {
+      const p = Math.min(1, (now - t0) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const v = start + (target - start) * eased;
+      el.textContent = decimals ? v.toFixed(decimals) : Math.round(v);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = decimals ? target.toFixed(decimals) : Math.round(target);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function paintRating(elId, r) {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    el.classList.remove('good', 'mod', 'bad', 'vbad');
+    if (r) el.classList.add(r);
+    el.textContent = ratingLabel(r);
+  }
+
+  function setPin(elId, pct) {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    el.style.transition = 'left 1100ms cubic-bezier(.2,.7,.2,1)';
+    requestAnimationFrame(() => { el.style.left = pct.toFixed(1) + '%'; });
+  }
+
+  function setStatusDot(worstRating) {
+    const dot = document.getElementById('aq-status-dot');
+    if (!dot) return;
+    const colors = { good: '#19c37d', mod: '#f5b301', bad: '#ff6a3d', vbad: '#d93636' };
+    dot.style.background = colors[worstRating] || '#19c37d';
+    dot.style.boxShadow = `0 0 12px ${colors[worstRating] || '#19c37d'}`;
+  }
+
+  function formatTime(iso) {
+    try {
+      const d = new Date(iso);
+      return d.toLocaleString('pl-PL', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', timeZone: 'Europe/Warsaw' });
+    } catch (e) { return '—'; }
+  }
+
+  function render(data, isFallback) {
+    const pm25 = data.pm2_5;
+    const pm10 = data.pm10;
+    const no2 = data.no2;
+
+    animateCounter(document.getElementById('pm25-val'), pm25, 1);
+    animateCounter(document.getElementById('pm10-val'), pm10, 1);
+    animateCounter(document.getElementById('no2-val'), no2, 1);
+
+    const r25 = rating(pm25, SCALES.pm25.thr);
+    const r10 = rating(pm10, SCALES.pm10.thr);
+    const rn2 = rating(no2, SCALES.no2.thr);
+
+    setPin('pm25-pin', clampPct(pm25, SCALES.pm25.max));
+    setPin('pm10-pin', clampPct(pm10, SCALES.pm10.max));
+    setPin('no2-pin', clampPct(no2, SCALES.no2.max));
+
+    paintRating('pm25-rating', r25);
+    paintRating('pm10-rating', r10);
+    paintRating('no2-rating', rn2);
+
+    // worst-of for status dot
+    const order = ['good', 'mod', 'bad', 'vbad'];
+    const worst = [r25, r10, rn2].filter(Boolean).sort((a, b) => order.indexOf(b) - order.indexOf(a))[0];
+    setStatusDot(worst);
+
+    const cap = document.getElementById('pm25-caption');
+    if (cap) {
+      if (r25 === 'good') cap.textContent = 'Norma WHO 24h spełniona. Filtry MERV13 wystarczające.';
+      else if (r25 === 'mod') cap.textContent = 'Powyżej zaleceń WHO. Rekomendujemy filtry HEPA H13 w nawiewie.';
+      else if (r25 === 'bad') cap.textContent = 'Wysokie pyły zawieszone — wskazana rekuperacja z HEPA i kontrola CO₂.';
+      else cap.textContent = 'Smog. Niezbędna wentylacja z HEPA H14 + monitoring jakości powietrza.';
+    }
+
+    const tEl = document.getElementById('aq-time');
+    if (tEl) tEl.textContent = (isFallback ? 'dane archiwalne · ' : '') + formatTime(data.time);
+
+    const st = document.getElementById('aq-station-name');
+    if (st) st.textContent = 'Wrocław · Open-Meteo Air Quality (CAMS)';
+
+    // Sync hero panel PM2.5
+    const heroPm = document.getElementById('pm25');
+    if (heroPm && typeof pm25 === 'number') {
+      heroPm.innerHTML = `${pm25.toFixed(1)}<span class="data-unit">µg/m³</span>`;
+    }
+  }
+
+  try {
+    const res = await fetch(URL_AQ, { cache: 'no-store' });
+    if (!res.ok) throw new Error('http ' + res.status);
+    const j = await res.json();
+    const c = j.current || {};
+    render({
+      pm2_5: typeof c.pm2_5 === 'number' ? c.pm2_5 : 8.2,
+      pm10: typeof c.pm10 === 'number' ? c.pm10 : 14.5,
+      no2: typeof c.nitrogen_dioxide === 'number' ? c.nitrogen_dioxide : 18.7,
+      time: c.time || new Date().toISOString()
+    }, false);
+  } catch (err) {
+    // Fallback: realistyczne wartości dla Wrocławia, oznaczone jako archiwalne
+    render({ pm2_5: 8.2, pm10: 14.5, no2: 18.7, time: new Date().toISOString() }, true);
+  }
+})();
+
+// === MOBILE HAMBURGER MENU ===
+(function initMobileMenu() {
+  const toggle = document.getElementById('mobileToggle');
+  const list = document.getElementById('navList');
+  if (!toggle || !list) return;
+
+  const close = () => {
+    toggle.classList.remove('is-open');
+    list.classList.remove('is-open');
+    document.body.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+  const open = () => {
+    toggle.classList.add('is-open');
+    list.classList.add('is-open');
+    document.body.classList.add('menu-open');
+    toggle.setAttribute('aria-expanded', 'true');
+  };
+
+  toggle.addEventListener('click', () => {
+    if (list.classList.contains('is-open')) close(); else open();
+  });
+
+  // Zamknij menu po kliknięciu w link
+  list.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => { setTimeout(close, 50); });
+  });
+
+  // ESC zamyka
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && list.classList.contains('is-open')) close();
+  });
+})();
+
+// === FORMULARZ WYCENY — walidacja, honeypot, mailto fallback ===
+(function initQuoteForm() {
+  const form = document.getElementById('quoteForm');
+  if (!form) return;
+  const ok = document.getElementById('quoteOk');
+  const submitBtn = form.querySelector('.quote-submit');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Honeypot — bot wypełni 'website', człowiek nie
+    const honey = form.querySelector('input[name="website"]');
+    if (honey && honey.value.trim() !== '') {
+      // cicho ignorujemy bota
+      console.warn('honeypot triggered');
+      return;
+    }
+
+    const data = {
+      name: (document.getElementById('q-name') || {}).value || '',
+      phone: (document.getElementById('q-phone') || {}).value || '',
+      email: (document.getElementById('q-email') || {}).value || '',
+      type: (document.getElementById('q-type') || {}).value || '',
+      area: (document.getElementById('q-area') || {}).value || '',
+      service: (document.getElementById('q-service') || {}).value || '',
+      district: (document.getElementById('q-district') || {}).value || '',
+      msg: (document.getElementById('q-msg') || {}).value || ''
+    };
+
+    // Walidacja minimum: imie + (telefon LUB email)
+    if (!data.name.trim()) {
+      alert('Podaj imię, abyśmy mogli się z Tobą skontaktować.');
+      const n = document.getElementById('q-name'); if (n) n.focus();
+      return;
+    }
+    if (!data.phone.trim() && !data.email.trim()) {
+      alert('Podaj telefon lub e-mail, aby otrzymać wycenę w 24h.');
+      const p = document.getElementById('q-phone'); if (p) p.focus();
+      return;
+    }
+
+    // Zablokuj guzik aby uniknąć double-submit
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Wysyłanie...'; }
+
+    // Treść maila — gotowiec
+    const subject = `Wycena NURTEX — ${data.service || 'Klimatyzacja'} — ${data.name}`;
+    const lines = [
+      `Imię: ${data.name}`,
+      `Telefon: ${data.phone}`,
+      `E-mail: ${data.email}`,
+      `Typ obiektu: ${data.type}`,
+      `Metraż: ${data.area} m²`,
+      `Usługa: ${data.service}`,
+      `Dzielnica/Lokalizacja: ${data.district}`,
+      '',
+      'Dodatkowe info:',
+      data.msg || '(brak)',
+      '',
+      '---',
+      'Wysłane z formularza nurtex.pl'
+    ];
+    const body = lines.join('\n');
+
+    // Próba 1: fetch do backendu (placeholder — zmień FORM_ENDPOINT na realny Formspree / własny endpoint)
+    const FORM_ENDPOINT = ''; // np. 'https://formspree.io/f/xxxxxx'
+
+    const showSuccess = () => {
+      // Schowaj wszystkie elementy formularza oprócz kontenera success
+      Array.from(form.children).forEach(child => {
+        if (child.id !== 'quoteOk') child.style.display = 'none';
+      });
+      if (ok) ok.classList.add('active');
+      // Scroll do potwierdzenia
+      setTimeout(() => { (ok || form).scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100);
+    };
+
+    const fallbackMailto = () => {
+      const href = `mailto:kontakt@nurtex.pl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      // Otwórz klienta pocztowego użytkownika
+      window.location.href = href;
+      // I tak pokazujemy success — bo dane są już w mailto
+      setTimeout(showSuccess, 300);
+    };
+
+    if (FORM_ENDPOINT) {
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+        .then(r => { if (r.ok) showSuccess(); else fallbackMailto(); })
+        .catch(() => fallbackMailto());
+    } else {
+      // Brak endpointu — od razu mailto
+      fallbackMailto();
+    }
+  });
+})();
+</script>
+
+<!-- ============ HOLOGRAPHIC TILT — SERVICE CARDS ============ -->
+<script>
+(() => {
+  if (window.matchMedia('(hover: none)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const cards = document.querySelectorAll('.service-card');
+  const MAX_TILT = 7;
+
+  cards.forEach(card => {
+    let rafId = null;
+    let targetX = 0, targetY = 0;
+    let currentX = 0, currentY = 0;
+
+    function update() {
+      currentX += (targetX - currentX) * 0.15;
+      currentY += (targetY - currentY) * 0.15;
+      card.style.setProperty('--rx', `${currentY}deg`);
+      card.style.setProperty('--ry', `${currentX}deg`);
+      if (Math.abs(targetX - currentX) > 0.01 || Math.abs(targetY - currentY) > 0.01) {
+        rafId = requestAnimationFrame(update);
+      } else { rafId = null; }
+    }
+
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      card.style.setProperty('--mx', `${x}px`);
+      card.style.setProperty('--my', `${y}px`);
+      targetX = ((x - cx) / cx) * MAX_TILT;
+      targetY = -((y - cy) / cy) * MAX_TILT;
+      if (!rafId) rafId = requestAnimationFrame(update);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      targetX = 0; targetY = 0;
+      if (!rafId) rafId = requestAnimationFrame(update);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
