@@ -6,6 +6,7 @@ const ALLOWED_ORIGINS = [
 ];
 
 const DEFAULT_TO = 'kontakt@nurtex.pl';
+const SUPABASE_TABLE = 'leads_kalkulator';
 
 function setCors(req, res) {
   const origin = req.headers.origin;
@@ -143,6 +144,77 @@ async function sendResendEmail({ apiKey, from, to, replyTo, subject, html }) {
   return parsed;
 }
 
+function getClientIp(req) {
+  return String(req.headers['x-forwarded-for'] || '')
+    .split(',')[0]
+    .trim() || req.headers['x-real-ip'] || null;
+}
+
+async function saveToSupabase(data, req, emailStatus) {
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!supabaseUrl || !serviceRoleKey) {
+    return {
+      saved: false,
+      id: null,
+      error: 'Brak konfiguracji SUPABASE_URL lub SUPABASE_SERVICE_ROLE_KEY w Vercel.'
+    };
+  }
+
+  const row = {
+    email: data.email,
+    telefon: data.telefon || null,
+    poziom: data.poziom,
+    stary_kociol: data.staryKociol || null,
+    inwestycja: data.inwestycja,
+    wynik_dotacja: Number(data.wynikDotacja || 0),
+    wynik_koszt: Number(data.wynikKoszt || 0),
+    wynik_koszt_po_dotacji: Number(data.wynikKosztPoDotacji || 0),
+    source_url: data.url || null,
+    user_agent: req.headers['user-agent'] || null,
+    ip_address: getClientIp(req),
+    email_sent_to_client: Boolean(emailStatus.clientSent),
+    email_sent_to_nurtex: Boolean(emailStatus.internalSent),
+    email_error: emailStatus.errors.length ? emailStatus.errors.join('; ') : null
+  };
+
+  try {
+    const headers = {
+      apikey: serviceRoleKey,
+      'Content-Type': 'application/json',
+      Prefer: 'return=representation'
+    };
+    if (!serviceRoleKey.startsWith('sb_secret_')) {
+      headers.Authorization = `Bearer ${serviceRoleKey}`;
+    }
+
+    const response = await fetch(`${supabaseUrl.replace(/\/$/, '')}/rest/v1/${SUPABASE_TABLE}`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(row)
+    });
+
+    const text = await response.text();
+    let parsed = null;
+    try {
+      parsed = text ? JSON.parse(text) : null;
+    } catch (error) {
+      parsed = text;
+    }
+
+    if (!response.ok) {
+      const message = parsed?.message || text || `Supabase error ${response.status}`;
+      return { saved: false, id: null, error: message };
+    }
+
+    const inserted = Array.isArray(parsed) ? parsed[0] : parsed;
+    return { saved: true, id: inserted?.id || null, error: null };
+  } catch (error) {
+    return { saved: false, id: null, error: error.message };
+  }
+}
+
 module.exports = async function handler(req, res) {
   setCors(req, res);
 
@@ -157,13 +229,6 @@ module.exports = async function handler(req, res) {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.FROM_EMAIL || DEFAULT_TO;
   const internalTo = process.env.TO_EMAIL || DEFAULT_TO;
-
-  if (!apiKey) {
-    return res.status(503).json({
-      success: false,
-      error: 'Brak konfiguracji RESEND_API_KEY w Vercel.'
-    });
-  }
 
   let data;
   try {
@@ -184,40 +249,70 @@ module.exports = async function handler(req, res) {
   const payload = { ...data, email };
   const subject = `Kalkulator Czyste Powietrze: ${email} · ${formatMoney(payload.wynikDotacja)}`;
 
-  let internalEmail;
-  try {
-    internalEmail = await sendResendEmail({
-      apiKey,
-      from,
-      to: internalTo,
-      replyTo: email,
-      subject,
-      html: renderInternalEmail(payload)
-    });
-  } catch (error) {
-    return res.status(502).json({
-      success: false,
-      error: `Nie udało się wysłać leada do NURTEX: ${error.message}`
-    });
-  }
-
+  let internalEmail = null;
+  let internalEmailError = null;
   let clientEmail = null;
   let clientEmailError = null;
-  try {
-    clientEmail = await sendResendEmail({
-      apiKey,
-      from,
-      to: email,
-      replyTo: internalTo,
-      subject: 'Twój wynik kalkulatora Czyste Powietrze · NURTEX',
-      html: renderClientEmail(payload)
+
+  if (apiKey) {
+    try {
+      internalEmail = await sendResendEmail({
+        apiKey,
+        from,
+        to: internalTo,
+        replyTo: email,
+        subject,
+        html: renderInternalEmail(payload)
+      });
+    } catch (error) {
+      internalEmailError = error.message;
+    }
+
+    try {
+      clientEmail = await sendResendEmail({
+        apiKey,
+        from,
+        to: email,
+        replyTo: internalTo,
+        subject: 'Twój wynik kalkulatora Czyste Powietrze · NURTEX',
+        html: renderClientEmail(payload)
+      });
+    } catch (error) {
+      clientEmailError = error.message;
+    }
+  } else {
+    internalEmailError = 'Brak konfiguracji RESEND_API_KEY w Vercel.';
+    clientEmailError = 'Brak konfiguracji RESEND_API_KEY w Vercel.';
+  }
+
+  const emailStatus = {
+    internalSent: Boolean(internalEmail),
+    clientSent: Boolean(clientEmail),
+    errors: [...new Set([internalEmailError, clientEmailError].filter(Boolean))]
+  };
+  const supabaseLead = await saveToSupabase(payload, req, emailStatus);
+  const leadCaptured = Boolean(internalEmail) || supabaseLead.saved;
+
+  if (!leadCaptured) {
+    return res.status(503).json({
+      success: false,
+      error: 'Lead nie został zapisany ani wysłany. Brakuje konfiguracji Resend/Supabase lub wystąpił błąd integracji.',
+      leadId: null,
+      supabaseSaved: false,
+      supabaseError: supabaseLead.error,
+      internalEmailSent: false,
+      internalEmailError,
+      clientEmailSent: false,
+      clientEmailError
     });
-  } catch (error) {
-    clientEmailError = error.message;
   }
 
   return res.status(200).json({
     success: true,
+    leadId: supabaseLead.id,
+    supabaseSaved: supabaseLead.saved,
+    supabaseError: supabaseLead.error,
+    internalEmailSent: Boolean(internalEmail),
     internalEmailId: internalEmail?.id || null,
     clientEmailSent: Boolean(clientEmail),
     clientEmailId: clientEmail?.id || null,
