@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<!--
+================================================================
+  NURTEX — WDROŻENIE NR 06 — KALKULATOR CZYSTE POWIETRZE 2026
+  
+  URL DOCELOWY:
+  https://wentylacja-nurtex-klimatyzacja.pl/kalkulator-czyste-powietrze/
+  
+  CO TO JEST:
+  Single-file interaktywny kalkulator dotacji Czyste Powietrze
+  zgodny z programem obowiązującym od 31.03.2025.
+  
+  Klient wypełnia 4 kroki:
+    1. Dochód (wybór poziomu dotacji)
+    2. Stary kocioł (kopciuch / gaz / olej / inny)
+    3. Zakres inwestycji (pompa ciepła / kompleksowa termo / PV)
+    4. Email (lead gen)
+  
+	  Otrzymuje:
+	    - Wyliczoną maksymalną dotację
+	    - Szacowany koszt po dotacji
+	    - Cykl zwrotu inwestycji
+	    - Wynik e-mail z kalkulacją
+	    - Lead leci na email NURTEX
+  
+  STACK TECHNICZNY:
+  - Vanilla JS (zero zależności)
+  - CSS embedded
+	  - Form submission → Vercel API + Resend
+  - localStorage (zapis nieskończonego progressu)
+  
+  RICH DATA SOURCES (zaktualizowane 17.05.2026):
+  - PDF Podręcznik Czyste Powietrze cz.1 (program od 31.03.2025)
+  - Poziom podstawowy: dochód ≤ 135 000 zł/rok
+  - Poziom podwyższony: dochód ≤ 2 651 zł/os/mies (lub 1 894 zł 1-os)
+  - Poziom najwyższy: dochód ≤ 1 894 zł/os/mies (lub 1 411 zł 1-os)
+  
+  MAKSYMALNE KWOTY DOTACJI 2025/2026:
+  - Pompa powietrze/woda (podst.): 22 500 zł
+  - Pompa powietrze/woda podwyższ. efektywność: 35 200 zł
+  - Pompa gruntowa: 45 000 zł
+  - Kompleksowa termomodernizacja: do 135 000 zł
+  - Audyt energetyczny: 1 200 zł
+  
+  Data: 2026-05-18
+================================================================
+-->
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ====== SEO META ====== -->
+  <title>Kalkulator Czyste Powietrze 2026 — Sprawdź ile dostaniesz | NURTEX Wrocław</title>
+  <meta name="description" content="Kalkulator dotacji Czyste Powietrze 2026 - bezpłatny. Sprawdź w 2 minuty ile dofinansowania możesz dostać na pompę ciepła, termomodernizację lub fotowoltaikę. Aktualne progi NFOŚiGW od 31.03.2025. Wycena 24h. ☎ 662 070 695">
+  <meta name="keywords" content="kalkulator czyste powietrze 2026, dotacja pompa ciepła kalkulator, czyste powietrze ile dostanę, dofinansowanie czyste powietrze 2026, kalkulator dotacji NFOŚiGW, czyste powietrze Wrocław, oblicz dotację pompa ciepła">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://wentylacja-nurtex-klimatyzacja.pl/kalkulator-czyste-powietrze/">
+  
+  <!-- ====== OPEN GRAPH ====== -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:site_name" content="NURTEX">
+  <meta property="og:title" content="Kalkulator Czyste Powietrze 2026 — NURTEX">
+  <meta property="og:description" content="Sprawdź w 2 minuty ile dotacji możesz dostać na pompę ciepła i termomodernizację. Aktualne progi NFOŚiGW.">
+  <meta property="og:url" content="https://wentylacja-nurtex-klimatyzacja.pl/kalkulator-czyste-powietrze/">
+  
+  <!-- ====== SCHEMA.ORG ====== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Kalkulator Czyste Powietrze 2026",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any (web)",
+    "description": "Bezpłatny kalkulator dotacji Czyste Powietrze 2026 dla domów jednorodzinnych w Polsce. Zgodny z aktualnym programem NFOŚiGW od 31 marca 2025.",
+    "url": "https://wentylacja-nurtex-klimatyzacja.pl/kalkulator-czyste-powietrze/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "PLN"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "NURTEX",
+      "url": "https://wentylacja-nurtex-klimatyzacja.pl/"
+    }
+  }
+  </script>
+  
+  <style>
+    /* ============================================================ */
+    /* CSS — SELF-CONTAINED, NO EXTERNAL DEPS                       */
+    /* ============================================================ */
+    
+    :root {
+      --color-bg: #0a0a0c;
+      --color-surface: #14141a;
+      --color-surface-2: #1c1c24;
+      --color-border: rgba(255,255,255,0.08);
+      --color-border-hover: rgba(232,80,58,0.45);
+      --color-text: #f5f5f5;
+      --color-text-muted: #888;
+      --color-text-dim: #555;
+      --color-accent: #e8503a;
+      --color-accent-hover: #ff6a52;
+      --color-success: #1d8a4e;
+      --color-success-bg: rgba(29, 138, 78, 0.12);
+      --color-warn: #d4823b;
+      --color-error: #c44545;
+      --radius: 12px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+    
+    .kalk-topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 16px clamp(18px, 4vw, 56px);
+      background: rgba(10, 10, 12, 0.88);
+      border-bottom: 1px solid var(--color-border);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .kalk-logo img { display: block; width: min(220px, 52vw); height: auto; }
+    .kalk-nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .kalk-nav a {
+      color: var(--color-text-muted);
+      text-decoration: none;
+    }
+    .kalk-nav a:hover { color: var(--color-text); }
+    .kalk-nav-cta {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--color-accent);
+      color: white !important;
+    }
+    .kalk-container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+    
+    @media (max-width: 640px) {
+      .kalk-container { padding: 24px 16px; }
+      .kalk-topbar { position: relative; align-items: flex-start; flex-direction: column; }
+      .kalk-nav { width: 100%; gap: 12px; overflow-x: auto; padding-bottom: 4px; }
+      .kalk-nav a { white-space: nowrap; }
+    }
+    
+    /* ===== HEADER ===== */
+    
+    .kalk-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .kalk-eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 16px;
+      display: inline-block;
+      padding: 6px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+    }
+    
+    .kalk-header h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    
+    .kalk-header h1 em {
+      color: var(--color-accent);
+      font-style: normal;
+    }
+    
+    .kalk-header p {
+      font-size: 17px;
+      color: var(--color-text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    
+    /* ===== PROGRESS BAR ===== */
+    
+    .kalk-progress {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    
+    .kalk-progress-step {
+      flex: 1;
+      height: 4px;
+      background: var(--color-surface-2);
+      border-radius: 2px;
+      transition: background 0.3s ease;
+    }
+    
+    .kalk-progress-step.is-done,
+    .kalk-progress-step.is-current {
+      background: var(--color-accent);
+    }
+    
+    /* ===== CARD ===== */
+    
+    .kalk-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      box-shadow: var(--shadow);
+    }
+    
+    @media (max-width: 640px) {
+      .kalk-card { padding: 28px 20px; }
+    }
+    
+    .kalk-step-label {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .kalk-step-title {
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    
+    .kalk-step-subtitle {
+      color: var(--color-text-muted);
+      margin-bottom: 32px;
+      font-size: 15px;
+    }
+    
+    /* ===== OPTIONS ===== */
+    
+    .kalk-options {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    
+    .kalk-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 20px;
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+      width: 100%;
+      font-family: inherit;
+      color: var(--color-text);
+    }
+    
+    .kalk-option:hover {
+      border-color: var(--color-border-hover);
+      background: rgba(201, 169, 97, 0.04);
+    }
+    
+    .kalk-option.is-selected {
+      border-color: var(--color-accent);
+      background: rgba(201, 169, 97, 0.08);
+    }
+    
+    .kalk-option-radio {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border: 2px solid var(--color-border);
+      border-radius: 50%;
+      margin-top: 2px;
+      position: relative;
+      transition: border-color 0.2s ease;
+    }
+    
+    .kalk-option.is-selected .kalk-option-radio {
+      border-color: var(--color-accent);
+    }
+    
+    .kalk-option.is-selected .kalk-option-radio::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      background: var(--color-accent);
+      border-radius: 50%;
+    }
+    
+    .kalk-option-content {
+      flex: 1;
+    }
+    
+    .kalk-option-title {
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 4px;
+      color: var(--color-text);
+    }
+    
+    .kalk-option-desc {
+      color: var(--color-text-muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    
+    .kalk-option-badge {
+      flex-shrink: 0;
+      font-size: 11px;
+      padding: 4px 10px;
+      background: rgba(201, 169, 97, 0.12);
+      color: var(--color-accent);
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      align-self: flex-start;
+    }
+    
+    /* ===== BUTTONS ===== */
+    
+    .kalk-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .kalk-btn {
+      padding: 14px 28px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    .kalk-btn:active { transform: scale(0.98); }
+    
+    .kalk-btn-primary {
+      background: var(--color-accent);
+      color: #1a1a1a;
+    }
+    .kalk-btn-primary:hover { background: var(--color-accent-hover); }
+    .kalk-btn-primary:disabled {
+      background: var(--color-surface-2);
+      color: var(--color-text-dim);
+      cursor: not-allowed;
+    }
+    
+    .kalk-btn-ghost {
+      background: transparent;
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border);
+    }
+    .kalk-btn-ghost:hover {
+      background: var(--color-surface-2);
+      color: var(--color-text);
+    }
+    
+    /* ===== INPUT (krok 4 - email) ===== */
+    
+    .kalk-input-group {
+      margin-bottom: 16px;
+    }
+    
+    .kalk-input-label {
+      display: block;
+      font-size: 13px;
+      color: var(--color-text-muted);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    
+    .kalk-input {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      color: var(--color-text);
+      font-size: 15px;
+      font-family: inherit;
+      transition: border-color 0.2s ease;
+    }
+    
+    .kalk-input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+    
+    .kalk-input::placeholder { color: var(--color-text-dim); }
+    
+    .kalk-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--color-text-muted);
+      margin: 20px 0;
+      cursor: pointer;
+    }
+    
+    .kalk-consent input { margin-top: 3px; cursor: pointer; }
+    
+    .kalk-consent a {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+    
+    /* ===== RESULT ===== */
+    
+    .kalk-result {
+      text-align: center;
+    }
+    
+    .kalk-result-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+      background: var(--color-success-bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-success);
+      font-size: 32px;
+    }
+    
+    .kalk-result-amount {
+      font-size: clamp(40px, 8vw, 64px);
+      font-weight: 800;
+      color: var(--color-accent);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+    
+    .kalk-result-label {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 40px;
+    }
+    
+    .kalk-result-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    
+    .kalk-result-tile {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    
+    .kalk-result-tile-label {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    
+    .kalk-result-tile-value {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-text);
+      font-variant-numeric: tabular-nums;
+    }
+    
+    .kalk-result-tile-sub {
+      font-size: 12px;
+      color: var(--color-text-dim);
+      margin-top: 4px;
+    }
+    
+    .kalk-result-cta {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: left;
+    }
+    
+    .kalk-result-cta h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    
+    .kalk-result-cta p {
+      color: var(--color-text-muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    
+    .kalk-result-cta-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    
+    .kalk-result-cta-buttons a {
+      flex: 1;
+      min-width: 140px;
+      text-align: center;
+      text-decoration: none;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.15s ease;
+    }
+    
+    .kalk-result-cta-buttons a.primary {
+      background: var(--color-accent);
+      color: #1a1a1a;
+    }
+    .kalk-result-cta-buttons a.primary:hover { background: var(--color-accent-hover); }
+    
+    .kalk-result-cta-buttons a.secondary {
+      background: var(--color-surface);
+      color: var(--color-text);
+      border: 1px solid var(--color-border);
+    }
+    .kalk-result-cta-buttons a.secondary:hover {
+      border-color: var(--color-border-hover);
+    }
+    
+    /* ===== DISCLAIMER ===== */
+    
+    .kalk-disclaimer {
+      margin-top: 32px;
+      padding: 20px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      font-size: 12px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+    
+    .kalk-disclaimer strong {
+      color: var(--color-text);
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+    
+    .kalk-disclaimer a {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+    
+    /* ===== TRUST BAR ===== */
+    
+    .kalk-trust {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      font-size: 12px;
+      color: var(--color-text-muted);
+    }
+    
+    .kalk-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .kalk-trust-item::before {
+      content: '✓';
+      color: var(--color-success);
+      font-weight: 700;
+    }
+
+    .kalk-footer {
+      margin-top: 56px;
+      border-top: 1px solid var(--color-border);
+      padding: 34px 24px 42px;
+      color: var(--color-text-muted);
+      text-align: center;
+      font-size: 13px;
+    }
+    .kalk-footer a { color: var(--color-accent); text-decoration: none; font-weight: 700; }
+    .kalk-footer a:hover { text-decoration: underline; }
+    
+    /* ===== ANIMATIONS ===== */
+    
+    .kalk-step-content {
+      animation: kalkFadeIn 0.4s ease;
+    }
+    
+    @keyframes kalkFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="kalk-topbar">
+    <a class="kalk-logo" href="/" aria-label="NURTEX - strona główna">
+      <img src="/img/nurtex-logo.svg" alt="NURTEX - Inżynieria klimatu" width="760" height="188">
+    </a>
+    <nav class="kalk-nav" aria-label="Nawigacja">
+      <a href="/#uslugi">Usługi</a>
+      <a href="/pompy-ciepla-wroclaw">Pompy ciepła</a>
+      <a href="/blog/">Blog</a>
+      <a class="kalk-nav-cta" href="/#wycena">Wycena 24h</a>
+      <a href="tel:+48662070695">662 070 695</a>
+    </nav>
+  </header>
+
+  <div class="kalk-container">
+    
+    <!-- ====== HEADER ====== -->
+    <header class="kalk-header">
+      <span class="kalk-eyebrow">Bezpłatne narzędzie · 2 minuty</span>
+      <h1>Kalkulator <em>Czyste Powietrze</em> 2026</h1>
+      <p>Sprawdź w 4 krokach, jaką maksymalną dotację możesz uzyskać na pompę ciepła, termomodernizację lub fotowoltaikę. Aktualne progi NFOŚiGW od 31 marca 2025.</p>
+    </header>
+    
+    <!-- ====== PROGRESS BAR ====== -->
+    <div class="kalk-progress" id="kalk-progress">
+      <div class="kalk-progress-step is-current"></div>
+      <div class="kalk-progress-step"></div>
+      <div class="kalk-progress-step"></div>
+      <div class="kalk-progress-step"></div>
+    </div>
+    
+    <!-- ====== CARD WITH STEPS ====== -->
+    <div class="kalk-card">
+      <div id="kalk-content"></div>
+    </div>
+    
+    <!-- ====== DISCLAIMER ====== -->
+    <div class="kalk-disclaimer">
+      <strong>Ważne — kalkulator orientacyjny</strong>
+      Wynik to maksymalna kwota dotacji według aktualnego programu Czyste Powietrze (od 31.03.2025). Rzeczywista wysokość zależy od kosztów kwalifikowanych w Twojej inwestycji, sytuacji dochodowej całego gospodarstwa domowego oraz zakresu termomodernizacji. Oficjalne źródło: <a href="https://czystepowietrze.gov.pl/" target="_blank" rel="noopener">czystepowietrze.gov.pl</a>. NURTEX przygotowuje wniosek po wycenie technicznej obiektu.
+    </div>
+    
+    <!-- ====== TRUST BAR ====== -->
+    <div class="kalk-trust">
+      <span class="kalk-trust-item">Bezpłatne</span>
+      <span class="kalk-trust-item">Bez logowania</span>
+      <span class="kalk-trust-item">Aktualne progi 2025/2026</span>
+      <span class="kalk-trust-item">Wycena 24h</span>
+    </div>
+    
+  </div>
+
+  <footer class="kalk-footer">
+    <p><strong>NURTEX Wiktor Zięba</strong> · Klimatyzacja · Wentylacja · Pompy ciepła · Wrocław i Dolny Śląsk</p>
+    <p><a href="tel:+48662070695">662 070 695</a> · <a href="mailto:kontakt@nurtex.pl">kontakt@nurtex.pl</a> · <a href="/polityka-prywatnosci/">Polityka prywatności</a></p>
+  </footer>
+
+
+<!-- ============================================================ -->
+<!-- JAVASCRIPT — VANILLA, SELF-CONTAINED                         -->
+<!-- ============================================================ -->
+
+<script>
+(function() {
+  'use strict';
+  
+  // ==========================================================
+  // DANE PROGRAMU — zaktualizowane 18.05.2026
+  // Źródło: Podręcznik Czyste Powietrze cz.1 (31.03.2025)
+  // ==========================================================
+  
+  const POZIOMY = {
+    podstawowy: {
+      label: 'Podstawowy',
+      doch: 'do 135 000 zł rocznie',
+      maxPompaPow: 22500,       // pompa powietrze/woda
+      maxPompaPowEff: 27500,    // pompa powietrze/woda podwyższona efektywność
+      maxPompaGrunt: 35000,     // pompa gruntowa
+      maxKompleks: 66000,       // termomodernizacja kompleksowa
+      maxPV: 7000               // fotowoltaika
+    },
+    podwyzszony: {
+      label: 'Podwyższony',
+      doch: 'do 2 651 zł na osobę / mies (1 894 zł 1-osobowe)',
+      maxPompaPow: 28100,
+      maxPompaPowEff: 35200,
+      maxPompaGrunt: 45000,
+      maxKompleks: 99000,
+      maxPV: 9000
+    },
+    najwyzszy: {
+      label: 'Najwyższy',
+      doch: 'do 1 894 zł na osobę / mies (1 411 zł 1-osobowe)',
+      maxPompaPow: 35200,
+      maxPompaPowEff: 40300,
+      maxPompaGrunt: 50400,
+      maxKompleks: 135000,
+      maxPV: 12600
+    }
+  };
+  
+  // Średnie kwoty inwestycji (do kalkulacji zwrotu)
+  const KOSZTY = {
+    pompaPow:     38000,
+    pompaPowEff:  45000,
+    pompaGrunt:   72000,
+    kompleks:    120000,
+    pv:           28000
+  };
+  
+  // Średnia oszczędność roczna na ogrzewaniu po wymianie
+  const OSZCZ_ROCZNE = {
+    pompaPow:    3200,
+    pompaPowEff: 3500,
+    pompaGrunt:  4200,
+    kompleks:    5800,   // pompa + termomodernizacja
+    pv:          2400
+  };
+  
+  // ==========================================================
+  // STATE
+  // ==========================================================
+  
+  const STATE = {
+    step: 0,
+    poziom: null,       // 'podstawowy' | 'podwyzszony' | 'najwyzszy'
+    staryKociol: null,  // 'wegiel' | 'gaz' | 'olej' | 'brak'
+	    inwestycja: null,   // 'pompaPow' | 'pompaPowEff' | 'pompaGrunt' | 'kompleks' | 'pv'
+	    email: '',
+	    telefon: '',
+	    consent: false,
+	    emailSent: null
+	  };
+  
+  // Persist state w localStorage (na wypadek odświeżenia)
+  function saveState() {
+    try { localStorage.setItem('nurtex_kalk', JSON.stringify(STATE)); } catch(e) {}
+  }
+  
+  function loadState() {
+    try {
+      const saved = JSON.parse(localStorage.getItem('nurtex_kalk') || '{}');
+      Object.assign(STATE, saved);
+    } catch(e) {}
+  }
+  
+  // ==========================================================
+  // RENDERING
+  // ==========================================================
+  
+  const content = document.getElementById('kalk-content');
+  const progress = document.getElementById('kalk-progress');
+  
+  function updateProgress() {
+    progress.querySelectorAll('.kalk-progress-step').forEach((el, idx) => {
+      el.classList.remove('is-current', 'is-done');
+      if (idx < STATE.step) el.classList.add('is-done');
+      if (idx === STATE.step) el.classList.add('is-current');
+    });
+  }
+  
+  function render() {
+    updateProgress();
+    const steps = [renderStep1, renderStep2, renderStep3, renderStep4, renderResult];
+    content.innerHTML = '';
+    const stepEl = document.createElement('div');
+    stepEl.className = 'kalk-step-content';
+    stepEl.innerHTML = steps[STATE.step]();
+    content.appendChild(stepEl);
+    attachListeners();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  // ==========================================================
+  // STEP 1 — POZIOM DOCHODÓW
+  // ==========================================================
+  
+  function renderStep1() {
+    const options = [
+      { id: 'podstawowy',  title: 'Poziom podstawowy',  desc: POZIOMY.podstawowy.doch,  badge: 'Najczęstszy' },
+      { id: 'podwyzszony', title: 'Poziom podwyższony', desc: POZIOMY.podwyzszony.doch, badge: '+50% dotacji' },
+      { id: 'najwyzszy',   title: 'Poziom najwyższy',   desc: POZIOMY.najwyzszy.doch,   badge: 'Max kwoty' }
+    ];
+    
+    return `
+      <div class="kalk-step-label">Krok 1 z 4</div>
+      <h2 class="kalk-step-title">Jaki jest dochód w Twoim gospodarstwie?</h2>
+      <p class="kalk-step-subtitle">Wybierz poziom, do którego się kwalifikujesz. Im niższy dochód, tym wyższa dotacja.</p>
+      
+      <div class="kalk-options" data-question="poziom">
+        ${options.map(opt => `
+          <button class="kalk-option ${STATE.poziom === opt.id ? 'is-selected' : ''}" data-value="${opt.id}">
+            <span class="kalk-option-radio"></span>
+            <span class="kalk-option-content">
+              <span class="kalk-option-title">${opt.title}</span>
+              <span class="kalk-option-desc">${opt.desc}</span>
+            </span>
+            <span class="kalk-option-badge">${opt.badge}</span>
+          </button>
+        `).join('')}
+      </div>
+      
+      <div class="kalk-buttons">
+        <span></span>
+        <button class="kalk-btn kalk-btn-primary" id="kalk-next" ${!STATE.poziom ? 'disabled' : ''}>Dalej →</button>
+      </div>
+    `;
+  }
+  
+  // ==========================================================
+  // STEP 2 — STARY KOCIOŁ
+  // ==========================================================
+  
+  function renderStep2() {
+    const options = [
+      { id: 'wegiel', title: 'Stary kocioł węglowy ("kopciuch")', desc: 'Klasa poniżej 5 lub bez certyfikatu — kwalifikuje się do pełnej dotacji.' },
+      { id: 'gaz',    title: 'Kocioł gazowy starszy niż 10 lat',  desc: 'Również kwalifikuje się — wymiana na pompę ciepła.' },
+      { id: 'olej',   title: 'Kocioł olejowy',                    desc: 'Pełna dotacja przy wymianie na OZE.' },
+      { id: 'brak',   title: 'Nowy dom (bez starego źródła)',      desc: 'Dom w budowie — kwalifikuje się tylko termomodernizacja kompleksowa.' }
+    ];
+    
+    return `
+      <div class="kalk-step-label">Krok 2 z 4</div>
+      <h2 class="kalk-step-title">Co masz obecnie do ogrzewania?</h2>
+      <p class="kalk-step-subtitle">Program wymaga likwidacji starego, nieefektywnego źródła ciepła.</p>
+      
+      <div class="kalk-options" data-question="staryKociol">
+        ${options.map(opt => `
+          <button class="kalk-option ${STATE.staryKociol === opt.id ? 'is-selected' : ''}" data-value="${opt.id}">
+            <span class="kalk-option-radio"></span>
+            <span class="kalk-option-content">
+              <span class="kalk-option-title">${opt.title}</span>
+              <span class="kalk-option-desc">${opt.desc}</span>
+            </span>
+          </button>
+        `).join('')}
+      </div>
+      
+      <div class="kalk-buttons">
+        <button class="kalk-btn kalk-btn-ghost" id="kalk-back">← Wstecz</button>
+        <button class="kalk-btn kalk-btn-primary" id="kalk-next" ${!STATE.staryKociol ? 'disabled' : ''}>Dalej →</button>
+      </div>
+    `;
+  }
+  
+  // ==========================================================
+  // STEP 3 — ZAKRES INWESTYCJI
+  // ==========================================================
+  
+  function renderStep3() {
+    const isBrak = STATE.staryKociol === 'brak';
+    
+    let options = [
+      { id: 'pompaPow',    title: 'Pompa ciepła powietrze/woda',          desc: 'Standardowa pompa — najczęstszy wybór. Dom 100-200 m².' },
+      { id: 'pompaPowEff', title: 'Pompa powietrze/woda PODWYŻSZONA EFEKTYWNOŚĆ', desc: 'Klasa A+++ z ErP, certyfikat ECO. Najwyższa dotacja na pompę powietrzną.' },
+      { id: 'pompaGrunt',  title: 'Pompa ciepła gruntowa',                desc: 'Z odwiertami pionowymi. Wyższy SCOP, większa dotacja.' },
+      { id: 'kompleks',    title: 'Kompleksowa termomodernizacja',         desc: 'Pompa + ocieplenie + okna + rekuperacja + PV. Pakiet zwrotu do 135 000 zł.', badge: 'Max dotacji' },
+      { id: 'pv',          title: 'Fotowoltaika (jako dodatek)',           desc: 'PV liczone osobno w ramach pakietu kompleksowego.' }
+    ];
+    
+    if (isBrak) {
+      options = options.filter(o => o.id === 'kompleks');
+    }
+    
+    return `
+      <div class="kalk-step-label">Krok 3 z 4</div>
+      <h2 class="kalk-step-title">Co planujesz?</h2>
+      <p class="kalk-step-subtitle">Wybierz główny zakres inwestycji. Pełne pakiety dają wyższą dotację.</p>
+      
+      <div class="kalk-options" data-question="inwestycja">
+        ${options.map(opt => `
+          <button class="kalk-option ${STATE.inwestycja === opt.id ? 'is-selected' : ''}" data-value="${opt.id}">
+            <span class="kalk-option-radio"></span>
+            <span class="kalk-option-content">
+              <span class="kalk-option-title">${opt.title}</span>
+              <span class="kalk-option-desc">${opt.desc}</span>
+            </span>
+            ${opt.badge ? `<span class="kalk-option-badge">${opt.badge}</span>` : ''}
+          </button>
+        `).join('')}
+      </div>
+      
+      <div class="kalk-buttons">
+        <button class="kalk-btn kalk-btn-ghost" id="kalk-back">← Wstecz</button>
+        <button class="kalk-btn kalk-btn-primary" id="kalk-next" ${!STATE.inwestycja ? 'disabled' : ''}>Dalej →</button>
+      </div>
+    `;
+  }
+  
+  // ==========================================================
+  // STEP 4 — EMAIL (LEAD GEN)
+  // ==========================================================
+  
+  function renderStep4() {
+    return `
+	      <div class="kalk-step-label">Krok 4 z 4</div>
+	      <h2 class="kalk-step-title">Gdzie wysłać wynik?</h2>
+	      <p class="kalk-step-subtitle">Dostaniesz wynik e-mail i bezpłatną wycenę techniczną w 24h.</p>
+      
+      <div class="kalk-input-group">
+        <label class="kalk-input-label" for="kalk-email">E-mail *</label>
+        <input type="email" id="kalk-email" class="kalk-input" placeholder="jan.kowalski@example.com" value="${STATE.email}" required>
+      </div>
+      
+      <div class="kalk-input-group">
+        <label class="kalk-input-label" for="kalk-tel">Telefon (opcjonalnie — szybszy kontakt)</label>
+        <input type="tel" id="kalk-tel" class="kalk-input" placeholder="+48 600 000 000" value="${STATE.telefon}">
+      </div>
+      
+      <label class="kalk-consent">
+        <input type="checkbox" id="kalk-consent" ${STATE.consent ? 'checked' : ''}>
+        <span>Wyrażam zgodę na kontakt e-mail/telefon w sprawie wyceny technicznej i informacji o programie Czyste Powietrze. Twoje dane trafiają wyłącznie do NURTEX, nigdy do firm trzecich. <a href="/polityka-prywatnosci/" target="_blank">Polityka prywatności</a>.</span>
+      </label>
+      
+      <div class="kalk-buttons">
+        <button class="kalk-btn kalk-btn-ghost" id="kalk-back">← Wstecz</button>
+        <button class="kalk-btn kalk-btn-primary" id="kalk-submit">Pokaż wynik →</button>
+      </div>
+    `;
+  }
+  
+  // ==========================================================
+  // RESULT — KALKULACJA
+  // ==========================================================
+  
+  function calculateResult() {
+    const poziom = POZIOMY[STATE.poziom];
+    const inwestycja = STATE.inwestycja;
+    
+    let dotacja = 0;
+    let koszt = 0;
+    let oszczedRoczne = 0;
+    let nazwaInwest = '';
+    
+    if (inwestycja === 'pompaPow') {
+      dotacja = poziom.maxPompaPow;
+      koszt = KOSZTY.pompaPow;
+      oszczedRoczne = OSZCZ_ROCZNE.pompaPow;
+      nazwaInwest = 'Pompa ciepła powietrze/woda';
+    } else if (inwestycja === 'pompaPowEff') {
+      dotacja = poziom.maxPompaPowEff;
+      koszt = KOSZTY.pompaPowEff;
+      oszczedRoczne = OSZCZ_ROCZNE.pompaPowEff;
+      nazwaInwest = 'Pompa powietrzna podwyższonej efektywności';
+    } else if (inwestycja === 'pompaGrunt') {
+      dotacja = poziom.maxPompaGrunt;
+      koszt = KOSZTY.pompaGrunt;
+      oszczedRoczne = OSZCZ_ROCZNE.pompaGrunt;
+      nazwaInwest = 'Pompa ciepła gruntowa';
+    } else if (inwestycja === 'kompleks') {
+      dotacja = poziom.maxKompleks;
+      koszt = KOSZTY.kompleks;
+      oszczedRoczne = OSZCZ_ROCZNE.kompleks;
+      nazwaInwest = 'Kompleksowa termomodernizacja';
+    } else if (inwestycja === 'pv') {
+      dotacja = poziom.maxPV;
+      koszt = KOSZTY.pv;
+      oszczedRoczne = OSZCZ_ROCZNE.pv;
+      nazwaInwest = 'Fotowoltaika';
+    }
+    
+    const kosztPoDotacji = Math.max(0, koszt - dotacja);
+    const zwrotLat = oszczedRoczne > 0 ? (kosztPoDotacji / oszczedRoczne).toFixed(1) : 0;
+    
+    return {
+      dotacja, koszt, kosztPoDotacji, oszczedRoczne, zwrotLat, nazwaInwest,
+      poziomLabel: poziom.label
+    };
+  }
+  
+	  function renderResult() {
+	    const r = calculateResult();
+	    const fmt = (n) => n.toLocaleString('pl-PL').replace(/,/g, ' ');
+	    const resultNotice = STATE.emailSent
+	      ? `Wysłaliśmy wynik e-mail na <strong>${STATE.email}</strong>. W ciągu 24h zadzwonimy z bezpłatną wyceną techniczną dla Twojego domu i pomożemy złożyć wniosek o dotację.`
+	      : `Wynik jest gotowy. Automatyczna wysyłka e-mail wymaga konfiguracji Resend, dlatego zadzwoń lub napisz na WhatsApp, a przygotujemy wycenę techniczną ręcznie.`;
+    
+    return `
+      <div class="kalk-result">
+        <div class="kalk-result-icon">✓</div>
+        
+        <div class="kalk-result-amount">${fmt(r.dotacja)} zł</div>
+        <div class="kalk-result-label">Maksymalna dotacja Czyste Powietrze</div>
+        
+        <div class="kalk-result-grid">
+          <div class="kalk-result-tile">
+            <div class="kalk-result-tile-label">Szacowany koszt</div>
+            <div class="kalk-result-tile-value">${fmt(r.koszt)} zł</div>
+            <div class="kalk-result-tile-sub">${r.nazwaInwest}</div>
+          </div>
+          
+          <div class="kalk-result-tile">
+            <div class="kalk-result-tile-label">Koszt po dotacji</div>
+            <div class="kalk-result-tile-value">${fmt(r.kosztPoDotacji)} zł</div>
+            <div class="kalk-result-tile-sub">Z twojej kieszeni</div>
+          </div>
+          
+          <div class="kalk-result-tile">
+            <div class="kalk-result-tile-label">Oszczędność roczna</div>
+            <div class="kalk-result-tile-value">${fmt(r.oszczedRoczne)} zł</div>
+            <div class="kalk-result-tile-sub">Niższe rachunki za ogrzewanie</div>
+          </div>
+          
+          <div class="kalk-result-tile">
+            <div class="kalk-result-tile-label">Zwrot inwestycji</div>
+            <div class="kalk-result-tile-value">${r.zwrotLat} lat</div>
+            <div class="kalk-result-tile-sub">Po dotacji, z oszczędności</div>
+          </div>
+        </div>
+        
+        <div class="kalk-result-cta">
+	          <h3>🎯 Co dalej?</h3>
+	          <p>
+	            ${resultNotice}
+	          </p>
+	          <div class="kalk-result-cta-buttons">
+	            <a href="tel:+48662070695" class="primary">☎ 662 070 695</a>
+	            <a href="https://wa.me/48662070695?text=Witam%2C%20wype%C5%82ni%C5%82em%20kalkulator%20Czyste%20Powietrze" class="secondary" target="_blank" rel="noopener">WhatsApp</a>
+	            <a href="/pompy-ciepla-wroclaw/" class="secondary">Więcej o pompach</a>
+	          </div>
+        </div>
+        
+        <div style="margin-top: 32px;">
+          <button class="kalk-btn kalk-btn-ghost" id="kalk-reset">Policz ponownie</button>
+        </div>
+      </div>
+    `;
+  }
+  
+  // ==========================================================
+  // EVENT LISTENERS
+  // ==========================================================
+  
+  function attachListeners() {
+    // Option clicks
+    content.querySelectorAll('.kalk-option').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const question = this.parentElement.dataset.question;
+        const value = this.dataset.value;
+        STATE[question] = value;
+        saveState();
+        // Auto-advance po wyborze
+        setTimeout(() => {
+          if (STATE.step < 3) {
+            STATE.step++;
+            render();
+          } else {
+            render(); // re-render dla aktywacji "Dalej"
+          }
+        }, 180);
+      });
+    });
+    
+    // Nav buttons
+    const nextBtn = document.getElementById('kalk-next');
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        if (STATE.step < 3) {
+          STATE.step++;
+          render();
+        }
+      });
+    }
+    
+    const backBtn = document.getElementById('kalk-back');
+    if (backBtn) {
+      backBtn.addEventListener('click', () => {
+        if (STATE.step > 0) {
+          STATE.step--;
+          render();
+        }
+      });
+    }
+    
+    // Step 4 — submit
+    const submitBtn = document.getElementById('kalk-submit');
+    if (submitBtn) {
+      submitBtn.addEventListener('click', handleSubmit);
+    }
+    
+    // Step 4 — inputs
+    const emailInput = document.getElementById('kalk-email');
+    if (emailInput) {
+      emailInput.addEventListener('input', e => { STATE.email = e.target.value; saveState(); });
+    }
+    const telInput = document.getElementById('kalk-tel');
+    if (telInput) {
+      telInput.addEventListener('input', e => { STATE.telefon = e.target.value; saveState(); });
+    }
+    const consentInput = document.getElementById('kalk-consent');
+    if (consentInput) {
+      consentInput.addEventListener('change', e => { STATE.consent = e.target.checked; saveState(); });
+    }
+    
+    // Reset
+    const resetBtn = document.getElementById('kalk-reset');
+	    if (resetBtn) {
+	      resetBtn.addEventListener('click', () => {
+	        Object.assign(STATE, { step: 0, poziom: null, staryKociol: null, inwestycja: null, email: '', telefon: '', consent: false, emailSent: null });
+	        saveState();
+	        render();
+	      });
+    }
+  }
+  
+  // ==========================================================
+  // SUBMIT — LEAD GEN
+  // ==========================================================
+  
+	  async function handleSubmit() {
+	    if (!STATE.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(STATE.email)) {
+	      alert('Proszę podać prawidłowy adres e-mail.');
+	      return;
+    }
+    if (!STATE.consent) {
+      alert('Proszę zaznaczyć zgodę na kontakt.');
+      return;
+    }
+	    const submitBtn = document.getElementById('kalk-submit');
+	    if (submitBtn) {
+	      submitBtn.disabled = true;
+	      submitBtn.textContent = 'Liczymy i wysyłamy...';
+	    }
+	    STATE.emailSent = null;
+
+	    // Wyślij lead do backendu
+	    const result = calculateResult();
+	    const payload = {
+      source: 'kalkulator-czyste-powietrze',
+      poziom: STATE.poziom,
+      staryKociol: STATE.staryKociol,
+      inwestycja: STATE.inwestycja,
+	      email: STATE.email,
+	      telefon: STATE.telefon,
+	      consent: STATE.consent,
+	      wynikDotacja: result.dotacja,
+	      wynikKoszt: result.koszt,
+	      wynikKosztPoDotacji: result.kosztPoDotacji,
+      timestamp: new Date().toISOString(),
+      url: window.location.href
+    };
+	    try {
+	      const response = await fetch('/api/lead-kalkulator', {
+	        method: 'POST',
+	        headers: { 'Content-Type': 'application/json' },
+	        body: JSON.stringify(payload)
+	      });
+	      const data = await response.json().catch(() => ({}));
+	      STATE.emailSent = response.ok && data.success !== false && data.clientEmailSent !== false;
+	      if (!STATE.emailSent) {
+	        console.warn('[KALKULATOR] Backend zwrócił błąd:', data);
+	      }
+	    } catch (error) {
+	      STATE.emailSent = false;
+	      console.warn('[KALKULATOR] Backend nie odpowiedział. Dane payload:', payload, error);
+	    }
+    
+    // Tracking GA4 / Plausible
+    if (typeof gtag === 'function') {
+      gtag('event', 'kalkulator_submit', {
+        event_category: 'lead_gen',
+        event_label: STATE.inwestycja,
+        value: result.dotacja
+      });
+    }
+    if (typeof plausible === 'function') {
+      plausible('Kalkulator Lead', { props: { inwestycja: STATE.inwestycja, dotacja: result.dotacja } });
+    }
+    
+	    // Przejdź do wyniku
+	    STATE.step = 4;
+	    saveState();
+	    render();
+	  }
+  
+  // ==========================================================
+  // INIT
+  // ==========================================================
+  
+  loadState();
+  // Reset stepa do 0 jeśli brak danych z poprzednich kroków (anti-deep-link)
+  if (!STATE.poziom) STATE.step = 0;
+  else if (!STATE.staryKociol && STATE.step > 1) STATE.step = 1;
+  else if (!STATE.inwestycja && STATE.step > 2) STATE.step = 2;
+  render();
+  
+})();
+</script>
+
+</body>
+</html>
