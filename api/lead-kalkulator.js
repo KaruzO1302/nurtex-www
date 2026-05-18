@@ -150,6 +150,14 @@ function getClientIp(req) {
     .trim() || req.headers['x-real-ip'] || null;
 }
 
+function buildSupabaseTableUrl(supabaseUrl, table) {
+  const baseUrl = String(supabaseUrl || '').trim().replace(/\/+$/, '');
+  if (baseUrl.endsWith('/rest/v1')) {
+    return `${baseUrl}/${table}`;
+  }
+  return `${baseUrl}/rest/v1/${table}`;
+}
+
 async function saveToSupabase(data, req, emailStatus) {
   const supabaseUrl = process.env.SUPABASE_URL;
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -189,7 +197,7 @@ async function saveToSupabase(data, req, emailStatus) {
       headers.Authorization = `Bearer ${serviceRoleKey}`;
     }
 
-    const response = await fetch(`${supabaseUrl.replace(/\/$/, '')}/rest/v1/${SUPABASE_TABLE}`, {
+    const response = await fetch(buildSupabaseTableUrl(supabaseUrl, SUPABASE_TABLE), {
       method: 'POST',
       headers,
       body: JSON.stringify(row)
