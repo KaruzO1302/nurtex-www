@@ -1,2 +1,10 @@
 .vercel
 supabase/.temp/
+
+# build/dependency artifacts
+node_modules/
+.next/
+.DS_Store
+*.log
+.env
+.env.local
