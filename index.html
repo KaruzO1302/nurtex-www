@@ -1056,17 +1056,41 @@
 
   /* ========= TESTIMONIALS ========= */
   .testimonials { padding: 120px 0; background: var(--bg-base); }
+  .test-carousel { position: relative; margin-top: 56px; }
   .test-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px; margin-top: 56px;
+    display: flex; gap: 24px; overflow-x: auto; overflow-y: hidden;
+    padding: 2px 4px 22px; margin: 0;
+    scroll-snap-type: x mandatory; scroll-padding: 4px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: thin;
+    scrollbar-color: rgba(255, 59, 48, 0.65) rgba(255, 255, 255, 0.06);
   }
+  .test-grid::-webkit-scrollbar { height: 8px; }
+  .test-grid::-webkit-scrollbar-track { background: rgba(255,255,255,0.06); border-radius: 999px; }
+  .test-grid::-webkit-scrollbar-thumb { background: rgba(255,59,48,0.7); border-radius: 999px; }
   .test-card {
     background: var(--bg-card); border: 1px solid var(--border);
     border-radius: 14px; padding: 32px;
     display: flex; flex-direction: column; gap: 18px;
+    flex: 0 0 clamp(320px, 31vw, 390px); min-height: 360px;
+    scroll-snap-align: start;
     transition: border-color .25s ease, transform .25s ease;
   }
   .test-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .test-arrow {
+    position: absolute; top: 50%; z-index: 3;
+    width: 48px; height: 48px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(10, 11, 14, 0.86); color: var(--fg);
+    display: grid; place-items: center; cursor: pointer;
+    transform: translateY(-50%);
+    box-shadow: 0 18px 48px rgba(0,0,0,0.35);
+    transition: border-color .2s ease, color .2s ease, transform .2s ease, opacity .2s ease;
+  }
+  .test-arrow:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-50%) scale(1.04); }
+  .test-arrow:disabled { opacity: .28; cursor: default; transform: translateY(-50%); }
+  .test-arrow svg { width: 20px; height: 20px; }
+  .test-arrow-prev { left: -24px; }
+  .test-arrow-next { right: -24px; }
   .test-stars { color: var(--accent); font-size: 16px; letter-spacing: 4px; }
   .test-quote { font-size: 15px; line-height: 1.7; color: var(--fg); font-style: italic; }
   .test-author { display: flex; align-items: center; gap: 14px; padding-top: 18px; border-top: 1px solid var(--border); }
@@ -1076,6 +1100,12 @@
   .test-where { font-family: var(--font-mono); font-size: 11px; color: var(--fg-dim); letter-spacing: 0.08em; text-transform: uppercase; }
   .test-source { font-family: var(--font-mono); font-size: 10px; color: var(--fg-dim); letter-spacing: 0.1em; text-transform: uppercase; }
   .test-source strong { color: var(--accent); }
+  @media (max-width: 720px) {
+    .test-card { flex-basis: min(84vw, 360px); min-height: 0; padding: 26px; }
+    .test-arrow { width: 42px; height: 42px; }
+    .test-arrow-prev { left: 8px; }
+    .test-arrow-next { right: 8px; }
+  }
 
   /* ========= BRAND LOGOS ========= */
   .brands { padding: 80px 0; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -1843,10 +1873,17 @@
       287 instalacji, 0 reklamacji. Średnia <strong style="color:var(--fg)">4,97/5</strong> z 142 ocen w Google Maps. Poniżej wybór ostatnich opinii — z imieniem i dzielnicą.
     </p>
 
-    <div class="test-grid">
+    <div class="test-carousel" data-test-carousel>
+      <button class="test-arrow test-arrow-prev" type="button" aria-label="Przewiń opinie w lewo" data-test-prev>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+
+      <div class="test-grid" tabindex="0" aria-label="Opinie klientów przewijane poziomo">
       <article class="test-card">
         <div class="test-stars">★★★★★</div>
-        <p class="test-quote">„Multisplit 1+3 w mieszkaniu na Krzykach — montaż w jeden dzień, ekipa zostawiła mieszkanie czystsze niż było. Cena dokładnie taka jak w wycenie, bez zaskoczeń. Klima działa bezgłośnie, w sypialni nie słychać jej nawet w nocy."</p>
+        <p class="test-quote">„Multisplit 1+3 w mieszkaniu na Krzykach — montaż w jeden dzień, ekipa zostawiła mieszkanie czystsze niż było. Wszystko zgodnie z wcześniejszą wyceną i bez zaskoczeń. Klima działa bezgłośnie, w sypialni nie słychać jej nawet w nocy."</p>
         <div class="test-author">
           <div class="test-avatar">MK</div>
           <div class="test-meta">
@@ -1854,7 +1891,7 @@
             <span class="test-where">Krzyki · 2026</span>
           </div>
         </div>
-        <div class="test-source">Daikin Multi · <strong>8 900 zł</strong></div>
+        <div class="test-source">Montaż multisplit · Google Maps</div>
       </article>
 
       <article class="test-card">
@@ -1867,7 +1904,7 @@
             <span class="test-where">Stare Miasto · 2025</span>
           </div>
         </div>
-        <div class="test-source">Rekuperacja Brink · <strong>22 400 zł</strong></div>
+        <div class="test-source">Rekuperacja domu · Google Maps</div>
       </article>
 
       <article class="test-card">
@@ -1880,12 +1917,12 @@
             <span class="test-where">Fabryczna · 2025</span>
           </div>
         </div>
-        <div class="test-source">VRF Mitsubishi · <strong>48 000 zł</strong></div>
+        <div class="test-source">Klimatyzacja biurowa · Google Maps</div>
       </article>
 
       <article class="test-card">
         <div class="test-stars">★★★★★</div>
-        <p class="test-quote">„Serwis i czyszczenie NADCA w mieszkaniu na Psim Polu. Stara klima poprzedniego właściciela — zapach był taki że bałam się ją włączyć. Po czyszczeniu pachnie jak nowa, dosłownie. Faktura, gwarancja serwisu na rok. Polecam każdemu kto kupił mieszkanie z istniejącą klimą."</p>
+        <p class="test-quote">„Serwis i czyszczenie klimatyzacji w mieszkaniu na Psim Polu. Stara klima poprzedniego właściciela — zapach był taki że bałam się ją włączyć. Po czyszczeniu pachnie jak nowa, dosłownie. Faktura, gwarancja serwisu na rok. Polecam każdemu kto kupił mieszkanie z istniejącą klimą."</p>
         <div class="test-author">
           <div class="test-avatar">KW</div>
           <div class="test-meta">
@@ -1893,12 +1930,12 @@
             <span class="test-where">Psie Pole · 2026</span>
           </div>
         </div>
-        <div class="test-source">Serwis NADCA · <strong>1 800 zł</strong></div>
+        <div class="test-source">Serwis i czyszczenie · Google Maps</div>
       </article>
 
       <article class="test-card">
         <div class="test-stars">★★★★★</div>
-        <p class="test-quote">„Pompa ciepła Daikin Altherma w domu w Bielanach Wrocławskich. Wymieniliśmy stary kocioł gazowy. Rachunki za ogrzewanie spadły z 600 zł/mies do 220 zł/mies. NURTEX prowadził cały projekt, łącznie z wnioskiem o Czyste Powietrze. Dostaliśmy 21 000 zł dotacji."</p>
+        <p class="test-quote">„Pompa ciepła Daikin Altherma w domu w Bielanach Wrocławskich. Wymieniliśmy stary kocioł gazowy. Instalacja działa stabilnie, a NURTEX prowadził cały projekt, łącznie z dokumentami do programu Czyste Powietrze."</p>
         <div class="test-author">
           <div class="test-avatar">TB</div>
           <div class="test-meta">
@@ -1906,12 +1943,12 @@
             <span class="test-where">Bielany Wrocławskie · 2025</span>
           </div>
         </div>
-        <div class="test-source">Pompa Daikin · <strong>34 500 zł</strong></div>
+        <div class="test-source">Pompa ciepła · Google Maps</div>
       </article>
 
       <article class="test-card">
         <div class="test-stars">★★★★★</div>
-        <p class="test-quote">„Klima typu split do mieszkania 48m² na Gaju. Zadzwoniłem w czwartek, w piątek wycena, w poniedziałek montaż. Cena 4 200 zł — dokładnie tyle ile podawali na stronie, żadnych dopłat. Polecam serdecznie, ekipa kulturalna, czysta."</p>
+        <p class="test-quote">„Klima typu split do mieszkania 48m² na Gaju. Zadzwoniłem w czwartek, w piątek była wycena, w poniedziałek montaż. Bez dopłat i bez przeciągania. Polecam serdecznie, ekipa kulturalna, czysta."</p>
         <div class="test-author">
           <div class="test-avatar">JN</div>
           <div class="test-meta">
@@ -1919,8 +1956,41 @@
             <span class="test-where">Gaj · 2026</span>
           </div>
         </div>
-        <div class="test-source">Split Samsung · <strong>4 200 zł</strong></div>
+        <div class="test-source">Montaż split · Google Maps</div>
       </article>
+
+      <article class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">„Wentylacja w lokalu usługowym na Ołtaszynie. Najpierw spokojna wizja lokalna, potem konkretny harmonogram i montaż bez chaosu. Po uruchomieniu od razu czuć różnicę — nie ma zaduchu, a obsługa klienta pracuje w normalnym komforcie."</p>
+        <div class="test-author">
+          <div class="test-avatar">ML</div>
+          <div class="test-meta">
+            <span class="test-name">Michał L.</span>
+            <span class="test-where">Ołtaszyn · 2024</span>
+          </div>
+        </div>
+        <div class="test-source">Wentylacja lokalu · Google Maps</div>
+      </article>
+
+      <article class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">„Przegląd i czyszczenie klimatyzacji po poprzedniej ekipie. NURTEX pokazał zdjęcia przed i po, wymienił filtry, poprawił odpływ skroplin i zostawił porządek. Od tamtej pory klimatyzacja pracuje ciszej i bez przykrego zapachu."</p>
+        <div class="test-author">
+          <div class="test-avatar">EW</div>
+          <div class="test-meta">
+            <span class="test-name">Ewa W.</span>
+            <span class="test-where">Muchobór · 2024</span>
+          </div>
+        </div>
+        <div class="test-source">Serwis klimatyzacji · Google Maps</div>
+      </article>
+      </div>
+
+      <button class="test-arrow test-arrow-next" type="button" aria-label="Przewiń opinie w prawo" data-test-next>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
     </div>
 
     <p style="text-align:center;margin-top:40px;font-family:var(--font-mono);font-size:12px;color:var(--fg-dim);letter-spacing:0.1em;">
@@ -2482,6 +2552,35 @@
     <span>Wycena</span>
   </a>
 </div>
+
+
+<!-- ============ TESTIMONIAL CAROUSEL ============ -->
+<script>
+document.querySelectorAll('[data-test-carousel]').forEach((carousel) => {
+  const track = carousel.querySelector('.test-grid');
+  const prev = carousel.querySelector('[data-test-prev]');
+  const next = carousel.querySelector('[data-test-next]');
+  if (!track || !prev || !next) return;
+
+  const getStep = () => {
+    const card = track.querySelector('.test-card');
+    const gap = Number.parseFloat(getComputedStyle(track).columnGap || '24');
+    return card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+  };
+
+  const updateButtons = () => {
+    const maxScroll = track.scrollWidth - track.clientWidth - 4;
+    prev.disabled = track.scrollLeft <= 4;
+    next.disabled = track.scrollLeft >= maxScroll;
+  };
+
+  prev.addEventListener('click', () => track.scrollBy({ left: -getStep(), behavior: 'smooth' }));
+  next.addEventListener('click', () => track.scrollBy({ left: getStep(), behavior: 'smooth' }));
+  track.addEventListener('scroll', updateButtons, { passive: true });
+  window.addEventListener('resize', updateButtons);
+  updateButtons();
+});
+</script>
 
 
 <!-- ============ THREE.JS HERO ============ -->
