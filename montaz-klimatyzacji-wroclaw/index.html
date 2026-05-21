@@ -577,6 +577,102 @@ section { padding: 100px 0; position: relative; }
   50% { transform: translateY(-4px); }
 }
 
+/* ============ PAKIETY ============ */
+.pakiety-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px; margin-top: 32px;
+}
+.pakiet-card {
+  padding: 32px 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border); border-radius: 16px;
+  transition: all 0.4s;
+  position: relative;
+  display: flex; flex-direction: column;
+}
+.pakiet-card:hover {
+  border-color: rgba(220,38,38,0.5);
+  transform: translateY(-4px);
+}
+.pakiet-card.featured {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, rgba(220,38,38,0.08) 0%, var(--bg-card) 60%);
+}
+.pakiet-ribbon {
+  position: absolute; top: -12px; right: 20px;
+  padding: 6px 14px; background: var(--accent); color: #fff;
+  font-family: 'Geist Mono', monospace; font-size: 11px;
+  font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  border-radius: 6px;
+}
+.pakiet-brand {
+  font-family: 'Geist Mono', monospace; font-size: 12px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--fg-dim); margin-bottom: 8px;
+}
+.pakiet-name {
+  font-size: 22px; font-weight: 700;
+  letter-spacing: -0.01em; margin-bottom: 4px;
+}
+.pakiet-desc {
+  font-size: 13px; color: var(--fg-dim); line-height: 1.5;
+  margin-bottom: 20px;
+}
+.pakiet-price {
+  display: flex; align-items: baseline; gap: 6px;
+  margin-bottom: 24px;
+  padding-bottom: 24px; border-bottom: 1px solid var(--border);
+}
+.pakiet-price-from {
+  font-family: 'Geist Mono', monospace; font-size: 12px;
+  color: var(--fg-dim); letter-spacing: 0.08em;
+}
+.pakiet-price-value {
+  font-size: 36px; font-weight: 800;
+  letter-spacing: -0.02em; color: var(--fg);
+}
+.pakiet-card.featured .pakiet-price-value { color: var(--accent); }
+.pakiet-price-currency {
+  font-size: 14px; color: var(--fg-dim); font-weight: 600;
+}
+.pakiet-features {
+  list-style: none; padding: 0; margin: 0 0 24px 0;
+  flex: 1;
+}
+.pakiet-features li {
+  font-size: 14px; line-height: 1.5; padding: 8px 0;
+  display: flex; gap: 10px; align-items: flex-start;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.pakiet-features li:last-child { border-bottom: none; }
+.pakiet-features li::before {
+  content: "\2713"; color: var(--accent); font-weight: 700;
+  flex-shrink: 0; line-height: 1.5;
+}
+.pakiet-cta {
+  display: block; text-align: center;
+  padding: 14px 20px; border-radius: 10px;
+  font-family: 'Geist Mono', monospace; font-size: 13px;
+  font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  background: rgba(255,255,255,0.05); color: var(--fg);
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.pakiet-cta:hover {
+  background: var(--accent); color: #fff; border-color: var(--accent);
+}
+.pakiet-card.featured .pakiet-cta {
+  background: var(--accent); color: #fff; border-color: var(--accent);
+}
+.pakiet-card.featured .pakiet-cta:hover {
+  background: #b91c1c; border-color: #b91c1c;
+}
+.pakiet-note {
+  margin-top: 24px; text-align: center;
+  font-size: 13px; color: var(--fg-dim); line-height: 1.6;
+}
+.pakiet-note strong { color: var(--fg); }
+
 /* ============ CENA ============ */
 .cena-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1465,9 +1561,112 @@ section { padding: 100px 0; position: relative; }
 </section>
 
 <!-- ============ CENA ============ -->
+<!-- ============ PAKIETY ============ -->
+<section id="pakiety">
+  <div class="container">
+    <div class="section-eyebrow">06 · Pakiety cenowe</div>
+    <h2 class="section-title">4 pakiety <em>montażu klimatyzacji</em> we Wrocławiu</h2>
+    <p class="section-lead">
+      Konkretne ceny dla mieszkania 25-50 m² (1 jednostka split, do 4m rurarstwa).
+      Bez ukrytych kosztów. Pakiet zawiera urządzenie, montaż, materiały, próbę szczelności, uruchomienie i fakturę VAT.
+    </p>
+
+    <div class="pakiety-grid">
+
+      <div class="pakiet-card" data-hover>
+        <div class="pakiet-brand">Airwell</div>
+        <div class="pakiet-name">Budget</div>
+        <div class="pakiet-desc">Solidny montaż, francuska marka. Najlepszy stosunek cena/jakość.</div>
+        <div class="pakiet-price">
+          <span class="pakiet-price-from">od</span>
+          <span class="pakiet-price-value">4 200</span>
+          <span class="pakiet-price-currency">zł brutto</span>
+        </div>
+        <ul class="pakiet-features">
+          <li>Airwell HKD 2.6 kW (A++/A+)</li>
+          <li>R32, klasa energ. A++</li>
+          <li>Sterowanie Wi-Fi (aplikacja)</li>
+          <li>Gwarancja producenta 3 lata</li>
+          <li>Montaż + materiały + uruchomienie</li>
+          <li>F-gaz, próba szczelności</li>
+        </ul>
+        <a href="#kontakt" class="pakiet-cta" data-hover>Zapytaj o ten pakiet</a>
+      </div>
+
+      <div class="pakiet-card featured" data-hover>
+        <div class="pakiet-ribbon">Najczęściej wybierany</div>
+        <div class="pakiet-brand">Samsung</div>
+        <div class="pakiet-name">Standard</div>
+        <div class="pakiet-desc">Wind-Free — cichy (19 dB), bez nawiewu na ciało. Hit w mieszkaniach.</div>
+        <div class="pakiet-price">
+          <span class="pakiet-price-from">od</span>
+          <span class="pakiet-price-value">4 800</span>
+          <span class="pakiet-price-currency">zł brutto</span>
+        </div>
+        <ul class="pakiet-features">
+          <li>Samsung Wind-Free Elite 2.5 kW</li>
+          <li>Poziom hałasu od 19 dB (cichy)</li>
+          <li>SmartThings — sterowanie aplikacją</li>
+          <li>Gwarancja 5 lat (sprężarka 10)</li>
+          <li>Filtr Easy Filter Plus</li>
+          <li>Tryb 24-stopniowego nawiewu</li>
+        </ul>
+        <a href="#kontakt" class="pakiet-cta" data-hover>Zapytaj o ten pakiet</a>
+      </div>
+
+      <div class="pakiet-card" data-hover>
+        <div class="pakiet-brand">Daikin</div>
+        <div class="pakiet-name">Premium</div>
+        <div class="pakiet-desc">Japońska jakość, klasa A+++. Wybór do biura i wymagających.</div>
+        <div class="pakiet-price">
+          <span class="pakiet-price-from">od</span>
+          <span class="pakiet-price-value">6 500</span>
+          <span class="pakiet-price-currency">zł brutto</span>
+        </div>
+        <ul class="pakiet-features">
+          <li>Daikin Perfera FTXM 2.5 kW</li>
+          <li>Klasa A+++ (najwyższa)</li>
+          <li>Onecta — sterowanie Wi-Fi</li>
+          <li>Gwarancja 5 lat na całość</li>
+          <li>Czujnik obecności (auto-oszczędzanie)</li>
+          <li>Filtr Flash Streamer (oczyszczanie)</li>
+        </ul>
+        <a href="#kontakt" class="pakiet-cta" data-hover>Zapytaj o ten pakiet</a>
+      </div>
+
+      <div class="pakiet-card" data-hover>
+        <div class="pakiet-brand">Mitsubishi Electric</div>
+        <div class="pakiet-name">Premium+</div>
+        <div class="pakiet-desc">Top półka. Najdłuższa żywotność, design, najcichsze urządzenia.</div>
+        <div class="pakiet-price">
+          <span class="pakiet-price-from">od</span>
+          <span class="pakiet-price-value">7 200</span>
+          <span class="pakiet-price-currency">zł brutto</span>
+        </div>
+        <ul class="pakiet-features">
+          <li>Mitsubishi MSZ-LN 2.5 kW (Diamond)</li>
+          <li>Klasa A+++, czujnik 3D i-See</li>
+          <li>MELCloud — aplikacja</li>
+          <li>Gwarancja 7 lat (rozszerzona)</li>
+          <li>Designerski front (4 kolory)</li>
+          <li>Filtr Plasma Quad Plus (alergeny)</li>
+        </ul>
+        <a href="#kontakt" class="pakiet-cta" data-hover>Zapytaj o ten pakiet</a>
+      </div>
+
+    </div>
+
+    <p class="pakiet-note">
+      <strong>Ceny zawierają:</strong> urządzenie + montaż + materiały (rura miedziana 6/10, Armaflex, kondensat) + 4m rurarstwa + 1 przebicie + próba szczelności + uruchomienie + faktura VAT.<br>
+      <strong>Co dolicza się:</strong> dodatkowe metry rurarstwa (+120 zł/m), podnośnik koszowy (+800 zł/dzień), osobny obwód 16A (+400 zł), bruzdowanie (+1 500 zł) — patrz sekcja niżej.
+    </p>
+  </div>
+</section>
+
+<!-- ============ CO WPŁYWA NA CENĘ ============ -->
 <section id="cena">
   <div class="container">
-    <div class="section-eyebrow">06 · Cena montażu</div>
+    <div class="section-eyebrow">07 · Co wpływa na cenę</div>
     <h2 class="section-title">Co wpływa na <em>cenę montażu</em>?</h2>
     <p class="section-lead">
       Dlaczego jeden montażysta we Wrocławiu wycenia 3 800 zł, a drugi 6 200 zł?
@@ -1543,7 +1742,7 @@ section { padding: 100px 0; position: relative; }
 <!-- ============ BŁĘDY ============ -->
 <section id="bledy">
   <div class="container">
-    <div class="section-eyebrow">07 · Najczęstsze błędy</div>
+    <div class="section-eyebrow">08 · Najczęstsze błędy</div>
     <h2 class="section-title">6 błędów przy montażu, które <em>rujnują instalację</em></h2>
     <p class="section-lead">
       Co odróżnia profesjonalny montaż od "chłopaków z Allegro za 1 500 zł"?
@@ -1601,7 +1800,7 @@ section { padding: 100px 0; position: relative; }
 <!-- ============ FAQ ============ -->
 <section id="faq">
   <div class="container">
-    <div class="section-eyebrow">08 · FAQ</div>
+    <div class="section-eyebrow">09 · FAQ</div>
     <h2 class="section-title">Najczęstsze pytania o montaż klimatyzacji <em>Wrocław</em></h2>
     <p class="section-lead">
       10 pytań, które zadają nam klienci każdego tygodnia. Konkretne odpowiedzi, bez owijania w bawełnę.
@@ -1695,7 +1894,7 @@ section { padding: 100px 0; position: relative; }
 <!-- ============ FORMULARZ ============ -->
 <section id="formularz">
   <div class="container">
-    <div class="section-eyebrow">09 · Zapytaj o cenę</div>
+    <div class="section-eyebrow">10 · Zapytaj o cenę</div>
     <h2 class="section-title">Zapytaj o cenę montażu — <em>wycena w 24h</em></h2>
     <p class="section-lead">
       Wypełnij formularz, wyślemy konkretną wycenę z modelem urządzenia i kosztem montażu.
