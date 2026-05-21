@@ -84,12 +84,27 @@
     min-height: calc(100vh - 80px);
     min-height: calc(100dvh - 80px);
   }
-  /* canvas / hero image dimmed mocno na mobile */
+  /* canvas / hero image - wentylator MOCNO widoczny za tekstem na mobile */
   #three-canvas {
-    opacity: 0.18 !important;
+    opacity: 0.55 !important;
+    filter: contrast(1.15) saturate(1.1) !important;
+    mix-blend-mode: screen;
   }
   .hero-image-bg {
-    opacity: 0.15 !important;
+    opacity: 0.22 !important;
+  }
+  /* veil pod tekstem żeby tekst czytelny mimo mocniejszego wentylatora */
+  .hero-content {
+    position: relative;
+    z-index: 3 !important;
+  }
+  .hero-content::before {
+    content: "";
+    position: absolute;
+    inset: -20px -16px;
+    background: radial-gradient(ellipse at center, rgba(7,8,12,0.72) 0%, rgba(7,8,12,0.55) 50%, rgba(7,8,12,0) 90%);
+    z-index: -1;
+    pointer-events: none;
   }
   /* eyebrow - jedna linia, mniejsza */
   .hero .eyebrow,
