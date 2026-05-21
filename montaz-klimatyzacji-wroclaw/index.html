@@ -857,6 +857,46 @@ section { padding: 100px 0; position: relative; }
   font-size: 13px; color: var(--fg-dim); line-height: 1.5;
 }
 
+/* ============ DZIELNICE ============ */
+.dz-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 16px; margin-top: 32px;
+}
+@media (max-width: 1024px) { .dz-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .dz-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
+.dz-card {
+  display: block; padding: 22px 20px;
+  background: linear-gradient(145deg, rgba(255,59,48,0.05), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 14px;
+  text-decoration: none; color: var(--fg);
+  transition: all 0.35s ease;
+  position: relative; overflow: hidden;
+}
+.dz-card::after {
+  content: "→"; position: absolute; top: 18px; right: 18px;
+  color: var(--accent); opacity: 0; transform: translateX(-6px);
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+.dz-card:hover {
+  border-color: rgba(255,59,48,0.45);
+  background: linear-gradient(145deg, rgba(255,59,48,0.1), rgba(255,255,255,0.03));
+  transform: translateY(-3px);
+}
+.dz-card:hover::after { opacity: 1; transform: translateX(0); }
+.dz-card h4 {
+  font-size: 18px; font-weight: 700; letter-spacing: -0.01em;
+  margin-bottom: 6px; color: var(--fg);
+}
+.dz-card .dz-count {
+  font-size: 12px; color: var(--accent); font-weight: 600;
+  letter-spacing: 0.02em; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.dz-card .dz-osiedla {
+  font-size: 12px; color: var(--fg-dim); line-height: 1.45;
+}
+
 /* ============ FAQ ============ */
 .faq-list {
   max-width: 900px; margin: 0 auto;
@@ -1979,10 +2019,48 @@ section { padding: 100px 0; position: relative; }
   </div>
 </section>
 
+<!-- ============ DZIELNICE WROCŁAWIA ============ -->
+<section id="dzielnice">
+  <div class="container">
+    <div class="section-eyebrow">10 · Dzielnice Wrocławia</div>
+    <h2 class="section-title">Montujemy <em>w całym Wrocławiu</em> — sprawdź swój rejon</h2>
+    <p class="section-lead">
+      265+ realizacji w 5 dzielnicach. Znamy specyfikę każdej z nich — od bloków Krzyków przez kamienice Starego Miasta po nowe osiedla Fabrycznej. <strong>Zero dopłat za dojazd w obrębie miasta.</strong>
+    </p>
+    <div class="dz-grid">
+      <a class="dz-card" href="/montaz-klimatyzacji-wroclaw/krzyki" data-hover>
+        <div class="dz-count">80+ montaży</div>
+        <h4>Krzyki</h4>
+        <p class="dz-osiedla">Borek, Klecina, Brochów, Tarnogaj, Wojszyce</p>
+      </a>
+      <a class="dz-card" href="/montaz-klimatyzacji-wroclaw/fabryczna" data-hover>
+        <div class="dz-count">60+ montaży</div>
+        <h4>Fabryczna</h4>
+        <p class="dz-osiedla">Maślice, Stabłowice, Pilczyce, Kozanów, Leśnica</p>
+      </a>
+      <a class="dz-card" href="/montaz-klimatyzacji-wroclaw/psie-pole" data-hover>
+        <div class="dz-count">50+ montaży</div>
+        <h4>Psie Pole</h4>
+        <p class="dz-osiedla">Sołtysowice, Karłowice, Pawłowice, Widawa, Lipa Piotrowska</p>
+      </a>
+      <a class="dz-card" href="/montaz-klimatyzacji-wroclaw/stare-miasto" data-hover>
+        <div class="dz-count">40+ montaży</div>
+        <h4>Stare Miasto</h4>
+        <p class="dz-osiedla">Rynek, Nadodrze, Ołbin — strefa konserwatora</p>
+      </a>
+      <a class="dz-card" href="/montaz-klimatyzacji-wroclaw/srodmiescie" data-hover>
+        <div class="dz-count">35+ montaży</div>
+        <h4>Śródmieście</h4>
+        <p class="dz-osiedla">Plac Grunwaldzki, Biskupin, Sępolno (WUWA)</p>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FAQ ============ -->
 <section id="faq">
   <div class="container">
-    <div class="section-eyebrow">10 · FAQ</div>
+    <div class="section-eyebrow">11 · FAQ</div>
     <h2 class="section-title">Najczęstsze pytania o montaż klimatyzacji <em>Wrocław</em></h2>
     <p class="section-lead">
       10 pytań, które zadają nam klienci każdego tygodnia. Konkretne odpowiedzi, bez owijania w bawełnę.
@@ -2076,7 +2154,7 @@ section { padding: 100px 0; position: relative; }
 <!-- ============ FORMULARZ ============ -->
 <section id="formularz">
   <div class="container">
-    <div class="section-eyebrow">11 · Zapytaj o cenę</div>
+    <div class="section-eyebrow">12 · Zapytaj o cenę</div>
     <h2 class="section-title">Zapytaj o cenę montażu — <em>wycena w 24h</em></h2>
     <p class="section-lead">
       Wypełnij formularz, wyślemy konkretną wycenę z modelem urządzenia i kosztem montażu.
