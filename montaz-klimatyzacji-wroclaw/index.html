@@ -46,8 +46,8 @@
   --bg-elev: #0f1116;
   --bg-card: rgba(16,18,22,0.6);
   --fg: #ffffff;
-  --fg-dim: #8b8d94;
-  --fg-mute: #5a5c63;
+  --fg-dim: #b5b7bd;
+  --fg-mute: #8f929a;
   --accent: #dc2626;
   --accent-glow: rgba(220,38,38,0.5);
   --border: rgba(255,255,255,0.08);
@@ -63,6 +63,7 @@ body {
   font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg-base);
   color: var(--fg);
+  font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -91,7 +92,7 @@ button { font-family: inherit; cursor: pointer; }
 .topbar-nav a:hover { color: var(--fg); }
 .topbar-cta {
   padding: 10px 20px; background: var(--accent); color: var(--fg);
-  font-weight: 600; font-size: 13px; border-radius: 8px;
+  font-weight: 600; font-size: 14px; border-radius: 8px;
   transition: all 0.3s; border: 1px solid var(--accent);
 }
 .topbar-cta:hover { box-shadow: 0 0 20px var(--accent-glow); }
@@ -102,7 +103,7 @@ button { font-family: inherit; cursor: pointer; }
 /* ============ BREADCRUMB ============ */
 .breadcrumb {
   padding: 100px 0 24px;
-  font-size: 12px; font-family: 'Geist Mono', monospace;
+  font-size: 14px; font-family: 'Geist Mono', monospace;
   color: var(--fg-mute); letter-spacing: 0.05em;
 }
 .breadcrumb a { color: var(--fg-dim); }
@@ -111,9 +112,9 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ============ HERO ============ */
 .hero {
-  position: relative; padding: 0 0 80px;
+  position: relative; padding: 0 0 64px;
   overflow: hidden;
-  min-height: 88vh;
+  min-height: 78vh;
 }
 #three-canvas {
   position: absolute; inset: 0;
@@ -127,11 +128,12 @@ button { font-family: inherit; cursor: pointer; }
 }
 @media (max-width: 1024px) {
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual { margin-top: 32px; }
 }
 
 .hero-content { position: relative; }
 .hero-eyebrow {
-  font-family: 'Geist Mono', monospace; font-size: 11px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   color: var(--accent); letter-spacing: 0.15em;
   text-transform: uppercase; margin-bottom: 24px;
   display: inline-flex; align-items: center; gap: 12px;
@@ -193,7 +195,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 .hero-stat-num .accent { color: var(--accent); }
 .hero-stat-label {
-  font-family: 'Geist Mono', monospace; font-size: 10px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   color: var(--fg-mute); text-transform: uppercase;
   letter-spacing: 0.1em; margin-top: 4px;
 }
@@ -239,7 +241,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 .indoor-display {
   position: absolute; top: 18%; right: 12%;
-  font-family: 'Geist Mono', monospace; font-size: 11px;
+  font-family: 'Geist Mono', monospace; font-size: 13px;
   color: #00ff7f; letter-spacing: 0.05em;
   animation: tempFlicker 4s ease-in-out infinite;
   text-shadow: 0 0 8px rgba(0,255,127,0.6);
@@ -360,7 +362,7 @@ button { font-family: inherit; cursor: pointer; }
   backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   border-radius: 12px;
-  font-family: 'Geist Mono', monospace; font-size: 11px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   z-index: 6;
 }
 .data-row {
@@ -375,7 +377,7 @@ button { font-family: inherit; cursor: pointer; }
   display: flex; align-items: center; gap: 8px;
   padding-bottom: 8px; margin-bottom: 8px;
   border-bottom: 1px solid var(--border);
-  color: var(--accent); font-size: 10px;
+  color: var(--accent); font-size: 13px;
   text-transform: uppercase; letter-spacing: 0.1em;
 }
 .data-status::before {
@@ -390,9 +392,9 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ============ SECTION COMMON ============ */
-section { padding: 100px 0; position: relative; }
+section { padding: 80px 0; position: relative; }
 .section-eyebrow {
-  font-family: 'Geist Mono', monospace; font-size: 11px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   color: var(--accent); letter-spacing: 0.15em;
   text-transform: uppercase; margin-bottom: 24px;
   display: inline-flex; align-items: center; gap: 12px;
@@ -409,6 +411,14 @@ section { padding: 100px 0; position: relative; }
 .section-lead {
   font-size: 18px; color: var(--fg-dim);
   max-width: 700px; margin-bottom: 56px; line-height: 1.6;
+}
+section p, .section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+[class*="-desc"] {
+  font-size: 15px !important;
+  line-height: 1.55;
 }
 
 /* ============ DLA KOGO ============ */
@@ -447,9 +457,10 @@ section { padding: 100px 0; position: relative; }
 .dla-kogo-card p {
   color: var(--fg-dim); margin-bottom: 24px;
   position: relative;
+  font-size: 16px;
 }
 .dla-kogo-price {
-  font-family: 'Geist Mono', monospace; font-size: 13px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   color: var(--accent); padding-top: 24px;
   border-top: 1px solid var(--border);
   position: relative;
@@ -474,7 +485,7 @@ section { padding: 100px 0; position: relative; }
 .schemat-caption {
   padding: 24px 32px;
   background: rgba(0,0,0,0.4);
-  font-family: 'Geist Mono', monospace; font-size: 12px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   color: var(--fg-dim); letter-spacing: 0.05em;
   display: flex; justify-content: space-between; align-items: center;
   flex-wrap: wrap; gap: 12px;
@@ -488,11 +499,11 @@ section { padding: 100px 0; position: relative; }
   padding: 16px 20px;
   background: var(--bg-card);
   border: 1px solid var(--border); border-radius: 12px;
-  font-size: 14px;
+  font-size: 15px;
 }
 .schemat-item strong {
   display: block; margin-bottom: 4px;
-  color: var(--accent); font-size: 12px;
+  color: var(--accent); font-size: 14px;
   font-family: 'Geist Mono', monospace; text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -534,7 +545,7 @@ section { padding: 100px 0; position: relative; }
   font-size: 16px; font-weight: 600; margin-bottom: 4px;
 }
 .zespol-badge p {
-  font-size: 13px; color: var(--fg-dim);
+  font-size: 15px; color: var(--fg-dim);
 }
 
 /* ============ PROCES ============ */
@@ -556,16 +567,16 @@ section { padding: 100px 0; position: relative; }
   transform: translateY(-4px);
 }
 .proces-num {
-  font-family: 'Geist Mono', monospace; font-size: 11px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   color: var(--accent); letter-spacing: 0.1em;
   margin-bottom: 16px;
 }
 .proces-step h4 {
-  font-size: 15px; font-weight: 600;
+  font-size: 16px; font-weight: 600;
   margin-bottom: 8px; letter-spacing: -0.01em;
 }
 .proces-step p {
-  font-size: 12px; color: var(--fg-dim); line-height: 1.5;
+  font-size: 15px; color: var(--fg-dim); line-height: 1.55;
 }
 .proces-icon {
   width: 32px; height: 32px;
@@ -592,7 +603,7 @@ section { padding: 100px 0; position: relative; }
 .kalk-row { display: flex; flex-direction: column; gap: 10px; }
 .kalk-label {
   display: flex; justify-content: space-between; align-items: baseline;
-  font-family: 'Geist Mono', monospace; font-size: 12px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--fg-dim);
 }
@@ -608,7 +619,7 @@ section { padding: 100px 0; position: relative; }
 }
 .kalk-slider::-webkit-slider-thumb {
   -webkit-appearance: none; appearance: none;
-  width: 22px; height: 22px; border-radius: 50%;
+  width: 32px; height: 32px; border-radius: 50%;
   background: var(--accent); cursor: pointer;
   border: 3px solid #fff;
   box-shadow: 0 2px 8px rgba(220,38,38,0.5);
@@ -616,14 +627,14 @@ section { padding: 100px 0; position: relative; }
 }
 .kalk-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .kalk-slider::-moz-range-thumb {
-  width: 22px; height: 22px; border-radius: 50%;
+  width: 32px; height: 32px; border-radius: 50%;
   background: var(--accent); cursor: pointer;
   border: 3px solid #fff;
   box-shadow: 0 2px 8px rgba(220,38,38,0.5);
 }
 .kalk-ticks {
   display: flex; justify-content: space-between;
-  font-family: 'Geist Mono', monospace; font-size: 11px;
+  font-family: 'Geist Mono', monospace; font-size: 15px;
   color: var(--fg-dim); letter-spacing: 0.05em;
   margin-top: 2px;
 }
@@ -634,7 +645,7 @@ section { padding: 100px 0; position: relative; }
   border: 1px solid var(--border);
   text-align: center; cursor: pointer;
   transition: all 0.25s;
-  font-family: 'Geist Mono', monospace; font-size: 12px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   font-weight: 600; letter-spacing: 0.04em;
   color: var(--fg-dim);
   user-select: none;
@@ -651,7 +662,7 @@ section { padding: 100px 0; position: relative; }
   justify-content: space-between;
 }
 .kalk-result-label {
-  font-family: 'Geist Mono', monospace; font-size: 11px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--fg-dim);
 }
@@ -667,12 +678,12 @@ section { padding: 100px 0; position: relative; }
   font-size: 15px; color: var(--fg-dim); font-weight: 600;
 }
 .kalk-result-range {
-  font-family: 'Geist Mono', monospace; font-size: 12px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   color: var(--fg-dim); letter-spacing: 0.05em;
 }
 .kalk-result-range strong { color: var(--fg); font-weight: 700; }
 .kalk-result-spec {
-  font-size: 13px; color: var(--fg-dim); line-height: 1.6;
+  font-size: 15px; color: var(--fg-dim); line-height: 1.6;
   padding: 12px 0; border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -681,7 +692,7 @@ section { padding: 100px 0; position: relative; }
   display: block; text-align: center;
   padding: 14px 20px; border-radius: 10px;
   background: var(--accent); color: #fff;
-  font-family: 'Geist Mono', monospace; font-size: 13px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
   border: 1px solid var(--accent);
   transition: all 0.3s;
@@ -689,7 +700,7 @@ section { padding: 100px 0; position: relative; }
 .kalk-result-cta:hover { background: #b91c1c; }
 .kalk-disclaimer {
   margin-top: 16px; text-align: center;
-  font-size: 12px; color: var(--fg-dim); line-height: 1.5;
+  font-size: 14px; color: var(--fg-dim); line-height: 1.5;
 }
 
 /* ============ PAKIETY ============ */
@@ -716,12 +727,12 @@ section { padding: 100px 0; position: relative; }
 .pakiet-ribbon {
   position: absolute; top: -12px; right: 20px;
   padding: 6px 14px; background: var(--accent); color: #fff;
-  font-family: 'Geist Mono', monospace; font-size: 11px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
   border-radius: 6px;
 }
 .pakiet-brand {
-  font-family: 'Geist Mono', monospace; font-size: 12px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--fg-dim); margin-bottom: 8px;
 }
@@ -730,7 +741,7 @@ section { padding: 100px 0; position: relative; }
   letter-spacing: -0.01em; margin-bottom: 4px;
 }
 .pakiet-desc {
-  font-size: 13px; color: var(--fg-dim); line-height: 1.5;
+  font-size: 15px; color: var(--fg-dim); line-height: 1.5;
   margin-bottom: 20px;
 }
 .pakiet-price {
@@ -739,7 +750,7 @@ section { padding: 100px 0; position: relative; }
   padding-bottom: 24px; border-bottom: 1px solid var(--border);
 }
 .pakiet-price-from {
-  font-family: 'Geist Mono', monospace; font-size: 12px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   color: var(--fg-dim); letter-spacing: 0.08em;
 }
 .pakiet-price-value {
@@ -755,7 +766,7 @@ section { padding: 100px 0; position: relative; }
   flex: 1;
 }
 .pakiet-features li {
-  font-size: 14px; line-height: 1.5; padding: 8px 0;
+  font-size: 15px; line-height: 1.5; padding: 8px 0;
   display: flex; gap: 10px; align-items: flex-start;
   border-bottom: 1px solid rgba(255,255,255,0.04);
 }
@@ -767,7 +778,7 @@ section { padding: 100px 0; position: relative; }
 .pakiet-cta {
   display: block; text-align: center;
   padding: 14px 20px; border-radius: 10px;
-  font-family: 'Geist Mono', monospace; font-size: 13px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
   background: rgba(255,255,255,0.05); color: var(--fg);
   border: 1px solid var(--border);
@@ -784,7 +795,7 @@ section { padding: 100px 0; position: relative; }
 }
 .pakiet-note {
   margin-top: 24px; text-align: center;
-  font-size: 13px; color: var(--fg-dim); line-height: 1.6;
+  font-size: 15px; color: var(--fg-dim); line-height: 1.6;
 }
 .pakiet-note strong { color: var(--fg); }
 
@@ -813,14 +824,14 @@ section { padding: 100px 0; position: relative; }
   margin-bottom: 8px; letter-spacing: -0.01em;
 }
 .cena-card p {
-  font-size: 13px; color: var(--fg-dim); line-height: 1.6;
+  font-size: 15px; color: var(--fg-dim); line-height: 1.6;
   margin-bottom: 16px;
 }
 .cena-tag {
   display: inline-block;
   padding: 4px 10px; background: rgba(220,38,38,0.15);
   border: 1px solid rgba(220,38,38,0.3); border-radius: 6px;
-  font-family: 'Geist Mono', monospace; font-size: 11px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   color: var(--accent); letter-spacing: 0.05em;
 }
 
@@ -833,18 +844,18 @@ section { padding: 100px 0; position: relative; }
 .bledy-card {
   padding: 28px;
   background: linear-gradient(145deg, rgba(40,15,15,0.4), rgba(20,8,8,0.6));
-  border: 1px solid rgba(220,38,38,0.2); border-radius: 16px;
+  border: 1px solid rgba(185,28,28,0.22); border-radius: 16px;
   display: flex; gap: 20px; align-items: flex-start;
   transition: all 0.4s;
 }
 .bledy-card:hover {
-  border-color: rgba(220,38,38,0.5);
+  border-color: rgba(185,28,28,0.48);
   transform: translateX(6px);
 }
 .bledy-icon {
   width: 32px; height: 32px;
-  background: rgba(220,38,38,0.15);
-  border: 1px solid rgba(220,38,38,0.3); border-radius: 10px;
+  background: rgba(185,28,28,0.14);
+  border: 1px solid rgba(185,28,28,0.28); border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
   color: var(--accent); flex-shrink: 0;
   font-weight: 700; font-size: 18px;
@@ -854,7 +865,7 @@ section { padding: 100px 0; position: relative; }
   margin-bottom: 6px; letter-spacing: -0.01em;
 }
 .bledy-card p {
-  font-size: 13px; color: var(--fg-dim); line-height: 1.5;
+  font-size: 15px; color: var(--fg-dim); line-height: 1.55;
 }
 
 /* ============ DZIELNICE ============ */
@@ -889,12 +900,12 @@ section { padding: 100px 0; position: relative; }
   margin-bottom: 6px; color: var(--fg);
 }
 .dz-card .dz-count {
-  font-size: 12px; color: var(--accent); font-weight: 600;
+  font-size: 14px; color: var(--accent); font-weight: 600;
   letter-spacing: 0.02em; text-transform: uppercase;
   margin-bottom: 10px;
 }
 .dz-card .dz-osiedla {
-  font-size: 12px; color: var(--fg-dim); line-height: 1.45;
+  font-size: 14px; color: var(--fg-dim); line-height: 1.45;
 }
 
 /* ============ FAQ ============ */
@@ -925,7 +936,7 @@ section { padding: 100px 0; position: relative; }
 .faq-item[open] .faq-chevron { transform: rotate(180deg); }
 .faq-item p {
   padding: 0 24px 24px;
-  color: var(--fg-dim); font-size: 14px; line-height: 1.7;
+  color: var(--fg-dim); font-size: 16px; line-height: 1.7;
 }
 
 /* ============ FORMULARZ ============ */
@@ -948,7 +959,7 @@ section { padding: 100px 0; position: relative; }
   box-shadow: 0 0 12px var(--accent-glow);
 }
 .form-progress-label {
-  font-family: 'Geist Mono', monospace; font-size: 11px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   color: var(--fg-dim); margin-bottom: 12px;
   display: flex; justify-content: space-between;
   letter-spacing: 0.05em;
@@ -962,7 +973,7 @@ section { padding: 100px 0; position: relative; }
 .form-field { display: flex; flex-direction: column; }
 .form-field.full { grid-column: 1 / -1; }
 .form-field label {
-  font-family: 'Geist Mono', monospace; font-size: 11px;
+  font-family: 'Geist Mono', monospace; font-size: 14px;
   color: var(--fg-dim); margin-bottom: 8px;
   letter-spacing: 0.05em; text-transform: uppercase;
 }
@@ -996,7 +1007,7 @@ section { padding: 100px 0; position: relative; }
   display: block; padding: 12px 16px;
   background: rgba(0,0,0,0.3);
   border: 1px solid var(--border); border-radius: 10px;
-  font-family: 'Geist', sans-serif; font-size: 13px;
+  font-family: 'Geist', sans-serif; font-size: 15px;
   color: var(--fg-dim); text-transform: none;
   letter-spacing: 0; text-align: center;
   cursor: pointer; transition: all 0.3s;
@@ -1015,7 +1026,7 @@ section { padding: 100px 0; position: relative; }
 }
 .form-rodo input { margin-top: 4px; accent-color: var(--accent); }
 .form-rodo label {
-  font-size: 12px; color: var(--fg-dim);
+  font-size: 14px; color: var(--fg-dim);
   line-height: 1.5; text-transform: none; letter-spacing: 0;
   font-family: 'Geist', sans-serif;
 }
@@ -1042,6 +1053,7 @@ section { padding: 100px 0; position: relative; }
 /* ============ FOOTER ============ */
 .footer {
   padding: 64px 0 32px;
+  margin-top: 0;
   border-top: 1px solid var(--border);
   background: var(--bg-base);
 }
@@ -1057,25 +1069,29 @@ section { padding: 100px 0; position: relative; }
 }
 .footer-brand img { display: block; width: 100%; height: auto; }
 .footer-tag {
-  font-family: 'Geist Mono', monospace; font-size: 11px;
+  font-family: 'Geist Mono', monospace; font-size: 15px;
   color: var(--fg-dim); letter-spacing: 0.05em;
   margin-bottom: 24px;
 }
 .footer-col h5 {
-  font-size: 11px; font-family: 'Geist Mono', monospace;
+  font-size: 14px; font-family: 'Geist Mono', monospace;
   color: var(--accent); letter-spacing: 0.1em;
   text-transform: uppercase; margin-bottom: 16px;
 }
 .footer-col a, .footer-col p {
   display: block; color: var(--fg-dim);
-  font-size: 14px; margin-bottom: 8px;
+  font-size: 15px; margin-bottom: 8px;
   transition: color 0.2s;
 }
 .footer-col a:hover { color: var(--accent); }
+.footer p, .footer a, .footer li, .footer span {
+  font-size: 15px;
+  line-height: 1.6;
+}
 .footer-bottom {
   padding-top: 32px; border-top: 1px solid var(--border);
   display: flex; justify-content: space-between;
-  font-family: 'Geist Mono', monospace; font-size: 11px;
+  font-family: 'Geist Mono', monospace; font-size: 15px;
   color: var(--fg-mute); letter-spacing: 0.05em;
   flex-wrap: wrap; gap: 16px;
 }
@@ -1083,19 +1099,20 @@ section { padding: 100px 0; position: relative; }
 /* ============ STICKY MOBILE CTA ============ */
 .sticky-mobile {
   position: fixed; bottom: 0; left: 0; right: 0;
-  padding: 12px 16px; background: rgba(8,9,12,0.95);
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  background: rgba(8,9,12,0.95);
   backdrop-filter: blur(20px);
   border-top: 1px solid var(--border);
-  display: none; z-index: 99;
+  display: none; z-index: 9999;
 }
 @media (max-width: 768px) {
-  .sticky-mobile { display: flex; gap: 8px; }
-  body { padding-bottom: 80px; }
+  .sticky-mobile { display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: 8px; }
+  body { padding-bottom: 88px !important; }
 }
 .sticky-mobile a {
   flex: 1; padding: 14px 10px;
   border-radius: 10px; text-align: center;
-  font-weight: 700; font-size: 14px;
+  font-weight: 700; font-size: 15px;
   text-decoration: none;
   display: flex; align-items: center; justify-content: center;
   min-height: 52px;
@@ -1140,9 +1157,25 @@ section { padding: 100px 0; position: relative; }
 @media (max-width: 768px) {
   .topbar { padding: 12px 20px; }
   .container { padding: 0 20px; }
-  section { padding: 64px 0; }
+  section { padding: 48px 0; }
+  .hero { padding-bottom: 48px; min-height: auto; }
+  .hero-grid, .hero-cols { grid-template-columns: 1fr; }
+  .hero-visual { margin-top: 32px; max-height: 480px; }
+  .hero-stats { gap: 20px; flex-wrap: wrap; }
+  .hero-stat { min-width: 130px; }
+  .section-lead { margin-bottom: 36px; }
+  .schemat-wrap { margin: 32px 0; }
+  .schemat-wrap img, .schemat-img, [class*="schemat"] img, section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  .cena-grid, .pricing-grid, .pakiety-grid {
+    grid-template-columns: 1fr;
+  }
   .form-wrap { padding: 24px; }
   .form-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
 }
 </style>
 
@@ -1269,7 +1302,7 @@ section { padding: 100px 0; position: relative; }
       "name": "Co to jest F-gaz i czy mi to potrzebne?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Certyfikat F-gazowy to obowiązkowe uprawnienie do pracy z czynnikami chłodniczymi (R32, R410A, R454B) wymagane przez prawo UE od 2018 roku. Montaż klimatyzacji bez certyfikatu F-gaz jest NIELEGALNY i grozi karą do 50 000 zł. NURTEX posiada certyfikat F-gaz dla całej ekipy."
+        "text": "Certyfikat F-gazowy to obowiązkowe uprawnienie do pracy z czynnikami chłodniczymi (R32, R410A, R454B). Montaż klimatyzacji bez certyfikatu F-gaz może oznaczać odpowiedzialność prawną wykonawcy i utratę gwarancji producenta. NURTEX posiada certyfikat F-gaz dla całej ekipy."
       }
     },
     {
@@ -1972,6 +2005,7 @@ section { padding: 100px 0; position: relative; }
       Każdy z tych błędów = pęknięcie układu w 1-3 lata.
     </p>
 
+    <!-- TODO designer: zastąpić 6x ikonę "!" różnymi ikonami branżowymi: sprężarka, kondensat, izolacja, słońce, miedź, elektryka. Proponowane lucide: Zap, Droplets, Flame, Sun, Wrench, Plug. -->
     <div class="bledy-grid">
       <div class="bledy-card" data-hover>
         <div class="bledy-icon">!</div>
@@ -2012,7 +2046,7 @@ section { padding: 100px 0; position: relative; }
         <div class="bledy-icon">!</div>
         <div>
           <h4>Montaż bez certyfikatu F-gaz</h4>
-          <p>R32 to czynnik fluorowany — wymaga certyfikatu wg rozporządzenia UE 517/2014. Brak = nielegalna instalacja, kara do 50 000 zł, utrata gwarancji producenta.</p>
+          <p>R32 to czynnik fluorowany — wymaga certyfikatu i prawidłowego protokołu uruchomienia. Brak uprawnień może oznaczać nielegalną instalację, odpowiedzialność prawną i utratę gwarancji producenta.</p>
         </div>
       </div>
     </div>
@@ -2126,7 +2160,7 @@ section { padding: 100px 0; position: relative; }
           Co to jest F-gaz i czy mi to potrzebne?
           <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
-        <p>Certyfikat F-gazowy to <strong>obowiązkowe uprawnienie</strong> do pracy z czynnikami chłodniczymi (R32, R410A, R454B) wymagane przez prawo UE od 2018 roku (Rozporządzenie 517/2014). Montaż klimatyzacji bez certyfikatu F-gaz jest <strong>NIELEGALNY</strong> i grozi karą do 50 000 zł dla wykonawcy, a klient traci gwarancję producenta. NURTEX posiada certyfikat F-gaz dla całej ekipy — sprawdź na fgazy.uokik.gov.pl.</p>
+        <p>Certyfikat F-gazowy to <strong>obowiązkowe uprawnienie</strong> do pracy z czynnikami chłodniczymi (R32, R410A, R454B) wymagane przez przepisy UE. Montaż klimatyzacji bez certyfikatu może oznaczać odpowiedzialność prawną wykonawcy i utratę gwarancji producenta. NURTEX posiada certyfikat F-gaz dla całej ekipy.</p>
       </details>
       <details class="faq-item" data-hover>
         <summary>
@@ -2320,7 +2354,7 @@ section { padding: 100px 0; position: relative; }
           <img src="/img/nurtex-logo.svg" alt="NURTEX - Inżynieria klimatu" width="760" height="188" />
         </div>
         <div class="footer-tag">Klimatyzacja · Wentylacja · Serwis · Wrocław</div>
-        <p style="color:var(--fg-dim);font-size:13px;">
+        <p style="color:var(--fg-dim);font-size:15px;line-height:1.6;">
           Inżynieria sanitarna premium. 8 lat doświadczenia, 287 instalacji, certyfikat F-gaz,
           SEP do 1 kV i praca w standardach producentów głównych marek HVAC.
         </p>
