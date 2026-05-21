@@ -1291,5 +1291,35 @@ document.querySelectorAll('.schemat-card').forEach(card=>{
   });
 });
 </script>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<style>
+.sticky-mobile-rek {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
+  background: rgba(7,10,18,0.96); backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: none; gap: 8px; z-index: 9999;
+}
+@media (max-width: 768px) {
+  .sticky-mobile-rek { display: grid; grid-template-columns: 1.4fr 1fr 1fr; }
+  body { padding-bottom: 76px; }
+}
+.sticky-mobile-rek a {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 54px; border-radius: 12px;
+  font-weight: 800; font-size: 14px; text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.smr-call { background: #ff3b30; border-color: #ff3b30; color: #fff; }
+.smr-wa { background: #25D366; border-color: #25D366; color: #07120a; }
+.smr-quote { background: rgba(255,255,255,0.06); color: #f7f8fb; }
+</style>
+<div class="sticky-mobile-rek" role="navigation" aria-label="Szybki kontakt">
+  <a href="tel:+48662070695" class="smr-call" aria-label="Zadzwoń: 662 070 695">☎ 662 070 695</a>
+  <a href="https://wa.me/48662070695?text=Dzie%C5%84%20dobry%2C%20mam%20pytanie%20o%20rekuperacj%C4%99" class="smr-wa" target="_blank" rel="noopener">WhatsApp</a>
+  <a href="#wycena" class="smr-quote">Wycena</a>
+</div>
+
 </body>
 </html>
