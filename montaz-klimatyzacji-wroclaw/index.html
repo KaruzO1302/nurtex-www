@@ -577,6 +577,121 @@ section { padding: 100px 0; position: relative; }
   50% { transform: translateY(-4px); }
 }
 
+/* ============ KALKULATOR ============ */
+.kalk-wrap {
+  margin-top: 32px;
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border); border-radius: 20px;
+  padding: 36px;
+}
+@media (max-width: 860px) {
+  .kalk-wrap { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
+}
+.kalk-controls { display: flex; flex-direction: column; gap: 24px; }
+.kalk-row { display: flex; flex-direction: column; gap: 10px; }
+.kalk-label {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: 'Geist Mono', monospace; font-size: 12px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--fg-dim);
+}
+.kalk-label strong {
+  font-size: 18px; color: var(--fg); font-family: 'Geist', sans-serif;
+  font-weight: 700; text-transform: none; letter-spacing: -0.01em;
+}
+.kalk-slider {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 6px; border-radius: 3px;
+  background: rgba(255,255,255,0.08);
+  outline: none; cursor: pointer;
+}
+.kalk-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--accent); cursor: pointer;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(220,38,38,0.5);
+  transition: transform 0.2s;
+}
+.kalk-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
+.kalk-slider::-moz-range-thumb {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--accent); cursor: pointer;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(220,38,38,0.5);
+}
+.kalk-ticks {
+  display: flex; justify-content: space-between;
+  font-family: 'Geist Mono', monospace; font-size: 11px;
+  color: var(--fg-dim); letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+.kalk-brands { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.kalk-brand {
+  padding: 14px 8px; border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  text-align: center; cursor: pointer;
+  transition: all 0.25s;
+  font-family: 'Geist Mono', monospace; font-size: 12px;
+  font-weight: 600; letter-spacing: 0.04em;
+  color: var(--fg-dim);
+  user-select: none;
+}
+.kalk-brand:hover { border-color: rgba(220,38,38,0.4); color: var(--fg); }
+.kalk-brand.active {
+  background: rgba(220,38,38,0.12); border-color: var(--accent);
+  color: var(--accent);
+}
+.kalk-result {
+  background: linear-gradient(180deg, rgba(220,38,38,0.08) 0%, transparent 80%);
+  border: 1px solid rgba(220,38,38,0.25); border-radius: 16px;
+  padding: 28px; display: flex; flex-direction: column; gap: 16px;
+  justify-content: space-between;
+}
+.kalk-result-label {
+  font-family: 'Geist Mono', monospace; font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--fg-dim);
+}
+.kalk-result-price {
+  display: flex; align-items: baseline; gap: 8px;
+}
+.kalk-result-price-value {
+  font-size: 44px; font-weight: 800;
+  letter-spacing: -0.02em; color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.kalk-result-currency {
+  font-size: 15px; color: var(--fg-dim); font-weight: 600;
+}
+.kalk-result-range {
+  font-family: 'Geist Mono', monospace; font-size: 12px;
+  color: var(--fg-dim); letter-spacing: 0.05em;
+}
+.kalk-result-range strong { color: var(--fg); font-weight: 700; }
+.kalk-result-spec {
+  font-size: 13px; color: var(--fg-dim); line-height: 1.6;
+  padding: 12px 0; border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.kalk-result-spec strong { color: var(--fg); }
+.kalk-result-cta {
+  display: block; text-align: center;
+  padding: 14px 20px; border-radius: 10px;
+  background: var(--accent); color: #fff;
+  font-family: 'Geist Mono', monospace; font-size: 13px;
+  font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  border: 1px solid var(--accent);
+  transition: all 0.3s;
+}
+.kalk-result-cta:hover { background: #b91c1c; }
+.kalk-disclaimer {
+  margin-top: 16px; text-align: center;
+  font-size: 12px; color: var(--fg-dim); line-height: 1.5;
+}
+
 /* ============ PAKIETY ============ */
 .pakiety-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1561,10 +1676,77 @@ section { padding: 100px 0; position: relative; }
 </section>
 
 <!-- ============ CENA ============ -->
+<!-- ============ KALKULATOR ============ -->
+<section id="kalkulator">
+  <div class="container">
+    <div class="section-eyebrow">06 · Kalkulator wyceny</div>
+    <h2 class="section-title">Policz cenę montażu <em>w 10 sekund</em></h2>
+    <p class="section-lead">
+      Podaj metraż, liczbę pomieszczeń i wybierz markę — zobaczysz orientacyjną cenę brutto na żywo.
+      Bez formularza, bez kontaktu, bez pułapek. Dokładna wycena po wizji lokalnej.
+    </p>
+
+    <div class="kalk-wrap">
+      <div class="kalk-controls">
+
+        <div class="kalk-row">
+          <div class="kalk-label">
+            <span>Metraż łączny</span>
+            <strong><span id="kalk-m2-val">50</span> m²</strong>
+          </div>
+          <input type="range" class="kalk-slider" id="kalk-m2" min="20" max="200" step="5" value="50">
+          <div class="kalk-ticks"><span>20 m²</span><span>200 m²</span></div>
+        </div>
+
+        <div class="kalk-row">
+          <div class="kalk-label">
+            <span>Liczba pomieszczeń do klimatyzacji</span>
+            <strong><span id="kalk-pom-val">2</span></strong>
+          </div>
+          <input type="range" class="kalk-slider" id="kalk-pom" min="1" max="6" step="1" value="2">
+          <div class="kalk-ticks"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+        </div>
+
+        <div class="kalk-row">
+          <div class="kalk-label"><span>Marka urządzenia</span></div>
+          <div class="kalk-brands">
+            <div class="kalk-brand" data-brand="airwell" data-hover>Airwell</div>
+            <div class="kalk-brand active" data-brand="samsung" data-hover>Samsung</div>
+            <div class="kalk-brand" data-brand="daikin" data-hover>Daikin</div>
+            <div class="kalk-brand" data-brand="mitsubishi" data-hover>Mitsubishi</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="kalk-result">
+        <div>
+          <div class="kalk-result-label">Szacowana cena brutto</div>
+          <div class="kalk-result-price">
+            <span class="kalk-result-price-value" id="kalk-price">8 000</span>
+            <span class="kalk-result-currency">zł</span>
+          </div>
+          <div class="kalk-result-range">
+            zakres: <strong id="kalk-range-min">6 800</strong> – <strong id="kalk-range-max">9 200</strong> zł ±15%
+          </div>
+        </div>
+        <div class="kalk-result-spec" id="kalk-spec">
+          <strong>Samsung Wind-Free</strong>, moc <strong>3.5 kW</strong>, multi split 2 jednostki, 4m rurarstwa/pom.
+        </div>
+        <a href="#formularz" class="kalk-result-cta" data-hover id="kalk-cta">Wyślij to do wyceny</a>
+      </div>
+    </div>
+
+    <p class="kalk-disclaimer">
+      Wycena orientacyjna na podstawie cen Q2 2026. Dokładna kwota po wizji lokalnej (24h) — uwzględnia trudność dostępu, długość rurarstwa, osobny obwód, bruzdowanie.
+    </p>
+  </div>
+</section>
+
 <!-- ============ PAKIETY ============ -->
 <section id="pakiety">
   <div class="container">
-    <div class="section-eyebrow">06 · Pakiety cenowe</div>
+    <div class="section-eyebrow">07 · Pakiety cenowe</div>
     <h2 class="section-title">4 pakiety <em>montażu klimatyzacji</em> we Wrocławiu</h2>
     <p class="section-lead">
       Konkretne ceny dla mieszkania 25-50 m² (1 jednostka split, do 4m rurarstwa).
@@ -1666,7 +1848,7 @@ section { padding: 100px 0; position: relative; }
 <!-- ============ CO WPŁYWA NA CENĘ ============ -->
 <section id="cena">
   <div class="container">
-    <div class="section-eyebrow">07 · Co wpływa na cenę</div>
+    <div class="section-eyebrow">08 · Co wpływa na cenę</div>
     <h2 class="section-title">Co wpływa na <em>cenę montażu</em>?</h2>
     <p class="section-lead">
       Dlaczego jeden montażysta we Wrocławiu wycenia 3 800 zł, a drugi 6 200 zł?
@@ -1742,7 +1924,7 @@ section { padding: 100px 0; position: relative; }
 <!-- ============ BŁĘDY ============ -->
 <section id="bledy">
   <div class="container">
-    <div class="section-eyebrow">08 · Najczęstsze błędy</div>
+    <div class="section-eyebrow">09 · Najczęstsze błędy</div>
     <h2 class="section-title">6 błędów przy montażu, które <em>rujnują instalację</em></h2>
     <p class="section-lead">
       Co odróżnia profesjonalny montaż od "chłopaków z Allegro za 1 500 zł"?
@@ -1800,7 +1982,7 @@ section { padding: 100px 0; position: relative; }
 <!-- ============ FAQ ============ -->
 <section id="faq">
   <div class="container">
-    <div class="section-eyebrow">09 · FAQ</div>
+    <div class="section-eyebrow">10 · FAQ</div>
     <h2 class="section-title">Najczęstsze pytania o montaż klimatyzacji <em>Wrocław</em></h2>
     <p class="section-lead">
       10 pytań, które zadają nam klienci każdego tygodnia. Konkretne odpowiedzi, bez owijania w bawełnę.
@@ -1894,7 +2076,7 @@ section { padding: 100px 0; position: relative; }
 <!-- ============ FORMULARZ ============ -->
 <section id="formularz">
   <div class="container">
-    <div class="section-eyebrow">10 · Zapytaj o cenę</div>
+    <div class="section-eyebrow">11 · Zapytaj o cenę</div>
     <h2 class="section-title">Zapytaj o cenę montażu — <em>wycena w 24h</em></h2>
     <p class="section-lead">
       Wypełnij formularz, wyślemy konkretną wycenę z modelem urządzenia i kosztem montażu.
@@ -2271,6 +2453,99 @@ section { padding: 100px 0; position: relative; }
       card.style.setProperty('--my', (e.clientY - r.top) + 'px');
     });
   });
+})();
+</script>
+
+<!-- ============ KALKULATOR LOGIC ============ -->
+<script>
+(() => {
+  const BRANDS = {
+    airwell:    { name: 'Airwell HKD',           base: 4200, label: 'Airwell' },
+    samsung:    { name: 'Samsung Wind-Free',     base: 4800, label: 'Samsung Wind-Free' },
+    daikin:     { name: 'Daikin Perfera',        base: 6500, label: 'Daikin Perfera' },
+    mitsubishi: { name: 'Mitsubishi MSZ-LN',     base: 7200, label: 'Mitsubishi MSZ-LN' }
+  };
+  // Mnoznik za liczbe pomieszczen (multi split): jednostka zewn. wieksza + 60% per dodatkowa wewn.
+  const POM_MULT = [0, 1.0, 1.65, 2.25, 2.85, 3.45, 4.05];
+  // Dodatkowa moc + cena za m2 (skalujemy jednostka wewn.)
+  function powerForM2PerRoom(m2_per_room) {
+    if (m2_per_room <= 25)  return { kw: 2.5, addPerUnit: 0 };
+    if (m2_per_room <= 40)  return { kw: 3.5, addPerUnit: 600 };
+    if (m2_per_room <= 55)  return { kw: 5.0, addPerUnit: 1400 };
+    if (m2_per_room <= 80)  return { kw: 7.0, addPerUnit: 2400 };
+    return { kw: 9.0, addPerUnit: 3600 };
+  }
+
+  const m2El   = document.getElementById('kalk-m2');
+  const pomEl  = document.getElementById('kalk-pom');
+  const m2Val  = document.getElementById('kalk-m2-val');
+  const pomVal = document.getElementById('kalk-pom-val');
+  const priceEl  = document.getElementById('kalk-price');
+  const minEl    = document.getElementById('kalk-range-min');
+  const maxEl    = document.getElementById('kalk-range-max');
+  const specEl   = document.getElementById('kalk-spec');
+  const ctaEl    = document.getElementById('kalk-cta');
+  const brandEls = document.querySelectorAll('.kalk-brand');
+
+  let currentBrand = 'samsung';
+
+  function fmt(n) {
+    // Zaokraglenie do najblizszych 100 zl + spacja jako separator tysiecy
+    n = Math.round(n / 100) * 100;
+    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function calc() {
+    const m2  = parseInt(m2El.value, 10);
+    const pom = parseInt(pomEl.value, 10);
+    const brand = BRANDS[currentBrand];
+    const m2_per_room = m2 / pom;
+    const pwr = powerForM2PerRoom(m2_per_room);
+
+    // Cena bazowa marki (urzadzenie + montaz dla 1 jedn. split 2.5 kW)
+    // Pakiet multi: base * mult_pom
+    // Dodatkowo: kazda jednostka wewn. (= pom) ma swoja dodatkowa moc
+    const mult = POM_MULT[pom] || 1.0;
+    const basePart = brand.base * mult;
+    const powerPart = pwr.addPerUnit * pom;
+    // Dodatkowe metry rurarstwa: zakladamy 6m/pom (default), 4m w cenie, +120 zl/m za 2m dodatkowo per pom
+    const ruryExtra = pom * 2 * 120;
+    // Multi split: jednostka zewn. wieksza przy 3+ pom
+    const multiAdd = pom >= 3 ? 400 * (pom - 2) : 0;
+
+    const total = basePart + powerPart + ruryExtra + multiAdd;
+    const min = total * 0.85;
+    const max = total * 1.15;
+
+    m2Val.textContent  = m2;
+    pomVal.textContent = pom;
+    priceEl.textContent = fmt(total);
+    minEl.textContent   = fmt(min);
+    maxEl.textContent   = fmt(max);
+
+    // Spec
+    let unitsWord = 'jednostki';
+    if (pom === 1) unitsWord = 'jednostka';
+    else if (pom >= 5) unitsWord = 'jednostek';
+    const systemType = pom === 1 ? 'split (1 jednostka)' : `multi split (${pom} ${unitsWord} wewn.)`;
+    specEl.innerHTML = `<strong>${brand.name}</strong>, moc <strong>${pwr.kw} kW</strong>/jedn., ${systemType}, ${m2} m² łącznie, 6m rurarstwa/pom.`;
+
+    // CTA link z parametrami
+    ctaEl.href = `#formularz?m2=${m2}&pom=${pom}&brand=${currentBrand}`;
+  }
+
+  m2El.addEventListener('input', calc);
+  pomEl.addEventListener('input', calc);
+  brandEls.forEach(el => {
+    el.addEventListener('click', () => {
+      brandEls.forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+      currentBrand = el.dataset.brand;
+      calc();
+    });
+  });
+
+  calc();
 })();
 </script>
 
