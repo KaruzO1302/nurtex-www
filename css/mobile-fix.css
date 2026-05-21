@@ -1,0 +1,245 @@
+/* =========================================================
+   NURTEX — Mobile Critical Fix (2026-05-21)
+   Dotyczy <=980px, focus: hero, logo, sticky bar, H1, CTA
+   ========================================================= */
+
+@media (max-width: 980px) {
+
+  /* === TOPBAR — collapse layout === */
+  header.topbar,
+  .topbar {
+    padding: 12px 16px !important;
+    min-height: 60px;
+    gap: 8px;
+  }
+  .topbar-left {
+    gap: 12px !important;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .logo-image,
+  .topbar-logo img,
+  .topbar a img[src*="nurtex-logo"] {
+    width: 130px !important;
+    max-width: 38vw;
+    height: auto;
+  }
+  /* status text - kompaktowy */
+  .topbar-left > span {
+    font-size: 10px !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.3 !important;
+    color: var(--fg-dim);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 40vw;
+  }
+  .topbar-left > span .live-dot {
+    width: 6px; height: 6px; margin-right: 6px;
+  }
+  .mobile-toggle {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  /* na mniejszych telefonach — status pill ukryty, tylko logo + hamburger */
+  .topbar-left > span {
+    display: none !important;
+  }
+  /* Swap logo na kompaktową wersję (bez dużego gap NURTE-X) */
+  .logo-image,
+  .topbar-logo img,
+  .topbar a img[src*="nurtex-logo"] {
+    content: url('/img/nurtex-logo-mobile.svg');
+    width: 150px !important;
+    max-width: 46vw;
+    height: auto;
+  }
+  /* Zapytaj o cenę w topbarze (subpages) — schowaj na bardzo małym, jest w sticky bar */
+  .topbar a.phone-cta,
+  .topbar .topbar-cta,
+  .topbar a[href*="wycena"],
+  .topbar a[href*="zapytaj"]:not(.topbar-logo) {
+    display: none !important;
+  }
+}
+
+/* === HERO — tekst nad canvas, nie pod === */
+@media (max-width: 980px) {
+  .hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    padding: 80px 0 32px;
+  }
+  .hero-content {
+    padding: 24px 20px 32px !important;
+    position: relative !important;
+    z-index: 10 !important;
+    inset: auto !important;
+    display: flex; flex-direction: column;
+    justify-content: flex-start;
+    min-height: calc(100vh - 80px);
+    min-height: calc(100dvh - 80px);
+  }
+  /* canvas / hero image dimmed mocno na mobile */
+  #three-canvas {
+    opacity: 0.18 !important;
+  }
+  .hero-image-bg {
+    opacity: 0.15 !important;
+  }
+  /* eyebrow - jedna linia, mniejsza */
+  .hero .eyebrow,
+  .eyebrow {
+    font-size: 10px !important;
+    letter-spacing: 0.12em !important;
+    line-height: 1.4 !important;
+    margin-bottom: 20px !important;
+    word-break: keep-all;
+  }
+  .hero .eyebrow::before,
+  .eyebrow::before {
+    width: 24px !important;
+    margin-right: 8px !important;
+  }
+  /* H1 - clamp do viewport, no overflow */
+  .hero h1,
+  h1 {
+    font-size: clamp(36px, 11vw, 56px) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -0.03em !important;
+    max-width: 100% !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: manual;
+  }
+  /* podtytuł - czytelny */
+  .hero .subtitle,
+  .hero p,
+  .hero-subtitle {
+    font-size: 17px !important;
+    line-height: 1.55 !important;
+    max-width: 100% !important;
+  }
+  /* przyciski CTA hero - stack pełna szerokość, czytelne */
+  .hero-cta,
+  .cta-buttons,
+  .hero .cta-row,
+  .hero .buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100%;
+    margin-top: 28px !important;
+  }
+  .hero-cta a,
+  .hero-cta .btn,
+  .cta-buttons a,
+  .cta-buttons .btn,
+  .hero a.btn,
+  .hero .btn-primary,
+  .hero .btn-secondary {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    padding: 16px 20px !important;
+    border-radius: 14px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    min-height: 54px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  /* pills/badges pod CTA — zwarte */
+  .hero-badges,
+  .hero .badges,
+  .hero .pills {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    margin-top: 20px !important;
+    padding-bottom: 16px;
+  }
+  .hero-badges li,
+  .hero .pill,
+  .hero .badge {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+    letter-spacing: 0.04em !important;
+  }
+}
+
+/* === STICKY MOBILE BAR — 2 buttony zamiast 3 === */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 80px !important;
+  }
+  .nurtex-mobile-bar {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom)) !important;
+    background: rgba(7, 10, 18, 0.98) !important;
+  }
+  /* Wycena - schowana w sticky barze (pozostaje w mega menu / hero CTA) */
+  .nurtex-mobile-bar .mobile-bar-btn[href*="wycena"],
+  .nurtex-mobile-bar .mobile-bar-btn--wycena,
+  .nurtex-mobile-bar .mobile-bar-btn:nth-child(3) {
+    display: none !important;
+  }
+  .mobile-bar-btn {
+    min-height: 52px !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    padding: 0 12px !important;
+    letter-spacing: 0.02em;
+  }
+  .mobile-bar-btn svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  .mobile-bar-btn--call span,
+  .mobile-bar-btn--wa span {
+    font-size: 13px !important;
+    font-weight: 800 !important;
+  }
+}
+
+/* === FONT SCALING (eyebrow / labels) globalnie na mobile === */
+@media (max-width: 640px) {
+  .section-eyebrow {
+    font-size: 11px !important;
+    letter-spacing: 0.08em !important;
+  }
+  .section-title,
+  h2 {
+    font-size: clamp(28px, 7vw, 40px) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+  }
+  .section-lead {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+  }
+  /* Container padding */
+  section .container,
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+/* === SCROLL OFFSET dla anchor (uwzględnia fixed topbar) === */
+@media (max-width: 980px) {
+  :target,
+  section[id] {
+    scroll-margin-top: 70px;
+  }
+}
