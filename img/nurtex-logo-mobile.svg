@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 140" role="img" aria-labelledby="title-m desc-m">
+  <title id="title-m">NURTEX</title>
+  <desc id="desc-m">Logo NURTEX kompaktowe</desc>
+  <defs>
+    <linearGradient id="mark-m" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#202129"/>
+      <stop offset="1" stop-color="#111217"/>
+    </linearGradient>
+    <linearGradient id="red-m" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff7a52"/>
+      <stop offset="1" stop-color="#ff3b30"/>
+    </linearGradient>
+  </defs>
+  <!-- Sygnet N -->
+  <rect x="4" y="14" width="112" height="112" rx="22" fill="url(#mark-m)" stroke="#2a2c36" stroke-width="2"/>
+  <text x="62" y="98" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial Black, Helvetica, sans-serif" font-size="78" font-weight="950" letter-spacing="-4">N</text>
+  <!-- Akcent czerwony pod N -->
+  <rect x="22" y="108" width="76" height="6" rx="2" fill="url(#red-m)"/>
+  <!-- Wordmark NURTEX -->
+  <text x="138" y="88" fill="#ffffff" font-family="Inter, Arial Black, Helvetica, sans-serif" font-size="70" font-weight="900" letter-spacing="-2">NURTE</text>
+  <text x="380" y="88" fill="url(#red-m)" font-family="Inter, Arial Black, Helvetica, sans-serif" font-size="70" font-weight="900" letter-spacing="-2">X</text>
+  <!-- Tagline -->
+  <text x="140" y="118" fill="#a6a6b1" font-family="Inter, Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="6">INŻYNIERIA KLIMATU</text>
+</svg>
