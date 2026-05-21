@@ -66,25 +66,14 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  cursor: none;
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: none; }
+button { font-family: inherit; cursor: pointer; }
 
 .mono { font-family: 'Geist Mono', monospace; }
 .accent { color: var(--accent); font-style: normal; }
 .container { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
-
-/* ============ CUSTOM CURSOR ============ */
-.cursor {
-  width: 8px; height: 8px; background: var(--accent);
-  border-radius: 50%; position: fixed; pointer-events: none;
-  z-index: 10000; transition: transform 0.15s ease;
-  mix-blend-mode: difference;
-}
-.cursor.hover { transform: scale(3); }
-@media (hover: none) { .cursor { display: none; } body { cursor: auto; } }
 
 /* ============ TOP BAR ============ */
 .topbar {
@@ -671,7 +660,7 @@ section { padding: 100px 0; position: relative; }
 .faq-item[open] { border-color: rgba(220,38,38,0.4); }
 .faq-item summary {
   padding: 20px 24px;
-  cursor: none; list-style: none;
+  cursor: pointer; list-style: none;
   display: flex; justify-content: space-between; align-items: center;
   font-weight: 500; font-size: 16px; letter-spacing: -0.01em;
   transition: color 0.2s;
@@ -736,7 +725,7 @@ section { padding: 100px 0; position: relative; }
   border-radius: 10px;
   color: var(--fg); font-family: inherit; font-size: 15px;
   transition: all 0.3s;
-  cursor: none;
+  cursor: pointer;
 }
 .form-field input:focus,
 .form-field select:focus,
@@ -759,7 +748,7 @@ section { padding: 100px 0; position: relative; }
   font-family: 'Geist', sans-serif; font-size: 13px;
   color: var(--fg-dim); text-transform: none;
   letter-spacing: 0; text-align: center;
-  cursor: none; transition: all 0.3s;
+  cursor: pointer; transition: all 0.3s;
   margin: 0;
 }
 .form-radio input:checked + label {
@@ -787,7 +776,7 @@ section { padding: 100px 0; position: relative; }
   border: none; border-radius: 14px;
   font-size: 17px; font-weight: 600;
   margin-top: 32px;
-  cursor: none; transition: all 0.4s;
+  cursor: pointer; transition: all 0.4s;
   display: flex; align-items: center; justify-content: center;
   gap: 12px;
 }
@@ -1067,9 +1056,6 @@ section { padding: 100px 0; position: relative; }
 
 </head>
 <body>
-
-<!-- Custom cursor -->
-<div class="cursor"></div>
 
 <!-- ============ TOP BAR ============ -->
 <header class="topbar">
@@ -1976,28 +1962,6 @@ section { padding: 100px 0; position: relative; }
     camera.aspect = window.innerWidth / canvas.parentElement.offsetHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, canvas.parentElement.offsetHeight);
-  });
-})();
-</script>
-
-<!-- ============ CUSTOM CURSOR ============ -->
-<script>
-(() => {
-  if (window.matchMedia('(hover: none)').matches) return;
-  const cursor = document.querySelector('.cursor');
-  if (!cursor) return;
-  let mx = 0, my = 0, cx = 0, cy = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-  function loop() {
-    cx += (mx - cx) * 0.2;
-    cy += (my - cy) * 0.2;
-    cursor.style.transform = `translate(${cx - 4}px, ${cy - 4}px)`;
-    requestAnimationFrame(loop);
-  }
-  loop();
-  document.querySelectorAll('[data-hover]').forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
   });
 })();
 </script>

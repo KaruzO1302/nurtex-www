@@ -67,26 +67,9 @@
     overflow-x: hidden;
   }
 
-  body { cursor: none; min-height: 100vh; }
+  body { min-height: 100vh; }
 
   ::selection { background: var(--accent); color: white; }
-
-  /* ========= CUSTOM CURSOR ========= */
-  .cursor {
-    position: fixed; width: 24px; height: 24px;
-    border: 1.5px solid var(--accent); border-radius: 50%;
-    pointer-events: none; z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: width 0.25s ease, height 0.25s ease, background 0.25s ease;
-    mix-blend-mode: difference;
-  }
-  .cursor.hover { width: 60px; height: 60px; background: var(--accent); }
-  .cursor-dot {
-    position: fixed; width: 4px; height: 4px;
-    background: var(--accent); border-radius: 50%;
-    pointer-events: none; z-index: 9999;
-    transform: translate(-50%, -50%);
-  }
 
   /* ========= TOP BAR (sticky) ========= */
   .topbar {
@@ -449,7 +432,6 @@
     font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
     border-radius: 100px; border: 1px solid transparent;
     text-decoration: none; transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-    cursor: none;
   }
   .btn-primary {
     background: var(--accent); color: white;
@@ -574,7 +556,7 @@
   .part-item {
     padding: 24px 28px; border: 1px solid var(--border);
     border-radius: 16px; background: var(--bg-elev);
-    cursor: none; transition: all 0.3s ease;
+    cursor: pointer; transition: all 0.3s ease;
     position: relative; overflow: hidden;
   }
   .part-item::before {
@@ -667,7 +649,7 @@
     --mx: 50%; --my: 50%;
     --rx: 0deg; --ry: 0deg;
     position: relative; padding: 56px;
-    min-height: 340px; cursor: none;
+    min-height: 340px;
     background: linear-gradient(145deg, rgba(22,24,30,0.85), rgba(14,15,20,0.95));
     backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255,255,255,0.06);
@@ -807,7 +789,7 @@
   }
   .real-card {
     position: relative; overflow: hidden; border-radius: 20px;
-    cursor: none; transition: all 0.5s ease;
+    cursor: pointer; transition: all 0.5s ease;
   }
   .real-card img {
     width: 100%; height: 100%; object-fit: cover;
@@ -1265,8 +1247,6 @@
       letter-spacing: 0.06em;
     }
     body.menu-open { overflow: hidden; }
-    body { cursor: auto; }
-    .cursor, .cursor-dot { display: none; }
     .anatomy-layout, .team-layout { grid-template-columns: 1fr; gap: 48px; }
     .services-grid { grid-template-columns: 1fr; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1536,9 +1516,6 @@
 
 <body>
 
-<!-- Custom cursor -->
-<div class="cursor" id="cursor"></div>
-<div class="cursor-dot" id="cursor-dot"></div>
 
 <!-- ============ TOP BAR ============ -->
 <header class="topbar">
@@ -2833,28 +2810,6 @@ animate();
 
 <!-- ============ INTERACTIONS (CURSOR, ANATOMY, COUNTERS) ============ -->
 <script>
-// === Custom cursor ===
-const cursor = document.getElementById('cursor');
-const cursorDot = document.getElementById('cursor-dot');
-let cX = 0, cY = 0, dX = 0, dY = 0;
-document.addEventListener('mousemove', (e) => {
-  cX = e.clientX; cY = e.clientY;
-  cursorDot.style.left = e.clientX + 'px';
-  cursorDot.style.top = e.clientY + 'px';
-});
-function mc() {
-  dX += (cX - dX) * 0.18;
-  dY += (cY - dY) * 0.18;
-  cursor.style.left = dX + 'px';
-  cursor.style.top = dY + 'px';
-  requestAnimationFrame(mc);
-}
-mc();
-document.querySelectorAll('[data-hover]').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-});
-
 // === Data panel ticker (temp + orders only — PM2.5 is live from Open-Meteo) ===
 setInterval(() => {
   const t = (17 + Math.random() * 4).toFixed(1);
