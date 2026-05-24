@@ -2594,12 +2594,12 @@ scene.add(topLight); scene.add(topLight.target);
 // FAN
 const fanGroup = new THREE.Group();
 const ringGeo = new THREE.TorusGeometry(4.2, 0.18, 16, 100);
-const ringMat = new THREE.MeshStandardMaterial({ color: 0x1a1d24, metalness: 0.95, roughness: 0.15, emissive: 0xff3b30, emissiveIntensity: 0.05 });
+const ringMat = new THREE.MeshStandardMaterial({ color: 0x2a303a, metalness: 0.95, roughness: 0.12, emissive: 0xff3b30, emissiveIntensity: 0.18 });
 fanGroup.add(new THREE.Mesh(ringGeo, ringMat));
-const innerRing = new THREE.Mesh(new THREE.TorusGeometry(4.4, 0.04, 8, 100), new THREE.MeshStandardMaterial({ color: 0xff3b30, emissive: 0xff3b30, emissiveIntensity: 1.2, metalness: 0.5, roughness: 0.4 }));
+const innerRing = new THREE.Mesh(new THREE.TorusGeometry(4.4, 0.065, 8, 100), new THREE.MeshStandardMaterial({ color: 0xff3b30, emissive: 0xff3b30, emissiveIntensity: 1.9, metalness: 0.45, roughness: 0.35 }));
 fanGroup.add(innerRing);
 
-const tickMat = new THREE.MeshStandardMaterial({ color: 0x8b929c, emissive: 0x8b929c, emissiveIntensity: 0.3 });
+const tickMat = new THREE.MeshStandardMaterial({ color: 0xb7bfcd, emissive: 0x8b929c, emissiveIntensity: 0.55 });
 for (let i = 0; i < 48; i++) {
   const tick = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.18, 0.04), tickMat);
   const a = (i / 48) * Math.PI * 2;
@@ -2610,9 +2610,9 @@ for (let i = 0; i < 48; i++) {
 }
 
 const rotorGroup = new THREE.Group();
-const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.7, 0.85, 0.6, 32), new THREE.MeshStandardMaterial({ color: 0x0a0c10, metalness: 1, roughness: 0.2, emissive: 0xff3b30, emissiveIntensity: 0.15 }));
+const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.7, 0.85, 0.6, 32), new THREE.MeshStandardMaterial({ color: 0x151922, metalness: 1, roughness: 0.18, emissive: 0xff3b30, emissiveIntensity: 0.35 }));
 hub.rotation.x = Math.PI / 2; rotorGroup.add(hub);
-const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.6, 0.05, 32), new THREE.MeshStandardMaterial({ color: 0xff3b30, emissive: 0xff3b30, emissiveIntensity: 1.5, metalness: 0.3, roughness: 0.4 }));
+const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.6, 0.05, 32), new THREE.MeshStandardMaterial({ color: 0xff3b30, emissive: 0xff3b30, emissiveIntensity: 2.1, metalness: 0.3, roughness: 0.35 }));
 disc.rotation.x = Math.PI / 2; disc.position.z = 0.32; rotorGroup.add(disc);
 
 for (let i = 0; i < 7; i++) {
@@ -2625,7 +2625,7 @@ for (let i = 0; i < 7; i++) {
   shape.quadraticCurveTo(4.0, -0.3, 3.8, -0.7);
   shape.lineTo(0.6, -0.5);
   shape.quadraticCurveTo(0.4, -0.2, 0, 0);
-  const blade = new THREE.Mesh(new THREE.ExtrudeGeometry(shape, { depth: 0.08, bevelEnabled: true, bevelSegments: 2, steps: 1, bevelSize: 0.03, bevelThickness: 0.03 }), new THREE.MeshStandardMaterial({ color: 0x8a92a0, metalness: 0.95, roughness: 0.15, emissive: 0x2a3045, emissiveIntensity: 0.3, side: THREE.DoubleSide }));
+  const blade = new THREE.Mesh(new THREE.ExtrudeGeometry(shape, { depth: 0.08, bevelEnabled: true, bevelSegments: 2, steps: 1, bevelSize: 0.03, bevelThickness: 0.03 }), new THREE.MeshStandardMaterial({ color: 0xc3cbd8, metalness: 0.9, roughness: 0.18, emissive: 0x40516d, emissiveIntensity: 0.55, side: THREE.DoubleSide }));
   blade.rotation.y = Math.PI / 7; bg.add(blade);
   bg.rotation.z = (i / 7) * Math.PI * 2;
   rotorGroup.add(bg);
@@ -2638,12 +2638,16 @@ for (let i = 0; i < 6; i++) {
   fanGroup.add(bolt);
 }
 scene.add(fanGroup);
-fanGroup.position.x = 3; fanGroup.rotation.x = -0.15; fanGroup.rotation.y = -0.25;
+fanGroup.rotation.x = -0.15; fanGroup.rotation.y = -0.25;
 
 // PARTICLES — adaptive count based on device
 const isMobile = window.matchMedia('(max-width: 768px)').matches;
 const isLowEnd = (navigator.hardwareConcurrency || 4) <= 4 || (navigator.deviceMemory || 4) <= 4;
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Keep the rotor visibly inside the mobile viewport instead of hiding on the far right.
+fanGroup.position.set(isMobile ? 1.35 : 3, isMobile ? 0.55 : 0, isMobile ? -0.2 : 0);
+fanGroup.scale.setScalar(isMobile ? 1.18 : 1);
 
 // Reduced motion accessibility: skip Three.js entirely
 if (prefersReducedMotion) {
@@ -2720,7 +2724,7 @@ function animate() {
   rotorGroup.rotation.z -= 0.02 + Math.abs(scrollVel) * 0.1;
   fanGroup.rotation.y += (tRot.y - fanGroup.rotation.y) * 0.04;
   fanGroup.rotation.x += (tRot.x - fanGroup.rotation.x) * 0.04;
-  innerRing.material.emissiveIntensity = 1.0 + Math.sin(t * 1.5) * 0.4;
+  innerRing.material.emissiveIntensity = 1.55 + Math.sin(t * 1.5) * 0.55;
 
   const pos = particles.geometry.attributes.position.array;
   for (let i = 0; i < N; i++) {
