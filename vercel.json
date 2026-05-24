@@ -8,6 +8,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/kalkulator-czyste-powietrze",
+      "destination": "/pompy-ciepla-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/kalkulator-czyste-powietrze/:path*",
+      "destination": "/pompy-ciepla-wroclaw",
+      "permanent": true
+    },
+    {
       "source": "/wiedza",
       "destination": "/blog",
       "permanent": true
