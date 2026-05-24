@@ -1,6 +1,7 @@
 // =============================================================================
-// NURTEX — LEAD ENDPOINT: FORMULARZ WYCENY (główny, na homepage #wycena)
-// Stack: Vercel Serverless Function + Resend + Supabase
+// NURTEX — LEAD ENDPOINT: FORMULARZ WYCENY
+// Stack: Vercel Serverless + Resend (TYLKO MAIL — bez bazy danych)
+// Endpoint: POST /api/lead-wycena
 // =============================================================================
 
 const ALLOWED_ORIGINS = [
@@ -12,7 +13,6 @@ const ALLOWED_ORIGINS = [
 ];
 
 const DEFAULT_TO = 'kontakt@nurtex.pl';
-const SUPABASE_TABLE = 'leads_wycena';
 
 function setCors(req, res) {
   const origin = req.headers.origin;
@@ -41,21 +41,27 @@ function escapeHtml(value = '') {
 function getClientIp(req) {
   return String(req.headers['x-forwarded-for'] || '')
     .split(',')[0]
-    .trim() || req.headers['x-real-ip'] || null;
+    .trim() || req.headers['x-real-ip'] || 'n/a';
 }
 
-function renderInternalEmail(data) {
+// =============================================================================
+// EMAIL TEMPLATES
+// =============================================================================
+
+function renderInternalEmail(data, req) {
+  const ip = getClientIp(req);
+  const ua = req.headers['user-agent'] || 'n/a';
   return `
     <div style="font-family:Arial,sans-serif;color:#111;padding:24px;max-width:680px;margin:0 auto;background:#f6f7f9">
       <div style="background:#fff;border:1px solid #e3e5ea;border-radius:14px;padding:28px">
-        <p style="letter-spacing:2px;color:#e8503a;font-size:11px;text-transform:uppercase;margin:0 0 16px;font-weight:700">NURTEX · Nowy lead</p>
-        <h1 style="font-size:22px;margin:0 0 6px;color:#0a0c10">Wycena: ${escapeHtml(data.service)} · ${escapeHtml(data.name)}</h1>
+        <p style="letter-spacing:2px;color:#e8503a;font-size:11px;text-transform:uppercase;margin:0 0 16px;font-weight:700">NURTEX · Nowy lead z formularza</p>
+        <h1 style="font-size:22px;margin:0 0 6px;color:#0a0c10">Wycena: ${escapeHtml(data.service || 'Klimatyzacja')} · ${escapeHtml(data.name)}</h1>
         <p style="color:#666;font-size:13px;margin:0 0 22px">Wpłynęło z formularza /#wycena na <strong>${escapeHtml(data.url || 'wentylacja-nurtex-klimatyzacja.pl')}</strong></p>
-        
+
         <table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.6">
           <tr><td style="padding:10px 0;color:#666;border-bottom:1px solid #eee;width:35%">Imię i nazwisko</td><td style="padding:10px 0;border-bottom:1px solid #eee;font-weight:600">${escapeHtml(data.name)}</td></tr>
           <tr><td style="padding:10px 0;color:#666;border-bottom:1px solid #eee">Telefon</td><td style="padding:10px 0;border-bottom:1px solid #eee"><a href="tel:${escapeHtml(data.phone || '')}" style="color:#e8503a;text-decoration:none;font-weight:700">${escapeHtml(data.phone || 'brak')}</a></td></tr>
-          <tr><td style="padding:10px 0;color:#666;border-bottom:1px solid #eee">E-mail</td><td style="padding:10px 0;border-bottom:1px solid #eee"><a href="mailto:${escapeHtml(data.email)}" style="color:#e8503a;text-decoration:none">${escapeHtml(data.email)}</a></td></tr>
+          <tr><td style="padding:10px 0;color:#666;border-bottom:1px solid #eee">E-mail</td><td style="padding:10px 0;border-bottom:1px solid #eee"><a href="mailto:${escapeHtml(data.email || '')}" style="color:#e8503a;text-decoration:none">${escapeHtml(data.email || 'brak')}</a></td></tr>
           <tr><td style="padding:10px 0;color:#666;border-bottom:1px solid #eee">Typ obiektu</td><td style="padding:10px 0;border-bottom:1px solid #eee">${escapeHtml(data.type || 'brak')}</td></tr>
           <tr><td style="padding:10px 0;color:#666;border-bottom:1px solid #eee">Metraż</td><td style="padding:10px 0;border-bottom:1px solid #eee">${escapeHtml(data.area || 'brak')}</td></tr>
           <tr><td style="padding:10px 0;color:#666;border-bottom:1px solid #eee">Usługa</td><td style="padding:10px 0;border-bottom:1px solid #eee;font-weight:600">${escapeHtml(data.service || 'brak')}</td></tr>
@@ -70,13 +76,14 @@ function renderInternalEmail(data) {
         ` : ''}
 
         <div style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap">
-          <a href="tel:${escapeHtml(data.phone || '')}" style="display:inline-block;background:#e8503a;color:#fff;text-decoration:none;border-radius:999px;padding:11px 18px;font-weight:700;font-size:13px">📞 Zadzwoń teraz</a>
-          <a href="mailto:${escapeHtml(data.email)}" style="display:inline-block;background:#f3f4f7;color:#0a0c10;text-decoration:none;border-radius:999px;padding:11px 18px;font-weight:700;font-size:13px">✉️ Odpisz</a>
-          <a href="https://wa.me/${escapeHtml((data.phone || '').replace(/[^\d]/g, ''))}" style="display:inline-block;background:#25D366;color:#fff;text-decoration:none;border-radius:999px;padding:11px 18px;font-weight:700;font-size:13px">💬 WhatsApp</a>
+          ${data.phone ? `<a href="tel:${escapeHtml(data.phone)}" style="display:inline-block;background:#e8503a;color:#fff;text-decoration:none;border-radius:999px;padding:11px 18px;font-weight:700;font-size:13px">📞 Zadzwoń teraz</a>` : ''}
+          ${data.email ? `<a href="mailto:${escapeHtml(data.email)}" style="display:inline-block;background:#f3f4f7;color:#0a0c10;text-decoration:none;border-radius:999px;padding:11px 18px;font-weight:700;font-size:13px">✉️ Odpisz</a>` : ''}
+          ${data.phone ? `<a href="https://wa.me/${escapeHtml(data.phone.replace(/[^\d]/g, ''))}" style="display:inline-block;background:#25D366;color:#fff;text-decoration:none;border-radius:999px;padding:11px 18px;font-weight:700;font-size:13px">💬 WhatsApp</a>` : ''}
         </div>
 
         <p style="margin-top:24px;color:#999;font-size:11px;border-top:1px solid #eee;padding-top:14px">
-          IP: ${escapeHtml(getClientIp({headers:{}}) || 'n/a')} · UA: ${escapeHtml((data._meta?.userAgent || '').substring(0, 100))}
+          IP: ${escapeHtml(ip)} · UA: ${escapeHtml(ua.substring(0, 100))}<br>
+          ${new Date().toLocaleString('pl-PL', { timeZone: 'Europe/Warsaw' })}
         </p>
       </div>
     </div>
@@ -84,13 +91,14 @@ function renderInternalEmail(data) {
 }
 
 function renderClientEmail(data) {
+  const firstName = String(data.name || '').split(' ')[0] || 'Kliencie';
   return `
     <div style="font-family:Arial,sans-serif;background:#07080b;color:#f7f7f8;padding:32px">
       <div style="max-width:680px;margin:0 auto;background:#111217;border:1px solid #2b2d36;border-radius:18px;padding:28px">
         <p style="letter-spacing:4px;color:#e8503a;font-size:12px;text-transform:uppercase;margin:0 0 16px">NURTEX · Wrocław</p>
-        <h1 style="font-size:30px;line-height:1.15;margin:0 0 16px">Dziękujemy, ${escapeHtml(data.name.split(' ')[0])}!</h1>
+        <h1 style="font-size:30px;line-height:1.15;margin:0 0 16px">Dziękujemy, ${escapeHtml(firstName)}!</h1>
         <p style="color:#b7bac6;font-size:16px;line-height:1.6;margin:0 0 18px">
-          Otrzymaliśmy Twoje zapytanie o <strong style="color:#fff">${escapeHtml(data.service)}</strong>. 
+          Otrzymaliśmy Twoje zapytanie o <strong style="color:#fff">${escapeHtml(data.service || 'usługę')}</strong>.
           Zadzwonimy w ciągu <strong style="color:#e8503a">24 godzin</strong> (zwykle szybciej) i umówimy bezpłatną wizję lokalną.
         </p>
         <p style="color:#b7bac6;font-size:15px;line-height:1.6;margin:0 0 24px">
@@ -99,7 +107,7 @@ function renderClientEmail(data) {
 
         <div style="background:#16181f;border-radius:14px;padding:20px;margin:24px 0">
           <p style="margin:0;color:#8f93a3;font-size:12px;text-transform:uppercase;letter-spacing:2px">Twoje zgłoszenie</p>
-          <p style="margin:8px 0 4px;color:#fff;font-size:15px"><strong>Usługa:</strong> ${escapeHtml(data.service)}</p>
+          <p style="margin:8px 0 4px;color:#fff;font-size:15px"><strong>Usługa:</strong> ${escapeHtml(data.service || '—')}</p>
           <p style="margin:0 0 4px;color:#fff;font-size:15px"><strong>Lokalizacja:</strong> ${escapeHtml(data.district || 'Wrocław/okolice')}</p>
           <p style="margin:0;color:#fff;font-size:15px"><strong>Metraż:</strong> ${escapeHtml(data.area || 'do ustalenia')}</p>
         </div>
@@ -122,6 +130,10 @@ function renderClientEmail(data) {
     </div>
   `;
 }
+
+// =============================================================================
+// RESEND API
+// =============================================================================
 
 async function sendResendEmail({ apiKey, from, to, replyTo, subject, html }) {
   const body = { from, to, subject, html };
@@ -152,78 +164,9 @@ async function sendResendEmail({ apiKey, from, to, replyTo, subject, html }) {
   return parsed;
 }
 
-function buildSupabaseTableUrl(supabaseUrl, table) {
-  const baseUrl = String(supabaseUrl || '').trim().replace(/\/+$/, '');
-  if (baseUrl.endsWith('/rest/v1')) {
-    return `${baseUrl}/${table}`;
-  }
-  return `${baseUrl}/rest/v1/${table}`;
-}
-
-async function saveToSupabase(data, req, emailStatus) {
-  const supabaseUrl = process.env.SUPABASE_URL;
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-  if (!supabaseUrl || !serviceRoleKey) {
-    return {
-      saved: false,
-      id: null,
-      error: 'Brak konfiguracji SUPABASE_URL lub SUPABASE_SERVICE_ROLE_KEY w Vercel.'
-    };
-  }
-
-  const row = {
-    name: data.name,
-    phone: data.phone || null,
-    email: data.email,
-    type: data.type || null,
-    area: data.area || null,
-    service: data.service || null,
-    district: data.district || null,
-    message: data.message || null,
-    source_url: data.url || null,
-    user_agent: req.headers['user-agent'] || null,
-    ip_address: getClientIp(req),
-    email_sent_to_client: Boolean(emailStatus.clientSent),
-    email_sent_to_nurtex: Boolean(emailStatus.internalSent),
-    email_error: emailStatus.errors.length ? emailStatus.errors.join('; ') : null
-  };
-
-  try {
-    const headers = {
-      apikey: serviceRoleKey,
-      'Content-Type': 'application/json',
-      Prefer: 'return=representation'
-    };
-    if (!serviceRoleKey.startsWith('sb_secret_')) {
-      headers.Authorization = `Bearer ${serviceRoleKey}`;
-    }
-
-    const response = await fetch(buildSupabaseTableUrl(supabaseUrl, SUPABASE_TABLE), {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(row)
-    });
-
-    const text = await response.text();
-    let parsed = null;
-    try {
-      parsed = text ? JSON.parse(text) : null;
-    } catch (error) {
-      parsed = text;
-    }
-
-    if (!response.ok) {
-      const message = parsed?.message || text || `Supabase error ${response.status}`;
-      return { saved: false, id: null, error: message };
-    }
-
-    const inserted = Array.isArray(parsed) ? parsed[0] : parsed;
-    return { saved: true, id: inserted?.id || null, error: null };
-  } catch (error) {
-    return { saved: false, id: null, error: error.message };
-  }
-}
+// =============================================================================
+// HANDLER
+// =============================================================================
 
 module.exports = async function handler(req, res) {
   setCors(req, res);
@@ -236,10 +179,6 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ success: false, error: 'Method not allowed' });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.FROM_EMAIL || DEFAULT_TO;
-  const internalTo = process.env.TO_EMAIL || DEFAULT_TO;
-
   let data;
   try {
     data = parseBody(req);
@@ -249,8 +188,7 @@ module.exports = async function handler(req, res) {
 
   // === HONEYPOT — bot wypełni 'website', człowiek nie ===
   if (data.website && String(data.website).trim() !== '') {
-    // Cicho ignorujemy bota, ale zwracamy 200 żeby nie alarmować
-    return res.status(200).json({ success: true, leadId: null, message: 'OK' });
+    return res.status(200).json({ success: true, message: 'OK' });
   }
 
   // === Walidacja ===
@@ -270,87 +208,73 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ success: false, error: 'Nieprawidłowy adres e-mail.' });
   }
 
-  const payload = {
-    ...data,
-    name,
-    phone,
-    email,
-    _meta: { userAgent: req.headers['user-agent'] }
-  };
+  // === Konfiguracja Resend ===
+  const apiKey = process.env.RESEND_API_KEY;
+  const from = process.env.FROM_EMAIL || DEFAULT_TO;
+  const internalTo = process.env.TO_EMAIL || DEFAULT_TO;
+
+  if (!apiKey) {
+    console.error('[lead-wycena] BRAK RESEND_API_KEY w Vercel env!');
+    return res.status(503).json({
+      success: false,
+      error: 'Konfiguracja serwera niekompletna. Zadzwoń bezpośrednio: 662 070 695'
+    });
+  }
+
+  const payload = { ...data, name, phone, email };
   const subject = `🔥 Nowa wycena NURTEX: ${payload.service || 'Klimatyzacja'} — ${payload.name}${payload.district ? ' (' + payload.district + ')' : ''}`;
 
+  // === 1. Email do NURTEX (priorytetowy — TO MUSI ZADZIAŁAĆ) ===
   let internalEmail = null;
   let internalEmailError = null;
+
+  try {
+    internalEmail = await sendResendEmail({
+      apiKey,
+      from,
+      to: internalTo,
+      replyTo: email || undefined,
+      subject,
+      html: renderInternalEmail(payload, req)
+    });
+  } catch (error) {
+    internalEmailError = error.message;
+    console.error('[lead-wycena] Email do NURTEX padł:', error.message);
+  }
+
+  // === 2. Auto-reply do klienta (opcjonalny — tylko jeśli podał email) ===
   let clientEmail = null;
   let clientEmailError = null;
 
-  if (apiKey) {
-    // 1. Email do NURTEX (priorytetowy — TO MUSI ZADZIAŁAĆ)
+  if (email && internalEmail) {
     try {
-      internalEmail = await sendResendEmail({
+      clientEmail = await sendResendEmail({
         apiKey,
         from,
-        to: internalTo,
-        replyTo: email || undefined,
-        subject,
-        html: renderInternalEmail(payload)
+        to: email,
+        replyTo: internalTo,
+        subject: 'Otrzymaliśmy Twoje zapytanie · NURTEX Wrocław',
+        html: renderClientEmail(payload)
       });
     } catch (error) {
-      internalEmailError = error.message;
+      clientEmailError = error.message;
+      console.error('[lead-wycena] Auto-reply do klienta padł:', error.message);
     }
-
-    // 2. Email do klienta (auto-reply) — opcjonalny
-    if (email) {
-      try {
-        clientEmail = await sendResendEmail({
-          apiKey,
-          from,
-          to: email,
-          replyTo: internalTo,
-          subject: 'Otrzymaliśmy Twoje zapytanie · NURTEX Wrocław',
-          html: renderClientEmail(payload)
-        });
-      } catch (error) {
-        clientEmailError = error.message;
-      }
-    }
-  } else {
-    internalEmailError = 'Brak konfiguracji RESEND_API_KEY w Vercel.';
-    clientEmailError = 'Brak konfiguracji RESEND_API_KEY w Vercel.';
   }
 
-  // 3. Zapis do Supabase (CRM-ready)
-  const emailStatus = {
-    internalSent: Boolean(internalEmail),
-    clientSent: Boolean(clientEmail),
-    errors: [...new Set([internalEmailError, clientEmailError].filter(Boolean))]
-  };
-  const supabaseLead = await saveToSupabase(payload, req, emailStatus);
-  const leadCaptured = Boolean(internalEmail) || supabaseLead.saved;
-
-  if (!leadCaptured) {
+  // === Response ===
+  if (!internalEmail) {
     return res.status(503).json({
       success: false,
-      error: 'Lead nie został zapisany. Sprawdź konfigurację Resend/Supabase w Vercel.',
-      leadId: null,
-      supabaseSaved: false,
-      supabaseError: supabaseLead.error,
-      internalEmailSent: false,
-      internalEmailError,
-      clientEmailSent: false,
-      clientEmailError
+      error: 'Nie udało się wysłać zgłoszenia. Zadzwoń: 662 070 695',
+      detail: internalEmailError
     });
   }
 
   return res.status(200).json({
     success: true,
-    leadId: supabaseLead.id,
-    supabaseSaved: supabaseLead.saved,
-    supabaseError: supabaseLead.error,
-    internalEmailSent: Boolean(internalEmail),
-    internalEmailId: internalEmail?.id || null,
-    clientEmailSent: Boolean(clientEmail),
-    clientEmailId: clientEmail?.id || null,
-    clientEmailError
+    leadId: internalEmail?.id || null,
+    clientReplyId: clientEmail?.id || null,
+    clientReplyError: clientEmailError
   });
 };
