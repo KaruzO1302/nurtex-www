@@ -1050,7 +1050,77 @@ section p, .section p {
   opacity: 0.5; cursor: not-allowed; transform: none;
 }
 
+/* ============ TABLES ============ */
+table {
+  width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 8px; margin: 28px 0;
+  background: rgba(255,255,255,.04); border: 1px solid var(--border);
+}
+th, td { padding: 16px; text-align: left; border-bottom: 1px solid rgba(255,255,255,.08); vertical-align: top; }
+th { color: var(--fg); font-size: 14px; text-transform: uppercase; letter-spacing: .06em; background: rgba(255,255,255,.08); }
+td { color: var(--fg-dim); font-size: 15px; }
+
 /* ============ FOOTER ============ */
+.footer-company-data {
+  position: relative;
+  clear: both;
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+.company-data-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.company-data-block address {
+  font-style: normal;
+  line-height: 1.7;
+  color: var(--fg-dim);
+  font-size: 15px;
+}
+.company-data-block h4 {
+  font-size: 14px;
+  font-family: 'Geist Mono', monospace;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.company-ids, .company-hours {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 14px;
+  margin: 0;
+  font-size: 15px;
+}
+.company-ids dt, .company-hours dt {
+  color: var(--fg-mute);
+}
+.company-ids dd, .company-hours dd {
+  margin: 0;
+  color: var(--fg-dim);
+}
+.payment-methods {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--fg-dim);
+}
+.payment-methods li::before {
+  content: "+";
+  color: var(--success);
+  margin-right: 8px;
+}
+@media (max-width: 768px) {
+  .company-data-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
 .footer {
   padding: 64px 0 32px;
   margin-top: 0;
@@ -1909,6 +1979,76 @@ section p, .section p {
       <strong>Ceny zawierają:</strong> urządzenie + montaż + materiały (rura miedziana 6/10, Armaflex, kondensat) + 4m rurarstwa + 1 przebicie + próba szczelności + uruchomienie + faktura VAT.<br>
       <strong>Co dolicza się:</strong> dodatkowe metry rurarstwa (+120 zł/m), podnośnik koszowy (+800 zł/dzień), osobny obwód 16A (+400 zł), bruzdowanie (+1 500 zł) — patrz sekcja niżej.
     </p>
+
+    <div class="pricing-table-wrapper" style="margin-top: 40px; overflow-x: auto;">
+      <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--fg); text-transform: uppercase; letter-spacing: 0.05em;">Szczegółowy cennik usług i prac montażowych klimatyzacji</h3>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Usługa / Typ instalacji</th>
+            <th>Moc / Przeznaczenie</th>
+            <th>Cena orientacyjna brutto</th>
+            <th>Szczegóły zakresu prac</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Montaż podstawowy klimatyzatora Split</strong> (Gree, Rotenso, Haier)</td>
+            <td>2,0 - 2,6 kW (mieszkanie do 35 m²)</td>
+            <td>od 4 200 zł</td>
+            <td>Trasa do 4m natynkowo w korycie, 1 przebicie, grawitacyjny odpływ skroplin, dojazd we Wrocławiu w cenie.</td>
+          </tr>
+          <tr>
+            <td><strong>Montaż podstawowy klimatyzatora Split</strong> (Gree, Rotenso, Haier)</td>
+            <td>3,5 - 5,0 kW (mieszkanie 35-70 m²)</td>
+            <td>od 4 900 zł</td>
+            <td>Trasa do 4m natynkowo w korycie, 1 przebicie, grawitacyjny odpływ skroplin.</td>
+          </tr>
+          <tr>
+            <td><strong>Montaż podstawowy klimatyzatora Split Premium</strong> (Daikin, Mitsubishi, Samsung)</td>
+            <td>2,5 - 3,5 kW (mieszkanie do 40 m²)</td>
+            <td>5 800 - 7 400 zł</td>
+            <td>Najwyższa kultura pracy, zaawansowane filtry, montaż standardowy do 4m.</td>
+          </tr>
+          <tr>
+            <td><strong>Montaż klimatyzacji Multi Split (1 skraplacz + 2 jednostki)</strong></td>
+            <td>Moc agregatu 5.0 - 5.3 kW</td>
+            <td>od 8 500 zł</td>
+            <td>Trasa do 10m łącznie, odpływ grawitacyjny lub pompką skroplin.</td>
+          </tr>
+          <tr>
+            <td><strong>Montaż klimatyzacji Multi Split (1 skraplacz + 3 jednostki)</strong></td>
+            <td>Moc agregatu 7.0 - 8.0 kW</td>
+            <td>od 12 500 zł</td>
+            <td>Trasa do 15m łącznie, odpływ grawitacyjny lub pompką skroplin.</td>
+          </tr>
+          <tr>
+            <td><strong>Dodatkowy metr instalacji chłodniczej</strong></td>
+            <td>Każdy kolejny metr ponad limit 4m</td>
+            <td>+120 zł / m</td>
+            <td>Rury miedziane w otulinie, kable, korytka maskujące.</td>
+          </tr>
+          <tr>
+            <td><strong>Montaż pompki skroplin</strong></td>
+            <td>Premium (np. Aspen / Sauermann)</td>
+            <td>od 450 zł</td>
+            <td>Stosowane przy braku możliwości odpływu grawitacyjnego (niski hałas &lt;20 dB).</td>
+          </tr>
+          <tr>
+            <td><strong>Prace na wysokości (użycie podnośnika)</strong></td>
+            <td>Montaż powyżej 3 metrów wysokości</td>
+            <td>od 800 zł / dzień</td>
+            <td>Konieczne przy braku balkonu i montażu na wysokiej elewacji.</td>
+          </tr>
+          <tr>
+            <td><strong>Wykonanie bruzdy w ścianie pod instalację</strong></td>
+            <td>Bruzdowanie w tynku/cegle pod przewody</td>
+            <td>od 1 500 zł</td>
+            <td>Dyskretne schowanie rur chłodniczych przed pracami wykończeniowymi.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 
@@ -2385,9 +2525,49 @@ section p, .section p {
         <p>Pon–Pt 7:00–19:00 · Sob 8:00–14:00</p>
       </div>
     </div>
+    <section class="footer-company-data" aria-label="Dane firmy">
+      <div class="company-data-grid">
+        <div class="company-data-block">
+          <h4>Dane firmy</h4>
+          <address>
+            <strong>NURTEX Wiktor Zięba</strong><br>
+            ul. Smardzowska 83B<br>
+            52-234 Wrocław<br>
+            Polska
+          </address>
+          <dl class="company-ids">
+            <dt>NIP</dt>
+            <dd>899-281-81-26</dd>
+            <dt>REGON</dt>
+            <dd>367234417</dd>
+          </dl>
+        </div>
+        <div class="company-data-block">
+          <h4>Godziny pracy</h4>
+          <dl class="company-hours">
+            <dt>Pon-Pt</dt>
+            <dd>7:00-19:00</dd>
+            <dt>Sobota</dt>
+            <dd>8:00-14:00</dd>
+            <dt>Niedziela</dt>
+            <dd>zamknięte</dd>
+            <dt>Serwis</dt>
+            <dd>24/7 dla klientów z umową</dd>
+          </dl>
+        </div>
+        <div class="company-data-block">
+          <h4>Płatności</h4>
+          <ul class="payment-methods">
+            <li>Faktura VAT</li>
+            <li>Przelew 7/14 dni dla firm</li>
+            <li>Raty 0% i leasing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <div class="footer-bottom">
       <span>© 2026 NURTEX · Wszystkie prawa zastrzeżone</span>
-      <span>v1.0 · Build NX-MONTAZ-SUB</span>
+      <span>v1.1 · Build NX-MONTAZ-SUB</span>
     </div>
   </div>
 </footer>

@@ -279,6 +279,99 @@ h2 em { color: var(--accent); font-style: normal; }
   .sticky-mobile { display: grid; }
   body { padding-bottom: 80px; }
 }
+
+/* ===== FOOTER ===== */
+.dz-footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding: 40px 0 20px;
+  color: var(--fg-dim);
+  font-size: 14px;
+}
+.dz-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.dz-footer-brand h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 12px;
+}
+.dz-footer-brand p {
+  line-height: 1.6;
+  font-size: 14px;
+}
+.dz-footer-col h5 {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.dz-footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+.dz-footer-col a {
+  color: var(--fg-dim);
+  transition: color 0.2s;
+}
+.dz-footer-col a:hover {
+  color: var(--accent);
+}
+.dz-footer-company {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  margin-top: 24px;
+}
+.dz-company-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.dz-company-block address {
+  font-style: normal;
+  line-height: 1.6;
+}
+.dz-company-block h6 {
+  font-size: 12px;
+  font-family: 'Geist Mono', monospace;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.dz-company-ids, .dz-company-hours {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+}
+.dz-company-ids dd, .dz-company-hours dd {
+  margin: 0;
+  color: var(--fg);
+}
+.dz-footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+}
+@media (max-width: 768px) {
+  .dz-footer-grid, .dz-company-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
 </style>
 <link rel="stylesheet" href="/css/mobile-fix.css?v=2026-05-21" />
 <script type="application/ld+json">
@@ -499,6 +592,79 @@ h2 em { color: var(--accent); font-style: normal; }
 </section>
 
 <!-- STICKY MOBILE -->
+
+<!-- ============ FOOTER ============ -->
+<footer class="dz-footer">
+  <div class="container">
+    <div class="dz-footer-grid">
+      <div class="dz-footer-brand">
+        <h4>NURTEX — Inżynieria sanitarna</h4>
+        <p>Klimatyzacja · Wentylacja · Pompy ciepła · Chłodnictwo.<br>Wrocław i Dolny Śląsk od 2018. Ponad 280 zrealizowanych instalacji.</p>
+      </div>
+      <div class="dz-footer-col">
+        <h5>Usługi</h5>
+        <ul>
+          <li><a href="/montaz-klimatyzacji-wroclaw">Montaż klimatyzacji</a></li>
+          <li><a href="/serwis-klimatyzacji-wroclaw">Serwis klimatyzacji</a></li>
+          <li><a href="/wentylacja-mechaniczna-rekuperacja-wroclaw">Wentylacja i rekuperacja</a></li>
+          <li><a href="/czyszczenie-kanalow-wentylacji-wroclaw">Czyszczenie kanałów</a></li>
+        </ul>
+      </div>
+      <div class="dz-footer-col">
+        <h5>Grupa Ziębud</h5>
+        <ul>
+          <li><a href="https://wuko-wroclaw.pl/" target="_blank" rel="noopener">WUKO Wrocław</a></li>
+          <li><a href="https://ziebud-expert.pl/" target="_blank" rel="noopener">ZIĘBUD Expert</a></li>
+          <li><a href="https://serwis-kanalizacji.com/" target="_blank" rel="noopener">Serwis kanalizacji</a></li>
+        </ul>
+      </div>
+      <div class="dz-footer-col">
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="tel:+48662070695">+48 662 070 695</a></li>
+          <li><a href="mailto:kontakt@nurtex.pl">kontakt@nurtex.pl</a></li>
+          <li>Wrocław i okolice</li>
+        </ul>
+      </div>
+    </div>
+    <div class="dz-footer-company">
+      <div class="dz-company-grid">
+        <div class="dz-company-block">
+          <h6>Dane firmy</h6>
+          <address>
+            <strong>NURTEX Wiktor Zięba</strong><br>
+            ul. Smardzowska 83B<br>
+            52-234 Wrocław
+          </address>
+          <dl class="dz-company-ids">
+            <dt>NIP:</dt><dd>899-281-81-26</dd>
+            <dt>REGON:</dt><dd>367234417</dd>
+          </dl>
+        </div>
+        <div class="dz-company-block">
+          <h6>Godziny pracy</h6>
+          <dl class="dz-company-hours">
+            <dt>Pon-Pt:</dt><dd>7:00-19:00</dd>
+            <dt>Sobota:</dt><dd>8:00-14:00</dd>
+            <dt>Niedziela:</dt><dd>Zamknięte</dd>
+          </dl>
+        </div>
+        <div class="dz-company-block">
+          <h6>Płatności</h6>
+          <ul>
+            <li>Faktura VAT</li>
+            <li>Przelew dla firm</li>
+            <li>Raty 0%</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="dz-footer-bottom">
+      <span>© 2026 NURTEX · Wszystkie prawa zastrzeżone</span>
+      <span>v1.0 · Build NX-DISTRICT</span>
+    </div>
+  </div>
+</footer>
 <div class="sticky-mobile">
   <a href="tel:+48662070695" class="call">📞 662 070 695</a>
   <a href="https://wa.me/48662070695" class="wa">WhatsApp</a>
