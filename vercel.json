@@ -31,6 +31,41 @@
       "source": "/wiedza/:path*",
       "destination": "/blog",
       "permanent": false
+    },
+    {
+      "source": "/chlodnictwo-:path*",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/uslugi/czyszczenie-mechaniczne-wentylacji",
+      "destination": "/czyszczenie-kanalow-wentylacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/uslugi/czyszczenie-kanalow-wentylacji",
+      "destination": "/czyszczenie-kanalow-wentylacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/uslugi/serwis-klimatyzacji",
+      "destination": "/serwis-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/uslugi/montaz-klimatyzacji",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/uslugi/wentylacja-mechaniczna",
+      "destination": "/wentylacja-mechaniczna-rekuperacja-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/uslugi/pompy-ciepla",
+      "destination": "/pompy-ciepla-wroclaw",
+      "permanent": true
     }
   ],
   "headers": [
