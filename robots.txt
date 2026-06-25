@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wentylacja-nurtex-klimatyzacja.pl/sitemap.xml
+Sitemap: https://nurtex.pl/sitemap.xml
