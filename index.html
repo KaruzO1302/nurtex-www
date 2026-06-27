@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="dyFY2BW43HufoRGjdPmAZPCVfjtnYiYsmX2lCejfoww" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Klimatyzacja Wrocław — Montaż, Serwis, Wentylacja | NURTEX</title>
-<meta name="description" content="Klimatyzacja Wrocław od 4 200 zł. Montaż, serwis, wentylacja, pompy ciepła i rekuperacja. F-gaz, 287 instalacji. Wycena 24h, zadzwoń: 662 070 695." />
+<title>Serwis klimatyzacji Wrocław — upał 40°C, awaria? | NURTEX</title>
+<meta name="description" content="Upał 40°C we Wrocławiu? Klima nie chłodzi — serwis NURTEX: naprawa, przegląd od 199 zł, montaż od 4 200 zł. F-gaz, 287 instalacji. Tel. 662 070 695." />
 <meta name="keywords" content="klimatyzacja Wrocław, montaż klimatyzacji Wrocław, serwis klimatyzacji Wrocław, wentylacja mechaniczna Wrocław, rekuperacja Wrocław, pompy ciepła Wrocław, klimatyzacja do mieszkania, klimatyzacja do biura, VRF Wrocław, klimatyzacja Daikin Wrocław" />
 
 <!-- Canonical + robots -->
@@ -73,8 +73,21 @@
   ::selection { background: var(--accent); color: white; }
 
   /* ========= TOP BAR (sticky) ========= */
+  .heat-alert {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 110;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+    gap: 8px 16px; padding: 10px 20px;
+    background: linear-gradient(90deg, #7f1d1d, #b91c1c 45%, #ea580c);
+    color: #fff; font-size: 13px; line-height: 1.45; text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 8px 28px rgba(185, 28, 28, .28);
+  }
+  .heat-alert strong { font-weight: 800; }
+  .heat-alert a { color: #fff; font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+  .heat-alert a:hover { color: #fef08a; }
+
   .topbar {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: fixed; top: 44px; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
     padding: 20px 48px;
     font-family: 'Geist Mono', monospace; font-size: 12px;
@@ -1487,6 +1500,12 @@
 <body>
 
 
+<div class="heat-alert" role="status">
+  <span><strong>Upał 40°C · Wrocław.</strong> Klima nie chłodzi albo wyłącza się sama?</span>
+  <a href="tel:+48662070695">Zadzwoń: 662 070 695</a>
+  <a href="/serwis-klimatyzacji-wroclaw/">Serwis awaryjny</a>
+</div>
+
 <!-- ============ TOP BAR ============ -->
 <header class="topbar">
   <div class="topbar-left">
@@ -1516,23 +1535,23 @@
   <canvas id="three-canvas"></canvas>
 
   <div class="hero-content">
-    <div class="eyebrow">HVAC Engineering · Wrocław · Est. 2018 · Certyfikat F-gaz</div>
+    <div class="eyebrow">Alert upałowy · Serwis klimatyzacji · Wrocław · F-gaz</div>
     <h1 class="hero-h1">
       <span class="h1-main">Klimatyzacja <em class="accent">Wrocław</em></span>
-      <span class="h1-sub">Montaż, serwis, wentylacja — klimat, który czujesz.</span>
+      <span class="h1-sub">Upał 40°C? Serwis awaryjny, montaż i wentylacja — dzwoń, nie czekaj na formularz.</span>
     </h1>
     <p class="sub">
       Klimatyzacja split, multisplit, VRF, rekuperacja i pompy ciepła we Wrocławiu i okolicach. <strong style="color:var(--fg)">Montaż od 4 200 zł.</strong> 8 lat, 287 instalacji, 0 reklamacji. Certyfikat F-gaz, SEP do 1 kV, standard NADCA.
     </p>
     <div class="cta-row">
-      <a href="#wycena" class="btn btn-primary" data-hover>
-        Zapytaj o cenę
+      <a href="tel:+48662070695" class="btn btn-primary" data-hover>
+        Wezwij serwis — 662 070 695
         <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
       </a>
-      <a href="tel:+48662070695" class="btn btn-ghost" data-hover>
-        ☎ 662 070 695
+      <a href="/serwis-klimatyzacji-wroclaw/" class="btn btn-ghost" data-hover>
+        Awaria przy upale — co robić
       </a>
     </div>
     <div class="hero-trust">
