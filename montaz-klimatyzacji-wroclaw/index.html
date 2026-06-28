@@ -1404,6 +1404,7 @@ td { color: var(--fg-dim); font-size: 15px; }
 }
 </script>
 
+<link rel="stylesheet" href="/style.css" />
 <link rel="stylesheet" href="/css/mobile-fix.css?v=2026-05-21" />
 </head>
 <body>
@@ -2348,156 +2349,30 @@ td { color: var(--fg-dim); font-size: 15px; }
     <div class="section-eyebrow">12 · Zapytaj o cenę</div>
     <h2 class="section-title">Zapytaj o cenę montażu — <em>wycena w 24h</em></h2>
     <p class="section-lead">
-      Wypełnij formularz, wyślemy konkretną wycenę z modelem urządzenia i kosztem montażu.
-      <strong>Bez ukrytych opłat, bez ślepego cennika.</strong> Im więcej szczegółów podasz,
-      tym dokładniejsza wycena.
+      Imię, telefon i krótka wiadomość — wyślij mailem. Oddzwonimy w 24h z wyceną.
     </p>
 
     <div class="form-wrap">
-      <div class="form-progress-label">
-        <span>POSTĘP FORMULARZA</span>
-        <span id="progress-pct">0 / 17</span>
-      </div>
-      <div class="form-progress">
-        <div class="form-progress-bar" id="progress-bar"></div>
-      </div>
-
-      <form id="quote-form" action="mailto:kontakt@nurtex.pl" method="POST" enctype="multipart/form-data" novalidate>
-        <div class="form-grid">
-
-          <div class="form-field">
-            <label>Imię i nazwisko <span class="req">*</span></label>
-            <input type="text" name="imie" required data-hover placeholder="Jan Kowalski" />
-          </div>
-
-          <div class="form-field">
-            <label>Telefon <span class="req">*</span></label>
-            <input type="tel" name="telefon" required data-hover placeholder="+48 662 070 695" pattern="[\+0-9\s]{9,15}" />
-          </div>
-
-          <div class="form-field full">
-            <label>Email <span class="req">*</span></label>
-            <input type="email" name="email" required data-hover placeholder="jan@example.com" />
-          </div>
-
-          <div class="form-field">
-            <label>Dzielnica Wrocławia <span class="req">*</span></label>
-            <select name="dzielnica" required data-hover>
-              <option value="">— wybierz —</option>
-              <option>Krzyki</option>
-              <option>Stare Miasto</option>
-              <option>Fabryczna</option>
-              <option>Psie Pole</option>
-              <option>Śródmieście</option>
-              <option>Gaj</option>
-              <option>Bielany Wrocławskie</option>
-              <option>Okolice Wrocławia</option>
-              <option>Inna</option>
-            </select>
-          </div>
-
-          <div class="form-field">
-            <label>Typ obiektu <span class="req">*</span></label>
-            <select name="obiekt" required data-hover>
-              <option value="">— wybierz —</option>
-              <option>Mieszkanie</option>
-              <option>Dom jednorodzinny</option>
-              <option>Biuro</option>
-              <option>Lokal usługowy</option>
-              <option>Inne</option>
-            </select>
-          </div>
-
-          <div class="form-field">
-            <label>Powierzchnia (m²) <span class="req">*</span></label>
-            <input type="number" name="powierzchnia" required data-hover min="10" max="1000" placeholder="55" id="f-area" />
-          </div>
-
-          <div class="form-field">
-            <label>Kubatura (m³) — policzy się auto</label>
-            <input type="number" name="kubatura" data-hover placeholder="auto" id="f-vol" readonly />
-          </div>
-
-          <div class="form-field">
-            <label>Liczba pomieszczeń do klimatyzacji <span class="req">*</span></label>
-            <input type="number" name="pokoje" required data-hover min="1" max="10" placeholder="2" />
-          </div>
-
-          <div class="form-field">
-            <label>Piętro</label>
-            <input type="number" name="pietro" data-hover min="0" max="30" placeholder="3" />
-          </div>
-
-          <div class="form-field full">
-            <label>Typ instalacji <span class="req">*</span></label>
-            <div class="form-radios">
-              <div class="form-radio"><input type="radio" name="typ" value="split" id="t1" required /><label for="t1" data-hover>Split (jeden pokój)</label></div>
-              <div class="form-radio"><input type="radio" name="typ" value="multi" id="t2" /><label for="t2" data-hover>Multi split (kilka pokoi)</label></div>
-              <div class="form-radio"><input type="radio" name="typ" value="nw" id="t3" /><label for="t3" data-hover>Nie wiem — doradźcie</label></div>
-            </div>
-          </div>
-
-          <div class="form-field full">
-            <label>Miejsce jednostki zewnętrznej</label>
-            <div class="form-radios">
-              <div class="form-radio"><input type="radio" name="miejsce" value="balkon" id="m1" /><label for="m1" data-hover>Balkon</label></div>
-              <div class="form-radio"><input type="radio" name="miejsce" value="elewacja" id="m2" /><label for="m2" data-hover>Ściana zewn.</label></div>
-              <div class="form-radio"><input type="radio" name="miejsce" value="dach" id="m3" /><label for="m3" data-hover>Dach</label></div>
-              <div class="form-radio"><input type="radio" name="miejsce" value="grunt" id="m4" /><label for="m4" data-hover>Grunt</label></div>
-              <div class="form-radio"><input type="radio" name="miejsce" value="inne" id="m5" /><label for="m5" data-hover>Inne</label></div>
-            </div>
-          </div>
-
-          <div class="form-field full">
-            <label>Czy potrzebny podnośnik koszowy?</label>
-            <div class="form-radios">
-              <div class="form-radio"><input type="radio" name="kosz" value="tak" id="k1" /><label for="k1" data-hover>Tak</label></div>
-              <div class="form-radio"><input type="radio" name="kosz" value="nie" id="k2" /><label for="k2" data-hover>Nie</label></div>
-              <div class="form-radio"><input type="radio" name="kosz" value="nw" id="k3" /><label for="k3" data-hover>Nie wiem</label></div>
-            </div>
-          </div>
-
-          <div class="form-field full">
-            <label>Odprowadzenie skroplin</label>
-            <div class="form-radios">
-              <div class="form-radio"><input type="radio" name="skropliny" value="graw" id="s1" /><label for="s1" data-hover>Grawitacyjnie</label></div>
-              <div class="form-radio"><input type="radio" name="skropliny" value="pomp" id="s2" /><label for="s2" data-hover>Pompka skroplin</label></div>
-              <div class="form-radio"><input type="radio" name="skropliny" value="nw" id="s3" /><label for="s3" data-hover>Nie wiem</label></div>
-            </div>
-          </div>
-
-          <div class="form-field">
-            <label>Preferowany termin montażu <span class="req">*</span></label>
-            <input type="date" name="termin" required data-hover />
-          </div>
-
-          <div class="form-field">
-            <label>Zdjęcia miejsca (max 5)</label>
-            <input type="file" name="zdjecia" accept="image/*" multiple data-hover />
-          </div>
-
-          <div class="form-field full">
-            <label>Opisz krótko, gdzie ma być klimatyzacja</label>
-            <textarea name="opis" data-hover maxlength="500" rows="4" placeholder="Salon 22 m² z 2 oknami na południe, sypialnia 14 m², potrzebny multi split. Mieszkanie w bloku, 4 piętro, jest winda. Termin: czerwiec, raczej Daikin lub Samsung."></textarea>
-          </div>
-
-          <div class="form-rodo full">
-            <input type="checkbox" name="rodo" required id="rodo-check" data-hover />
-            <label for="rodo-check">
-              Wyrażam zgodę na przetwarzanie moich danych osobowych przez NURTEX
-              w celu przygotowania wyceny i kontaktu zwrotnego. Dane będą wykorzystywane
-              zgodnie z <a href="/polityka-prywatnosci/" data-hover>polityką prywatności</a>.
-              Zgodę mogę wycofać w każdej chwili. <span class="req">*</span>
-            </label>
-          </div>
-
-        </div>
-
-        <button type="submit" class="form-submit" data-hover>
-          Zapytaj o cenę montażu
-          <span class="btn-arrow"></span>
-        </button>
-      </form>
+<form class="nurtex-lead-form" data-service="Montaż klimatyzacji Wrocław" data-url="https://nurtex.pl/montaz-klimatyzacji-wroclaw/" novalidate>
+  <div class="field-row">
+    <div class="field">
+      <label>Imię i nazwisko *</label>
+      <input type="text" name="name" required autocomplete="name" placeholder="Jan Kowalski">
+    </div>
+    <div class="field">
+      <label>Telefon *</label>
+      <input type="tel" name="phone" required autocomplete="tel" placeholder="662 070 695">
+    </div>
+  </div>
+  <div class="field">
+    <label>Wiadomość *</label>
+    <textarea name="message" required rows="4" placeholder="np. mieszkanie 65 m² Krzyki, split do salonu, balkon na agregat, wycena na czerwiec"></textarea>
+  </div>
+  <input type="hidden" name="service" value="Montaż klimatyzacji Wrocław">
+  <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
+  <button type="submit" class="form-submit" data-hover>Wyślij e-mailem →</button>
+  <p class="nurtex-lead-meta">Otworzy się program pocztowy — wyślij wiadomość na <strong>kontakt@nurtex.pl</strong>. Oddzwonimy w 24h.</p>
+</form>
     </div>
   </div>
 </section>
@@ -2688,63 +2563,7 @@ td { color: var(--fg-dim); font-size: 15px; }
 })();
 </script>
 
-<!-- ============ FORMULARZ — progress + auto-kubatura ============ -->
-<script>
-(() => {
-  const form = document.getElementById('quote-form');
-  if (!form) return;
-
-  // Auto-licz kubaturę = m² × 2.7 (średnia wysokość mieszkania)
-  const area = document.getElementById('f-area');
-  const vol = document.getElementById('f-vol');
-  if (area && vol) {
-    area.addEventListener('input', () => {
-      if (area.value) vol.value = Math.round(area.value * 2.7);
-    });
-  }
-
-  // Progress bar
-  const bar = document.getElementById('progress-bar');
-  const pct = document.getElementById('progress-pct');
-  function updateProgress() {
-    const inputs = form.querySelectorAll('input:not([type=file]):not([type=submit]), select, textarea');
-    const totalFields = 17;
-    let filled = 0;
-    const seen = new Set();
-    inputs.forEach(el => {
-      if (el.type === 'radio') {
-        if (el.checked && !seen.has(el.name)) { filled++; seen.add(el.name); }
-      } else if (el.type === 'checkbox') {
-        if (el.checked && !seen.has(el.name)) { filled++; seen.add(el.name); }
-      } else {
-        if (el.value && el.value.trim() && !seen.has(el.name)) { filled++; seen.add(el.name); }
-      }
-    });
-    const percent = Math.min(100, (filled / totalFields) * 100);
-    bar.style.width = percent + '%';
-    pct.textContent = filled + ' / ' + totalFields;
-  }
-  form.addEventListener('input', updateProgress);
-  form.addEventListener('change', updateProgress);
-
-  // Submit handler — fallback to mailto if Formspree not configured
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const fd = new FormData(form);
-    const body = [];
-    for (const [k, v] of fd.entries()) {
-      if (v instanceof File) {
-        if (v.name) body.push(`${k}: [plik: ${v.name}]`);
-      } else if (v) {
-        body.push(`${k}: ${v}`);
-      }
-    }
-    const subject = encodeURIComponent('Zapytanie o cenę montażu klimatyzacji — ' + (fd.get('imie') || 'klient'));
-    const mailbody = encodeURIComponent('NOWE ZAPYTANIE Z PODSTRONY MONTAŻ:\n\n' + body.join('\n'));
-    window.location.href = `mailto:kontakt@nurtex.pl?subject=${subject}&body=${mailbody}`;
-  });
-})();
-</script>
+<script src="/js/lead-form.js" defer></script>
 
 <!-- ============ REVEAL ON SCROLL ============ -->
 <script>
