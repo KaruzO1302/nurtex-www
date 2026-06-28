@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 188 188" role="img" aria-label="NURTEX">
+  <defs>
+    <linearGradient id="markBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#202129"/>
+      <stop offset="1" stop-color="#111217"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff5b45"/>
+      <stop offset="1" stop-color="#e23524"/>
+    </linearGradient>
+  </defs>
+  <rect x="18" y="18" width="152" height="152" rx="34" fill="url(#markBg)" stroke="#2c2d35" stroke-width="2"/>
+  <path d="M46 52h18v34l44-34h22v78H112V96L68 130H46V52z" fill="#ffffff"/>
+  <circle cx="132" cy="68" r="8" fill="url(#red)"/>
+  <path d="M49 130C70 115 94 109 124 130" fill="none" stroke="url(#red)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M60 145C82 132 106 130 129 145" fill="none" stroke="#b84a40" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+</svg>
