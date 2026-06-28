@@ -5,6 +5,8 @@
 // =============================================================================
 
 const ALLOWED_ORIGINS = [
+  'https://nurtex.pl',
+  'https://www.nurtex.pl',
   'https://wentylacja-nurtex-klimatyzacja.pl',
   'https://www.wentylacja-nurtex-klimatyzacja.pl',
   'https://nurtex-www.vercel.app',

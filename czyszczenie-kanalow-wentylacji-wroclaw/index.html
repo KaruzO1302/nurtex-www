@@ -165,7 +165,7 @@
       <a href="/#obszar">Obszar</a>
       <a href="/#proces">Proces</a>
       <a href="/blog/">Blog</a>
-      <a class="nav-cta" href="/#wycena">Wycena 24h</a>
+      <a class="nav-cta" href="#wycena">Wycena 24h</a>
       <a href="tel:+48662070695">662 070 695</a>
     </nav>
   </header>
@@ -194,7 +194,7 @@
       </p>
       
       <div class="hero-cta">
-        <a href="/#wycena" class="btn btn-primary">Audyt + wycena 24h</a>
+        <a href="#wycena" class="btn btn-primary">Audyt + wycena 24h</a>
         <a href="tel:+48662070695" class="btn btn-secondary">☎ 662 070 695</a>
       </div>
       
@@ -538,7 +538,7 @@
         <strong>Stała umowa serwisowa</strong> — rabat 15% na wszystkie usługi NADCA
         + priorytetowy termin (max. 7 dni) + bezpłatne pomiary powykonawcze 2x/rok.
       </p>
-      <a href="/#wycena" class="btn btn-primary">Zamów audyt + wycenę</a>
+      <a href="#wycena" class="btn btn-primary">Zamów audyt + wycenę</a>
     </div>
   </section>
 
@@ -761,6 +761,71 @@
     </details>
   </section>
 
+  <!-- ====== FORMULARZ WYCENY ====== -->
+  <section class="section section-wycena" id="wycena">
+    <span class="section-label">09 · Wycena 24h</span>
+    <h2>Zamów <em>audyt i wycenę czyszczenia</em> kanałów</h2>
+    <p>Bezpłatna konsultacja + orientacyjna wycena w 24h. Inspekcja kamerą na miejscu po umówieniu terminu.</p>
+
+    <div class="nurtex-wycena-wrap">
+      <form class="nurtex-lead-form" data-service="Czyszczenie kanałów wentylacji NADCA" data-url="https://nurtex.pl/czyszczenie-kanalow-wentylacji-wroclaw/" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label>Imię i nazwisko *</label>
+            <input type="text" name="name" required autocomplete="name" placeholder="Jan Kowalski">
+          </div>
+          <div class="field">
+            <label>Telefon *</label>
+            <input type="tel" name="phone" required autocomplete="tel" placeholder="+48 662 070 695">
+          </div>
+        </div>
+        <div class="field">
+          <label>E-mail</label>
+          <input type="email" name="email" autocomplete="email" placeholder="jan@example.com">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Typ obiektu *</label>
+            <select name="type" required>
+              <option value="">— wybierz —</option>
+              <option>Mieszkanie / dom</option>
+              <option>Biuro / open space</option>
+              <option>Restauracja / gastronomia</option>
+              <option>Hotel / obiekt noclegowy</option>
+              <option>Przychodnia / medycyna</option>
+              <option>Hala / produkcja</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Powierzchnia</label>
+            <select name="area">
+              <option value="">— wybierz —</option>
+              <option>do 80 m²</option>
+              <option>80–200 m²</option>
+              <option>200–500 m²</option>
+              <option>500 m²+</option>
+            </select>
+          </div>
+        </div>
+        <input type="hidden" name="service" value="Czyszczenie kanałów wentylacji NADCA">
+        <div class="field">
+          <label>Lokalizacja</label>
+          <input type="text" name="district" placeholder="np. Fabryczna, centrum Wrocławia">
+        </div>
+        <div class="field">
+          <label>Opis (opcjonalnie)</label>
+          <textarea name="message" placeholder="np. rekuperacja w domu, ostatnie czyszczenie 5 lat temu, słaby nawiew w sypialni"></textarea>
+        </div>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;">
+        <button type="submit" class="submit-btn">Wyślij — wycena czyszczenia w 24h</button>
+        <p class="nurtex-lead-meta">Dane chronione zgodnie z <a href="/polityka-prywatnosci/">polityką prywatności</a>.</p>
+        <div class="nurtex-lead-ok" hidden>
+          <strong style="color:#19c37d">Dziękujemy!</strong>
+          <p style="margin-top:8px;color:var(--muted)">Oddzwonimy w 24h z terminem audytu. Pilne? <a href="tel:+48662070695" style="color:var(--accent)">662 070 695</a></p>
+        </div>
+      </form>
+    </div>
+  </section>
   <!-- ====== SEKCJA 9: CTA ====== -->
   <section class="section section-cta-final">
     <h2>Twój obiekt potrzebuje <em>audytu wentylacji</em>?</h2>
@@ -771,7 +836,7 @@
     </p>
     
     <div class="cta-buttons">
-      <a href="/#wycena" class="btn btn-primary btn-large">Bezpłatny audyt</a>
+      <a href="#wycena" class="btn btn-primary btn-large">Bezpłatny audyt</a>
       <a href="tel:+48662070695" class="btn btn-secondary btn-large">☎ 662 070 695</a>
       <a href="https://wa.me/48662070695" class="btn btn-tertiary btn-large">WhatsApp B2B</a>
     </div>
@@ -885,7 +950,7 @@
       </svg>
       <span>WhatsApp</span>
     </a>
-    <a href="/#wycena" class="mobile-bar-btn" aria-label="Przejdź do formularza wyceny" data-track="mobile_bar_quote">
+    <a href="#wycena" class="mobile-bar-btn" aria-label="Przejdź do formularza wyceny" data-track="mobile_bar_quote">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
         <polyline points="14 2 14 8 20 8"/>
@@ -916,6 +981,7 @@
   })();
   </script>
 
-<script src="/js/consent.js" defer></script>
+<script src="/js/lead-form.js" defer></script>
+  <script src="/js/consent.js" defer></script>
 </body>
 </html>

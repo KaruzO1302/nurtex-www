@@ -157,7 +157,7 @@
       <a href="/#obszar">Obszar</a>
       <a href="/#proces">Proces</a>
       <a href="/blog/">Blog</a>
-      <a class="nav-cta" href="/#wycena">Wycena 24h</a>
+      <a class="nav-cta" href="#wycena">Wycena 24h</a>
       <a href="tel:+48662070695">662 070 695</a>
     </nav>
   </header>
@@ -183,7 +183,7 @@
       </p>
       
       <div class="hero-cta">
-        <a href="/#wycena" class="btn btn-primary">Zamów przegląd wentylacji</a>
+        <a href="#wycena" class="btn btn-primary">Zamów przegląd wentylacji</a>
         <a href="tel:+48662070695" class="btn btn-secondary">☎ 662 070 695</a>
       </div>
       
@@ -406,6 +406,71 @@
     </details>
   </section>
 
+  <!-- ====== FORMULARZ WYCENY ====== -->
+  <section class="section section-wycena" id="wycena">
+    <span class="section-label">05 · Wycena 24h</span>
+    <h2>Zamów <em>przegląd wentylacji</em> — odpowiadamy w 24h</h2>
+    <p>Wypełnij krótki formularz. Oddzwonimy z terminem i orientacyjną ceną. Bez zobowiązań, bez ukrytych opłat.</p>
+
+    <div class="nurtex-wycena-wrap">
+      <form class="nurtex-lead-form" data-service="Przegląd wentylacji Wrocław" data-url="https://nurtex.pl/przeglad-wentylacji-wroclaw/" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label>Imię i nazwisko *</label>
+            <input type="text" name="name" required autocomplete="name" placeholder="Jan Kowalski">
+          </div>
+          <div class="field">
+            <label>Telefon *</label>
+            <input type="tel" name="phone" required autocomplete="tel" placeholder="+48 662 070 695">
+          </div>
+        </div>
+        <div class="field">
+          <label>E-mail</label>
+          <input type="email" name="email" autocomplete="email" placeholder="jan@example.com">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Typ obiektu *</label>
+            <select name="type" required>
+              <option value="">— wybierz —</option>
+              <option>Mieszkanie / wspólnota</option>
+              <option>Dom jednorodzinny</option>
+              <option>Biuro / lokal usługowy</option>
+              <option>Gastronomia / hotel</option>
+              <option>Szkoła / przedszkole</option>
+              <option>Inne</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Metraż / skala</label>
+            <select name="area">
+              <option value="">— wybierz —</option>
+              <option>1 lokal / mieszkanie</option>
+              <option>Dom do 200 m²</option>
+              <option>Obiekt do 500 m²</option>
+              <option>Obiekt powyżej 500 m²</option>
+            </select>
+          </div>
+        </div>
+        <input type="hidden" name="service" value="Przegląd wentylacji Wrocław">
+        <div class="field">
+          <label>Lokalizacja (dzielnica / miasto)</label>
+          <input type="text" name="district" placeholder="np. Krzyki, Bielany Wrocławskie">
+        </div>
+        <div class="field">
+          <label>Opis (opcjonalnie)</label>
+          <textarea name="message" placeholder="np. rekuperacja w domu 150 m², potrzebny protokół dla ubezpieczyciela, termin do końca miesiąca"></textarea>
+        </div>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;">
+        <button type="submit" class="submit-btn">Wyślij — wycena przeglądu w 24h</button>
+        <p class="nurtex-lead-meta">Klikając, akceptujesz <a href="/polityka-prywatnosci/">politykę prywatności</a>. Dane trafiają wyłącznie do NURTEX.</p>
+        <div class="nurtex-lead-ok" hidden>
+          <strong style="color:#19c37d">Dziękujemy!</strong>
+          <p style="margin-top:8px;color:var(--muted)">Zgłoszenie przyjęte. Oddzwonimy w ciągu 24h. Pilne? <a href="tel:+48662070695" style="color:var(--accent)">662 070 695</a></p>
+        </div>
+      </form>
+    </div>
+  </section>
   <!-- ====== SEKCJA 6: CTA ====== -->
   <section class="section section-cta-final">
     <h2>Potrzebujesz <em>protokołu z kontroli wentylacji</em> we Wrocławiu?</h2>
@@ -414,7 +479,7 @@
     </p>
     
     <div class="cta-buttons">
-      <a href="/#wycena" class="btn btn-primary btn-large">Zamów przegląd w 24h</a>
+      <a href="#wycena" class="btn btn-primary btn-large">Zamów przegląd w 24h</a>
       <a href="tel:+48662070695" class="btn btn-secondary btn-large">☎ 662 070 695</a>
       <a href="https://wa.me/48662070695" class="btn btn-tertiary btn-large">WhatsApp B2B</a>
     </div>
@@ -528,7 +593,7 @@
       </svg>
       <span>WhatsApp</span>
     </a>
-    <a href="/#wycena" class="mobile-bar-btn" aria-label="Przejdź do formularza wyceny" data-track="mobile_bar_quote">
+    <a href="#wycena" class="mobile-bar-btn" aria-label="Przejdź do formularza wyceny" data-track="mobile_bar_quote">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
         <polyline points="14 2 14 8 20 8"/>
@@ -559,6 +624,7 @@
   })();
   </script>
 
+  <script src="/js/lead-form.js" defer></script>
   <script src="/js/consent.js" defer></script>
 </body>
 </html>

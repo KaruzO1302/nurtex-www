@@ -235,3 +235,51 @@ details p { margin-top: 16px; }
   .mobile-bar-btn--wa { background: #25D366; border-color: #25D366; color: #07120a; }
   .foot-bottom { flex-direction: column; }
 }
+
+/* ===== Wycena form (service landings) ===== */
+.section-wycena { background: linear-gradient(180deg, rgba(255,59,48,.04), transparent); }
+.nurtex-wycena-wrap {
+  max-width: 720px; margin: 32px auto 0; padding: 28px;
+  background: var(--panel); border: 1px solid rgba(255,255,255,.1); border-radius: 18px;
+}
+.nurtex-lead-form .field { margin-bottom: 16px; }
+.nurtex-lead-form label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--muted); }
+.nurtex-lead-form input, .nurtex-lead-form select, .nurtex-lead-form textarea {
+  width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04); color: var(--fg); font: inherit;
+}
+.nurtex-lead-form textarea { min-height: 96px; resize: vertical; }
+.nurtex-lead-form .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.nurtex-lead-form .submit-btn {
+  width: 100%; margin-top: 8px; padding: 14px 20px; border: none; border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff;
+  font-weight: 800; font-size: 15px; cursor: pointer;
+}
+.nurtex-lead-ok {
+  padding: 20px; border-radius: 12px; background: rgba(25,195,125,.12);
+  border: 1px solid rgba(25,195,125,.35); text-align: center;
+}
+.nurtex-lead-meta { font-size: 12px; color: var(--muted); margin-top: 12px; text-align: center; }
+
+/* ===== Google social proof ===== */
+.gbp-proof { text-align: center; }
+.gbp-proof-score {
+  display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;
+  margin: 20px 0; padding: 14px 22px; border-radius: 999px;
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+}
+.gbp-stars { color: #fbbc04; font-size: 22px; letter-spacing: 2px; }
+.gbp-proof-score strong { font-size: 28px; }
+.gbp-proof-lead { max-width: 680px; margin: 0 auto 20px; color: var(--muted); }
+.gbp-proof-tags {
+  display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; list-style: none;
+  padding: 0; margin: 0 0 24px;
+}
+.gbp-proof-tags li {
+  padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 700;
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+}
+.gbp-proof-link { display: inline-flex; }
+@media (max-width: 640px) {
+  .nurtex-lead-form .field-row { grid-template-columns: 1fr; }
+}
