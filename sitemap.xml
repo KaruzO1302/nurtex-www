@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nurtex.pl/</loc>
-    <lastmod>2026-05-18</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://nurtex.pl/montaz-klimatyzacji-wroclaw</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -76,6 +76,12 @@
     <loc>https://nurtex.pl/blog</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nurtex.pl/blog/najczestsze-pytania-klimatyzacja</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
