@@ -24,7 +24,12 @@
     },
     {
       "source": "/wiedza/jak-dziala-klimatyzator-prosto-wyjasnione",
-      "destination": "/blog/jak-dziala-klimatyzator",
+      "destination": "/blog/jak-zbudowany-jest-klimatyzator",
+      "permanent": true
+    },
+    {
+      "source": "/blog/jak-dziala-klimatyzator",
+      "destination": "/blog/jak-zbudowany-jest-klimatyzator",
       "permanent": true
     },
     {
