@@ -71,6 +71,131 @@
       "source": "/uslugi/pompy-ciepla",
       "destination": "/pompy-ciepla-wroclaw",
       "permanent": true
+    },
+    {
+      "source": "/uslugi/chlodnictwo-przemyslowe-wroclaw",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/uslugi/chlodnictwo-wroclaw",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/uslugi/serwis-agregatow-wody-lodowej-wroclaw",
+      "destination": "/serwis-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/uslugi/wymiana-glikolu-wroclaw",
+      "destination": "/serwis-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/uslugi/okresowe-przeglady-naprawy-wentylacji",
+      "destination": "/przeglad-wentylacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/uslugi/montaz-wentylacji-i-klimatyzacji-kompleksowo",
+      "destination": "/wentylacja-mechaniczna-rekuperacja-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/blog/okresowe-przeglady-wentylacji-wroclaw",
+      "destination": "/blog/przeglad-wentylacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/blog/serwis-chlodni-przemyslowych",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/kontrola-sanepidu-wroclaw",
+      "destination": "/przeglad-wentylacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/blog/oszczednosc-energii-w-chlodnictwie",
+      "destination": "/blog/cykl-chlodniczy-r32",
+      "permanent": true
+    },
+    {
+      "source": "/montaz-chlodni-rawicz",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/serwis-chlodniczy-trzebnica",
+      "destination": "/serwis-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/klimatyzacja-chlodnictwo-swidnica",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/strona-glowna",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/o-firmie",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wentylacja-wroclaw",
+      "destination": "/wentylacja-mechaniczna-rekuperacja-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/klimatyzacja-wroclaw",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/klimatyzacja-wroclaw/:path*",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/klimatyzacja-a-zdrowie",
+      "destination": "/blog/najczestsze-pytania-klimatyzacja",
+      "permanent": true
+    },
+    {
+      "source": "/jak-sprawdzic-czy-klimatyzacja-dziala-poprawnie",
+      "destination": "/blog/klimatyzacja-nie-chlodzi-w-upal",
+      "permanent": true
+    },
+    {
+      "source": "/dofinansowanie-do-rekuperacji",
+      "destination": "/blog/klimatyzacja-czy-pompa-ciepla",
+      "permanent": true
+    },
+    {
+      "source": "/nowosci-w-branzy-wentylacji-i-klimatyzacji-w-2019-roku",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/uslugi",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/uslugi/:path*",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [
