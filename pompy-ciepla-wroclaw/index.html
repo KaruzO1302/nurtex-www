@@ -253,6 +253,7 @@
     .hero::before {
       content: ""; position: absolute; inset: 0; opacity: .26;
       background: linear-gradient(90deg, rgba(7,8,12,.96), rgba(7,8,12,.62)), url('/img/hero-instalator.jpg') center/cover;
+      background: linear-gradient(90deg, rgba(7,8,12,.96), rgba(7,8,12,.62)), image-set(url('/img/hero-instalator.webp') type('image/webp'), url('/img/hero-instalator.jpg') type('image/jpeg')) center/cover;
     }
     .hero::after {
       content: ""; position: absolute; right: -160px; top: 14%; width: min(52vw, 620px); aspect-ratio: 1;

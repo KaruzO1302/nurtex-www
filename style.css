@@ -69,15 +69,19 @@ strong { color: var(--fg); }
 .hero::before {
   content: ""; position: absolute; inset: 0; opacity: .28;
   background: linear-gradient(90deg, rgba(7,8,12,.96), rgba(7,8,12,.62)), url('/img/proces-nadca.jpg') center/cover;
+  background: linear-gradient(90deg, rgba(7,8,12,.96), rgba(7,8,12,.62)), image-set(url('/img/proces-nadca.webp') type('image/webp'), url('/img/proces-nadca.jpg') type('image/jpeg')) center/cover;
 }
 .hero-pompa::before {
   background: linear-gradient(90deg, rgba(7,8,12,.96), rgba(7,8,12,.62)), url('/img/hero-instalator.jpg') center/cover;
+  background: linear-gradient(90deg, rgba(7,8,12,.96), rgba(7,8,12,.62)), image-set(url('/img/hero-instalator.webp') type('image/webp'), url('/img/hero-instalator.jpg') type('image/jpeg')) center/cover;
 }
 .hero-bms::before {
   background: linear-gradient(90deg, rgba(7,8,12,.96), rgba(7,8,12,.58)), url('/img/proces-manometr.jpg') center/cover;
+  background: linear-gradient(90deg, rgba(7,8,12,.96), rgba(7,8,12,.58)), image-set(url('/img/proces-manometr.webp') type('image/webp'), url('/img/proces-manometr.jpg') type('image/jpeg')) center/cover;
 }
 .hero-serwis::before {
   background: linear-gradient(90deg, rgba(7,8,12,.96), rgba(7,8,12,.60)), url('/img/proces-manometr.jpg') center/cover;
+  background: linear-gradient(90deg, rgba(7,8,12,.96), rgba(7,8,12,.60)), image-set(url('/img/proces-manometr.webp') type('image/webp'), url('/img/proces-manometr.jpg') type('image/jpeg')) center/cover;
 }
 .hero::after {
   content: ""; position: absolute; right: -160px; top: 14%; width: min(52vw, 620px); aspect-ratio: 1;
