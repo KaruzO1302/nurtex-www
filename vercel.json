@@ -8,16 +8,6 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/pompy-ciepla-wroclaw/srodmiescie",
-      "destination": "/pompy-ciepla-wroclaw",
-      "permanent": true
-    },
-    {
-      "source": "/pompy-ciepla-wroclaw/stare-miasto",
-      "destination": "/pompy-ciepla-wroclaw",
-      "permanent": true
-    },
-    {
       "source": "/kalkulator-czyste-powietrze",
       "destination": "/pompy-ciepla-wroclaw",
       "permanent": true
