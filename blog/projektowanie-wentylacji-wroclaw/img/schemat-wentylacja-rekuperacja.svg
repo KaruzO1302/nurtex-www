@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Schemat wentylacji mechanicznej z rekuperacją w domu jednorodzinnym: centrala, kanały nawiewne i wywiewne, anemostaty w pomieszczeniach">
+  <defs>
+    <style>
+      .lbl{font-family:Inter,Arial,sans-serif;font-size:18px;fill:#b0b0bc}
+      .lbl b{fill:#ffffff}
+      .ttl{font-family:Inter,Arial,sans-serif;font-size:15px;letter-spacing:4px;fill:#e8503a;font-weight:700}
+      .sub{font-family:Inter,Arial,sans-serif;font-size:13px;fill:#8a8a96;letter-spacing:1px}
+      .room{font-family:Inter,Arial,sans-serif;font-size:14px;fill:#8a8a96;letter-spacing:1px}
+      .box{fill:#0a0a0e;stroke:#26262e;stroke-width:1.5}
+      .wall{fill:none;stroke:#3a3a46;stroke-width:2.5}
+      .unit{fill:#10101a;stroke:#3a3a46;stroke-width:2}
+      .nawiew{stroke:#4ab8ff;fill:none;stroke-width:3}
+      .wywiew{stroke:#ff5a3a;fill:none;stroke-width:3;stroke-dasharray:10 6}
+      .anem{fill:#4ab8ff}
+      .krot{fill:#ff5a3a}
+      .flow{font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:700}
+    </style>
+    <marker id="arrB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4ab8ff"/></marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#ff5a3a"/></marker>
+  </defs>
+
+  <rect width="1200" height="630" fill="#06060a"/>
+  <rect x="20" y="20" width="1160" height="590" rx="14" class="box"/>
+
+  <text x="60" y="66" class="ttl">WENTYLACJA MECHANICZNA Z REKUPERACJĄ — SCHEMAT BILANSU POWIETRZA</text>
+  <text x="60" y="92" class="sub">PROJEKTOWANIE · DOBÓR KANAŁÓW I CENTRALI · SCHEMAT NURTEX</text>
+
+  <!-- ===== BRYŁA DOMU ===== -->
+  <rect x="60" y="130" width="720" height="420" rx="6" class="wall"/>
+  <text x="70" y="122" class="room">DOM JEDNORODZINNY — PRZEKRÓJ</text>
+
+  <!-- parter/piętro -->
+  <line x1="60" y1="340" x2="780" y2="340" class="wall" stroke-dasharray="12 8"/>
+  <text x="70" y="332" class="room">PIĘTRO</text>
+  <text x="70" y="542" class="room">PARTER</text>
+
+  <!-- pomieszczenia piętro -->
+  <line x1="300" y1="130" x2="300" y2="340" class="wall"/>
+  <line x1="540" y1="130" x2="540" y2="340" class="wall"/>
+  <text x="90" y="160" class="room">SYPIALNIA</text>
+  <text x="330" y="160" class="room">SYPIALNIA 2</text>
+  <text x="570" y="160" class="room">ŁAZIENKA</text>
+
+  <!-- pomieszczenia parter -->
+  <line x1="300" y1="340" x2="300" y2="550" class="wall"/>
+  <line x1="540" y1="340" x2="540" y2="550" class="wall"/>
+  <text x="90" y="370" class="room">SALON</text>
+  <text x="330" y="370" class="room">GABINET</text>
+  <text x="570" y="370" class="room">KUCHNIA</text>
+
+  <!-- ===== CENTRALA (pralnia/spiżarnia) ===== -->
+  <rect x="900" y="400" width="220" height="130" rx="10" class="unit"/>
+  <text x="1010" y="428" class="room" text-anchor="middle" fill="#fff">CENTRALA</text>
+  <text x="1010" y="448" class="room" text-anchor="middle">REKUPERACYJNA</text>
+  <!-- wymiennik przeciwprądowy -->
+  <path d="M950 480 L1010 455 L1070 480 L1010 505 Z" fill="none" stroke="#e8503a" stroke-width="2"/>
+  <text x="1010" y="522" class="sub" text-anchor="middle">wymiennik · odzysk do 90%</text>
+
+  <!-- czerpnia/wyrzutnia -->
+  <path d="M900 435 L820 435 L820 380" class="nawiew" marker-end="url(#arrB)"/>
+  <text x="828" y="425" class="flow" fill="#4ab8ff">CZERPNIA</text>
+  <path d="M1120 500 L1150 500 L1150 380" class="wywiew" marker-end="url(#arrO)"/>
+  <text x="1096" y="370" class="flow" fill="#ff5a3a">WYRZUTNIA</text>
+
+  <!-- ===== KANAŁY NAWIEWNE (niebieski ciągły) ===== -->
+  <path d="M900 450 L700 450 L700 210 L420 210" class="nawiew" marker-end="url(#arrB)"/>
+  <path d="M700 210 L180 210" class="nawiew" marker-end="url(#arrB)"/>
+  <!-- anemostaty nawiewne piętro -->
+  <circle cx="180" cy="210" r="7" class="anem"/>
+  <circle cx="420" cy="210" r="7" class="anem"/>
+  <!-- nawiew parter -->
+  <path d="M700 450 L420 450" class="nawiew" marker-end="url(#arrB)"/>
+  <path d="M560 450 L180 450" class="nawiew" marker-end="url(#arrB)"/>
+  <circle cx="420" cy="450" r="7" class="anem"/>
+  <circle cx="180" cy="450" r="7" class="anem"/>
+  <text x="230" y="200" class="flow" fill="#4ab8ff">NAWIEW — strefa czysta (sypialnie, salon)</text>
+
+  <!-- ===== KANAŁY WYWIEWNE (pomarańczowy przerywany) ===== -->
+  <path d="M660 270 L760 270 L760 470 L900 470" class="wywiew" marker-end="url(#arrO)"/>
+  <path d="M660 480 L900 480" class="wywiew"/>
+  <!-- kratki wywiewne -->
+  <circle cx="660" cy="270" r="7" class="krot"/>
+  <circle cx="660" cy="480" r="7" class="krot"/>
+  <text x="440" y="262" class="flow" fill="#ff5a3a">WYWIEW — strefa brudna (łazienka, kuchnia, WC)</text>
+
+  <!-- legenda -->
+  <rect x="60" y="570" width="660" height="26" rx="6" fill="#0a0a0e"/>
+  <line x1="80" y1="583" x2="120" y2="583" class="nawiew"/>
+  <text x="130" y="588" class="lbl">kanał nawiewny</text>
+  <line x1="280" y1="583" x2="320" y2="583" class="wywiew"/>
+  <text x="330" y="588" class="lbl">kanał wywiewny</text>
+  <circle cx="480" cy="583" r="7" class="anem"/>
+  <text x="496" y="588" class="lbl">anemostat / kratka</text>
+
+  <!-- dymki projektowe -->
+  <rect x="820" y="150" width="330" height="180" rx="12" fill="#0a0a0e" stroke="#26262e"/>
+  <text x="845" y="185" class="ttl" font-size="13">CO LICZYMY W PROJEKCIE</text>
+  <text x="845" y="220" class="lbl">· strumienie: 30–50 m³/h na osobę</text>
+  <text x="845" y="250" class="lbl">· prędkość w kanałach ≤ 3–5 m/s</text>
+  <text x="845" y="280" class="lbl">· bilans: nawiew ≈ wywiew (±10%)</text>
+  <text x="845" y="310" class="lbl">· hałas przy anemostacie ≤ 25 dB</text>
+</svg>

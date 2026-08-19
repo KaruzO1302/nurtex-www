@@ -74,9 +74,27 @@
   </url>
   <url>
     <loc>https://nurtex.pl/blog</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nurtex.pl/blog/serwis-klimatyzacji-cennik-wroclaw</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nurtex.pl/blog/projektowanie-wentylacji-wroclaw</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://nurtex.pl/blog/klimatyzacja-kanalowa-dom</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://nurtex.pl/blog/najczestsze-pytania-klimatyzacja</loc>

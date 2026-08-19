@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Schemat klimatyzacji kanałowej: jednostka kanałowa w stropie podwieszanym, kanały nawiewne do pomieszczeń, nawiewniki szczelinowe, kratka powrotna i agregat zewnętrzny">
+  <defs>
+    <style>
+      .lbl{font-family:Inter,Arial,sans-serif;font-size:18px;fill:#b0b0bc}
+      .lbl b{fill:#ffffff}
+      .ttl{font-family:Inter,Arial,sans-serif;font-size:15px;letter-spacing:4px;fill:#e8503a;font-weight:700}
+      .sub{font-family:Inter,Arial,sans-serif;font-size:13px;fill:#8a8a96;letter-spacing:1px}
+      .room{font-family:Inter,Arial,sans-serif;font-size:14px;fill:#8a8a96;letter-spacing:1px}
+      .box{fill:#0a0a0e;stroke:#26262e;stroke-width:1.5}
+      .wall{fill:none;stroke:#3a3a46;stroke-width:2.5}
+      .unit{fill:#10101a;stroke:#3a3a46;stroke-width:2}
+      .duct{stroke:#4ab8ff;fill:none;stroke-width:6}
+      .freon{stroke:#4ab8ff;fill:none;stroke-width:2;opacity:.65}
+      .ret{stroke:#ff5a3a;fill:none;stroke-width:2.5;stroke-dasharray:8 6}
+      .flow{font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:700}
+      .coldArrow{stroke:#4ab8ff;stroke-width:2;fill:none}
+    </style>
+    <marker id="aB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#4ab8ff"/></marker>
+    <marker id="aO" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ff5a3a"/></marker>
+  </defs>
+
+  <rect width="1200" height="630" fill="#06060a"/>
+  <rect x="20" y="20" width="1160" height="590" rx="14" class="box"/>
+
+  <text x="60" y="60" class="ttl">KLIMATYZACJA KANAŁOWA — SCHEMAT INSTALACJI</text>
+  <text x="60" y="84" class="sub">JEDNA JEDNOSTKA WEWNĘTRZNA · NAWIEW DO KAŻDEGO POMIESZCZENIA · SCHEMAT NURTEX</text>
+
+  <!-- ===== PRZEKRÓJ DOMU ===== -->
+  <rect x="60" y="110" width="820" height="450" rx="6" class="wall"/>
+  <text x="75" y="134" class="room">PRZESTRZEŃ NAD SUFITEM PODWIESZANYM (25–35 CM)</text>
+  <!-- sufit podwieszany -->
+  <line x1="60" y1="240" x2="880" y2="240" class="wall"/>
+  <!-- ściany działowe -->
+  <line x1="330" y1="240" x2="330" y2="560" class="wall"/>
+  <line x1="600" y1="240" x2="600" y2="560" class="wall"/>
+  <text x="90" y="545" class="room">SALON</text>
+  <text x="360" y="545" class="room">SYPIALNIA</text>
+  <text x="630" y="545" class="room">GABINET / KORYTARZ</text>
+
+  <!-- ===== JEDNOSTKA KANAŁOWA ===== -->
+  <rect x="420" y="150" width="220" height="62" rx="10" class="unit"/>
+  <text x="530" y="232" class="sub" text-anchor="middle">JEDNOSTKA KANAŁOWA (nad sufitem)</text>
+
+  <!-- ===== KANAŁY NAWIEWNE ===== -->
+  <path d="M420 165 L180 165 L180 232" class="duct"/>
+  <path d="M420 188 L465 188 L465 232" class="duct"/>
+  <path d="M640 160 L780 160 L780 232" class="duct"/>
+  <text x="90" y="152" class="flow" fill="#4ab8ff">KANAŁY NAWIEWNE (spiro / sono)</text>
+
+  <!-- nawiewniki szczelinowe -->
+  <rect x="130" y="240" width="100" height="10" rx="3" fill="#4ab8ff"/>
+  <rect x="415" y="240" width="100" height="10" rx="3" fill="#4ab8ff"/>
+  <rect x="730" y="240" width="100" height="10" rx="3" fill="#4ab8ff"/>
+  <text x="130" y="278" class="flow" fill="#4ab8ff">NAWIEWNIKI SZCZELINOWE</text>
+
+  <!-- strugi powietrza -->
+  <path d="M150 258 q0 34 -12 52" class="coldArrow" marker-end="url(#aB)"/>
+  <path d="M210 258 q0 34 12 52" class="coldArrow" marker-end="url(#aB)"/>
+  <path d="M435 258 q0 34 -12 52" class="coldArrow" marker-end="url(#aB)"/>
+  <path d="M495 258 q0 34 12 52" class="coldArrow" marker-end="url(#aB)"/>
+  <path d="M750 258 q0 34 -12 52" class="coldArrow" marker-end="url(#aB)"/>
+  <path d="M810 258 q0 34 12 52" class="coldArrow" marker-end="url(#aB)"/>
+
+  <!-- ===== KRATKA POWROTNA ===== -->
+  <rect x="640" y="240" width="70" height="10" rx="3" fill="none" stroke="#ff5a3a" stroke-width="2"/>
+  <path d="M675 238 L640 214" class="ret" marker-end="url(#aO)"/>
+  <text x="640" y="300" class="flow" fill="#ff5a3a">KRATKA POWROTNA</text>
+  <text x="640" y="318" class="sub">powrót z korytarza do jednostki</text>
+
+  <!-- ===== AGREGAT ZEWNĘTRZNY ===== -->
+  <rect x="980" y="400" width="170" height="140" rx="12" class="unit"/>
+  <circle cx="1065" cy="455" r="42" fill="none" stroke="#3a3a46" stroke-width="2"/>
+  <path d="M1065 413 q16 20 9 42" class="coldArrow"/>
+  <path d="M1107 455 q-20 16 -42 9" class="coldArrow"/>
+  <path d="M1065 497 q-16 -20 -9 -42" class="coldArrow"/>
+  <path d="M1023 455 q20 -16 42 -9" class="coldArrow"/>
+  <text x="1065" y="566" class="room" text-anchor="middle">AGREGAT ZEWNĘTRZNY</text>
+
+  <!-- łącze freonowe -->
+  <path d="M1065 400 L1065 275 L872 275 L872 200 L645 200" class="freon"/>
+  <text x="890" y="298" class="flow" fill="#4ab8ff">ŁĄCZE FREONOWE R32</text>
+
+  <!-- dymek zalety -->
+  <rect x="910" y="110" width="260" height="150" rx="12" fill="#0a0a0e" stroke="#26262e"/>
+  <text x="934" y="142" class="ttl" font-size="13">ZALETY SYSTEMU</text>
+  <text x="934" y="174" class="lbl">· zero jednostek na ścianach</text>
+  <text x="934" y="202" class="lbl">· jeden serwis, jedna jednostka</text>
+  <text x="934" y="230" class="lbl">· równa temperatura wszędzie</text>
+</svg>
