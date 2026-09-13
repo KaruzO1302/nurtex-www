@@ -1,6 +1,5 @@
 (function initNurtexLeadForms() {
   const ENDPOINT = '/api/lead-wycena';
-  const WHATSAPP = '48662070695';
   const SELECTORS = '.nurtex-lead-form, #quoteForm, #quote-form, #recuperacjaForm';
 
   function getField(form, ...names) {
@@ -14,17 +13,19 @@
     return '';
   }
 
-  function buildWhatsappText(payload) {
-    const lines = [
-      'Zapytanie ze strony NURTEX',
-      '',
-      `Usługa: ${payload.service || 'Wycena'}`,
-      `Imię: ${payload.name}`,
-      `Tel klienta: ${payload.phone}`
-    ];
-    if (payload.message) lines.push(`Wiadomość: ${payload.message}`);
-    if (payload.url) lines.push(`Strona: ${payload.url}`);
-    return lines.join('\n');
+  function showError(form) {
+    let error = form.querySelector('.nurtex-lead-error');
+    if (!error) {
+      error = document.createElement('p');
+      error.className = 'nurtex-lead-error';
+      error.setAttribute('role', 'alert');
+      error.tabIndex = -1;
+      error.style.cssText = 'margin-top:16px;padding:16px;border:1px solid currentColor;border-radius:8px;color:inherit;line-height:1.6';
+      error.innerHTML = 'Nie udało się potwierdzić wysłania zgłoszenia. Twoje dane pozostały w formularzu. Spróbuj ponownie lub zadzwoń: <a href="tel:+48662070695" style="color:inherit;font-weight:700">662 070 695</a>.';
+      form.appendChild(error);
+    }
+    error.hidden = false;
+    error.focus();
   }
 
   function showSuccess(form) {
@@ -32,6 +33,8 @@
     if (!ok) {
       ok = document.createElement('div');
       ok.className = 'nurtex-lead-ok';
+      ok.setAttribute('role', 'status');
+      ok.tabIndex = -1;
       ok.innerHTML = [
         '<strong style="color:#19c37d">Dziękujemy!</strong>',
         '<p style="margin-top:8px">Zgłoszenie wysłane. Oddzwonimy w 24h (często szybciej).',
@@ -43,7 +46,7 @@
       if (!child.classList.contains('nurtex-lead-ok')) child.style.display = 'none';
     });
     ok.hidden = false;
-    ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    ok.focus();
   }
 
   document.querySelectorAll(SELECTORS).forEach((form) => {
@@ -53,12 +56,16 @@
     const submitBtn = form.querySelector('[type="submit"]');
     const defaultService = form.dataset.service || '';
     const pageUrl = form.dataset.url || window.location.href;
+    let sending = false;
+    let sent = false;
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (sending || sent) return;
 
       const honey = form.querySelector('input[name="website"]');
       if (honey && honey.value.trim() !== '') return;
+      if (!form.reportValidity()) return;
 
       const payload = {
         name: getField(form, 'name', 'imie'),
@@ -83,35 +90,47 @@
         form.querySelector('[name="phone"], [name="telefon"]')?.focus();
         return;
       }
+      if (!payload.message) {
+        alert('Napisz krótko, w czym możemy pomóc.');
+        form.querySelector('[name="message"], [name="msg"], [name="opis"]')?.focus();
+        return;
+      }
 
+      sending = true;
+      form.setAttribute('aria-busy', 'true');
+      const previousError = form.querySelector('.nurtex-lead-error');
+      if (previousError) previousError.hidden = true;
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.dataset.prevText = submitBtn.textContent;
         submitBtn.textContent = 'Wysyłanie...';
       }
 
-      const waUrl = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(buildWhatsappText(payload))}`;
-      window.open(waUrl, '_blank', 'noopener');
-
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 20000);
       try {
         const res = await fetch(ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+          body: JSON.stringify(payload),
+          signal: controller.signal
         });
-        const json = await res.json().catch(() => ({}));
-        if (!res.ok || !json.success) {
-          console.warn('[lead-form] API:', json.error || res.status);
+        const json = await res.json();
+        if (!res.ok || json?.success !== true) {
+          throw new Error('Lead not accepted');
         }
-      } catch (err) {
-        console.warn('[lead-form] API offline:', err);
-      }
-
-      showSuccess(form);
-
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = submitBtn.dataset.prevText || 'Wyślij zapytanie';
+        sent = true;
+        showSuccess(form);
+      } catch {
+        showError(form);
+      } finally {
+        clearTimeout(timeout);
+        sending = false;
+        form.setAttribute('aria-busy', 'false');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitBtn.dataset.prevText || 'Wyślij zapytanie';
+        }
       }
     });
   });
