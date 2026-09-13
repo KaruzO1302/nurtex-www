@@ -809,6 +809,7 @@
     gap: 24px; grid-auto-rows: 280px;
   }
   .real-card {
+    color: #f4f2ed; text-decoration: none;
     position: relative; overflow: hidden; border-radius: 20px;
     cursor: pointer; transition: all 0.5s ease;
   }
@@ -832,7 +833,8 @@
     transform: translateY(20px); opacity: 0.85;
     transition: all 0.5s ease;
   }
-  .real-card:hover .real-info { transform: translateY(0); opacity: 1; }
+  .real-card:hover .real-info, .real-card:focus-visible .real-info { transform: translateY(0); opacity: 1; }
+  .real-card:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
   .real-tag {
     font-family: 'Geist Mono', monospace; font-size: 10px;
     color: var(--accent); letter-spacing: 0.15em;
@@ -1895,47 +1897,12 @@
   <div class="container">
     <div class="section-eyebrow">04 · Realizacje</div>
     <h2 class="section-title">Z miedzi, stali i <em class="accent">precyzji</em>.</h2>
-    <p class="section-lead">
-      Wybrane realizacje 2023–2026. Od biura na 80 m² po centrale wentylacyjne
-      4 500 m³/h. Każda instalacja udokumentowana, przeglądana, archiwizowana.
-    </p>
-
-    <div class="realizations-grid">
-      <div class="real-card real-a" data-hover>
-        <picture><source srcset="img/realizacja-9.webp" type="image/webp"><img src="img/realizacja-9.jpg" alt="Realizacja wentylacji na dachu Zespołu Szkolno-Przedszkolnego w Tyńcu Małym" loading="lazy"  width="1920" height="1440" /></picture>
-        <div class="real-info">
-          <div class="real-tag">Obiekt edukacyjny · 2025</div>
-          <div class="real-title">Zespół Szkolno-Przedszkolny w Tyńcu Małym</div>
-          <div class="real-meta">Wentylacja mechaniczna · Tyniec Mały</div>
-        </div>
-      </div>
-
-      <div class="real-card real-b" data-hover>
-        <picture><source srcset="img/realizacja-2.webp" type="image/webp"><img src="img/realizacja-2.jpg" alt="Lutowanie instalacji miedzianej VRF Heat Recovery podczas montażu klimatyzacji w obiekcie komercyjnym" loading="lazy"  width="1920" height="1082" /></picture>
-        <div class="real-info">
-          <div class="real-tag">VRF Heat Recovery · 2025</div>
-          <div class="real-title">VRF Mitsubishi 28 kW</div>
-          <div class="real-meta">Biurowiec · Wrocław · Krzyki</div>
-        </div>
-      </div>
-
-      <div class="real-card real-c" data-hover>
-        <picture><source srcset="img/realizacja-7.webp" type="image/webp"><img src="img/realizacja-7.jpg" alt="Montaż zewnętrznej jednostki klimatyzacji Samsung na dachu budynku komercyjnego we Wrocławiu" loading="lazy"  width="1920" height="1082" /></picture>
-        <div class="real-info">
-          <div class="real-tag">Multisplit Samsung · 2024</div>
-          <div class="real-title">NURTEX Specjaliści od Wentylacji</div>
-          <div class="real-meta">Punkt usługowy · Wrocław · Stare Miasto</div>
-        </div>
-      </div>
-
-    </div>
-
-    <p class="section-lead" style="margin-top:48px">
-      Pełne case studies wybranych realizacji:
-      <a href="/realizacje/klimatyzacja-vrf-biuro-wroclaw" data-hover style="color:var(--accent)">klimatyzacja VRF w biurze we Wrocławiu</a>
-      &nbsp;·&nbsp;
-      <a href="/realizacje/rekuperacja-dom-pod-wroclawiem" data-hover style="color:var(--accent)">rekuperacja w domu pod Wrocławiem</a>
-    </p>
+    <p class="section-lead">Montaż klimatyzacji, prace przy wentylacji i ludzie, którzy stoją za instalacjami. Zobacz zdjęcia z pracy naszego zespołu.</p>
+    <div class="realizations-grid"><a href="/realizacje#montaz-klimatyzatora" class="real-card real-a" data-hover><img src="/img/realizacje-2026-09/montaz-klimatyzatora-1280.webp" srcset="/img/realizacje-2026-09/montaz-klimatyzatora-640.webp 640w, /img/realizacje-2026-09/montaz-klimatyzatora-1280.webp 1280w" sizes="(max-width: 700px) 100vw, 50vw" width="1280" height="854" alt="Ekipa NURTEX przy osadzaniu jednostki wewnętrznej klimatyzacji." loading="lazy" decoding="async"><div class="real-info"><div class="real-tag">Klimatyzacja</div><div class="real-title">Montaż klimatyzatora ściennego</div><div class="real-meta">Zobacz zespół NURTEX w pracy →</div></div></a>
+<a href="/realizacje#montaz-kanalow" class="real-card real-b" data-hover><img src="/img/realizacje-2026-09/montaz-kanalow-1280.webp" srcset="/img/realizacje-2026-09/montaz-kanalow-640.webp 640w, /img/realizacje-2026-09/montaz-kanalow-1280.webp 1280w" sizes="(max-width: 700px) 100vw, 50vw" width="1280" height="938" alt="Prace przy okrągłych kanałach wentylacyjnych prowadzonych pod stropem." loading="lazy" decoding="async"><div class="real-info"><div class="real-tag">Wentylacja</div><div class="real-title">Montaż kanałów wentylacyjnych</div><div class="real-meta">Zobacz zespół NURTEX w pracy →</div></div></a>
+<a href="/realizacje#klimatyzacja-dach" class="real-card real-c" data-hover><img src="/img/realizacje-2026-09/klimatyzacja-dach-1280.webp" srcset="/img/realizacje-2026-09/klimatyzacja-dach-640.webp 640w, /img/realizacje-2026-09/klimatyzacja-dach-1280.webp 1280w" sizes="(max-width: 700px) 100vw, 50vw" width="1280" height="960" alt="Prace instalacyjne przy urządzeniach klimatyzacyjnych na dachu." loading="lazy" decoding="async"><div class="real-info"><div class="real-tag">Klimatyzacja</div><div class="real-title">Prace przy jednostkach zewnętrznych</div><div class="real-meta">Zobacz zespół NURTEX w pracy →</div></div></a>
+</div>
+    <p class="section-lead" style="margin-top:32px"><a href="/realizacje" style="color:var(--accent)">Zobacz całą galerię realizacji i zespołu →</a></p>
   </div>
 </section>
 

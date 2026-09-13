@@ -8,6 +8,26 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/realizacje/rekuperacja-dom-pod-wroclawiem",
+      "destination": "/realizacje",
+      "permanent": false
+    },
+    {
+      "source": "/realizacje/rekuperacja-dom-pod-wroclawiem/:path*",
+      "destination": "/realizacje",
+      "permanent": false
+    },
+    {
+      "source": "/realizacje/klimatyzacja-vrf-biuro-wroclaw",
+      "destination": "/realizacje",
+      "permanent": false
+    },
+    {
+      "source": "/realizacje/klimatyzacja-vrf-biuro-wroclaw/:path*",
+      "destination": "/realizacje",
+      "permanent": false
+    },
+    {
       "source": "/kalkulator-czyste-powietrze",
       "destination": "/pompy-ciepla-wroclaw",
       "permanent": true
