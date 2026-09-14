@@ -1957,7 +1957,7 @@ td { color: var(--fg-dim); font-size: 15px; }
           <li>Montaż + materiały + uruchomienie</li>
           <li>F-gaz, próba szczelności</li>
         </ul>
-        <a href="#kontakt" class="pakiet-cta" data-hover>Zapytaj o ten pakiet</a>
+        <a href="#formularz" class="pakiet-cta" data-hover>Zapytaj o ten pakiet</a>
       </div>
 
       <div class="pakiet-card featured" data-hover>
@@ -1978,7 +1978,7 @@ td { color: var(--fg-dim); font-size: 15px; }
           <li>Filtr Easy Filter Plus</li>
           <li>Tryb 24-stopniowego nawiewu</li>
         </ul>
-        <a href="#kontakt" class="pakiet-cta" data-hover>Zapytaj o ten pakiet</a>
+        <a href="#formularz" class="pakiet-cta" data-hover>Zapytaj o ten pakiet</a>
       </div>
 
       <div class="pakiet-card" data-hover>
@@ -1998,7 +1998,7 @@ td { color: var(--fg-dim); font-size: 15px; }
           <li>Czujnik obecności (auto-oszczędzanie)</li>
           <li>Filtr Flash Streamer (oczyszczanie)</li>
         </ul>
-        <a href="#kontakt" class="pakiet-cta" data-hover>Zapytaj o ten pakiet</a>
+        <a href="#formularz" class="pakiet-cta" data-hover>Zapytaj o ten pakiet</a>
       </div>
 
       <div class="pakiet-card" data-hover>
@@ -2018,7 +2018,7 @@ td { color: var(--fg-dim); font-size: 15px; }
           <li>Designerski front (4 kolory)</li>
           <li>Filtr Plasma Quad Plus (alergeny)</li>
         </ul>
-        <a href="#kontakt" class="pakiet-cta" data-hover>Zapytaj o ten pakiet</a>
+        <a href="#formularz" class="pakiet-cta" data-hover>Zapytaj o ten pakiet</a>
       </div>
 
     </div>
@@ -2747,8 +2747,8 @@ td { color: var(--fg-dim); font-size: 15px; }
     const systemType = pom === 1 ? 'split (1 jednostka)' : `multi split (${pom} ${unitsWord} wewn.)`;
     specEl.innerHTML = `<strong>${brand.name}</strong>, moc <strong>${pwr.kw} kW</strong>/jedn., ${systemType}, ${m2} m² łącznie, 6m rurarstwa/pom.`;
 
-    // CTA link z parametrami
-    ctaEl.href = `#formularz?m2=${m2}&pom=${pom}&brand=${currentBrand}`;
+    // Przejście do istniejącej sekcji formularza.
+    ctaEl.href = '#formularz';
   }
 
   m2El.addEventListener('input', calc);
