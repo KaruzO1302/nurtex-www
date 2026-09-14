@@ -1,0 +1,5 @@
+/* Persistent contact for content pages without an existing mobile contact bar. */
+.nurtex-contact-access{position:fixed;right:20px;bottom:20px;z-index:900;display:flex;gap:8px;padding:8px;background:#12171bf2;border:1px solid #4a5359;border-radius:12px;box-shadow:0 6px 24px #0005;box-sizing:border-box}
+.nurtex-contact-access a{display:flex;align-items:center;justify-content:center;min-height:46px;padding:10px 16px;color:#101214;background:#ff7654;border-radius:7px;text-decoration:none;font:700 14px/1.25 system-ui,sans-serif;border:1px solid #ff7654;box-sizing:border-box}
+.nurtex-contact-access a+ a{background:#20282e;color:#fff;border-color:#60717d}.nurtex-contact-access a:focus-visible{outline:3px solid #6dd8e8;outline-offset:3px}
+@media(max-width:768px){body{padding-bottom:88px!important}.nurtex-contact-access{left:0;right:0;bottom:0;border-radius:0;border-width:1px 0 0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1.2fr 1fr}.nurtex-contact-access a{padding:12px 8px;min-height:48px}}
