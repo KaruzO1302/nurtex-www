@@ -153,9 +153,15 @@
   </url>
   <url>
     <loc>https://nurtex.pl/przeglad-wentylacji-wroclaw</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://nurtex.pl/naprawa-wentylacji-mechanicznej-wroclaw</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://nurtex.pl/polityka-prywatnosci</loc>
