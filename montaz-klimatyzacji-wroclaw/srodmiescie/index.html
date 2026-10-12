@@ -28,15 +28,16 @@
 <meta name="twitter:description" content="Montaż klimatyzacji we Wrocławiu na Śródmieściu. Plac Grunwaldzki, Sępolno, Biskupin, Zalesie. Apartamenty premium, kamienice. Wycena 24h." />
 
 <!-- JSON-LD LocalBusiness z areaServed -->
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://nurtex.pl/montaz-klimatyzacji-wroclaw/srodmiescie#business",
-  "name": "NURTEX — Montaż klimatyzacji Śródmieście, Wrocław",
+  "@type": "Service",
+  "@id": "https://nurtex.pl/montaz-klimatyzacji-wroclaw/srodmiescie#service",
+  "name": "Montaż klimatyzacji – Śródmieście, Wrocław",
+  "serviceType": "Montaż klimatyzacji",
   "description": "Montaż klimatyzacji we Wrocławiu na Śródmieściu. Plac Grunwaldzki, Sępolno, Biskupin, Zalesie. Apartamenty premium, kamienice. Wycena 24h.",
-  "telephone": "+48 662 070 695",
-  "url": "https://nurtex.pl/montaz-klimatyzacji-wroclaw/srodmiescie",
+  "provider": {
+    "@id": "https://nurtex.pl/#business"
+  },
   "areaServed": {
     "@type": "AdministrativeArea",
     "name": "Śródmieście, Wrocław",
@@ -45,33 +46,34 @@
       "name": "Wrocław"
     }
   },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Wrocław",
-    "addressRegion": "dolnośląskie",
-    "addressCountry": "PL"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "51.1140",
-    "longitude": "17.0700"
-  },
-  "priceRange": "4200-35000 PLN"
-}
-</script>
+  "url": "https://nurtex.pl/montaz-klimatyzacji-wroclaw/srodmiescie"
+}</script>
 
 <!-- JSON-LD BreadcrumbList -->
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://nurtex.pl/" },
-    { "@type": "ListItem", "position": 2, "name": "Montaż klimatyzacji Wrocław", "item": "https://nurtex.pl/montaz-klimatyzacji-wroclaw" },
-    { "@type": "ListItem", "position": 3, "name": "Śródmieście", "item": "https://nurtex.pl/montaz-klimatyzacji-wroclaw/srodmiescie" }
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Strona główna",
+      "item": "https://nurtex.pl/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Montaż klimatyzacji Wrocław",
+      "item": "https://nurtex.pl/montaz-klimatyzacji-wroclaw"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Śródmieście",
+      "item": "https://nurtex.pl/montaz-klimatyzacji-wroclaw/srodmiescie"
+    }
   ]
-}
-</script>
+}</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -377,8 +379,7 @@ h2 em { color: var(--accent); font-style: normal; }
 }
 </style>
 <link rel="stylesheet" href="/css/mobile-fix.css?v=2026-05-21" />
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
@@ -413,31 +414,15 @@ h2 em { color: var(--accent); font-style: normal; }
         "@type": "Answer",
         "text": "Urządzenia z certyfikatem F-gaz: Daikin, Mitsubishi, LG, Gree, Haier. W gęstej zabudowie Śródmieścia dobieramy modele o niskim poziomie hałasu (19–22 dB)."
       }
-    },
-    {
-      "@type": "Question",
-      "name": "Czy potrzebna jest zgoda konserwatora zabytków na Śródmieściu?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Przy montażu agregatu od strony elewacji w zabudowie chronionej często wymagana jest zgoda konserwatora lub zarządcy. Najczęściej montujemy od podwórza lub na dachu północnym i pomagamy przygotować dokumentację dla wspólnoty."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ile trwa montaż klimatyzacji na Śródmieściu?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Standardowy split w mieszkaniu montujemy w 4–6 godzin, zwykle w jeden dzień. Kamienica z długim rurociągiem lub multi split to 1–2 dni robocze. Wycena i wizja lokalna w 24h."
-      }
     }
   ]
-}
-</script>
+}</script>
 <meta property="og:site_name" content="NURTEX">
 <meta property="og:image" content="https://nurtex.pl/img/realizacje-2026-09/montaz-klimatyzatora-1280.webp">
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="854">
 <meta name="twitter:image" content="https://nurtex.pl/img/realizacje-2026-09/montaz-klimatyzatora-1280.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HVACBusiness","@id":"https://nurtex.pl/#business","name":"NURTEX Klimatyzacja i Wentylacja","telephone":"+48 662 070 695","email":"kontakt@nurtex.pl","url":"https://nurtex.pl/","address":{"@type":"PostalAddress","streetAddress":"ul. Smardzowska 83B","postalCode":"52-234","addressLocality":"Wrocław","addressRegion":"Dolnośląskie","addressCountry":"PL"}}</script>
 </head>
 <body>
 

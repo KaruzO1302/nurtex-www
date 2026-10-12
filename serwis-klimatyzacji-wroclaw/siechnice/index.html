@@ -30,12 +30,14 @@
 <!-- JSON-LD LocalBusiness -->
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://nurtex.pl/serwis-klimatyzacji-wroclaw/siechnice#business",
-  "name": "NURTEX — Serwis klimatyzacji Siechnice",
+  "@type": "Service",
+  "@id": "https://nurtex.pl/serwis-klimatyzacji-wroclaw/siechnice#service",
+  "name": "Serwis klimatyzacji – Siechnice",
+  "serviceType": "Serwis klimatyzacji",
   "description": "Serwis klimatyzacji w Siechnicach k. Wrocławia. Przegląd od 299 zł, naprawa, czyszczenie, dezynfekcja. Nowe osiedla, domy jednorodzinne. Dojazd 24h.",
-  "telephone": "+48 662 070 695",
-  "url": "https://nurtex.pl/serwis-klimatyzacji-wroclaw/siechnice",
+  "provider": {
+    "@id": "https://nurtex.pl/#business"
+  },
   "areaServed": {
     "@type": "AdministrativeArea",
     "name": "Siechnice, okolice Wrocławia",
@@ -44,18 +46,7 @@
       "name": "Siechnice"
     }
   },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Siechnice",
-    "addressRegion": "dolnośląskie",
-    "addressCountry": "PL"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "51.0300",
-    "longitude": "17.1350"
-  },
-  "priceRange": "199-2000 PLN"
+  "url": "https://nurtex.pl/serwis-klimatyzacji-wroclaw/siechnice"
 }</script>
 
 <!-- JSON-LD BreadcrumbList -->
@@ -431,6 +422,7 @@ h2 em { color: var(--accent); font-style: normal; }
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="854">
 <meta name="twitter:image" content="https://nurtex.pl/img/realizacje-2026-09/montaz-klimatyzatora-1280.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HVACBusiness","@id":"https://nurtex.pl/#business","name":"NURTEX Klimatyzacja i Wentylacja","telephone":"+48 662 070 695","email":"kontakt@nurtex.pl","url":"https://nurtex.pl/","address":{"@type":"PostalAddress","streetAddress":"ul. Smardzowska 83B","postalCode":"52-234","addressLocality":"Wrocław","addressRegion":"Dolnośląskie","addressCountry":"PL"}}</script>
 </head>
 <body>
 
