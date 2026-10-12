@@ -27,6 +27,22 @@ Wszystkie wpisy są **tylko komentarzami HTML** – nie ma ich w treści widoczn
 | 8 | **Ceny z wpisu blogowego** – czy aktualne i czy mają gdzieś wrócić | `blog/przeglad-wentylacji-wroclaw/index.html` koniec `<main>`; kwoty poniżej |
 | 9 | Współrzędne **geo** 51.0582136, 17.042428 – zgodność z adresem i wizytówką | `index.html` komentarz nad blokiem JSON-LD `HVACBusiness` |
 
+### Status: wszystkie punkty 1–9 ROZWIĄZANE (potwierdzenie właściciela 11.10.2026, gałąź `seo/fakty-wlasciciela`)
+
+| # | Odpowiedź właściciela | Wdrożenie |
+|---|---|---|
+| 1 | ✅ Tak – kontrola z art. 62 PB, protokół, osoba z uprawnieniami w specjalności instalacyjnej | serwis `#kontrola-okresowa` + FAQ; przegląd `#kontrola-okresowa` (notice) + FAQ; blog – akapit na końcu `<main>` |
+| 2 | ✅ Dojazd bezpłatny tylko we Wrocławiu, poza Wrocławiem doliczany | serwis `#cennik`; przegląd i czyszczenie – lista „Wycena” |
+| 3 | ✅ Przeglądy 2× w roku; czas reakcji zależny od abonamentu za gotowość (bez liczb) | serwis `#stala-obsluga` + FAQ „Czy podpisujecie stałą umowę serwisową?” |
+| 4 | ✅ M.in. Systemair, Komfovent, Vents, Zehnder, Brink | serwis `#rekuperacja` + nowe FAQ |
+| 5 | ✅ Pomiar przepływów – tak (bez nazwy sprzętu) | przegląd – nowe FAQ |
+| 6 | ✅ Awarie poza pn–pt 8–17 tylko w opcji abonamentowej | naprawa `#zgloszenie`; serwis `#stala-obsluga`, karta „Gastronomia”, nowe FAQ |
+| 7 | ✅ Montaż rekuperacji i nowych instalacji + serwis rekuperacji | serwis `#rekuperacja` + nowe FAQ; naprawa – usunięte „nie składamy instalacji pod klucz” |
+| 8 | ✅ Cen nie publikujemy – podawane telefonicznie lub po przeglądzie | blog (komentarz z cennikiem usunięty, kwoty nie wracają); przegląd – FAQ o koszcie |
+| 9 | ✅ Współrzędne geo zgodne | `index.html` – komentarz usunięty |
+
+FAQPage JSON-LD na stronach serwisu, przeglądu i naprawy zsynchronizowany z widocznym FAQ. Decyzje o usunięciu 38 niewidocznych pytań FAQ (zostaje) i o `nofollow` dla linków hydraulicznych (bez zmian) – bez zmian w tej gałęzi.
+
 ### Usunięte kwoty z `/blog/przeglad-wentylacji-wroclaw` (sekcja 04, pkt 8)
 
 | Typ obiektu / instalacja | Średni koszt brutto (było) | Zakres dokumentacji (było) |
@@ -82,4 +98,4 @@ sed -i -E 's#(href="https://(wuko-wroclaw\.pl|ziebud-expert\.pl|serwis-kanalizac
 - kompresja obrazów,
 - skrócenie H1 strony głównej (142 zn.),
 - decyzja o linkach hydraulicznych (sekcja 3),
-- potwierdzenie pkt 1–9 i ewentualne odkomentowanie treści.
+- ~~potwierdzenie pkt 1–9~~ – rozwiązane 11.10.2026 (gałąź `seo/fakty-wlasciciela`).
