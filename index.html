@@ -8,7 +8,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <title>Klimatyzacja, wentylacja i pompy ciepła Wrocław | NURTEX</title>
-<meta name="description" content="Klimatyzacja Wrocław oraz przegląd i naprawa wentylacji mechanicznej. Centrale, rekuperacja, czyszczenie kanałów. Firmy i spółdzielnie. Tel. 662 070 695." />
+<meta name="description" content="Montaż i serwis klimatyzacji, wentylacji mechanicznej oraz pomp ciepła we Wrocławiu. Obsługa firm, biur i domów. Wycena w 24h — tel. 662 070 695." />
 <meta name="keywords" content="klimatyzacja Wrocław, montaż klimatyzacji Wrocław, serwis klimatyzacji Wrocław, wentylacja mechaniczna Wrocław, rekuperacja Wrocław, pompy ciepła Wrocław, klimatyzacja do mieszkania, klimatyzacja do biura, VRF Wrocław, klimatyzacja Daikin Wrocław" />
 
 <!-- Canonical + robots -->
@@ -34,8 +34,8 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="pl_PL" />
-<meta property="og:title" content="Klimatyzacja Wrocław — Montaż, Serwis, Wentylacja | NURTEX" />
-<meta property="og:description" content="Klimatyzacja Wrocław od 4 200 zł. Ponad 287 instalacji, 8 lat, certyfikat F-gaz. Daikin, Samsung, Mitsubishi, LG. Wycena 24h." />
+<meta property="og:title" content="Klimatyzacja, wentylacja i pompy ciepła Wrocław | NURTEX" />
+<meta property="og:description" content="Montaż i serwis klimatyzacji, wentylacji mechanicznej oraz pomp ciepła we Wrocławiu. Obsługa firm, biur i domów. Wycena w 24h — tel. 662 070 695." />
 <meta property="og:url" content="https://nurtex.pl/">
 <meta property="og:site_name" content="NURTEX" />
 <meta property="og:image" content="https://nurtex.pl/img/hero-instalator.jpg">
@@ -44,8 +44,8 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Klimatyzacja Wrocław — NURTEX" />
-<meta name="twitter:description" content="Klimatyzacja, wentylacja, rekuperacja Wrocław. Wycena 24h." />
+<meta name="twitter:title" content="Klimatyzacja, wentylacja i pompy ciepła Wrocław | NURTEX" />
+<meta name="twitter:description" content="Montaż i serwis klimatyzacji, wentylacji mechanicznej oraz pomp ciepła we Wrocławiu. Obsługa firm, biur i domów. Wycena w 24h — tel. 662 070 695." />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -507,6 +507,9 @@
   }
   .bottombar a { color: var(--fg); transition: color 0.25s ease; }
   .bottombar a:hover { color: var(--accent); }
+.bottombar .footer-links { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; }
+.bottombar .footer-links a { text-decoration: none; opacity: .85; }
+.bottombar .footer-links a:hover { opacity: 1; }
   .field-status {
     display: inline-flex; align-items: center; gap: 10px;
   }
@@ -1320,7 +1323,7 @@
   "@id": "https://nurtex.pl/#business",
   "name": "NURTEX Klimatyzacja i Wentylacja",
   "alternateName": "NURTEX HVAC Engineering",
-  "description": "Klimatyzacja, wentylacja mechaniczna, rekuperacja i pompy ciepła we Wrocławiu i okolicach. Montaż od 4 200 zł, ponad 287 instalacji, certyfikat F-gaz, SEP do 1 kV i czyszczenie kanałów wentylacyjnych. Wycena 24h.",
+  "description": "Klimatyzacja, wentylacja mechaniczna, rekuperacja i pompy ciepła we Wrocławiu i okolicach. Montaż od 4 200 zł, certyfikat F-gaz, SEP do 1 kV i czyszczenie kanałów wentylacyjnych. Wycena 24h.",
   "url": "https://nurtex.pl/",
   "telephone": "+48 662 070 695",
   "email": "kontakt@nurtex.pl",
@@ -1331,7 +1334,6 @@
   ],
   "logo": "https://nurtex.pl/img/nurtex-logo.svg",
   "priceRange": "4200-280000 PLN",
-  "foundingDate": "2018",
   "slogan": "Inżynierowie, nie sprzedawcy.",
   "address": {
     "@type": "PostalAddress",
@@ -1546,11 +1548,13 @@
 }</script>
 
 <!-- ============ JSON-LD: Service (Montaż klimatyzacji) ============ -->
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Montaż klimatyzacji",
-  "name": "Montaż klimatyzacji Wrocław",
+  "@id": "https://nurtex.pl/#uslugi",
+  "name": "Klimatyzacja, wentylacja mechaniczna i pompy ciepła Wrocław",
+  "serviceType": "Usługi HVAC: wentylacja mechaniczna B2B, czyszczenie wentylacji, pompy ciepła, klimatyzacja",
   "provider": {
     "@id": "https://nurtex.pl/#business"
   },
@@ -1564,79 +1568,129 @@
       "name": "Dolnośląskie"
     }
   ],
-  "offers": {
-    "@type": "Offer",
-    "price": "4200",
-    "priceCurrency": "PLN",
-    "priceSpecification": {
-      "@type": "PriceSpecification",
-      "price": "4200",
-      "priceCurrency": "PLN",
-      "valueAddedTaxIncluded": true
-    }
-  },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Usługi HVAC NURTEX",
     "itemListElement": [
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Montaż klimatyzacji split"
-        },
-        "price": "4200",
-        "priceCurrency": "PLN"
+        "@type": "OfferCatalog",
+        "name": "Wentylacja mechaniczna B2B — serwis i pomiary central (AHU)",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Serwis i stała obsługa wentylacji mechanicznej dla firm, gastronomii i spółdzielni",
+              "url": "https://nurtex.pl/wentylacja-mechaniczna-rekuperacja-wroclaw"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Przegląd okresowy i pomiary wentylacji — protokół",
+              "url": "https://nurtex.pl/przeglad-wentylacji-wroclaw"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Naprawa wentylacji mechanicznej, central i rekuperatorów",
+              "url": "https://nurtex.pl/naprawa-wentylacji-mechanicznej-wroclaw"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monitoring IAQ i automatyka BMS",
+              "url": "https://nurtex.pl/monitoring-iaq-bms-wroclaw"
+            }
+          }
+        ]
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Multisplit 1+2"
-        },
-        "price": "8500",
-        "priceCurrency": "PLN"
+        "@type": "OfferCatalog",
+        "name": "Czyszczenie i dezynfekcja wentylacji",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Czyszczenie kanałów i central wentylacyjnych",
+              "url": "https://nurtex.pl/czyszczenie-kanalow-wentylacji-wroclaw"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ozonowanie pomieszczeń i instalacji",
+              "url": "https://nurtex.pl/ozonowanie-wroclaw"
+            }
+          }
+        ]
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Przeglądy i naprawy central wentylacyjnych"
-        }
+        "@type": "OfferCatalog",
+        "name": "Pompy ciepła",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Montaż pompy ciepła powietrze-woda",
+              "url": "https://nurtex.pl/pompy-ciepla-wroclaw"
+            },
+            "price": "32000",
+            "priceCurrency": "PLN",
+            "description": "Montaż z urządzeniem, od 32 000 zł brutto"
+          }
+        ]
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Serwis central wentylacyjnych dla firm i spółdzielni"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Czyszczenie central i kanałów wentylacyjnych"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Serwis klimatyzacji (przegląd)"
-        },
-        "price": "299",
-        "priceCurrency": "PLN"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Pompy ciepła powietrze-powietrze"
-        }
+        "@type": "OfferCatalog",
+        "name": "Klimatyzacja",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Montaż klimatyzacji split",
+              "url": "https://nurtex.pl/montaz-klimatyzacji-wroclaw"
+            },
+            "price": "4200",
+            "priceCurrency": "PLN",
+            "description": "Montaż klimatyzacji split z urządzeniem, od 4 200 zł brutto"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Klimatyzacja multisplit 1+2",
+              "url": "https://nurtex.pl/montaz-klimatyzacji-wroclaw"
+            },
+            "price": "8500",
+            "priceCurrency": "PLN"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Serwis i przegląd klimatyzacji",
+              "url": "https://nurtex.pl/serwis-klimatyzacji-wroclaw"
+            },
+            "price": "299",
+            "priceCurrency": "PLN",
+            "description": "Przegląd klimatyzacji od 299 zł brutto"
+          }
+        ]
       }
     ]
   }
-}</script>
+}
+</script>
 
 <!-- ============ JSON-LD: FAQPage ============ -->
 <script type="application/ld+json">{
@@ -1740,7 +1794,7 @@
   <div class="hero-content">
     <div class="eyebrow">Montaż klimatyzacji · Wentylacja · Wrocław · F-gaz</div>
     <div class="hero-h1">
-      <h1 class="h1-main">Klimatyzacja <em class="accent">Wrocław</em></h1>
+      <h1 class="h1-main">Klimatyzacja, wentylacja mechaniczna i pompy ciepła <em class="accent">we Wrocławiu</em></h1>
       <p class="h1-sub">Montaż split i VRF oraz serwis wentylacji — przeglądy central, naprawy i czyszczenie dla firm, gastronomii i spółdzielni.</p>
     </div>
     <p class="sub">
@@ -1787,6 +1841,14 @@
       <span class="status-dot" aria-hidden="true"></span>
       <span>Wrocław i okolice · <strong>Pon–Pt 8:00–17:00</strong></span>
     </div>
+    <nav class="footer-links" aria-label="Usługi sezonowe NURTEX">
+      <a href="/naprawa-wentylacji-mechanicznej-wroclaw" data-hover>Naprawa wentylacji</a>
+      <a href="/przeglad-wentylacji-wroclaw" data-hover>Przegląd wentylacji</a>
+      <a href="/czyszczenie-kanalow-wentylacji-wroclaw" data-hover>Czyszczenie kanałów</a>
+      <a href="/ozonowanie-wroclaw" data-hover>Ozonowanie</a>
+      <a href="/monitoring-iaq-bms-wroclaw" data-hover>Monitoring IAQ / BMS</a>
+      <a href="/realizacje" data-hover>Realizacje</a>
+    </nav>
     <a href="#wycena" data-hover>Wycena w 24h</a>
   </footer>
 

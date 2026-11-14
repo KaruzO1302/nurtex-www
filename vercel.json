@@ -10,22 +10,22 @@
     {
       "source": "/realizacje/rekuperacja-dom-pod-wroclawiem",
       "destination": "/realizacje",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/realizacje/rekuperacja-dom-pod-wroclawiem/:path*",
       "destination": "/realizacje",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/realizacje/klimatyzacja-vrf-biuro-wroclaw",
       "destination": "/realizacje",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/realizacje/klimatyzacja-vrf-biuro-wroclaw/:path*",
       "destination": "/realizacje",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/kalkulator-czyste-powietrze",
@@ -55,7 +55,7 @@
     {
       "source": "/wiedza/:path*",
       "destination": "/blog",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/chlodnictwo-:path*",
