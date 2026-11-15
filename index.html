@@ -7,9 +7,9 @@
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<title>Klimatyzacja, wentylacja i pompy ciepła Wrocław | NURTEX</title>
-<meta name="description" content="Montaż i serwis klimatyzacji, wentylacji mechanicznej oraz pomp ciepła we Wrocławiu. Obsługa firm, biur i domów. Wycena w 24h — tel. 662 070 695." />
-<meta name="keywords" content="klimatyzacja Wrocław, montaż klimatyzacji Wrocław, serwis klimatyzacji Wrocław, wentylacja mechaniczna Wrocław, rekuperacja Wrocław, pompy ciepła Wrocław, klimatyzacja do mieszkania, klimatyzacja do biura, VRF Wrocław, klimatyzacja Daikin Wrocław" />
+<title>Wentylacja Wrocław – obsługa systemów i central | NURTEX</title>
+<meta name="description" content="Obsługa techniczna systemów wentylacji mechanicznej i central we Wrocławiu: serwis, przeglądy, naprawy i czyszczenie. Także klimatyzacja – 662 070 695." />
+<meta name="keywords" content="wentylacja Wrocław, wentylacja mechaniczna Wrocław, serwis wentylacji Wrocław, przegląd wentylacji Wrocław, naprawa wentylacji Wrocław, czyszczenie wentylacji Wrocław, serwis central wentylacyjnych, klimatyzacja Wrocław" />
 
 <!-- Canonical + robots -->
 <link rel="canonical" href="https://nurtex.pl/" />
@@ -34,8 +34,8 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="pl_PL" />
-<meta property="og:title" content="Klimatyzacja, wentylacja i pompy ciepła Wrocław | NURTEX" />
-<meta property="og:description" content="Montaż i serwis klimatyzacji, wentylacji mechanicznej oraz pomp ciepła we Wrocławiu. Obsługa firm, biur i domów. Wycena w 24h — tel. 662 070 695." />
+<meta property="og:title" content="Wentylacja Wrocław – obsługa systemów i central | NURTEX" />
+<meta property="og:description" content="Obsługa techniczna systemów wentylacji mechanicznej i central we Wrocławiu: serwis, przeglądy, naprawy i czyszczenie. Także klimatyzacja – 662 070 695." />
 <meta property="og:url" content="https://nurtex.pl/">
 <meta property="og:site_name" content="NURTEX" />
 <meta property="og:image" content="https://nurtex.pl/img/hero-instalator.jpg">
@@ -44,8 +44,8 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Klimatyzacja, wentylacja i pompy ciepła Wrocław | NURTEX" />
-<meta name="twitter:description" content="Montaż i serwis klimatyzacji, wentylacji mechanicznej oraz pomp ciepła we Wrocławiu. Obsługa firm, biur i domów. Wycena w 24h — tel. 662 070 695." />
+<meta name="twitter:title" content="Wentylacja Wrocław – obsługa systemów i central | NURTEX" />
+<meta name="twitter:description" content="Obsługa techniczna systemów wentylacji mechanicznej i central we Wrocławiu: serwis, przeglądy, naprawy i czyszczenie. Także klimatyzacja – 662 070 695." />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1211,6 +1211,16 @@
   }
 
   .nurtex-mobile-bar { display: none; }
+  /* podmenu „Klimatyzacja” */
+  nav li.has-sub { position: relative; }
+  nav li.has-sub > a::after { content: " ▾"; font-size: 10px; opacity: .7; }
+  nav li.has-sub > ul {
+    display: none; position: absolute; top: 100%; left: -8px; min-width: 240px;
+    flex-direction: column; align-items: stretch; gap: 0; padding: 10px 0; margin: 0;
+    background: rgba(8, 10, 12, 0.98); border: 1px solid var(--border); border-radius: 10px; z-index: 60;
+  }
+  nav li.has-sub:hover > ul, nav li.has-sub:focus-within > ul { display: flex; }
+  nav li.has-sub > ul li a { display: block; padding: 10px 16px; white-space: nowrap; }
 
   /* ========= RESPONSIVE ========= */
   @media (max-width: 1024px) {
@@ -1245,6 +1255,12 @@
       transform: translateX(0);
       pointer-events: auto;
       visibility: visible;
+    }
+    nav li.has-sub > ul {
+      display: flex !important; position: static !important; width: auto !important; height: auto !important;
+      transform: none !important; pointer-events: auto !important; visibility: visible !important;
+      padding: 0 0 0 16px !important; border: 0 !important; background: transparent !important;
+      backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
     }
     /* Podnieś cały header podczas otwartego menu, żeby panel był nad three-canvas */
     body.menu-open header { z-index: 9999; }
@@ -1321,20 +1337,50 @@
   "@context": "https://schema.org",
   "@type": "HVACBusiness",
   "@id": "https://nurtex.pl/#business",
-  "name": "NURTEX Klimatyzacja i Wentylacja",
-  "alternateName": "NURTEX HVAC Engineering",
-  "description": "Klimatyzacja, wentylacja mechaniczna, rekuperacja i pompy ciepła we Wrocławiu i okolicach. Montaż od 4 200 zł, certyfikat F-gaz, SEP do 1 kV i czyszczenie kanałów wentylacyjnych. Wycena 24h.",
+  "name": "NURTEX Wentylacja i Klimatyzacja",
+  "alternateName": "NURTEX Wiktor Zięba",
+  "description": "Serwis wentylacji mechanicznej i central wentylacyjnych we Wrocławiu: przeglądy okresowe z protokołem (art. 62 Prawa budowlanego), naprawy, czyszczenie i dezynfekcja kanałów. Także montaż i serwis klimatyzacji. Certyfikat F-gaz, SEP do 1 kV.",
   "url": "https://nurtex.pl/",
   "telephone": "+48 662 070 695",
   "email": "kontakt@nurtex.pl",
   "image": [
-    "https://nurtex.pl/img/hero-instalator.jpg",
-    "https://nurtex.pl/img/zespol.jpg",
-    "https://nurtex.pl/img/realizacja-9.jpg"
+    "https://nurtex.pl/img/realizacje-2026-09/centrala-wentylacyjna-1280.webp",
+    "https://nurtex.pl/img/realizacje-2026-09/montaz-kanalow-1280.webp",
+    "https://nurtex.pl/img/zespol.jpg"
   ],
   "logo": "https://nurtex.pl/img/nurtex-logo.svg",
-  "priceRange": "4200-280000 PLN",
+  "priceRange": "$$",
   "slogan": "Inżynierowie, nie sprzedawcy.",
+  "employee": {
+    "@type": "Person",
+    "name": "Wiktor Zięba",
+    "jobTitle": "Właściciel, kontakt techniczny",
+    "telephone": "+48 662 070 695",
+    "email": "kontakt@nurtex.pl"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "technical support",
+      "name": "Wiktor Zięba",
+      "telephone": "+48 662 070 695",
+      "email": "kontakt@nurtex.pl",
+      "availableLanguage": "pl",
+      "areaServed": "PL",
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    }
+  ],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "ul. Smardzowska 83B",
@@ -1390,38 +1436,18 @@
     {
       "@type": "AdministrativeArea",
       "name": "Dolnośląskie"
-    },
-    {
-      "@type": "Place",
-      "name": "Krzyki, Wrocław"
-    },
-    {
-      "@type": "Place",
-      "name": "Fabryczna, Wrocław"
-    },
-    {
-      "@type": "Place",
-      "name": "Psie Pole, Wrocław"
-    },
-    {
-      "@type": "Place",
-      "name": "Stare Miasto, Wrocław"
-    },
-    {
-      "@type": "Place",
-      "name": "Śródmieście, Wrocław"
     }
   ],
   "knowsAbout": [
-    "Klimatyzacja",
     "Wentylacja mechaniczna",
-    "Rekuperacja",
-    "Pompy ciepła",
+    "Centrale wentylacyjne (AHU)",
+    "Przeglądy okresowe wentylacji (art. 62 PB)",
+    "Czyszczenie i dezynfekcja kanałów wentylacyjnych",
+    "PN-EN 15780",
+    "Klimatyzacja",
     "VRF",
     "Multisplit",
     "Certyfikat F-gaz",
-    "Standard NADCA",
-    "PN-EN 15780",
     "BREEAM"
   ],
   "hasCredential": [
@@ -1438,6 +1464,11 @@
       "@type": "EducationalOccupationalCredential",
       "name": "SEP do 1 kV (E + D)",
       "credentialCategory": "license"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Uprawnienia budowlane w specjalności instalacyjnej",
+      "credentialCategory": "license"
     }
   ],
   "hasOfferCatalog": {
@@ -1448,8 +1479,40 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
+          "name": "Serwis i stała obsługa central wentylacyjnych",
+          "url": "https://nurtex.pl/serwis-wentylacji-wroclaw"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Przegląd okresowy i pomiary wentylacji — protokół",
+          "url": "https://nurtex.pl/przeglad-wentylacji-wroclaw"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Naprawa wentylacji mechanicznej i central",
+          "url": "https://nurtex.pl/naprawa-wentylacji-mechanicznej-wroclaw"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Czyszczenie i dezynfekcja kanałów wentylacyjnych",
+          "url": "https://nurtex.pl/czyszczenie-kanalow-wentylacji-wroclaw"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
           "name": "Montaż klimatyzacji Wrocław",
-          "areaServed": "Wrocław"
+          "url": "https://nurtex.pl/montaz-klimatyzacji-wroclaw"
         },
         "price": "4200",
         "priceCurrency": "PLN",
@@ -1459,49 +1522,12 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Klimatyzacja multisplit Wrocław"
-        },
-        "price": "8500",
-        "priceCurrency": "PLN"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Serwis central wentylacyjnych dla firm i spółdzielni"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Pompa ciepła powietrzna Wrocław"
-        },
-        "price": "32000",
-        "priceCurrency": "PLN"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Przeglądy i naprawy central wentylacyjnych"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Czyszczenie central i kanałów wentylacyjnych"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Serwis klimatyzacji Wrocław"
+          "name": "Serwis klimatyzacji Wrocław",
+          "url": "https://nurtex.pl/serwis-klimatyzacji-wroclaw"
         },
         "price": "299",
-        "priceCurrency": "PLN"
+        "priceCurrency": "PLN",
+        "description": "Przegląd klimatyzacji od 299 zł brutto"
       }
     ]
   },
@@ -1547,14 +1573,13 @@
   ]
 }</script>
 
-<!-- ============ JSON-LD: Service (Montaż klimatyzacji) ============ -->
-<script type="application/ld+json">
-{
+<!-- ============ JSON-LD: Service (wentylacja + klimatyzacja) ============ -->
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://nurtex.pl/#uslugi",
-  "name": "Klimatyzacja, wentylacja mechaniczna i pompy ciepła Wrocław",
-  "serviceType": "Usługi HVAC: wentylacja mechaniczna B2B, czyszczenie wentylacji, pompy ciepła, klimatyzacja",
+  "name": "Wentylacja mechaniczna i klimatyzacja Wrocław",
+  "serviceType": "Serwis wentylacji mechanicznej B2B: obsługa central, przeglądy i pomiary, naprawy, czyszczenie kanałów; klimatyzacja",
   "provider": {
     "@id": "https://nurtex.pl/#business"
   },
@@ -1574,21 +1599,21 @@
     "itemListElement": [
       {
         "@type": "OfferCatalog",
-        "name": "Wentylacja mechaniczna B2B — serwis i pomiary central (AHU)",
+        "name": "Wentylacja mechaniczna B2B — serwis central (AHU)",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
               "name": "Serwis i stała obsługa wentylacji mechanicznej dla firm, gastronomii i spółdzielni",
-              "url": "https://nurtex.pl/wentylacja-mechaniczna-rekuperacja-wroclaw"
+              "url": "https://nurtex.pl/serwis-wentylacji-wroclaw"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Przegląd okresowy i pomiary wentylacji — protokół",
+              "name": "Przegląd okresowy i pomiary wentylacji — protokół (art. 62 PB)",
               "url": "https://nurtex.pl/przeglad-wentylacji-wroclaw"
             }
           },
@@ -1596,7 +1621,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Naprawa wentylacji mechanicznej, central i rekuperatorów",
+              "name": "Naprawa wentylacji mechanicznej, central i wentylatorów",
               "url": "https://nurtex.pl/naprawa-wentylacji-mechanicznej-wroclaw"
             }
           },
@@ -1618,7 +1643,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Czyszczenie kanałów i central wentylacyjnych",
+              "name": "Czyszczenie i dezynfekcja kanałów i central wentylacyjnych",
               "url": "https://nurtex.pl/czyszczenie-kanalow-wentylacji-wroclaw"
             }
           },
@@ -1629,23 +1654,6 @@
               "name": "Ozonowanie pomieszczeń i instalacji",
               "url": "https://nurtex.pl/ozonowanie-wroclaw"
             }
-          }
-        ]
-      },
-      {
-        "@type": "OfferCatalog",
-        "name": "Pompy ciepła",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Montaż pompy ciepła powietrze-woda",
-              "url": "https://nurtex.pl/pompy-ciepla-wroclaw"
-            },
-            "price": "32000",
-            "priceCurrency": "PLN",
-            "description": "Montaż z urządzeniem, od 32 000 zł brutto"
           }
         ]
       },
@@ -1668,16 +1676,6 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Klimatyzacja multisplit 1+2",
-              "url": "https://nurtex.pl/montaz-klimatyzacji-wroclaw"
-            },
-            "price": "8500",
-            "priceCurrency": "PLN"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
               "name": "Serwis i przegląd klimatyzacji",
               "url": "https://nurtex.pl/serwis-klimatyzacji-wroclaw"
             },
@@ -1689,8 +1687,7 @@
       }
     ]
   }
-}
-</script>
+}</script>
 
 <!-- ============ JSON-LD: FAQPage ============ -->
 <script type="application/ld+json">{
@@ -1699,58 +1696,42 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Ile kosztuje klimatyzacja o mocy 3,5 kW z montażem?",
+      "name": "Jak często trzeba robić przegląd wentylacji w firmie?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Klimatyzacja 3,5 kW z pełnym montażem we Wrocławiu kosztuje 4 800–7 400 zł brutto (2026). Wariant ekonomiczny (Gree, Rotenso, Haier): 4 800–5 500 zł. Premium (Daikin, Mitsubishi, Samsung): 6 200–7 400 zł. Cena obejmuje urządzenie, montaż, trasę do 5 m, próżnię, czynnik R32 i 5 lat gwarancji."
+        "text": "Prawo budowlane (art. 62) wymaga co najmniej raz w roku kontroli stanu technicznego przewodów wentylacyjnych, a jej wynik trafia do książki obiektu. Przegląd samej centrali — filtry, wymiennik, wentylatory, automatyka — planujemy według dokumentacji producenta i warunków pracy; w stałej umowie serwisowej wykonujemy go dwa razy w roku. Centrala przy kuchni zwykle potrzebuje częstszych wizyt niż urządzenie w biurze."
       }
     },
     {
       "@type": "Question",
-      "name": "Jakie są najcichsze klimatyzacje?",
+      "name": "Kto podpisuje protokół z kontroli okresowej wentylacji?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Najcichsze splity: Samsung WindFree Elite ok. 16 dB(A), Mitsubishi MSZ-LN ok. 19 dB, Daikin Emura/Stylish 19–21 dB, Toshiba SEIA ok. 20 dB. Przy montażu NURTEX mierzymy hałas w pomieszczeniu — celujemy poniżej 22 dB w sypialni. Jednostka zewnętrzna: zwykle 45–52 dB."
+        "text": "Kontrolę z art. 62 Prawa budowlanego prowadzi u nas osoba z uprawnieniami budowlanymi w specjalności instalacyjnej i to ona podpisuje protokół. Po przeglądzie technicznym centrali dostajesz dodatkowo podsumowanie prac, wykrytych usterek i zaleceń z datą następnej wizyty."
       }
     },
     {
       "@type": "Question",
-      "name": "Jakie są polscy producenci klimatyzatorów?",
+      "name": "Jakie centrale wentylacyjne obsługuje NURTEX?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Masowa produkcja klimatyzatorów w Polsce jest ograniczona. Najbliżej polskiego producenta jest Rotenso — marka projektowana pod warunki w Polsce z krajowym serwisem. Pozostałe to producenci globalni: Gree, Haier, Daikin, Mitsubishi, Samsung, LG, Toshiba, Panasonic. NURTEX montuje wszystkie i dobiera markę do budżetu i wymagań akustycznych."
+        "text": "Centrale nawiewno-wywiewne różnych producentów, m.in. Systemair, Komfovent i Vents. Pracujemy na dokumentacji urządzenia, więc w zgłoszeniu najlepiej podać model z tabliczki znamionowej albo przesłać zdjęcie sterownika."
       }
     },
     {
       "@type": "Question",
-      "name": "Ile kosztuje montaż klimatyzacji we Wrocławiu w 2026?",
+      "name": "Jak wygląda reakcja na awarię centrali wentylacyjnej?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Klimatyzacja split z montażem we Wrocławiu zaczyna się od 4 200 zł brutto (urządzenie 2,5 kW marki Gree, Rotenso, Haier). Daikin lub Mitsubishi to 5 800 – 7 400 zł. Multisplit 1+2 (mieszkanie ~60 m²) od 8 500 zł. Każda wycena jest indywidualna — metraż, rodzaj ścian, trasa instalacji i klasa urządzenia zmieniają koszt."
+        "text": "Zgłoszenia przyjmujemy od poniedziałku do piątku w godzinach 8:00–17:00 — telefonicznie, przez formularz albo zdjęciem sterownika na WhatsApp. Najpierw diagnoza na miejscu, potem wycena części i robocizny; bez akceptacji nie wymieniamy podzespołów. Obiekty ze stałą umową serwisową mają ustalony czas reakcji i mogą zgłaszać awarie także poza godzinami pracy biura."
       }
     },
     {
       "@type": "Question",
-      "name": "Klimatyzacja czy pompa ciepła powietrze-powietrze?",
+      "name": "Czy wykonujecie też serwis klimatyzacji w tym samym obiekcie?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "W praktyce to ten sam typ urządzenia — inwerterowy split z funkcją grzania. Różnica jest formalna: pompa ciepła powietrze-powietrze ma SCOP powyżej 3,8 i klasę efektywności A++/A+++. NURTEX dobiera modele dopasowane do mieszkania, biura lub domu — z gwarancją 5 lat i pełną dokumentacją montażu."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Jak często serwisować klimatyzację?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Przegląd zalecamy raz w roku (najlepiej wiosna, przed sezonem). Obejmuje: czyszczenie filtrów wewnętrznych, podstawowe czyszczenie dostępnych elementów parownika, kontrolę parametrów pracy, oczyszczenie skraplacza, sprawdzenie odpływu skroplin. Koszt we Wrocławiu: od 299 zł brutto za układ split; multisplit 1+2 od 449 zł brutto, 1+3 od 599 zł brutto. Warunki i wymagany harmonogram przeglądów określa producent urządzenia."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Co to certyfikat F-gaz i dlaczego ma znaczenie?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Certyfikat F-gaz to obowiązkowe uprawnienie do pracy z czynnikami chłodniczymi (R32, R410A, R454B). Bez niego montaż klimatyzacji jest nielegalny i może skutkować utratą gwarancji urządzenia oraz odpowiedzialnością prawną instalatora i użytkownika. NURTEX posiada certyfikat F-gaz dla firmy oraz personelu, plus uprawnienia SEP do 1 kV (E i D). Zakres czyszczenia kanałów wentylacyjnych dobieramy do rodzaju instalacji i stanu zabrudzenia."
+        "text": "Tak. Przy stałej obsłudze wentylacji możemy przejąć również przeglądy i serwis klimatyzacji — split, multisplit i VRF — w tym samym terminie. Przegląd klimatyzacji zaczyna się od 299 zł brutto za układ split; zakres i cennik opisujemy na stronie serwisu klimatyzacji."
       }
     }
   ]
@@ -1774,13 +1755,18 @@
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
   <nav>
     <ul id="navList">
-      <li><a href="#uslugi" data-hover>Usługi</a></li>
-      <li><a href="#cennik" data-hover>Cennik</a></li>
-      <li><a href="#obszar" data-hover>Obszar</a></li>
-      <li><a href="#proces" data-hover>Proces</a></li>
-      <li><a href="#faq" data-hover>FAQ</a></li>
+      <li><a href="/serwis-wentylacji-wroclaw" data-hover>Serwis wentylacji</a></li>
+      <li><a href="/przeglad-wentylacji-wroclaw" data-hover>Przeglądy i pomiary</a></li>
+      <li><a href="/naprawa-wentylacji-mechanicznej-wroclaw" data-hover>Naprawy</a></li>
+      <li><a href="/czyszczenie-kanalow-wentylacji-wroclaw" data-hover>Czyszczenie</a></li>
+      <li><a href="/realizacje" data-hover>Realizacje</a></li>
       <li><a href="/blog" data-hover>Blog</a></li>
-      <li><a href="#wycena" class="phone-cta" data-hover>Wycena 24h</a></li>
+      <li class="has-sub"><a href="#klimatyzacja" data-hover>Klimatyzacja</a>
+        <ul>
+          <li><a href="/montaz-klimatyzacji-wroclaw" data-hover>Montaż klimatyzacji</a></li>
+          <li><a href="/serwis-klimatyzacji-wroclaw" data-hover>Serwis klimatyzacji</a></li>
+        </ul>
+      </li>
       <li><a href="tel:+48662070695" class="phone-cta" data-hover>+48 662 070 695</a></li>
     </ul>
   </nav>
@@ -1792,17 +1778,17 @@
   <canvas id="three-canvas"></canvas>
 
   <div class="hero-content">
-    <div class="eyebrow">Montaż klimatyzacji · Wentylacja · Wrocław · F-gaz</div>
+    <div class="eyebrow">Wentylacja mechaniczna · Serwis central · Wrocław</div>
     <div class="hero-h1">
-      <h1 class="h1-main">Klimatyzacja, wentylacja mechaniczna i pompy ciepła <em class="accent">we Wrocławiu</em></h1>
-      <p class="h1-sub">Montaż split i VRF oraz serwis wentylacji — przeglądy central, naprawy i czyszczenie dla firm, gastronomii i spółdzielni.</p>
+      <h1 class="h1-main">Wentylacja mechaniczna <em class="accent">we Wrocławiu</em> – serwis, przeglądy i naprawy instalacji</h1>
+      <p class="h1-sub">Obsługa central wentylacyjnych, przeglądy okresowe z protokołem, naprawy i czyszczenie kanałów dla firm, biur, gastronomii i spółdzielni.</p>
     </div>
     <p class="sub">
-      <a href="/montaz-klimatyzacji-wroclaw" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Montaż klimatyzacji</a>, okresowe przeglądy i naprawy central wentylacyjnych oraz czyszczenie kanałów we Wrocławiu i na Dolnym Śląsku. <strong style="color:var(--fg)">Montaż od 4 200 zł.</strong> 8 lat, ponad 287 instalacji (stan: sierpień 2026). Certyfikat F-gaz, SEP do 1 kV, serwis central wentylacyjnych.
+      <a href="/serwis-wentylacji-wroclaw" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Serwis central wentylacyjnych</a>, przeglądy z protokołem (art. 62 Prawa budowlanego), diagnostyka usterek i czyszczenie kanałów we Wrocławiu i na Dolnym Śląsku. <strong style="color:var(--fg)">Zakres, koszt i termin ustalamy przed pracą.</strong> Certyfikat F-gaz, SEP do 1 kV, faktura VAT.
     </p>
     <div class="cta-row">
       <a href="#wycena" class="btn btn-primary" data-hover>
-        Wycena montażu / wentylacji
+        Zgłoś obiekt do serwisu
         <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
@@ -1815,10 +1801,10 @@
       </a>
     </div>
     <div class="hero-trust">
-      <span class="trust-pill">F-gaz</span>
-      <span class="trust-pill">287+ instalacji</span>
-      <span class="trust-pill">Gwarancja na montaż</span>
-      <span class="trust-pill">Wycena 24h</span>
+      <span class="trust-pill">Protokół z przeglądu</span>
+      <span class="trust-pill">Umowy serwisowe</span>
+      <span class="trust-pill">F-gaz · SEP 1 kV</span>
+      <span class="trust-pill">Faktura VAT 7/14 dni</span>
     </div>
   </div>
 
@@ -1860,32 +1846,26 @@
 <section id="uslugi">
   <div class="container">
     <div class="section-eyebrow">02 · Zakres usług</div>
-    <h2 class="section-title">Montaż, wentylacja i <em class="accent">przeglądy okresowe</em>.</h2>
+    <h2 class="section-title">Serwis, przeglądy, naprawy i <em class="accent">czyszczenie wentylacji</em>.</h2>
     <p class="section-lead">
-      Klimatyzacja oraz obsługa wentylacji dla firm, lokali gastronomicznych i spółdzielni mieszkaniowych
-      we Wrocławiu i na Dolnym Śląsku. Zakres wentylacji dobieramy do urządzeń i potrzeb obiektu.
+      Obsługa techniczna wentylacji mechanicznej dla firm, biur, lokali gastronomicznych i spółdzielni mieszkaniowych
+      we Wrocławiu i na Dolnym Śląsku. Zakres dobieramy do urządzeń i pracy obiektu — jednorazowo albo w stałej umowie.
     </p>
 
     <div class="services-grid">
-      <a href="/montaz-klimatyzacji-wroclaw" class="service-card" data-hover>
+      <a href="/serwis-wentylacji-wroclaw" class="service-card" data-hover>
         <div class="service-icon">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="6" y="14" width="36" height="20" rx="2" />
-            <path d="M10 24h28" stroke-dasharray="2 2" opacity="0.5" />
-            <circle cx="14" cy="24" r="2" fill="currentColor" />
-            <circle cx="24" cy="24" r="2" fill="currentColor" />
-            <circle cx="34" cy="24" r="2" fill="currentColor" />
+            <rect x="8" y="10" width="32" height="28" rx="2" />
+            <path d="M16 18h16M16 24h16M16 30h10" />
           </svg>
         </div>
         <div>
-          <h3 class="service-title">Montaż split, multi-split, VRF</h3>
-          <p class="service-desc">
-            Klimatyzacja Mitsubishi, Daikin, Samsung, LG, Toshiba.
-            Moc 2.5–280 kW. Inwertery DC, czynniki R32 / R410A / R454B.
-          </p>
+          <h3 class="service-title">Serwis central wentylacyjnych</h3>
+          <p class="service-desc">Stała obsługa i jednorazowe wizyty: centrale nawiewno-wywiewne w firmach, lokalach i budynkach zbiorowych. Plan przeglądów, jeden kontakt, podsumowanie po każdej wizycie.</p>
         </div>
         <div class="service-meta">
-          <span>F-gazy · 80% rocznej eksploatacji</span>
+          <span>Umowy serwisowe · 2 przeglądy w roku</span>
           <span class="service-arrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -1894,19 +1874,40 @@
         </div>
       </a>
 
-      <a href="/wentylacja-mechaniczna-rekuperacja-wroclaw" class="service-card" data-hover>
+      <a href="/przeglad-wentylacji-wroclaw" class="service-card" data-hover>
         <div class="service-icon">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="8" y="10" width="32" height="28" rx="2" />
-            <path d="M16 18h16M16 24h16M16 30h10" />
+            <circle cx="24" cy="24" r="18" />
+            <path d="M24 12v12l8 4" />
           </svg>
         </div>
         <div>
-          <h3 class="service-title">Serwis wentylacji Wrocław</h3>
-          <p class="service-desc">Przeglądy okresowe, diagnostyka i naprawy central. Obsługa firm, gastronomii i spółdzielni mieszkaniowych.</p>
+          <h3 class="service-title">Przeglądy okresowe i pomiary</h3>
+          <p class="service-desc">Kontrola filtrów, wymiennika, wentylatorów i automatyki, pomiar przepływów powietrza. Kontrola przewodów z art. 62 Prawa budowlanego z protokołem do książki obiektu.</p>
         </div>
         <div class="service-meta">
-          <span>Centrale · naprawy · stała obsługa</span>
+          <span>Protokół · uprawnienia instalacyjne</span>
+          <span class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="/naprawa-wentylacji-mechanicznej-wroclaw" class="service-card" data-hover>
+        <div class="service-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M30 8l10 10-6 6-10-10z" />
+            <path d="M24 14L10 28a4 4 0 0 0 0 6l4 4a4 4 0 0 0 6 0l14-14" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="service-title">Diagnostyka i naprawy awarii</h3>
+          <p class="service-desc">Brak nawiewu, alarm sterownika, hałas, drgania, wyciek skroplin. Diagnoza na miejscu, części i koszt uzgodnione przed wymianą.</p>
+        </div>
+        <div class="service-meta">
+          <span>Wentylatory · automatyka · wymienniki</span>
           <span class="service-arrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -1924,35 +1925,11 @@
           </svg>
         </div>
         <div>
-          <h3 class="service-title">Czyszczenie wentylacji i kanałów</h3>
-          <p class="service-desc">Usuwanie osadów z central i kanałów. Ozonowanie jako osobny zabieg po ocenie instalacji i warunków zabezpieczenia obiektu.</p>
+          <h3 class="service-title">Czyszczenie i dezynfekcja kanałów</h3>
+          <p class="service-desc">Mechaniczne usuwanie osadów z kanałów i central, dezynfekcja, dokumentacja przed i po. Gastronomia, biura, spółdzielnie.</p>
         </div>
         <div class="service-meta">
-          <span>Firmy · gastronomia · spółdzielnie</span>
-          <span class="service-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </span>
-        </div>
-      </a>
-
-      <a href="/pompy-ciepla-wroclaw" class="service-card" data-hover>
-        <div class="service-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M24 6L36 18v18a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4V18L24 6z" />
-            <path d="M18 28h12M24 22v12" />
-          </svg>
-        </div>
-        <div>
-          <h3 class="service-title">Pompy ciepła + fotowoltaika</h3>
-          <p class="service-desc">
-            Pompy powietrzne i gruntowe Daikin Altherma, Mitsubishi Ecodan.
-            COP 4.2, SCOP 5.1, integracja z PV i magazynem energii.
-          </p>
-        </div>
-        <div class="service-meta">
-          <span>Klasa A+++ · ErP 2024</span>
+          <span>Kanały · centrale · wyciągi kuchenne</span>
           <span class="service-arrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -1970,10 +1947,7 @@
         </div>
         <div>
           <h3 class="service-title">Monitoring IAQ + automatyka BMS</h3>
-          <p class="service-desc">
-            Czujniki PM2.5, PM10, CO₂, VOC, TVOC, formaldehyd.
-            Integracja Modbus / KNX / BACnet. Dashboard 24/7.
-          </p>
+          <p class="service-desc">Czujniki PM2.5, PM10, CO₂, VOC, TVOC, formaldehyd. Integracja Modbus / KNX / BACnet. Dashboard 24/7.</p>
         </div>
         <div class="service-meta">
           <span>WELL · BREEAM · LEED</span>
@@ -1985,19 +1959,21 @@
         </div>
       </a>
 
-      <a href="/przeglad-wentylacji-wroclaw" class="service-card" data-hover>
+      <a href="/ozonowanie-wroclaw" class="service-card" data-hover>
         <div class="service-icon">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="24" cy="24" r="18" />
-            <path d="M24 12v12l8 4" />
+            <circle cx="16" cy="28" r="6" />
+            <circle cx="32" cy="28" r="6" />
+            <circle cx="24" cy="16" r="6" />
+            <path d="M20 20l-2 3M28 20l2 3" />
           </svg>
         </div>
         <div>
-          <h3 class="service-title">Okresowe przeglądy central</h3>
-          <p class="service-desc">Filtry, wymienniki, wentylatory i sterowanie. Zakres dobrany do urządzenia; naprawy i części po uzgodnieniu.</p>
+          <h3 class="service-title">Ozonowanie — po ocenie instalacji</h3>
+          <p class="service-desc">Osobny zabieg po usunięciu zabrudzeń i zabezpieczeniu obiektu. Nie zastępuje czyszczenia: usuwa zapach, nie osad.</p>
         </div>
         <div class="service-meta">
-          <span>Zakres i wycena dla obiektu</span>
+          <span>Strefa wyłączona · pomiar po zabiegu</span>
           <span class="service-arrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -2010,7 +1986,7 @@
 </section>
 
 
-<section class="vent-feature" aria-labelledby="vent-feature-title"><div class="wrap"><div><p class="vent-kicker">NURTEX / WENTYLACJA DLA OBIEKTÓW</p><h2 id="vent-feature-title">Centrale pod opieką.<br><em>Wentylacja w porządku.</em></h2><p>Przegląd wentylacji, naprawa wentylacji mechanicznej i czyszczenie kanałów. Dla firm, gastronomii i spółdzielni mieszkaniowych.</p><a href="/przeglad-wentylacji-wroclaw" class="btn btn-primary">Przegląd wentylacji Wrocław →</a> <a href="/naprawa-wentylacji-mechanicznej-wroclaw" class="btn btn-ghost">Naprawa wentylacji mechanicznej →</a> <a href="/wentylacja-mechaniczna-rekuperacja-wroclaw" class="btn btn-ghost">Serwis wentylacji Wrocław →</a><p style="margin-top:20px"><a href="/ozonowanie-wroclaw" style="color:#6dd8e8;text-decoration:underline">Ozonowanie Wrocław — zapytaj o możliwość wykonania →</a></p></div><figure><img src="/img/wentylacja-techniczna/centrala-punkty-przegladu.svg" width="1600" height="1100" alt="Schemat centrali wentylacyjnej: filtr, wymiennik, wentylator, sterowanie i odpływ skroplin" loading="lazy" decoding="async"><figcaption>Przekrój poglądowy centrali · punkty przeglądu</figcaption></figure></div></section>
+<section class="vent-feature" aria-labelledby="vent-feature-title"><div class="wrap"><div><p class="vent-kicker">NURTEX / WENTYLACJA DLA OBIEKTÓW</p><h2 id="vent-feature-title">Centrale pod opieką.<br><em>Wentylacja w porządku.</em></h2><p>Przegląd wentylacji, naprawa wentylacji mechanicznej i czyszczenie kanałów. Dla firm, gastronomii i spółdzielni mieszkaniowych.</p><a href="/przeglad-wentylacji-wroclaw" class="btn btn-primary">Przegląd wentylacji Wrocław →</a> <a href="/naprawa-wentylacji-mechanicznej-wroclaw" class="btn btn-ghost">Naprawa wentylacji mechanicznej →</a> <a href="/serwis-wentylacji-wroclaw" class="btn btn-ghost">Serwis wentylacji Wrocław →</a><p style="margin-top:20px"><a href="/ozonowanie-wroclaw" style="color:#6dd8e8;text-decoration:underline">Ozonowanie Wrocław — zapytaj o możliwość wykonania →</a></p></div><figure><img src="/img/wentylacja-techniczna/centrala-punkty-przegladu.svg" width="1600" height="1100" alt="Schemat centrali wentylacyjnej: filtr, wymiennik, wentylator, sterowanie i odpływ skroplin" loading="lazy" decoding="async"><figcaption>Przekrój poglądowy centrali · punkty przeglądu</figcaption></figure></div></section>
 <!-- ============ REALIZATIONS / PORTFOLIO ============ -->
 <section class="realizations" id="realizacje">
   <div class="container">
@@ -2041,8 +2017,8 @@
         <h2 class="section-title" style="margin-bottom: 24px;">Inżynierowie, <em class="accent">nie sprzedawcy</em>.</h2>
         <p class="section-lead" style="margin-bottom: 0;">
           Zespół 8 certyfikowanych techników HVAC. Uprawnienia F-gazowe,
-          SEP do 1 kV, prawo jazdy kat. C+E oraz doświadczenie z urządzeniami
-          Mitsubishi, Daikin i Samsung.
+          SEP do 1 kV, uprawnienia budowlane w specjalności instalacyjnej oraz doświadczenie
+          z centralami Systemair, Komfovent i Vents i klimatyzacją Mitsubishi, Daikin i Samsung.
         </p>
 
         <div class="cred-list">
@@ -2065,16 +2041,16 @@
             <svg class="cred-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M12 2l3 7h7l-6 4 3 7-7-4-7 4 3-7-6-4h7z"/>
             </svg>
-            <div class="cred-name">8 lat doświadczenia</div>
-            <div class="cred-meta">w branży HVAC</div>
+            <div class="cred-name">Uprawnienia budowlane</div>
+            <div class="cred-meta">specjalność instalacyjna</div>
           </div>
           <div class="cred">
             <svg class="cred-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <rect x="3" y="3" width="18" height="18" rx="2"/>
               <path d="M9 12l2 2 4-4"/>
             </svg>
-            <div class="cred-name">Ponad 287 instalacji</div>
-            <div class="cred-meta">Wrocław i okolice · stan: sierpień 2026</div>
+            <div class="cred-name">Protokoły z art. 62 PB</div>
+            <div class="cred-meta">kontrola przewodów wentylacyjnych</div>
           </div>
         </div>
       </div>
@@ -2089,11 +2065,51 @@
     <div class="section-eyebrow">06 · Dlaczego NURTEX</div>
     <h2 class="section-title">Konkretne <em class="accent">realizacje</em> i twarde standardy</h2>
     <p class="section-lead">
-      Montaże klimatyzacji i pomp ciepła oraz serwis central wentylacyjnych we Wrocławiu i okolicach. Pracujemy na markowych urządzeniach, z certyfikatem F-gaz, fakturą VAT i gwarancją na całą instalację.
+      Serwis central wentylacyjnych, przeglądy z protokołem i czyszczenie kanałów oraz montaże klimatyzacji we Wrocławiu i okolicach. Pracujemy na markowych urządzeniach, z certyfikatem F-gaz, fakturą VAT i gwarancją na wykonane prace.
     </p>
 
     <div class="test-carousel" data-test-carousel>
       <div class="test-grid" tabindex="0" aria-label="Zakres realizacji NURTEX">
+      <article class="test-card">
+        <p class="test-quote">Centrale wentylacyjne w firmach, gastronomii i spółdzielniach — przeglądy, diagnostyka i naprawy. Zakres obsługi dopasowany do instalacji i pracy obiektu.</p>
+        <div class="test-author">
+          <div class="test-meta">
+            <span class="test-name">Obsługa central</span>
+            <span class="test-where">Wrocław i okolice</span>
+          </div>
+        </div>
+        <div class="test-source">Wentylacja mechaniczna</div>
+      </article>
+      <article class="test-card">
+        <p class="test-quote">Okresowe przeglądy z pomiarem przepływów i protokołem, kontrola przewodów z art. 62 Prawa budowlanego, plan wizyt dla obiektów z kilkoma centralami.</p>
+        <div class="test-author">
+          <div class="test-meta">
+            <span class="test-name">Przeglądy i pomiary</span>
+            <span class="test-where">Firmy · spółdzielnie · gastronomia</span>
+          </div>
+        </div>
+        <div class="test-source">Protokoły</div>
+      </article>
+      <article class="test-card">
+        <p class="test-quote">Mechaniczne czyszczenie kanałów i central, dezynfekcja, dokumentacja przed i po. Kuchnie, biura i części wspólne budynków.</p>
+        <div class="test-author">
+          <div class="test-meta">
+            <span class="test-name">Czyszczenie wentylacji</span>
+            <span class="test-where">Gastronomia · biura</span>
+          </div>
+        </div>
+        <div class="test-source">Kanały · centrale</div>
+      </article>
+      <article class="test-card">
+        <p class="test-quote">Klimatyzacja biurowa i VRF — instalacje wielostrefowe dla firm, z audytem powietrza i serwisem. Komfort pracy także w upalne dni.</p>
+        <div class="test-author">
+          <div class="test-meta">
+            <span class="test-name">Klimatyzacja firm</span>
+            <span class="test-where">Obiekty B2B</span>
+          </div>
+        </div>
+        <div class="test-source">VRF · Multisplit</div>
+      </article>
       <article class="test-card">
         <p class="test-quote">Montaż klimatyzacji split i multisplit w mieszkaniach i domach — dobór mocy do metrażu, czysty montaż, uruchomienie i instruktaż obsługi tego samego dnia.</p>
         <div class="test-author">
@@ -2105,51 +2121,6 @@
         <div class="test-source">Split · Multisplit</div>
       </article>
 
-      <article class="test-card">
-        <p class="test-quote">Centrale wentylacyjne w firmach, gastronomii i spółdzielniach — przeglądy, diagnostyka i naprawy. Zakres obsługi dopasowany do instalacji i pracy obiektu.</p>
-        <div class="test-author">
-          <div class="test-meta">
-            <span class="test-name">Obsługa central</span>
-            <span class="test-where">Wrocław i okolice</span>
-          </div>
-        </div>
-        <div class="test-source">Wentylacja mechaniczna</div>
-      </article>
-
-      <article class="test-card">
-        <p class="test-quote">Klimatyzacja biurowa i VRF — instalacje wielostrefowe dla firm, z audytem powietrza i serwisem. Komfort pracy także w upalne dni.</p>
-        <div class="test-author">
-          <div class="test-meta">
-            <span class="test-name">Klimatyzacja firm</span>
-            <span class="test-where">Obiekty B2B</span>
-          </div>
-        </div>
-        <div class="test-source">VRF · Multisplit</div>
-      </article>
-
-      <article class="test-card">
-        <p class="test-quote">Okresowe przeglądy i naprawy central wentylacyjnych. Czyszczenie instalacji dla firm, gastronomii i spółdzielni mieszkaniowych.</p>
-        <div class="test-author">
-          <div class="test-meta">
-            <span class="test-name">Serwis wentylacji</span>
-            <span class="test-where">B2B · wspólnoty · domy</span>
-          </div>
-        </div>
-        <div class="test-source">Przeglądy</div>
-      </article>
-
-      <article class="test-card">
-        <p class="test-quote">Pompy ciepła — dobór, montaż i uruchomienie, także przy wymianie starego kotła. Prowadzimy projekt od koncepcji po rozruch.</p>
-        <div class="test-author">
-          <div class="test-meta">
-            <span class="test-name">Pompy ciepła</span>
-            <span class="test-where">Domy jednorodzinne</span>
-          </div>
-        </div>
-        <div class="test-source">Powietrzne pompy ciepła</div>
-      </article>
-
-
       </div>
     </div>
 
@@ -2159,162 +2130,59 @@
   </div>
 </section>
 
-<!-- ============ LEAD CTA po OPINIACH ============ -->
-<section style="background: var(--bg-base); padding: 0;">
-  <div class="container" style="padding: 40px 32px;">
-    <div class="lead-cta-band" style="margin-top:0;">
-      <div>
-        <h3>Chcesz bezpłatną wycenę instalacji?</h3>
-        <p>Montaże klimatyzacji i pomp ciepła oraz przeglądy, naprawy i czyszczenie wentylacji. Wrocław i okolice. Zapytaj o zakres dla swojego obiektu.</p>
-      </div>
-      <div class="lead-cta-band-actions">
-        <a href="#wycena" class="btn btn-primary" data-hover>
-          Zapytaj o cenę
-          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-        <a href="tel:+48662070695" class="btn btn-ghost" data-hover>☎ 662 070 695</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CENNIK — KLIMATYZACJA WROCŁAW CENA ============ -->
-<section class="pricing" id="cennik">
+<!-- ============ KLIMATYZACJA — skromnie, w tle ============ -->
+<section id="klimatyzacja">
   <div class="container">
-    <div class="section-eyebrow">07 · Cennik</div>
-    <h2 class="section-title">Ile kosztuje <em class="accent">klimatyzacja</em> we Wrocławiu?</h2>
-    <p style="max-width:720px;color:var(--fg-dim);font-size:17px;line-height:1.55;margin-top:14px;">
-      Transparentne widelki cenowe na 2026. Bez ukrytych kosztów, bez kosztu dojazdu w obrębie Wrocławia. Wszystkie pozycje zawierają montaż, materiały, uruchomienie i 5 lat gwarancji.
+    <div class="section-eyebrow">07 · Klimatyzacja</div>
+    <h2 class="section-title">Klimatyzacja dla biur, lokali i domów — <em class="accent">montaż i serwis</em>.</h2>
+    <p class="section-lead">
+      Obok wentylacji montujemy i serwisujemy klimatyzację split, multisplit i VRF we Wrocławiu. Zakres, pakiety i ceny opisujemy na stronach usług — tutaj tylko dwa kierunki.
     </p>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <h3>Klimatyzacja split 1+1</h3>
-        <p class="price-tag">od <strong>4 200</strong> zł brutto</p>
-        <ul>
-          <li>Urządzenie 2,5–3,5 kW (Gree / Rotenso / Haier)</li>
-          <li>Montaż kompletny, wiercenie diamentowe</li>
-          <li>Trasa instalacji do 5 m, izolacja UV</li>
-          <li>Próba ciśnieniowa N₂, próżnia, R32</li>
-          <li>Uruchomienie, pomiar, wniosek do wspólnoty</li>
-          <li>5 lat gwarancji</li>
-        </ul>
-        <a href="#wycena" class="price-cta" data-hover>Zapytaj o cenę</a>
-      </div>
-      <div class="price-card featured">
-        <h3>Klimatyzacja multisplit 1+2</h3>
-        <p class="price-tag">od <strong>8 500</strong> zł brutto</p>
-        <ul>
-          <li>Daikin / Samsung / Mitsubishi 5,0 kW</li>
-          <li>2 jednostki wewnętrzne, 1 skraplacz</li>
-          <li>Trasa do 10 m łącznie, WiFi w cenie</li>
-          <li>Sterowanie aplikacją, harmonogram tygodniowy</li>
-          <li>Funkcja grzania do −25°C (SCOP 4,0)</li>
-          <li>5 lat gwarancji urządzenia + montażu</li>
-        </ul>
-        <a href="#wycena" class="price-cta" data-hover>Zapytaj o cenę</a>
-      </div>
-      <div class="price-card"><h3>Stała obsługa wentylacji</h3><p class="price-tag">Wycena dla obiektu</p><ul><li>Plan okresowych przeglądów central</li><li>Zakres dopasowany do dokumentacji urządzeń</li><li>Diagnoza usterek i uzgodnienie napraw</li><li>Firmy, gastronomia i spółdzielnie mieszkaniowe</li><li>Terminy oraz warunki zapisane w uzgodnionym zakresie</li></ul><a href="/wentylacja-mechaniczna-rekuperacja-wroclaw#stala-obsluga" class="price-cta" data-hover>Zapytaj o stałą obsługę</a></div>
-    </div>
-    <div class="pricing-grid" style="margin-top:24px;">
-      <div class="price-card">
-        <h3>Pompa ciepła powietrzna</h3>
-        <p class="price-tag">od <strong>32 000</strong> zł brutto</p>
-        <ul>
-          <li>Daikin Altherma / Samsung EHS 8–12 kW</li>
-          <li>Bufor c.w.u. 200 l, montaż hydrauliki</li>
-          <li>SCOP 4,2–4,5 — niskie koszty ogrzewania</li>
-          <li>Integracja z fotowoltaiką i magazynem energii</li>
-          <li>5 lat gwarancji, 10 na sprężarkę</li>
-        </ul>
-        <a href="#wycena" class="price-cta" data-hover>Zapytaj o cenę</a>
-      </div>
-      <div class="price-card"><h3>Przegląd wentylacji</h3><p class="price-tag">Wycena indywidualna</p><ul><li>Okresowy przegląd wentylacji mechanicznej</li><li>Filtry, wymiennik, wentylatory, sterowanie</li><li>Firmy, gastronomia i spółdzielnie</li><li>Usterkę wyceniamy jako osobną naprawę</li></ul><a href="/przeglad-wentylacji-wroclaw#wycena" class="price-cta" data-hover>Umów przegląd wentylacji</a></div>
-      <div class="price-card"><h3>Naprawa wentylacji mechanicznej</h3><p class="price-tag">Wycena po diagnozie</p><ul><li>Brak nawiewu, alarm, hałas, wyciek skroplin</li><li>Centrale i rekuperacja</li><li>Części dopiero po akceptacji zakresu</li><li>Wrocław i Dolny Śląsk</li></ul><a href="/naprawa-wentylacji-mechanicznej-wroclaw#wycena" class="price-cta" data-hover>Zgłoś naprawę centrali</a></div>
-      <div class="price-card"><h3>Czyszczenie wentylacji</h3><p class="price-tag">Wycena indywidualna</p><ul><li>Centrale oraz kanały nawiewne i wywiewne</li><li>Dobór metody do osadów i konstrukcji instalacji</li><li>Ozonowanie po ocenie warunków obiektu</li><li>Zakres i koszt uzgadniane przed pracami</li></ul><a href="/czyszczenie-kanalow-wentylacji-wroclaw#wycena" class="price-cta" data-hover>Zapytaj o zakres i cenę</a></div>
-    </div>
-
-    <div class="pricing-table-wrapper" style="margin-top: 48px; margin-bottom: 32px; overflow-x: auto;">
-      <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--fg); text-transform: uppercase; letter-spacing: 0.05em;">Szczegółowy cennik usług NURTEX (Wrocław i Dolny Śląsk)</h3>
-      <table class="pricing-table">
-        <thead>
-          <tr>
-            <th>Usługa / Typ instalacji</th>
-            <th>Moc / Zakres wydajności</th>
-            <th>Cena orientacyjna brutto (z montażem)</th>
-            <th>Czas realizacji</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Klimatyzacja Split (Gree / Rotenso / Haier)</strong> - standardowy montaż do 5m</td>
-            <td>2,5 - 3,5 kW (mieszkanie do 40 m²)</td>
-            <td>od 4 200 zł</td>
-            <td>1 dzień (4-6h)</td>
-          </tr>
-          <tr>
-            <td><strong>Klimatyzacja Split Premium (Daikin / Mitsubishi / Samsung)</strong></td>
-            <td>2,5 - 3,5 kW (mieszkanie do 40 m²)</td>
-            <td>5 800 - 7 400 zł</td>
-            <td>1 dzień (4-6h)</td>
-          </tr>
-          <tr>
-            <td><strong>Klimatyzacja Multi Split 1+2 (2 jednostki wewnętrzne)</strong></td>
-            <td>5,0 - 6,0 kW (mieszkanie 50-70 m²)</td>
-            <td>od 8 500 zł</td>
-            <td>1-2 dni</td>
-          </tr>
-          <tr>
-            <td><strong>Klimatyzacja Multi Split 1+3 (3 jednostki wewnętrzne)</strong></td>
-            <td>7,0 - 8,0 kW (mieszkanie 70-100 m²)</td>
-            <td>od 12 500 zł</td>
-            <td>1-2 dni</td>
-          </tr>
-
-
-          <tr>
-            <td><strong>Pompa ciepła powietrze-woda (Split / Monoblok)</strong></td>
-            <td>Moc grzewcza 6 - 9 kW</td>
-            <td>od 32 000 zł</td>
-            <td>2-3 dni</td>
-          </tr>
-          <tr>
-            <td><strong>Pompa ciepła powietrze-woda (Split / Monoblok)</strong></td>
-            <td>Moc grzewcza 12 - 16 kW</td>
-            <td>od 45 000 zł</td>
-            <td>3-4 dni</td>
-          </tr>
-          <tr><td><strong><a href="/przeglad-wentylacji-wroclaw">Przeglądy</a> i <a href="/naprawa-wentylacji-mechanicznej-wroclaw">naprawy</a> central wentylacyjnych</strong></td><td>Firmy, gastronomia, spółdzielnie</td><td>Wycena indywidualna</td><td>Termin uzgadniany</td></tr>
-          <tr>
-            <td><strong>Przegląd i czyszczenie klimatyzacji split (roczny)</strong></td>
-            <td>Kontrola pracy, filtry, podstawowe czyszczenie, odpływ skroplin</td>
-            <td>od 299 zł brutto<br><a href="/serwis-klimatyzacji-wroclaw#cennik">Zakres i warunki</a></td>
-            <td>1-2h</td>
-          </tr>
-          <tr><td><strong>Czyszczenie central i kanałów wentylacyjnych</strong></td><td>Zakres według instalacji i rodzaju osadów</td><td>Wycena indywidualna</td><td>Termin uzgadniany</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="pricing-note">
-      <strong style="color:var(--fg)">Cennik orientacyjny.</strong> Powyższe widełki cenowe dają ogólne pojęcie ile co kosztuje. <strong style="color:var(--accent)">Ostateczna cena po bezpłatnej wizji lokalnej</strong> — dopiero wtedy oceniamy metraż, trasę instalacji, materiały i specyfikę obiektu. Bez opłaty za dojazd w obrębie Wrocławia. Strefa okolic do 30 km — bez doliczania. Faktura VAT, możliwość rat 0% (PEKAO, Santander).
-    </div>
-
-    <div class="lead-cta-band">
-      <div>
-        <h3>Nie znalazłeś swojego <em>scenariusza</em>?</h3>
-        <p>Każde mieszkanie i biuro to inna sprawa — metraż, układ, balkon, wspólnota. Wyślij krótki opis, oddzwonimy w 24h z konkretną wyceną na Twoje warunki.</p>
-      </div>
-      <div class="lead-cta-band-actions">
-        <a href="#wycena" class="btn btn-primary" data-hover>
-          Zapytaj o cenę
-          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
+    <div class="services-grid">
+      <a href="/montaz-klimatyzacji-wroclaw" class="service-card" data-hover>
+        <div class="service-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="6" y="14" width="36" height="20" rx="2" />
+            <path d="M10 24h28" stroke-dasharray="2 2" opacity="0.5" />
+            <circle cx="14" cy="24" r="2" fill="currentColor" />
+            <circle cx="24" cy="24" r="2" fill="currentColor" />
+            <circle cx="34" cy="24" r="2" fill="currentColor" />
           </svg>
-        </a>
-        <a href="tel:+48662070695" class="btn btn-ghost" data-hover>☎ 662 070 695</a>
-      </div>
+        </div>
+        <div>
+          <h3 class="service-title">Montaż klimatyzacji Wrocław</h3>
+          <p class="service-desc">Split, multisplit i VRF dla mieszkań, domów i biur. Dobór mocy, wniosek do wspólnoty, uruchomienie i 5 lat gwarancji na montaż.</p>
+        </div>
+        <div class="service-meta">
+          <span>Daikin · Mitsubishi · Samsung · LG</span>
+          <span class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="/serwis-klimatyzacji-wroclaw" class="service-card" data-hover>
+        <div class="service-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="24" cy="24" r="18" />
+            <path d="M24 12v12l8 4" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="service-title">Serwis i przegląd klimatyzacji</h3>
+          <p class="service-desc">Czyszczenie i dezynfekcja jednostek, kontrola czynnika i odpływu skroplin, umowy serwisowe dla firm. Przegląd przed sezonem.</p>
+        </div>
+        <div class="service-meta">
+          <span>Split · multisplit · VRF</span>
+          <span class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -2323,9 +2191,9 @@
 <section class="area" id="obszar">
   <div class="container">
     <div class="section-eyebrow">08 · Obszar działania</div>
-    <h2 class="section-title">Klimatyzacja <em class="accent">Wrocław</em> i okolice</h2>
+    <h2 class="section-title">Wentylacja i klimatyzacja — <em class="accent">Wrocław</em> i okolice</h2>
     <p style="max-width:720px;color:var(--fg-dim);font-size:17px;line-height:1.55;margin-top:14px;">
-      Pracujemy w całym Wrocławiu — każda dzielnica, każdy blok, każda kamienica. Dodatkowo obsługujemy okolice do 30 km bez opłat za dojazd. Lista nie jest zamknięta — zadzwoń, sprawdzimy.
+      Obsługujemy obiekty w całym Wrocławiu — biurowce, lokale, zaplecza i budynki wielorodzinne — oraz okolice w promieniu ok. 30 km. Dojazd w obrębie Wrocławia jest bezpłatny; poza miastem koszt dojazdu podajemy w wycenie.
     </p>
     <div class="area-wrap">
       <div class="area-col">
@@ -2338,7 +2206,7 @@
         </ul>
       </div>
       <div class="area-col">
-        <h3>Okolice (do 30 km bez opłat)</h3>
+        <h3>Okolice (do ok. 30 km)</h3>
         <ul class="area-list">
           <li>Kobierzyce</li><li>Bielany Wrocławskie</li><li>Długołęka</li><li>Smolec</li>
           <li>Kąty Wrocławskie</li><li>Oleśnica</li><li>Siechnice</li><li>Oława</li>
@@ -2353,38 +2221,38 @@
 <section class="process" id="proces">
   <div class="container">
     <div class="section-eyebrow">09 · Proces</div>
-    <h2 class="section-title">Od pytania do <em class="accent">uruchomienia</em> w 7–14 dni.</h2>
+    <h2 class="section-title">Od zgłoszenia do <em class="accent">protokołu</em> — bez niespodzianek.</h2>
     <div class="process-grid">
       <div class="process-step">
         <div class="num">01 · 0–24h</div>
-        <h3>Wycena</h3>
-        <p>Formularz lub telefon. Audyt obiektu (online albo wizyta w 24h). Dobór urządzenia i tras instalacji. Oferta na piśmie.</p>
+        <h3>Zgłoszenie</h3>
+        <p>Telefon, formularz albo zdjęcie sterownika na WhatsApp. Podaj typ obiektu, liczbę central i objaw. Oddzwaniamy w 24h.</p>
       </div>
       <div class="process-step">
-        <div class="num">02 · 1–3 dni</div>
-        <h3>Projekt</h3>
-        <p>Rysunek techniczny, BOM, parametry akustyczne, dokumentacja do wspólnoty. Akceptacja, podpis umowy, zaliczka 30%.</p>
+        <div class="num">02 · termin</div>
+        <h3>Oględziny i zakres</h3>
+        <p>Ustalamy dostęp, potrzebny postój instalacji i zakres prac. Wycena na piśmie przed rozpoczęciem — części i filtry po Twojej akceptacji.</p>
       </div>
       <div class="process-step">
-        <div class="num">03 · 5–10 dni</div>
-        <h3>Montaż</h3>
-        <p>2-osobowa ekipa, własne narzędzia (Hilti, Power-Vac, miernik R32). Ochrona podłóg, sprzątanie po sobie. 1 dzień = 1 lokal.</p>
+        <div class="num">03 · prace</div>
+        <h3>Przegląd, naprawa, czyszczenie</h3>
+        <p>Pracujemy przy działającym obiekcie, w uzgodnionym oknie czasowym. Bez akceptacji nie wymieniamy podzespołów.</p>
       </div>
       <div class="process-step">
-        <div class="num">04 · ten sam dzień</div>
-        <h3>Uruchomienie</h3>
-        <p>Próba szczelności, programowanie, szkolenie użytkownika, karta gwarancyjna 5 lat. Faktura VAT, możliwe raty 0%.</p>
+        <div class="num">04 · odbiór</div>
+        <h3>Protokół i plan</h3>
+        <p>Podsumowanie prac, wykrytych usterek i zaleceń, protokół z kontroli art. 62, termin następnej wizyty. Faktura VAT, przelew 7/14 dni.</p>
       </div>
     </div>
   </div>
 
     <div class="process-photos">
       <div class="process-photo">
-        <picture><source srcset="img/proces-manometr.webp" type="image/webp"><img src="img/proces-manometr.jpg" alt="Pomiar ciśnienia czynnika R32 manometrem cyfrowym podczas montażu klimatyzacji" loading="lazy"  width="1536" height="1024" /></picture>
+        <img src="/img/realizacje-2026-09/centrala-wentylacyjna-1280.webp" srcset="/img/realizacje-2026-09/centrala-wentylacyjna-640.webp 640w, /img/realizacje-2026-09/centrala-wentylacyjna-1280.webp 1280w" sizes="(max-width: 700px) 100vw, 50vw" alt="Centrala wentylacji mechanicznej na dachu obiektu — czerpnie i kanały, serwis NURTEX Wrocław" loading="lazy" decoding="async" width="1280" height="938" />
         <div class="process-photo-meta">
-          <span class="process-photo-tag">Krok 03 · Uruchomienie</span>
-          <div class="process-photo-title">Próba ciśnieniowa N₂ i kontrola R32</div>
-          <div class="process-photo-desc">Manometr cyfrowy, 4 MPa przez 24h, dopiero potem czynnik. Bez tego nie ma gwarancji F-gaz.</div>
+          <span class="process-photo-tag">Krok 03 · Prace na obiekcie</span>
+          <div class="process-photo-title">Centrala na dachu — przegląd i serwis</div>
+          <div class="process-photo-desc">Filtry, wymiennik, wentylatory, automatyka i odpływ skroplin — zakres według dokumentacji urządzenia.</div>
         </div>
       </div>
       <div class="process-photo">
@@ -2402,17 +2270,17 @@
 <section class="brands" id="marki">
   <div class="container">
     <div class="section-eyebrow" style="text-align:center;margin-bottom:8px;">10 · Marki urządzeń</div>
-    <h2 class="section-title" style="text-align:center;">Pracujemy <em class="accent">tylko z czołówką</em>.</h2>
-    <p class="brands-eyebrow" style="margin-top: 32px;">Niezależny instalator · Wszystkie główne marki · F-gaz</p>
+    <h2 class="section-title" style="text-align:center;">Centrale i klimatyzatory, <em class="accent">które znamy od środka</em>.</h2>
+    <p class="brands-eyebrow" style="margin-top: 32px;">Niezależny serwis · centrale wentylacyjne i klimatyzacja · F-gaz</p>
     <div class="brands-grid">
+      <div class="brand-cell">SYSTEMAIR</div>
+      <div class="brand-cell">KOMFOVENT</div>
+      <div class="brand-cell">VENTS</div>
+      <div class="brand-cell">ZEHNDER</div>
       <div class="brand-cell">DAIKIN</div>
       <div class="brand-cell">MITSUBISHI</div>
       <div class="brand-cell">SAMSUNG</div>
-      <div class="brand-cell">GREE</div>
       <div class="brand-cell">LG</div>
-      <div class="brand-cell">TOSHIBA</div>
-      <div class="brand-cell">PANASONIC</div>
-      <div class="brand-cell">BRINK</div>
     </div>
     <p style="text-align:center;margin-top:24px;font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);letter-spacing:0.1em;">
       — i pozostali producenci na zapytanie —
@@ -2424,64 +2292,31 @@
 <section class="faq" id="faq">
   <div class="container">
     <div class="section-eyebrow">11 · FAQ</div>
-    <h2 class="section-title">Często zadawane <em class="accent">pytania</em>.</h2>
+    <h2 class="section-title">Pytania o <em class="accent">wentylację</em> we Wrocławiu.</h2>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>Ile kosztuje klimatyzacja o mocy 3,5 kW z montażem?</summary>
-        <div class="faq-a">Klimatyzacja <strong>3,5 kW z pełnym montażem</strong> we Wrocławiu kosztuje <strong>4 800–7 400 zł brutto</strong> (2026). Wariant ekonomiczny (Gree, Rotenso, Haier): <strong>4 800–5 500 zł</strong>. Premium (Daikin, Mitsubishi, Samsung): <strong>6 200–7 400 zł</strong>. Cena obejmuje urządzenie, montaż, trasę do 5 m, próżnię, czynnik R32 i 5 lat gwarancji. Dokładną kwotę podajemy po bezpłatnej wizji lokalnej.</div>
+        <summary>Jak często trzeba robić przegląd wentylacji w firmie?</summary>
+        <div class="faq-a">Prawo budowlane (art. 62) wymaga co najmniej raz w roku kontroli stanu technicznego przewodów wentylacyjnych, a jej wynik trafia do książki obiektu. Przegląd samej centrali — filtry, wymiennik, wentylatory, automatyka — planujemy według dokumentacji producenta i warunków pracy; w stałej umowie serwisowej wykonujemy go dwa razy w roku. Centrala przy kuchni zwykle potrzebuje częstszych wizyt niż urządzenie w biurze.</div>
       </details>
       <details class="faq-item">
-        <summary>Jakie są najcichsze klimatyzacje?</summary>
-        <div class="faq-a">Najcichsze splity na rynku (hałas jednostki wewnętrznej w trybie niskim): <strong>Samsung WindFree Elite ~16 dB(A)</strong>, Mitsubishi MSZ-LN ~19 dB, Daikin Emura/Stylish 19–21 dB, Toshiba SEIA ~20 dB. Przy montażu NURTEX mierzymy hałas w pomieszczeniu — celujemy <strong>poniżej 22 dB</strong> w sypialni. Jednostka zewnętrzna: zwykle 45–52 dB — przy wniosku do wspólnoty podajemy parametry akustyczne.</div>
+        <summary>Kto podpisuje protokół z kontroli okresowej wentylacji?</summary>
+        <div class="faq-a">Kontrolę z art. 62 Prawa budowlanego prowadzi u nas osoba z uprawnieniami budowlanymi w specjalności instalacyjnej i to ona podpisuje protokół. Po przeglądzie technicznym centrali dostajesz dodatkowo podsumowanie prac, wykrytych usterek i zaleceń z datą następnej wizyty.</div>
       </details>
       <details class="faq-item">
-        <summary>Jakie są polscy producenci klimatyzatorów?</summary>
-        <div class="faq-a">Masowa produkcja klimatyzatorów w Polsce jest ograniczona. Najbliżej „polskiego" producenta jest <strong>Rotenso</strong> — marka projektowana pod warunki w Polsce (grzanie do −25°C, serwis krajowy). Pozostałe popularne marki to producenci globalni: <strong>Gree, Haier, Daikin, Mitsubishi, Samsung, LG, Toshiba, Panasonic</strong>. NURTEX montuje wszystkie — dobiera markę do budżetu, hałasu i wymagań montażowych.</div>
+        <summary>Jakie centrale wentylacyjne obsługuje NURTEX?</summary>
+        <div class="faq-a">Centrale nawiewno-wywiewne różnych producentów, m.in. Systemair, Komfovent i Vents. Pracujemy na dokumentacji urządzenia, więc w zgłoszeniu najlepiej podać model z tabliczki znamionowej albo przesłać zdjęcie sterownika.</div>
       </details>
       <details class="faq-item">
-        <summary>Ile kosztuje montaż klimatyzacji we Wrocławiu w 2026?</summary>
-        <div class="faq-a">Klimatyzacja split z montażem we Wrocławiu zaczyna się od <strong>4 200 zł brutto</strong> (urządzenie 2,5 kW marki Gree, Rotenso lub Haier). Daikin lub Mitsubishi to <strong>5 800–7 400 zł</strong>. Multisplit 1+2 dla mieszkania ~60 m² — od <strong>8 500 zł</strong>. Cena zawiera urządzenie, montaż, wszystkie materiały i 5 lat gwarancji. Każda wycena jest indywidualna — metraż, rodzaj ścian, trasa instalacji i klasa urządzenia zmieniają koszt o ±15%.</div>
+        <summary>Jak wygląda reakcja na awarię centrali wentylacyjnej?</summary>
+        <div class="faq-a">Zgłoszenia przyjmujemy od poniedziałku do piątku w godzinach 8:00–17:00 — telefonicznie, przez formularz albo zdjęciem sterownika na WhatsApp. Najpierw diagnoza na miejscu, potem wycena części i robocizny; bez akceptacji nie wymieniamy podzespołów. Obiekty ze stałą umową serwisową mają ustalony czas reakcji i mogą zgłaszać awarie także poza godzinami pracy biura.</div>
       </details>
       <details class="faq-item">
-        <summary>Czy potrzebuję zgody wspólnoty na klimatyzację w bloku?</summary>
-        <div class="faq-a">Tak. Montaż jednostki zewnętrznej na elewacji to ingerencja w część wspólną — wymagana jest <strong>uchwała wspólnoty</strong> lub zgoda zarządcy budynku. NURTEX bezpłatnie przygotowuje wniosek z rysunkiem technicznym, parametrami akustycznymi (zwykle 38–42 dB — poniżej normy nocnej 40 dB), lokalizacją jednostki i schematem tras. Wniosek wystarczy złożyć w administracji — średnio 2–4 tygodnie procedowania.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Jak długo trwa montaż klimatyzacji?</summary>
-        <div class="faq-a">Standardowy montaż <strong>split 1+1: 4–6 godzin</strong> w jednym dniu. Multisplit 1+2: 6–8 godzin. Pełen proces: wiercenie diamentowe średnicą 6–8 cm, trasa instalacji (rurki miedziane Cu, kabel zasilający, kondensat), instalacja elektryczna 230 V z bezpiecznikiem, próba ciśnieniowa azotem (40 bar, 60 min), próżnia 30 min, napełnienie czynnikiem R32, uruchomienie, pomiar parametrów pracy, szkolenie użytkownika.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Jaką klimatyzację wybrać do mieszkania 50 m²?</summary>
-        <div class="faq-a">Do mieszkania 50 m² (1 salon + 1 sypialnia) zalecamy <strong>multisplit 5,0 kW</strong> (1 jednostka zewnętrzna, 2 wewnętrzne: 3,5 kW + 2,5 kW). Wariant: 2 osobne splity. Multisplit jest droższy w zakupie (~+15%), ale oszczędza elewację (1 skraplacz), jest cichszy w sumie i pozwala na niezależne sterowanie każdym pokojem. Modele rekomendowane: Daikin Stylish, Mitsubishi MSZ-LN, Samsung WindFree.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Klimatyzacja czy pompa ciepła powietrze-powietrze?</summary>
-        <div class="faq-a">W praktyce to ten sam typ urządzenia — inwerterowy split z funkcją grzania. Różnica jest formalna: <strong>pompa ciepła powietrze-powietrze ma SCOP powyżej 3,8</strong> i klasę efektywności A++/A+++. NURTEX dobiera modele dopasowane do mieszkania, biura lub domu — z gwarancją 5 lat i pełną dokumentacją montażu.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Czy klimatyzacja może grzać zimą we Wrocławiu?</summary>
-        <div class="faq-a">Tak. Inwerterowe splity Daikin Perfera, Mitsubishi Zubadan, Samsung WindFree Elite pracują grzewczo do <strong>−25°C</strong>. We Wrocławiu (średnia styczniowa −2°C, ekstrema rzadko poniżej −18°C) klimatyzacja grzewcza działa niezawodnie cały rok. Koszt kWh ciepła jest <strong>3–4× niższy</strong> niż z grzejnika elektrycznego (SCOP 4,0). 1 kWh prądu = 4 kWh ciepła. Opłacalna alternatywa dla pieca gazowego, jeśli masz fotowoltaikę.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Jak często serwisować klimatyzację?</summary>
-        <div class="faq-a">Przegląd zalecamy <strong>raz w roku</strong>, najlepiej wiosna (kwiecień–maj), przed sezonem. Obejmuje: czyszczenie filtrów wewnętrznych, podstawowe czyszczenie dostępnych elementów parownika, kontrolę ciśnienia czynnika chłodniczego, oczyszczenie skraplacza zewnętrznego, sprawdzenie odpływu skroplin i izolacji. Koszt we Wrocławiu: <strong>od 299 zł brutto</strong> za układ split. Multisplit 1+2 od 449 zł brutto, 1+3 od 599 zł brutto. <a href="/serwis-klimatyzacji-wroclaw#cennik">Zakres i warunki cennika serwisowego</a>. <em>Brak udokumentowanych przeglądów może skutkować odmową naprawy gwarancyjnej — większość producentów wymaga okresowego serwisu w warunkach gwarancji.</em></div>
-      </details>
-      <details class="faq-item">
-        <summary>Co to certyfikat F-gaz i dlaczego ma znaczenie?</summary>
-        <div class="faq-a">Certyfikat F-gaz to <strong>obowiązkowe uprawnienie</strong> do pracy z fluorowanymi czynnikami chłodniczymi (R32, R410A, R454B — nowe ekologiczne). Montaż lub demontaż urządzenia bez tego certyfikatu jest <strong>niedozwolony</strong> (rozporządzenie UE w sprawie F-gazów) i może skutkować utratą gwarancji urządzenia oraz odpowiedzialnością instalatora i użytkownika. NURTEX posiada certyfikat F-gaz dla firmy i całego personelu, plus uprawnienia SEP do 1 kV (E i D). Zakres czyszczenia kanałów wentylacyjnych dobieramy do rodzaju instalacji i stanu zabrudzenia.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Klimatyzacja na poddasze — jaką wybrać?</summary>
-        <div class="faq-a">Poddasze pod skosami z trudną wentylacją wymaga starannego doboru. Dla 30–50 m² zalecamy <strong>split 3,5–5,0 kW</strong> montowany blisko kalenicy (największy zysk powietrza chłodnego). Alternatywa: <strong>klimatyzacja kanalowa</strong> ukryta w suficie podwieszanym — droga, ale niewidoczna i bezgłośna. Ważna izolacja połaci dachowej (min. 25 cm wełny) — inaczej walka z 45°C latem będzie kosztowna.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Ile prądu zużywa klimatyzacja w sezonie?</summary>
-        <div class="faq-a">Inwerterowy split 3,5 kW pracujący <strong>4 godziny dziennie przez 3 miesiące</strong> (czerwiec–sierpień) zużywa ok. <strong>180–220 kWh</strong> — przy stawce 0,85 zł/kWh to <strong>150–190 zł sezonowo</strong> za pełne chłodzenie 25 m² pokoju. Klasa energetyczna A+++ (SEER 8,5) obniża rachunek o 20% względem A+. Z fotowoltaiką koszt zbliża się do zera.</div>
+        <summary>Czy wykonujecie też serwis klimatyzacji w tym samym obiekcie?</summary>
+        <div class="faq-a">Tak. Przy stałej obsłudze wentylacji możemy przejąć również przeglądy i serwis klimatyzacji — split, multisplit i VRF — w tym samym terminie. Przegląd klimatyzacji zaczyna się od 299 zł brutto za układ split; zakres i cennik opisujemy na stronie serwisu klimatyzacji.</div>
       </details>
     </div>
     <p style="margin-top:32px;max-width:720px;font-size:15px;line-height:1.7;color:var(--fg-dim)">
-      Więcej odpowiedzi na pytania z Google (cena 3,5 kW, najcichsze modele, zdrowie, polscy producenci):
-      <a href="/blog/najczestsze-pytania-klimatyzacja" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">4 najczęstsze pytania o klimatyzację — artykuł NURTEX</a>.
+      Więcej w poradnikach: <a href="/blog/przeglad-wentylacji-wroclaw" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">kontrola okresowa wentylacji — przepisy i protokół</a> oraz <a href="/blog/wymiana-filtrow-wentylacji-rekuperacji" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">kiedy wymieniać filtry w centralach</a>. Pytania o klimatyzację: <a href="/serwis-klimatyzacji-wroclaw" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">serwis klimatyzacji Wrocław</a>.
     </p>
   </div>
 </section>
@@ -2494,13 +2329,13 @@
     <div class="quote-wrap">
       <div class="quote-left">
         <h3>Jak to działa?</h3>
-        <p>Wypełnij 3 pola i wyślij formularz — zapytanie trafi do nas bez otwierania programu pocztowego. Oddzwonimy w 24h. Dopiero na miejscu oceniamy metraż, trasę instalacji, materiały i specyfikę Twojego obiektu — i podajemy <strong style="color:var(--fg)">konkretną, ostateczną cenę brutto</strong>. Bez szacunków, bez zaskoczeń.</p>
-        <p>Audyt online (wideo + zdjęcia) jako wstępna konsultacja, a finalna wizyta w domu/biurze — zawsze bezpłatna. <strong style="color:var(--fg)">Bez opłat, bez zobowiązań.</strong></p>
+        <p>Wypełnij 3 pola i wyślij formularz — zapytanie trafi do nas bez otwierania programu pocztowego. Oddzwonimy w 24h. Zakres, koszt i termin ustalamy po oględzinach obiektu i podajemy <strong style="color:var(--fg)">na piśmie, zanim ktokolwiek odkręci obudowę centrali</strong>. Bez szacunków, bez zaskoczeń.</p>
+        <p>Wstępna konsultacja po zdjęciach i opisie (model centrali, objaw, liczba urządzeń), potem oględziny na obiekcie — we Wrocławiu bezpłatne. <strong style="color:var(--fg)">Bez opłat, bez zobowiązań.</strong></p>
         <div class="quote-feat">
           <div class="quote-feat-card"><strong>24h</strong><span>czas odpowiedzi</span></div>
           <div class="quote-feat-card"><strong>0 zł</strong><span>koszt wyceny</span></div>
-          <div class="quote-feat-card"><strong>287+</strong><span>instalacji · stan: VIII.2026</span></div>
-          <div class="quote-feat-card"><strong>5 lat</strong><span>gwarancji</span></div>
+          <div class="quote-feat-card"><strong>2×/rok</strong><span>przeglądy w umowie</span></div>
+          <div class="quote-feat-card"><strong>VAT</strong><span>faktura, przelew 7/14 dni</span></div>
         </div>
       </div>
       <form class="quote-form nurtex-lead-form" id="quoteForm" data-service="Wycena NURTEX" data-url="https://nurtex.pl/" novalidate>
@@ -2516,7 +2351,7 @@
   </div>
   <div class="field">
     <label>Wiadomość *</label>
-    <textarea name="message" required rows="4" placeholder="np. montaż klimatyzacji, mieszkanie 55 m², Krzyki, split do salonu i sypialni"></textarea>
+    <textarea name="message" required rows="4" placeholder="np. biurowiec, 3 centrale Systemair na dachu, alarm na sterowniku, Wrocław Fabryczna"></textarea>
   </div>
   <input type="hidden" name="service" value="Wycena NURTEX">
   <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
@@ -2554,7 +2389,7 @@
     <div class="section-eyebrow" style="justify-content: center;">14 · Bezpośredni kontakt</div>
     <h2 class="cta-title">Wolisz <em class="accent">zadzwonić</em>?<br/>Odbieramy w 30 sekund.</h2>
     <p class="cta-sub">
-      Pon–Pt 8:00–17:00, sob. zamknięte. Serwis 24/7 wyłącznie dla klientów z <a href="/serwis-klimatyzacji-wroclaw" style="color:inherit;text-decoration:underline;text-underline-offset:3px">umową serwisową (SLA)</a>.
+      Pon–Pt 8:00–17:00, sob. zamknięte. Kontakt techniczny: <strong>Wiktor Zięba</strong>. Zgłoszenia awaryjne poza godzinami pracy biura — tylko dla obiektów z <a href="/serwis-wentylacji-wroclaw#stala-obsluga" style="color:inherit;text-decoration:underline;text-underline-offset:3px">umową serwisową</a>.
     </p>
     <div class="cta-buttons">
       <a href="tel:+48662070695" class="btn btn-primary" data-hover>
@@ -2579,8 +2414,8 @@
   <div class="container">
     <div class="foot-cta-band">
       <div>
-        <h3>Gotowy? <em>Zapytaj o cenę</em> dla swojego mieszkania.</h3>
-        <p>Krótki formularz, oddzwonimy w 24h z konkretną wyceną. Bez naciągania, bez magii — same liczby. Ponad 287 instalacji we Wrocławiu i na Dolnym Śląsku (stan: sierpień 2026).</p>
+        <h3>Gotowy? <em>Zapytaj o zakres i cenę</em> dla swojego obiektu.</h3>
+        <p>Krótki formularz, oddzwonimy w 24h z konkretną wyceną serwisu, przeglądu lub czyszczenia wentylacji. Bez naciągania, bez magii — same liczby. Wrocław i Dolny Śląsk.</p>
       </div>
       <div class="foot-cta-band-actions">
         <a href="#wycena" class="btn btn-primary" data-hover>
@@ -2597,20 +2432,21 @@
         <img src="/img/nurtex-logo.svg" alt="NURTEX - Inżynieria klimatu" width="760" height="188" style="display:block;width:min(250px,100%);height:auto;margin-bottom:24px;" />
         <p>
           NURTEX — Inżynieria sanitarna.<br/>
-          Klimatyzacja · Wentylacja · Pompy ciepła · Chłodnictwo.<br/>
+          Wentylacja mechaniczna · Serwis central · Klimatyzacja.<br/>
           Wrocław i Dolny Śląsk od 2018.
         </p>
       </div>
       <div class="foot-col">
         <h4>Usługi</h4>
         <ul>
-          <li><a href="/montaz-klimatyzacji-wroclaw" data-hover>Montaż klimatyzacji Wrocław</a></li>
-          <li><a href="/wentylacja-mechaniczna-rekuperacja-wroclaw" data-hover>Serwis wentylacji Wrocław</a></li>
-          <li><a href="/przeglad-wentylacji-wroclaw" data-hover>Przegląd wentylacji Wrocław</a></li>
-          <li><a href="/naprawa-wentylacji-mechanicznej-wroclaw" data-hover>Naprawa wentylacji mechanicznej Wrocław</a></li>
-          <li><a href="/czyszczenie-kanalow-wentylacji-wroclaw" data-hover>Czyszczenie kanałów wentylacji</a></li>
-          <li><a href="/pompy-ciepla-wroclaw" data-hover>Pompy ciepła Wrocław</a></li>
+          <li><a href="/serwis-wentylacji-wroclaw" data-hover>Serwis wentylacji Wrocław</a></li>
+          <li><a href="/przeglad-wentylacji-wroclaw" data-hover>Przegląd i pomiary wentylacji</a></li>
+          <li><a href="/naprawa-wentylacji-mechanicznej-wroclaw" data-hover>Naprawa wentylacji mechanicznej</a></li>
+          <li><a href="/czyszczenie-kanalow-wentylacji-wroclaw" data-hover>Czyszczenie i dezynfekcja kanałów</a></li>
+          <li><a href="/ozonowanie-wroclaw" data-hover>Ozonowanie Wrocław</a></li>
           <li><a href="/monitoring-iaq-bms-wroclaw" data-hover>Monitoring IAQ + automatyka BMS</a></li>
+          <li><a href="/montaz-klimatyzacji-wroclaw" data-hover>Montaż klimatyzacji Wrocław</a></li>
+          <li><a href="/serwis-klimatyzacji-wroclaw" data-hover>Serwis klimatyzacji Wrocław</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -2623,16 +2459,6 @@
           <li><a href="#proces" data-hover>Proces</a></li>
           <li><a href="https://nurtex.pl/" target="_blank" rel="noopener" data-hover>Wentylacja i klimatyzacja Wrocław</a></li>
           <li><a href="https://nurtex.pl/" target="_blank" rel="noopener" data-hover>NURTEX.pl</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4>Firmy z naszej grupy</h4>
-        <ul>
-          <li><a href="https://wuko-wroclaw.pl/" target="_blank" rel="noopener" data-hover>Pogotowie kanalizacyjne 24/7 — WUKO Wrocław</a></li>
-          <li><a href="https://ziebud-expert.pl/" target="_blank" rel="noopener" data-hover>ZIĘBUD Expert — sieci wod-kan</a></li>
-          <li><a href="https://serwis-kanalizacji.com/" target="_blank" rel="noopener" data-hover>Serwis kanalizacji Wrocław</a></li>
-          <li><a href="https://sekor.com.pl/" target="_blank" rel="noopener" data-hover>Sekor — pogotowie hydrauliczne</a></li>
-          <li><a href="https://wodociagi-kanalizacja.com/" target="_blank" rel="noopener" data-hover>Wodociągi i kanalizacja — sieci wod-kan</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -2701,7 +2527,7 @@
     </svg>
     <span>662 070 695</span>
   </a>
-  <a href="https://wa.me/48662070695?text=Dzie%C5%84%20dobry%2C%20mam%20pytanie%20o%20wycen%C4%99%20klimatyzacji" class="mobile-bar-btn mobile-bar-btn--wa" target="_blank" rel="noopener" aria-label="Napisz na WhatsApp" data-track="mobile_bar_whatsapp">
+  <a href="https://wa.me/48662070695?text=Dzie%C5%84%20dobry%2C%20mam%20pytanie%20o%20serwis%20wentylacji" class="mobile-bar-btn mobile-bar-btn--wa" target="_blank" rel="noopener" aria-label="Napisz na WhatsApp" data-track="mobile_bar_whatsapp">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
     </svg>
@@ -3163,7 +2989,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (cap) {
       if (r25 === 'good') cap.textContent = 'Norma WHO 24h spełniona. Filtry MERV13 wystarczające.';
       else if (r25 === 'mod') cap.textContent = 'Powyżej zaleceń WHO. Rekomendujemy filtry HEPA H13 w nawiewie.';
-      else if (r25 === 'bad') cap.textContent = 'Wysokie pyły zawieszone — wskazana rekuperacja z HEPA i kontrola CO₂.';
+      else if (r25 === 'bad') cap.textContent = 'Wysokie pyły zawieszone — wskazana filtracja HEPA w wentylacji i kontrola CO₂.';
       else cap.textContent = 'Smog. Niezbędna wentylacja z HEPA H14 + monitoring jakości powietrza.';
     }
 

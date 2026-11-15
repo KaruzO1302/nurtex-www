@@ -8,6 +8,71 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/wentylacja-mechaniczna-rekuperacja-wroclaw",
+      "destination": "/serwis-wentylacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/wentylacja-mechaniczna-rekuperacja-wroclaw/:path*",
+      "destination": "/serwis-wentylacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/blog/klimatyzacja-czy-pompa-ciepla",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/montaz-klimatyzacji-wroclaw/krzyki",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/serwis-klimatyzacji-wroclaw/krzyki",
+      "destination": "/serwis-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/montaz-klimatyzacji-wroclaw/fabryczna",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/serwis-klimatyzacji-wroclaw/fabryczna",
+      "destination": "/serwis-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/montaz-klimatyzacji-wroclaw/psie-pole",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/serwis-klimatyzacji-wroclaw/psie-pole",
+      "destination": "/serwis-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/montaz-klimatyzacji-wroclaw/stare-miasto",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/serwis-klimatyzacji-wroclaw/stare-miasto",
+      "destination": "/serwis-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/montaz-klimatyzacji-wroclaw/srodmiescie",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/serwis-klimatyzacji-wroclaw/srodmiescie",
+      "destination": "/serwis-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
       "source": "/realizacje/rekuperacja-dom-pod-wroclawiem",
       "destination": "/realizacje",
       "permanent": true
@@ -25,16 +90,6 @@
     {
       "source": "/realizacje/klimatyzacja-vrf-biuro-wroclaw/:path*",
       "destination": "/realizacje",
-      "permanent": true
-    },
-    {
-      "source": "/kalkulator-czyste-powietrze",
-      "destination": "/pompy-ciepla-wroclaw",
-      "permanent": true
-    },
-    {
-      "source": "/kalkulator-czyste-powietrze/:path*",
-      "destination": "/pompy-ciepla-wroclaw",
       "permanent": true
     },
     {
@@ -84,12 +139,7 @@
     },
     {
       "source": "/uslugi/wentylacja-mechaniczna",
-      "destination": "/wentylacja-mechaniczna-rekuperacja-wroclaw",
-      "permanent": true
-    },
-    {
-      "source": "/uslugi/pompy-ciepla",
-      "destination": "/pompy-ciepla-wroclaw",
+      "destination": "/serwis-wentylacji-wroclaw",
       "permanent": true
     },
     {
@@ -119,7 +169,7 @@
     },
     {
       "source": "/uslugi/montaz-wentylacji-i-klimatyzacji-kompleksowo",
-      "destination": "/wentylacja-mechaniczna-rekuperacja-wroclaw",
+      "destination": "/serwis-wentylacji-wroclaw",
       "permanent": true
     },
     {
@@ -174,7 +224,7 @@
     },
     {
       "source": "/wentylacja-wroclaw",
-      "destination": "/wentylacja-mechaniczna-rekuperacja-wroclaw",
+      "destination": "/serwis-wentylacji-wroclaw",
       "permanent": true
     },
     {
@@ -199,7 +249,7 @@
     },
     {
       "source": "/dofinansowanie-do-rekuperacji",
-      "destination": "/blog/klimatyzacja-czy-pompa-ciepla",
+      "destination": "/blog",
       "permanent": true
     },
     {
@@ -230,15 +280,6 @@
     },
     {
       "source": "/montaz-klimatyzacji-wroclaw/img/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/wentylacja-mechaniczna-rekuperacja-wroclaw/img/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
