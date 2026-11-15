@@ -144,6 +144,19 @@
     border-radius: 100px; transition: all 0.3s ease;
   }
   .phone-cta:hover { background: var(--accent); color: white !important; }
+  nav a, .phone-cta { white-space: nowrap; }
+  /* laptopy 1025–1500 px: pasek w jednym rzędzie (dłuższe menu po pivocie na wentylację) */
+  @media (min-width: 1025px) and (max-width: 1500px) {
+    .topbar-left > span { display: none; }
+    .topbar { padding: 16px 32px; }
+    nav ul { gap: 18px; }
+  }
+  @media (min-width: 1025px) and (max-width: 1279px) {
+    .topbar { padding: 14px 20px; }
+    nav ul { gap: 14px; }
+    nav a { font-size: 11px; letter-spacing: 0.04em; }
+    .phone-cta { padding: 7px 12px; }
+  }
 
   /* ========= HERO IMAGE BG — disabled to prevent first-paint photo flash ========= */
   .hero-image-bg {
@@ -418,6 +431,15 @@
     border-radius: 100px; background: rgba(255,255,255,0.02);
     backdrop-filter: blur(10px);
   }
+  /* niższe ekrany (do 1100 px wysokości; MacBook 16" 1728×1117 bez zmian): hero zagęszczone, żeby nic nie wchodziło pod pasek */
+  @media (min-width: 1025px) and (max-height: 1100px) {
+    .hero-content { padding-top: 100px; padding-bottom: 64px; }
+    .eyebrow { margin-bottom: 14px; }
+    .hero-h1 .h1-main { font-size: clamp(34px, min(4.4vw, 6.2vh), 84px); }
+    .hero-h1 .h1-sub { margin-top: 10px; font-size: clamp(16px, 2.6vh, 22px); }
+    .hero-trust { margin-top: 16px; }
+  }
+  @media (min-width: 1025px) and (max-height: 740px) { .hero-trust { display: none; } }
   @media (max-width: 768px) {
     .hero-h1 .h1-main { font-size: clamp(40px, 11vw, 64px); }
     .hero-h1 .h1-sub { font-size: 16px; }
