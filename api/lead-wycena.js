@@ -125,7 +125,7 @@ function renderClientEmail(data) {
 
         <hr style="border:none;border-top:1px solid #2b2d36;margin:24px 0">
         <p style="color:#666;font-size:12px;line-height:1.5;margin:0">
-          NURTEX Wiktor Zięba · ul. Smardzowska 83B, 52-234 Wrocław · NIP 899-281-81-26<br>
+          NURTEX Wiktor Zięba · Wrocław · NIP 899-281-81-26<br>
           <a href="https://wentylacja-nurtex-klimatyzacja.pl" style="color:#8f93a3;text-decoration:none">wentylacja-nurtex-klimatyzacja.pl</a>
         </p>
       </div>

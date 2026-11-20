@@ -28,8 +28,6 @@
 <!-- Geo / Local SEO -->
 <meta name="geo.region" content="PL-DS" />
 <meta name="geo.placename" content="Wrocław" />
-<meta name="geo.position" content="51.0582136;17.042428" />
-<meta name="ICBM" content="51.0582136, 17.042428" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -1151,14 +1149,8 @@
     .brand-cell { height: 56px; font-size: 14px; }
   }
 
-  /* ========= MAP EMBED ========= */
+  /* ========= DOJAZD ========= */
   .map-section { padding: 80px 0; background: var(--bg-base); }
-  .map-wrap {
-    margin-top: 40px; border-radius: 14px; overflow: hidden;
-    border: 1px solid var(--border); height: 420px;
-    filter: grayscale(0.3) contrast(1.05);
-  }
-  .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
 
   /* ========= FOOTER ========= */
   footer.foot {
@@ -1405,16 +1397,9 @@
   ],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "ul. Smardzowska 83B",
     "addressLocality": "Wrocław",
-    "postalCode": "52-234",
     "addressRegion": "Dolnośląskie",
     "addressCountry": "PL"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 51.0582136,
-    "longitude": 17.042428
   },
   "openingHoursSpecification": [
     {
@@ -1867,6 +1852,7 @@
     <p class="section-lead">
       Obsługa techniczna wentylacji mechanicznej dla firm, biur, lokali gastronomicznych i spółdzielni mieszkaniowych
       we Wrocławiu i na Dolnym Śląsku. Zakres dobieramy do urządzeń i pracy obiektu — jednorazowo albo w stałej umowie.
+      Osobno wykonujemy <a href="/pomiary-wentylacji-wroclaw" style="color:inherit;text-decoration:underline;text-underline-offset:3px">pomiary wentylacji z regulacją instalacji</a> i badaniem szczelności kanałów.
     </p>
 
     <div class="services-grid">
@@ -2357,17 +2343,17 @@
       <form class="quote-form nurtex-lead-form" id="quoteForm" data-service="Wycena NURTEX" data-url="https://nurtex.pl/" novalidate>
   <div class="field-row">
     <div class="field">
-      <label>Imię i nazwisko *</label>
-      <input type="text" name="name" required autocomplete="name" placeholder="Jan Kowalski">
+      <label for="quote-name">Imię i nazwisko *</label>
+      <input type="text" id="quote-name" name="name" required autocomplete="name" placeholder="Jan Kowalski">
     </div>
     <div class="field">
-      <label>Telefon *</label>
-      <input type="tel" name="phone" required autocomplete="tel" placeholder="662 070 695">
+      <label for="quote-phone">Telefon *</label>
+      <input type="tel" id="quote-phone" name="phone" required autocomplete="tel" placeholder="662 070 695">
     </div>
   </div>
   <div class="field">
-    <label>Wiadomość *</label>
-    <textarea name="message" required rows="4" placeholder="np. biurowiec, 3 centrale Systemair na dachu, alarm na sterowniku, Wrocław Fabryczna"></textarea>
+    <label for="quote-message">Wiadomość *</label>
+    <textarea id="quote-message" name="message" required rows="4" placeholder="np. biurowiec, 3 centrale Systemair na dachu, alarm na sterowniku, Wrocław Fabryczna"></textarea>
   </div>
   <input type="hidden" name="service" value="Wycena NURTEX">
   <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
@@ -2379,23 +2365,14 @@
   </div>
 </section>
 
-<!-- ============ MAP SECTION ============ -->
+<!-- ============ DOJAZD — FIRMA OBSZAROWA ============ -->
 <section class="map-section" id="mapa">
   <div class="container">
     <div class="section-eyebrow">13 · Dojazd</div>
-    <h2 class="section-title">NURTEX na <em class="accent">mapie Google</em>.</h2>
+    <h2 class="section-title">Przyjeżdżamy na <em class="accent">miejsce usługi</em>.</h2>
     <p class="section-lead">
-      Biuro i magazyn w pełni dostępne dla klientów. Możesz zobaczyć sprzęt przed montażem, omówić projekt na żywo. Dojazd do klienta w obrębie Wrocławia bezpłatny.
+      Nie prowadzimy punktu obsługi klientów — przyjeżdżamy na miejsce wykonania usługi: do biura, lokalu gastronomicznego, zaplecza czy budynku wielorodzinnego. Działamy we Wrocławiu i okolicach oraz na Dolnym Śląsku (Kobierzyce, Siechnice, Oława, Trzebnica, Kąty Wrocławskie i inne miejscowości — <a href="#obszar" style="color:inherit;text-decoration:underline;text-underline-offset:3px">zobacz obszar działania</a>). Dojazd do klienta w obrębie Wrocławia bezpłatny.
     </p>
-    <div class="map-wrap">
-      <iframe
-        src="https://www.google.com/maps?q=NURTEX%20Klimatyzacja%20i%20Wentylacja%2051.0582136,17.042428&amp;output=embed"
-        allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="NURTEX Wrocław — mapa"></iframe>
-    </div>
-    <div class="cta-buttons" style="margin-top:24px;">
-    </div>
   </div>
 </section>
 
@@ -2403,7 +2380,7 @@
 <section class="cta-section" id="kontakt">
   <div class="container">
     <div class="section-eyebrow" style="justify-content: center;">14 · Bezpośredni kontakt</div>
-    <h2 class="cta-title">Wolisz <em class="accent">zadzwonić</em>?<br/>Odbieramy w 30 sekund.</h2>
+    <h2 class="cta-title">Wolisz <em class="accent">zadzwonić</em>?<br/>Opisz obiekt, doradzimy zakres.</h2>
     <p class="cta-sub">
       Pon–Pt 8:00–17:00, sob. zamknięte. Kontakt techniczny: <strong>Wiktor Zięba</strong>. Zgłoszenia awaryjne poza godzinami pracy biura — tylko dla obiektów z <a href="/serwis-wentylacji-wroclaw#stala-obsluga" style="color:inherit;text-decoration:underline;text-underline-offset:3px">umową serwisową</a>.
     </p>
@@ -2457,6 +2434,7 @@
         <ul>
           <li><a href="/serwis-wentylacji-wroclaw" data-hover>Serwis wentylacji Wrocław</a></li>
           <li><a href="/przeglad-wentylacji-wroclaw" data-hover>Przegląd i pomiary wentylacji</a></li>
+          <li><a href="/pomiary-wentylacji-wroclaw" data-hover>Pomiary i regulacja instalacji</a></li>
           <li><a href="/naprawa-wentylacji-mechanicznej-wroclaw" data-hover>Naprawa wentylacji mechanicznej</a></li>
           <li><a href="/czyszczenie-kanalow-wentylacji-wroclaw" data-hover>Czyszczenie i dezynfekcja kanałów</a></li>
           <li><a href="/ozonowanie-wroclaw" data-hover>Ozonowanie Wrocław</a></li>
@@ -2494,8 +2472,8 @@
           <h4>Dane firmy</h4>
           <address>
             <strong>NURTEX Wiktor Zięba</strong><br>
-            ul. Smardzowska 83B<br>
-            52-234 Wrocław<br>
+            Wrocław i Dolny Śląsk<br>
+            Dojazd na miejsce usługi<br>
             Polska
           </address>
           <dl class="company-ids">

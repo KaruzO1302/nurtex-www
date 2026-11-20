@@ -39,8 +39,6 @@
 <!-- Geo / Local SEO -->
 <meta name="geo.region" content="PL-DS" />
 <meta name="geo.placename" content="Wrocław" />
-<meta name="geo.position" content="51.0582136;17.042428" />
-<meta name="ICBM" content="51.0582136, 17.042428" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -1423,7 +1421,7 @@ td { color: var(--fg-dim); font-size: 15px; }
 <link rel="stylesheet" href="/style.css" />
 <link rel="stylesheet" href="/css/mobile-fix.css?v=2026-05-21" />
 <meta property="og:site_name" content="NURTEX">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HVACBusiness","@id":"https://nurtex.pl/#business","name":"NURTEX Klimatyzacja i Wentylacja","telephone":"+48 662 070 695","email":"kontakt@nurtex.pl","url":"https://nurtex.pl/","address":{"@type":"PostalAddress","streetAddress":"ul. Smardzowska 83B","postalCode":"52-234","addressLocality":"Wrocław","addressRegion":"Dolnośląskie","addressCountry":"PL"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HVACBusiness","@id":"https://nurtex.pl/#business","name":"NURTEX Klimatyzacja i Wentylacja","telephone":"+48 662 070 695","email":"kontakt@nurtex.pl","url":"https://nurtex.pl/","address":{"@type":"PostalAddress","addressLocality":"Wrocław","addressRegion":"Dolnośląskie","addressCountry":"PL"},"areaServed":[{"@type":"City","name":"Wrocław"},{"@type":"AdministrativeArea","name":"Dolnośląskie"}]}</script>
 </head>
 <body>
 
@@ -2364,17 +2362,17 @@ td { color: var(--fg-dim); font-size: 15px; }
 <form class="nurtex-lead-form" data-service="Montaż klimatyzacji Wrocław" data-url="https://nurtex.pl/montaz-klimatyzacji-wroclaw/" novalidate>
   <div class="field-row">
     <div class="field">
-      <label>Imię i nazwisko *</label>
-      <input type="text" name="name" required autocomplete="name" placeholder="Jan Kowalski">
+      <label for="montaz-name">Imię i nazwisko *</label>
+      <input type="text" id="montaz-name" name="name" required autocomplete="name" placeholder="Jan Kowalski">
     </div>
     <div class="field">
-      <label>Telefon *</label>
-      <input type="tel" name="phone" required autocomplete="tel" placeholder="662 070 695">
+      <label for="montaz-phone">Telefon *</label>
+      <input type="tel" id="montaz-phone" name="phone" required autocomplete="tel" placeholder="662 070 695">
     </div>
   </div>
   <div class="field">
-    <label>Wiadomość *</label>
-    <textarea name="message" required rows="4" placeholder="np. mieszkanie 65 m² Krzyki, split do salonu, balkon na agregat, wycena na czerwiec"></textarea>
+    <label for="montaz-message">Wiadomość *</label>
+    <textarea id="montaz-message" name="message" required rows="4" placeholder="np. mieszkanie 65 m² Krzyki, split do salonu, balkon na agregat, wycena na czerwiec"></textarea>
   </div>
   <input type="hidden" name="service" value="Montaż klimatyzacji Wrocław">
   <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
@@ -2431,8 +2429,8 @@ td { color: var(--fg-dim); font-size: 15px; }
           <h4>Dane firmy</h4>
           <address>
             <strong>NURTEX Wiktor Zięba</strong><br>
-            ul. Smardzowska 83B<br>
-            52-234 Wrocław<br>
+            Wrocław i Dolny Śląsk<br>
+            Dojazd na miejsce usługi<br>
             Polska
           </address>
           <dl class="company-ids">
