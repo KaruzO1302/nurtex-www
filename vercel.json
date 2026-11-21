@@ -266,6 +266,91 @@
       "source": "/uslugi/:path*",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/pompy-ciepla-wroclaw",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/cennik",
+      "destination": "/serwis-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/cennik/",
+      "destination": "/serwis-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/galeria",
+      "destination": "/realizacje",
+      "permanent": true
+    },
+    {
+      "source": "/galeria/",
+      "destination": "/realizacje",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/o-firmie/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/montaz-klimatyzacji-wroclaw",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/blog/kontrola-sanepidu-czystosc-wentylacji",
+      "destination": "/blog/przeglad-wentylacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/blog/okresowe-przeglady-wentylacji-wymagania-prawne",
+      "destination": "/blog/przeglad-wentylacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/blog/diagnostyka-hvacr-metody-pomiarowe",
+      "destination": "/pomiary-wentylacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/blog/diagnostyka-hvacr-nowoczesne-narzedzia",
+      "destination": "/pomiary-wentylacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/blog/dobor-systemu-klimatyzacji-biuro",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/blog/optymalizacja-zuzycia-energii-chlodnictwo",
+      "destination": "/blog/cykl-chlodniczy-r32",
+      "permanent": true
+    },
+    {
+      "source": "/blog/serwis-chlodni-przemyslowych-prewencja",
+      "destination": "/serwis-wentylacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/serwis-klimatyzacji-strzelin",
+      "destination": "/serwis-klimatyzacji-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/montaz-instalacji-chlodniczych-legnica",
+      "destination": "/montaz-klimatyzacji-wroclaw",
+      "permanent": true
     }
   ],
   "headers": [
