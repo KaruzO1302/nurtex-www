@@ -5,6 +5,8 @@
 // =============================================================================
 
 const ALLOWED_ORIGINS = [
+  'https://serwis-wentylacji-wroclaw.pl',
+  'https://www.serwis-wentylacji-wroclaw.pl',
   'https://nurtex.pl',
   'https://www.nurtex.pl',
   'https://wentylacja-nurtex-klimatyzacja.pl',

@@ -28,7 +28,7 @@ function setup(fetchResult, { valid = true } = {}) {
       querySelectorAll: () => [form],
       createElement: () => { const node = { style: {}, attributes: {}, hidden: false, setAttribute(k,v) { this.attributes[k] = v; }, focus() { this.focused = true; } }; node.classList = { contains: c => node.className === c }; return node; }
     },
-    window: { location: { href: 'https://nurtex.pl/' }, open() { opened++; } },
+    window: { location: { href: 'https://serwis-wentylacji-wroclaw.pl/' }, open() { opened++; } },
     fetch: async (...args) => { requests++; return fetchResult(...args); },
     AbortController,
     setTimeout(fn) { timeout = fn; return 1; },

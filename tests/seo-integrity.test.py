@@ -84,7 +84,7 @@ class SeoIntegrity(unittest.TestCase):
                 self.assertEqual(page.meta["og:url"], [url])
                 for key in ["og:image", "twitter:image"]:
                     image = urlsplit(page.meta[key][0])
-                    self.assertEqual(image.hostname, "nurtex.pl")
+                    self.assertEqual(image.hostname, "serwis-wentylacji-wroclaw.pl")
                     self.assertTrue((ROOT / image.path.lstrip("/")).is_file(), image.path)
                 if path != "polityka-prywatnosci":
                     self.assertIn("/polityka-prywatnosci", page.links)

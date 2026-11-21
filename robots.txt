@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nurtex.pl/sitemap.xml
+Sitemap: https://serwis-wentylacji-wroclaw.pl/sitemap.xml
